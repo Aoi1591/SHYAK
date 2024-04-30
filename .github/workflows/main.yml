@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: Aoi1591/SHYAK/checkout@v4
+        uses: Aoi1591/SHYAK/checkout@v4.1.4
       - name: FTP Deploy
-        uses: Aoi1591/SHYAK/FTP-Deploy-Action@4.3.4
+        uses: Aoi1591/SHYAK/FTP-Deploy-Action@4.3.5
         with:
           server: ${{secrets.FTP_SERVER}}
           username: ${{secrets.FTP_USERNAME}}
