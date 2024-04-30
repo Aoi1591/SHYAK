@@ -1,19 +1,19 @@
-name: FTP Deploy
 on:
-  push:
-    branches:
-      - 'main'
-      - 'sub'
+  push:                 # プッシュした時に実行
+    branches:           # ブランチを指定
+      - main    # mainブランチ
+      - sub    # subブランチ
+name: Build and Deploy  # アクションの名称
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action     # JOBの名前
+    runs-on: ubuntu-latest      # 仮想環境の種類を指定
     steps:
-      - name: Checkout code
-        uses: Aoi1591/SHYAK/checkout@v4.1.4
-      - name: FTP Deploy
-        uses: Aoi1591/SHYAK/FTP-Deploy-Action@4.3.5
-        with:
-          server: ${{secrets.FTP_SERVER}}
-          username: ${{secrets.FTP_USERNAME}}
-          password: ${{secrets.FTP_PASSWORD}}
+      - uses: actions/checkout@master   # リポジトリのデータを仮想環境にチェックアウトしてくるアクションを実行する
+
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4   # FTPを使ってサーバーにDeployするアクションを実行
+        env:                                        # FTP環境の設定を行う
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}     # FTPサーバーのURLを設定
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }} # FTPのユーザー名を設定
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} # FTPのパスワードを設定
