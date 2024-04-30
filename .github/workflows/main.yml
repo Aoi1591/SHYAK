@@ -1,8 +1,8 @@
 on: 
   push:
     branches:
-      -main
-      -sub
+      - 'main'
+      - 'sub'
 
 name: 🚀 Deploy website on push
 jobs:
