@@ -1,19 +1,20 @@
 on:
-  push:                 # プッシュした時に実行
-    branches:           # ブランチを指定
-      - main    # mainブランチ
-      - sub    # subブランチ
-name: Build and Deploy  # アクションの名称
+  push:
+    branches:
+      - main
+      - sub
+name: 🚀 Deploy website on push
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action     # JOBの名前
-    runs-on: ubuntu-latest      # 仮想環境の種類を指定
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master   # リポジトリのデータを仮想環境にチェックアウトしてくるアクションを実行する
-
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4   # FTPを使ってサーバーにDeployするアクションを実行
-        env:                                        # FTP環境の設定を行う
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}     # FTPサーバーのURLを設定
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }} # FTPのユーザー名を設定
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} # FTPのパスワードを設定
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
