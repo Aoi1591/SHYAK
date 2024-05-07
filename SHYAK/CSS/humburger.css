@@ -110,7 +110,43 @@ a{
             -ms-transform: translateY(9px) rotate(-45deg);
             transform: translateY(9px) rotate(-45deg);
         }
-        
+        .js_humburgerOpen .el-humburger span.el_humburger_bar.middle{
+            opacity: 0;
+        }
+        .js_humburgerOpen .el-humburger span .el_humburger_ber.bottom{
+            -webkit-transform: translateY(-11px)rptate(45deg);
+            -ms-transform: translateY(-11px)rotate(45deg);
+            transform: translateY(-11px)rotate(45deg);
+        }
+        .el-humburgerButton.el_humburgerButtom_close{
+            top: 2%;
+            right: 2%;
+        }
+        .el-humburgerButtom_close sapn.el_humburger_bar{
+            display: block;
+            width: 35px;
+            margin: 0 auto;
+            height: 4px;
+            background: #000;
+        }
+        .el_humburgerButton_close span.el_humburger_bar.top{
+            -webkit-transform: translateY(-6px)rotate(45deg);
+            -ms-transform: translateY(-6px)rotate(45deg);
+            transform: translateY(-6px)rotate(45deg);
+        }
+        .navi{
+            position: fixed;
+            right: 0;
+            background-color: rgba(255,255,255,0.9);
+            width: 450px;
+            z-index: 3;
+            padding-top: 100px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 600ms ease-out;
+            -o-transition: all 600ms ease-out;
+            /*149かから*/
+        }
     }
     }
 
