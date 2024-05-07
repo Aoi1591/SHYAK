@@ -9,7 +9,7 @@ var focusFlag = false;
       $(document).on('click','.el_humburger',function(){
         if(navButtonFlag){
           spNavInOut.switch();
-          //連続してボタンを押せないようにする
+          //連続してボタンを押せないようにする.200ミリ秒の間にボタンが押されても無効とする
           setTimeout(function(){
             navButtonFlag = true;
           },200);
