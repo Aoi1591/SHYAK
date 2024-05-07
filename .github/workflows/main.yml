@@ -2,6 +2,7 @@ on:
   push:
     branches:
     - main
+    - sub02
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
