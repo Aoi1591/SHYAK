@@ -145,9 +145,38 @@ a{
             box-sizing: border-box;
             -webkit-transition: all 600ms ease-out;
             -o-transition: all 600ms ease-out;
-            /*149かから*/
+            transition: all 600ms ease-out;
+            transform: translateZ(0) translateX(100%);
+            overflow: auto;
+        }
+        .js_humburgerOpen .navi{
+            right: auto;
+            transform: translateZ(0) translateX(0);
+        }
+            @media  screen and (max-width:840px) {
+                .navi{
+                    padding: 100px 5% 0;
+                }
+                .js_humburgerOpen .navi{
+                    width: 100%;
+                }
+            }
+        .navi_item{
+            margin-bottom: 28px;
+            font-size: 20px;
+            font-family: "Marcellus",serif !important;
+            white-space: nowrap;
+            margin-left: 90px;
+        }
+        .navi_item.op_innerLike{
+            cursor: pointer;
+        }
+        @media screen and(max-width: 840px) {
+            .navi_item{
+                margin-left: 0;
+                font-size: 18px;
+            }
+    
+        }
         }
     }
-    }
-
-/*追加*/
