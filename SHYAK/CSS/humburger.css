@@ -1,9 +1,9 @@
 
-body{
+/*body{
     margin: 0;
-}
+}*/
 /*メニュー文字*/
-a{
+/*a{
     color: #040404;
     text-decoration: none;
 }
@@ -11,9 +11,9 @@ a{
     width: 100vw;
     height: 100vh;
     background-color: #ccc;
-}
+}*/
 /*ハンバーガーボタン*/
-.el-humburger{
+/*.el-humburger{
     position: fixed;
     top: 45px;
     width: 46px;
@@ -48,9 +48,9 @@ a{
             margin-bottom: 5px;
             width: 30px;
         }
-    }
+    }*/
     /*テキストデザイン*/
-    .el_humburger_text{
+    /*.el_humburger_text{
         font-size: 12px;
         letter-spacing: 0.1em;
         font-family: "游ゴシック Medium",YuGothic,"ヒイラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,sans-serif;
@@ -110,7 +110,212 @@ a{
             -ms-transform: translateY(9px) rotate(-45deg);
             transform: translateY(9px) rotate(-45deg);
         }
-        
+        .js_humburgerOpen .el-humburger span.el_humburger_bar.middle{
+            opacity: 0;
+        }
+        .js_humburgerOpen .el-humburger span .el_humburger_ber.bottom{
+            -webkit-transform: translateY(-11px)rptate(45deg);
+            -ms-transform: translateY(-11px)rotate(45deg);
+            transform: translateY(-11px)rotate(45deg);
+        }
+        .el-humburgerButton.el_humburgerButtom_close{
+            top: 2%;
+            right: 2%;
+        }
+        .el-humburgerButtom_close sapn.el_humburger_bar{
+            display: block;
+            width: 35px;
+            margin: 0 auto;
+            height: 4px;
+            background: #000;
+        }
+        .el_humburgerButton_close span.el_humburger_bar.top{
+            -webkit-transform: translateY(-6px)rotate(45deg);
+            -ms-transform: translateY(-6px)rotate(45deg);
+            transform: translateY(-6px)rotate(45deg);
+        }
+        .navi{
+            position: fixed;
+            right: 0;
+            background-color: rgba(255,255,255,0.9);
+            width: 450px;
+            z-index: 3;
+            padding-top: 100px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 600ms ease-out;
+            -o-transition: all 600ms ease-out;
+            transition: all 600ms ease-out;
+            transform: translateZ(0) translateX(100%);
+            overflow: auto;
+        }
+        .js_humburgerOpen .navi{
+            right: auto;
+            transform: translateZ(0) translateX(0);
+        }
+            @media  screen and (max-width:840px) {
+                .navi{
+                    padding: 100px 5% 0;
+                }
+                .js_humburgerOpen .navi{
+                    width: 100%;
+                }
+            }
+        .navi_item{
+            margin-bottom: 28px;
+            font-size: 20px;
+            font-family: "Marcellus",serif !important;
+            white-space: nowrap;
+            margin-left: 90px;
+        }
+        .navi_item.op_innerLike{
+            cursor: pointer;
+        }
+        @media screen and(max-width: 840px) {
+            .navi_item{
+                margin-left: 0;
+                font-size: 18px;
+            }
+    
+        }
+        }
+    }*/
+    body,ul,li,h1,p {margin: 0;padding: 0;}
+    a {text-decoration: none; color: #000;}
+    li {list-style-type: none;}
+    /*------------------------------------
+    汎用 ↓
+    ------------------------------------*/
+    .flex {display: flex;}
+    .aic {align-items: center;}
+    .jcb {justify-content: space-between;}
+    /*------------------------------------
+    ヘッダー a hover:下線アンダーライン ↓
+    ------------------------------------*/
+    header ul li a {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
     }
+    header ul li a::after {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 3px;
+      background: #3b5d82;
+      transform: scale(0, 1);
+      transform-origin: right top;
+      transition: transform .3s;
     }
-
+    header ul li a:hover {
+      color: #3b5d82;
+    }
+    header ul li a:hover::after {
+      transform-origin: left top;
+      transform: scale(1, 1);
+    }
+    /*------------------------------------
+    ヘッダー spハンバーガーメニュー ↓
+    ------------------------------------*/
+    header .sp_nav {
+      text-align: center;
+    }
+    .sidemenu {
+      height: 50vh;
+      padding-top: 100px;
+      padding-bottom: 35vh;
+      position: fixed;
+      right: -40%; /*メニュー幅*/
+      transition: all 0.6s;
+      top: 0;
+      width: 40%; /*メニュー幅*/
+      z-index: 2;
+      background-color: #fff;
+      overflow-y: scroll;
+    }
+    .sidemenu nav ul li {
+      padding: 20px;
+    }
+    .hamburger {
+      cursor: pointer;
+      height: 60px;
+      position: absolute;
+      right: 30px;
+      top: 40px;
+      width: 60px;
+      z-index: 3;
+    }
+    .hamburger span {
+      background-color: #868686;
+      height: 4px;
+      left: 15px;
+      position: absolute;
+      transition: all 0.6s;
+      width: 30px;
+    }
+    .hamburger_linetop {
+      top: 20px;
+    }
+    .hamburger_linecenter {
+      top: 29px;
+    }
+    .hamburger_linebottom {
+      top: 38px;
+    }
+    /*------------------------------------
+    メニュークリックした後 ↓
+    ------------------------------------*/
+    .nav_open .sidemenu {
+      right: 0;
+    }
+    .nav_open .hamburger_linetop {
+      top: 26px;
+      transform: rotate(45deg);
+    }
+    .nav_open .hamburger_linecenter {
+      left: 50%;
+      width: 0;
+    }
+    .nav_open .hamburger_linebottom {
+      top: 26px;
+      transform: rotate(-45deg);
+    }
+    .nav_open .overlay {
+      opacity: 0.8;
+      visibility: visible;
+    }
+    /*------------------------------------
+    メニュークリック後メニュー外の背景 ↓
+    ------------------------------------*/
+    .overlay {
+      background-color: #000;
+      cursor: pointer;
+      height: 100vh;
+      left: 0;
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      transition: all 0.6s;
+      visibility: hidden;
+      width: 100vw;
+      z-index: 1;
+    }
+    /*------------------------------------
+    @media screen 1000px~999px ↓
+    ------------------------------------*/
+    @media screen and (max-width: 1000px) {
+      .sp_no {
+        display: none;
+      }
+      .sidemenu {
+        right: -50%; /*メニュー幅*/
+        width: 50%; /*メニュー幅*/
+      }
+    }
+    @media screen and (min-width: 999px) {
+      .pc_no {
+        display: none;
+      }
+    }
