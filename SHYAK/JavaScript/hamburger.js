@@ -16,7 +16,7 @@ var focusFlag = false;
           navButtonFlag = false;
         }
       });
-      // 画面のどこかをクリックした時の処理.今たぶん要素押してもメニュー閉じるだけになってる！
+      // メニューの外をクリックした時の処理.今たぶん要素押してもメニュー閉じるだけになってる！
       $(document).on('click touchend', function(event) {
         if (!$(event.target).closest('.navi,.el_humburger').length && $('body').hasClass('js_humburgerOpen') && focusFlag) {
           focusFlag = false;
