@@ -1,5 +1,5 @@
 <?php require 'header.php' ;?>
-<?php require 'menu-humburger.php';?>
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../CSS/humburger.css">
 </head>
 <body>
+<?php require 'menu-humburger.php';?>
     <div class="container">
         <!-- 設定ボタンを右上に配置 -->
         <div class="row justify-content-end">
