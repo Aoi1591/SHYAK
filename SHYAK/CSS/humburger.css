@@ -204,7 +204,7 @@
       content: '';
       width: 100%;
       height: 3px;
-      background: #3b5d82;
+      background: #000f20;
       transform: scale(0, 1);
       transform-origin: right top;
       transition: transform .3s;
@@ -232,7 +232,7 @@
       top: 0;
       width: 40%; /*メニュー幅*/
       z-index: 2;
-      background-color: #fff;
+      background-color: #000;
       overflow-y: scroll;
     }
     .sidemenu nav ul li {
