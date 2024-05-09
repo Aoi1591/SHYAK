@@ -248,7 +248,7 @@
       z-index: 3;
     }
     .hamburger span {
-      background-color: #868686;
+      background-color: #000;
       height: 4px;
       left: 15px;
       position: absolute;
