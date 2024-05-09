@@ -1,5 +1,5 @@
 <?php require 'header.php' ;?>
-<?php require 'menu-hamburger.php';?>
+<?php require 'menu-humburger.php';?>
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
