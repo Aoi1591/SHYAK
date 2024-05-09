@@ -1,5 +1,5 @@
-<?php require 'header.php' ?>
-<?php require 'menu-hamburger.php'?>
+<?php require 'header.php' ;?>
+<?php require 'menu-hamburger.php';?>
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,5 +58,4 @@
         </div>
         </div>
     </div>
-</body>
-</html>
+<?php require 'footer.php' ;?>
