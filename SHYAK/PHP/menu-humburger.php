@@ -35,15 +35,10 @@
 
       <nav>
         <ul>
-          <li><a href="top.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"></i></a></li>
-          <li><a href="C_post-input.php"><i class="fa-solid fa-user-group" style="color: #aed6f4;"></i></a></li>
-          <li><a href="C_browsing.php"><i class="fa-regular fa-envelope" style="color: #5291ff;"></i></a></li>
-          <li><a href="Cart.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #0b5fef;"></i></a></li>
-          <li><a href="O_his.php">注文履歴</a></li>
-	      <li><a href="mypage.php?id=<?php $user_id ?>">マイページ</a></li>
-	      <li><a href="U_update-input.php?id=<?php $user_id ?>">アカウント情報更新</a></li>
-          <li><a href="login.php">ログイン</a></li>
-	      <li><a href="logout-check.php">ログアウト</a></li>
+          <li><a href="mypage.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"></i>マイページ</a></li>
+          <li><a href="friend.php"><i class="fa-solid fa-user-group" style="color: #aed6f4;"></i>フレンド</a></li>
+          <li><a href="Explanationofrules.php"><i class="fa-regular fa-envelope" style="color: #5291ff;"></i>ルール</a></li>
+          <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #0b5fef;"></i>ログアウト</a></li>
         </ul>
       </nav>
     </div>
