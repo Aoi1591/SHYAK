@@ -28,7 +28,7 @@
         
         <div class="row justify-content-center mt-5">
         <div class="col-6">
-        <textarea class="form-control" name="a" rows="15" cols="40" placeholder="願いや祝福を入力してください"></textarea>
+        <textarea class="form-control" name="sent-message" rows="15" cols="40" placeholder="願いや祝福を入力してください"></textarea>
         </div>
         </div>
 
