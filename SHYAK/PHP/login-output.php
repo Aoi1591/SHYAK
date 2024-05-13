@@ -24,7 +24,7 @@
     if (isset($_SESSION['User'])) {
         header("Location: ./top.php");
         exit;
-    } else {
+    } else {//ユーザー認証できなかった時の処理
         header("Location: ./login.php?flag=fail");
         exit;
     }
