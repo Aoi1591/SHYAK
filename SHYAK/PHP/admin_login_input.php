@@ -5,7 +5,7 @@
         <title>ログイン画面</title>
     </head>
     <body>
-        <form action = "login-out.php" method="post">
+        <form action = "admin_login_output.php" method="post">
             <input type="text" id="username" name="username" placeholder="USERNAME" required><br>
 
             <input type="password" id="password" name="password" placeholder="PASSWORD" required><br>
