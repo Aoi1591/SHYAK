@@ -1,23 +1,19 @@
 <?php
-    require './common/header.php';
-    require './common/db-connect.php';
-
-    echo '<p>Choose your language</p>';
-    echo '<input type="submit" value="戻る">';
-    echo '<input type="submit" value="Français">';
-    echo '<input type="submit" value="Русский">';
-    echo '<input type="submit" value="中文">';
-    echo '<input type="submit" value="日本語">';
-    echo '<input type="submit" value="English">';
-    echo '<input type="submit" value="Português">';
-    echo $data = file_get_contents($filePath);
-
-    // header関数でコンテンツの形式が画像であると宣言
-    header('Content-type: image/jpg');
+    require 'header.php';
+    ?>
+    <title>Choose your language</title>
+</head>
+<body>
+<?php
     
-    //データを出力
-    echo $data;
-    
+    echo '<div style="text-align: center">';
+    echo '<h1>Choose your language</h1>';
+    echo '<h1>この瓶でよろしいですか？</h1>';
+    echo '<input type="submit" value="はい">';
+    echo '<a href="Chooseyourlanguage.php">いいえ</a>';
+    echo '</div>';
 
-    require './common/footer.php';
 ?>
+</body>
+</html>
+   

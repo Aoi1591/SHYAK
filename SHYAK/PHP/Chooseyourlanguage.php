@@ -1,13 +1,21 @@
 <?php
-    
-    echo '<p><h1>Choose your language</h1></p>';
-    echo '<input type="submit" value="戻る">';
-    echo '<input type="submit" value="Français">';
-    echo '<input type="submit" value="Русский">';
-    echo '<input type="submit" value="中文">';
-    echo '<input type="submit" value="日本語">';
-    echo '<input type="submit" value="English">';
-    echo '<input type="submit" value="Português">';
+    require 'header.php';
+    ?>
+    <title>Choose your language</title>
+</head>
+<body>
+    <?php
+    echo '<h1>Choose your language</h1>';
 
-    
-?>
+    echo '<form action="Choose your language.php" method="post">';
+        echo '<button type="submit" name="language" value="JP">日本語</button>';
+        echo '<button type="submit" name="language" value="FR">Français</button>';
+        echo '<button type="submit" name="language" value="RU">Русский</button>';
+        echo '<button type="submit" name="language" value="CN">中文</button>';
+        echo '<button type="submit" name="language" value="EN">English</button>';
+        echo '<button type="submit" name="language" value="PT">Português</button>';
+    echo '</form>';
+    ?>
+</body>
+</html>
+
