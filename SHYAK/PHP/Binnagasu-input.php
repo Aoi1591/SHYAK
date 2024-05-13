@@ -36,6 +36,7 @@
         echo '<!-- 瓶を流すボタンと瓶を回収ボタンを中央に配置 --><br><br>';
 
         echo '<div class="row justify-content-center">';
+        
         echo '<div class="text-center col-6">';
         echo '<button type="submit" class="btn btn-outline-dark userinfoButton">瓶を流す';
         echo '</button>';
@@ -48,5 +49,4 @@
         ?>
 </body>
 </html>
-<!--テスト-->
 
