@@ -24,29 +24,27 @@
 
         <h2 class="text-center mt-5">瓶を流す</h2>
 
-        <?php
+        <form action="Binnagasu-output.php" method="post">
         
-        echo '<form action="Binnagasu-output.php" method="post">';
-        echo '<div class="row justify-content-center mt-5">';
-        echo '<div class="col-6">';
-        echo '<textarea class="form-control" name="a" rows="15" cols="40" placeholder="願いや祝福を入力してください"></textarea>';
-        echo '</div>';
-        echo '</div>';
+        <div class="row justify-content-center mt-5">
+        <div class="col-6">
+        <textarea class="form-control" name="a" rows="15" cols="40" placeholder="願いや祝福を入力してください"></textarea>
+        </div>
+        </div>
 
-        echo '<!-- 瓶を流すボタンと瓶を回収ボタンを中央に配置 --><br><br>';
+        <!-- 瓶を流すボタンと瓶を回収ボタンを中央に配置 --><br><br>
 
-        echo '<div class="row justify-content-center">';
+        <div class="row justify-content-center">
+
+        <div class="text-center col-6">
+        <button type="submit" class="btn btn-outline-dark userinfoButton">瓶を流す
+        </button>
+        </form>
+        </div>
+        </div>
+
+        </div>
         
-        echo '<div class="text-center col-6">';
-        echo '<button type="submit" class="btn btn-outline-dark userinfoButton">瓶を流す';
-        echo '</button>';
-        echo '</form>';
-        echo '</div>';
-        echo '</div>';
-
-
-        echo '</div>';
-        ?>
 </body>
 </html>
 
