@@ -3,8 +3,8 @@
     require 'connect.php';
     unset($_SESSION['User']); // セッションの初期化
     $pdo = new PDO($connect, USER, PASS);
-    $sql = $pdo->prepare('select id from Users where user_name = ?');
-    $sql->execute([$_REQUEST['username']]);
+    $sql = $pdo->prepare('select user_id from Users where user_name = ?');
+    $sql->execute([$_POST['username']]);
     foreach ($sql as $row) {
         $userId = $row['user_id'];
         
@@ -13,11 +13,11 @@
         $sql_pass->execute([$userId]);
         $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);
 
-        if ($pass_row && password_verify($_REQUEST['password'], $pass_row['hash_pass'])) {
+        if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
             // 認証成功
             $_SESSION['User'] = [
                 'id' => $userId,
-                'username' => $_REQUEST['username']
+                'username' => $_POST['username']
             ];
         }
     }
