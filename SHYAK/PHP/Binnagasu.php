@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
             <div class="col-12 col-md-2">
                 <div class="row">
                     <a href="top.php">
-                        <button type="submit" class="btn btn-outline-dark userinfoButton"><br>×
+                        <button type="submit" class="btn btn-outline-dark userinfoButton"><br>
                         </button>
                     </a>
                 </div>
@@ -40,4 +41,4 @@
 
     </div>
 </body>
-</html>
+</html
