@@ -8,7 +8,7 @@
     <script src="../JavaScript/signup-input.js"></script>
          <form action ="signup-output.php" method="post">
             <select name="choice" value="Language Choice">
-                <option value="Language Choice">Language Choice</option>
+                <option disabled selected>Language Choice</option>
                 <option value = "Japanease">日本語</option>
                 <option value = "English">English</option>
                 <option value = "Russian"> русский язык</option>
