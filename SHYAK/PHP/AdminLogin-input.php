@@ -10,8 +10,6 @@
             <input type="password" id="password" name="password" placeholder="PASSWORD" required><br>
             <input type="submit" value="LOGIN">
             <br><br>
-
-        <button onclick="window.location.href='signup-input.php';">SIGN-UP</button>
         </form>
     </body>
 </html>
