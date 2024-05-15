@@ -1,6 +1,6 @@
 <?php
-private function translate($text): void
-{
+class Translator{
+ public function translate($text): void{
     // cURLの初期化
     $ch = curl_init();
 
@@ -41,5 +41,6 @@ private function translate($text): void
     // 翻訳結果表示
     echo $decode[0]->translations[0]->text;
     return;
+ }
 }
 ?>
