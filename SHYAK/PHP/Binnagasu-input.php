@@ -10,17 +10,19 @@
 </head>
 <body>
     <div class="container">
-        <!-- ✘ボタン -->
-        <div class="row justify-content-end">
-            <div class="col-12 col-md-2">
-                <div class="row">
-                    <br>
-                    <a href="top.php">
-                        <button type="button" class="btn btn-outline-dark userinfoButton">×</button>
-                    </a>
-                </div>
+    <!-- ✘ボタン -->
+    <div class="row justify-content-end">
+        <div class="col-12 col-md-2">
+            <div class="row">
+                <br>
+                <a href="top.php">
+                    <button type="submit" class="btn btn-outline-dark userinfoButton">×
+                    </button>
+                </a>
             </div>
         </div>
+    </div>
+
 
         <h2 class="text-center mt-5">瓶を流す</h2>
         <!-- テキストエリア -->

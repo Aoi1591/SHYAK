@@ -3,11 +3,12 @@
     ?>
     <title>Choose your language</title>
 </head>
+<link rel="stylesheet" href="Chooseyourlanguage.css">
 <body>
     <?php
     echo '<h1>Choose your language</h1>';
 
-    echo '<form action="Chooseyourlanguage1.php" method="post">';
+    echo '<form action="Choose your language.php" method="post">';
         echo '<button type="submit" name="language" value="JP">日本語</button>';
         echo '<button type="submit" name="language" value="FR">Français</button>';
         echo '<button type="submit" name="language" value="RU">Русский</button>';
@@ -18,3 +19,4 @@
     ?>
 </body>
 </html>
+
