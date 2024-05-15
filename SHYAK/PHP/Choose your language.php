@@ -22,8 +22,8 @@ echo "<h1>$translatedText</h1>";
 // ボタンのテキストも翻訳
 $yesText = $translator->translate("はい");
 $noText = $translator->translate("いいえ");
-echo "<input type=\"submit\" value=\"$yesText\">";
-echo "<a href=\"Chooseyourlanguage.php\">$noText</a>";
+echo "<input type='submit' value='$yesText'>";
+echo "<a href='Chooseyourlanguage.php'>$noText</a>";
 
 echo '</div>';
 ?>
