@@ -1,4 +1,7 @@
+<?php require 'header.php';?>
+
 <?php
+ echo '<body>';
 class Translator{
  public function translate($text): void{
     // cURLの初期化
@@ -44,3 +47,4 @@ class Translator{
  }
 }
 ?>
+<?php require 'footer.php';?>
