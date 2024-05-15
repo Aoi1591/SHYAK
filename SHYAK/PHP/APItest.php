@@ -8,8 +8,8 @@ class Translator {
         $ch = curl_init();
 
         // キーとリージョンの指定
-        $key = "<your key>";
-        $region = "JapanEast";
+        $key = "8d961f7fadf3441d9b12285b07e0ed50";
+        $region = "Japanwest";
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             "Ocp-Apim-Subscription-Key: " . $key,
             "Ocp-Apim-Subscription-Region: " . $region,
