@@ -22,7 +22,7 @@ echo "<h1>$translatedText</h1>";
 // ボタンのテキストも翻訳
 //$yesText = $translator->translate("はい");
 $noText = $translator->translate("いいえ");
-echo '<input type="submit" value="$yesText = $translator->translate("はい");">';
+echo '<input type="submit" value='$yesText = $translator->translate("はい")'">"';
 echo "<a href='Chooseyourlanguage.php'>$noText</a>";
 
 echo '</div>';
