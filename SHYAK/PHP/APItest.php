@@ -42,7 +42,7 @@ class Translator{
     }
 
     // 翻訳結果表示
-    echo $decode[0]->translations[0]->text;
+    echo '$decode[0]->translations[0]->text';
     return;
  }
 }
