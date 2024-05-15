@@ -3,11 +3,11 @@
     require 'connect.php';
     unset($_SESSION['User']); // セッションの初期化
     $pdo = new PDO($connect, USER, PASS);
-    $sql = $pdo->prepare('select user_id from Users where user_name = ?');
+    $sql = $pdo->prepare('select user_id,country_id from Users where user_name = ?');
     $sql->execute([$_POST['username']]);
     foreach ($sql as $row) {
         $userId = $row['user_id'];
-        
+        $lang = $row['country_id'];
         // パスワードを取得するクエリを修正
         $sql_pass = $pdo->prepare('select hash_pass from Password where user_id = ?');
         $sql_pass->execute([$userId]);
@@ -17,7 +17,8 @@
             // 認証成功
             $_SESSION['User'] = [
                 'id' => $userId,
-                'username' => $_POST['username']
+                'username' => $_POST['username'],
+                'lang' => $lang
             ];
         }
     }
