@@ -3,6 +3,7 @@
     ?>
     <title>Choose your language</title>
 </head>
+<link rel="stylesheet" href="Chooseyourlanguage.css">
 <body>
     <?php
     echo '<h1>Choose your language</h1>';

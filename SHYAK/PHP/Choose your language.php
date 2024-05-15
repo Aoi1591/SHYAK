@@ -1,8 +1,8 @@
 
 <?php
-require 'header.php';
+    require 'header.php';
 ?>
-<title>Choose your language</title>
+    <title>Choose your language</title>
 </head>
 <body>
 <?php require 'api.php'; ?>
