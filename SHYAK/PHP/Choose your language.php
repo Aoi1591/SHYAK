@@ -1,6 +1,6 @@
 <?php
     require 'header.php';
-    ?>
+?>
     <title>Choose your language</title>
 </head>
 <body>
