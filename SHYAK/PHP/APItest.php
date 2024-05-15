@@ -23,6 +23,7 @@ class Translator {
         curl_setopt($ch, CURLOPT_URL, $url);
 
         // 翻訳テキストの指定
+        $text = "dog";
         $json = json_encode([['Text' => $text]]);
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
@@ -45,9 +46,10 @@ class Translator {
     }
 }
 
-// 使用例
+/*使用例
 $translator = new Translator();
 $translator->translate("Hello, what is your name?");
+*/
 ?>
 
 <?php require 'footer.php';?>
