@@ -38,8 +38,10 @@ class Translator {
         }
 
         // 翻訳結果表示
-        echo $decode[0]->translations[0]->text;
-        return;
+        //echo $decode[0]->translations[0]->text;
+        //翻訳結果を取得、返り値に指定
+        $translatedText = $decode[0]->translations[0]->text;
+        return $translatedText;
     }
 }
 
