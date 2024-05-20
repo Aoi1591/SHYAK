@@ -8,7 +8,7 @@
         header('Location: ./top.php');
         exit();
     }else{
-        echo '<script>alart("ログインしてください")</script>';
+        echo '<script>alart("Please log in")</script>';
         header('Location:./login.php');
         exit();
     }

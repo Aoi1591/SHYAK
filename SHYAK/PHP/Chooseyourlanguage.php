@@ -9,12 +9,12 @@
     echo '<h1>Choose your language</h1>';
 
     echo '<form action="Choose your language.php" method="post">';
-        echo '<button type="submit" name="language" value="JP">日本語</button>';
-        echo '<button type="submit" name="language" value="FR">Français</button>';
-        echo '<button type="submit" name="language" value="RU">Русский</button>';
-        echo '<button type="submit" name="language" value="CN">中文</button>';
-        echo '<button type="submit" name="language" value="EN">English</button>';
-        echo '<button type="submit" name="language" value="PT">Português</button>';
+        echo '<button type="submit" name="language" value="jp">日本語</button>';
+        echo '<button type="submit" name="language" value="fr">Français</button>';
+        echo '<button type="submit" name="language" value="ru">Русский</button>';
+        echo '<button type="submit" name="language" value="cn">中文</button>';
+        echo '<button type="submit" name="language" value="en">English</button>';
+        echo '<button type="submit" name="language" value="pt">Português</button>';
     echo '</form>';
     ?>
 </body>
