@@ -1,7 +1,7 @@
 <?php
 
 class Translator {
-    public function translate($text): void {
+    public function translate($text): string {//返り値をvoidからstringに変更
         // cURLの初期化
         $ch = curl_init();
 
