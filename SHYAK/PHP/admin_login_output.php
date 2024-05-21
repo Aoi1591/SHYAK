@@ -6,7 +6,7 @@
     $sql = $pdo->prepare('select admin_id from Admins where admin_name = ?');
     $sql->execute([$_POST['adminname']]);
     foreach ($sql as $row) {
-        $userId = $row['admin_id'];
+        $adminId = $row['admin_id'];
         
         // パスワードを取得するクエリを修正
         $sql_pass = $pdo->prepare('select hash_pass from AdminPass where admin_id = ?');
