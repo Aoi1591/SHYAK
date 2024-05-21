@@ -6,7 +6,7 @@
     </head>
     <body>
         <form action = "admin_login_output.php" method="post">
-            <input type="text" id="username" name="username" placeholder="USERNAME" required><br>
+            <input type="text" id="adminname" name="adminname" placeholder="ADMINNAME" required><br>
 
             <input type="password" id="password" name="password" placeholder="PASSWORD" required><br>
 
