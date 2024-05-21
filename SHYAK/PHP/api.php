@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Translator {
     public function translate($text): string {//返り値をvoidからstringに変更
         // cURLの初期化
@@ -16,7 +16,7 @@ class Translator {
 
         // URLと翻訳言語の指定
         $from = 'ja';
-        $to = 'en';
+        $to = $_SESSION['User']['lang'];
         $url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=".$from."&to=".$to;
         curl_setopt($ch, CURLOPT_URL, $url);
 
