@@ -1,19 +1,31 @@
+
 <?php
     require 'header.php';
-    ?>
+?>
     <title>Choose your language</title>
 </head>
 <body>
-<?php
-    
-    echo '<div style="text-align: center">';
-    echo '<h1>Choose your language</h1>';
-    echo '<h1>この瓶でよろしいですか？</h1>';
-    echo '<input type="submit" value="はい">';
-    echo '<a href="Chooseyourlanguage.php">いいえ</a>';
-    echo '</div>';
+<?php require 'api.php'; ?>
 
+<?php
+echo '<div style="text-align: center">';
+echo '<h1>Choose your language</h1>';
+
+// 翻訳クラスのインスタンス化
+$translator = new Translator();
+
+// 翻訳するテキスト
+$originalText = "この瓶でよろしいですか？";
+$translatedText = $translator->translate($originalText);
+echo "<h1>$translatedText</h1>";
+
+// ボタンのテキストも翻訳
+$yesText = $translator->translate("はい");
+$noText = $translator->translate("いいえ");
+echo "<a href='Binkaisyu-input.php'>$yesText</a>";
+echo "<a href='Chooseyourlanguage.php'>$noText</a>";
+
+echo '</div>';
 ?>
 </body>
 </html>
-   

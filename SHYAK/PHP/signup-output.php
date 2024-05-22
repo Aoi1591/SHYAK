@@ -50,8 +50,8 @@ try {
                 'id' => $id,
                 'username' => $_POST['username']
             ];
-            // 登録が成功した場合、Top.php にリダイレクト
-            header('Location: ./top.php');
+            // 登録が成功した場合、Chooseyourlangage.php にリダイレクト
+            header('Location: ./Chooseyourlanguage.php');
             exit();
         }
     } else {
