@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>ログイン画面</title>
-    </head>
-    <body>
-        <form action = "login" method="post">
-            <input type="text" id="username" name="username" placeholder="USERNAME" required><br>
+<head>
+    <meta charset="UTF-8">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+    <title>ログイン画面</title>
+    <link rel="stylesheet" href="../css/login-input.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div id="back-ground"></div>
 
-            <input type="password" id="password" name="password" placeholder="PASSWORD" required><br>
+    <!-- Airplane Image -->
+    <div class="airplane"></div>
 
-            <input type="submit" value="LOGIN">
+    <!-- Bottles Images -->
+    <div class="bottol-1"></div>
+    <div class="bottol-2"></div>
+    <div class="bottol-3"></div>
+    <div class="bottol-4"></div>
+    <div class="bottol-5"></div>
 
-            <br><br>
+    <!-- Login Form Container -->
 
-        <button onclick="window.location.href='signup-input.php';">SIGN-UP</button>
-        </form>
-    </body>
+        <form action="login-output.php" method="post">
+            <div id="username-all">
+                <input type="text" id="username" name="username" placeholder="USER NAME" required>
+            </div>
+            <div id="password-all">
+                <input type="password" id="password" name="password" placeholder="PASSWORD" required>
+            </div>
+            <div id="login-all">
+            <button type="submit" id="login-button">LOGIN</button>
+            </div>
+      </form>
+
+    <!-- Sign-Up Text and Line -->
+    <div id="sign-up-container">
+        <a href="../php/sign-up-input.php" id="sign-up">SIGN-UP</a>
+        <div class="sign-up-line"></div>
+    </div>
+</body>
 </html>
