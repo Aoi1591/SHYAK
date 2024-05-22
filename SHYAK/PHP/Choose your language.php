@@ -1,23 +1,31 @@
+
 <?php
-    require './common/header.php';
-    require './common/db-connect.php';
-
-    echo '<p>Choose your language</p>';
-    echo '<input type="submit" value="戻る">';
-    echo '<input type="submit" value="Français">';
-    echo '<input type="submit" value="Русский">';
-    echo '<input type="submit" value="中文">';
-    echo '<input type="submit" value="日本語">';
-    echo '<input type="submit" value="English">';
-    echo '<input type="submit" value="Português">';
-    echo $data = file_get_contents($filePath);
-
-    // header関数でコンテンツの形式が画像であると宣言
-    header('Content-type: image/jpg');
-    
-    //データを出力
-    echo $data;
-    
-
-    require './common/footer.php';
+    require 'header.php';
 ?>
+    <title>Choose your language</title>
+</head>
+<body>
+<?php require 'api.php'; ?>
+
+<?php
+echo '<div style="text-align: center">';
+echo '<h1>Choose your language</h1>';
+
+// 翻訳クラスのインスタンス化
+$translator = new Translator();
+
+// 翻訳するテキスト
+$originalText = "この瓶でよろしいですか？";
+$translatedText = $translator->translate($originalText);
+echo "<h1>$translatedText</h1>";
+
+// ボタンのテキストも翻訳
+$yesText = $translator->translate("はい");
+$noText = $translator->translate("いいえ");
+echo "<a href='Binkaisyu-input.php'>$yesText</a>";
+echo "<a href='Chooseyourlanguage.php'>$noText</a>";
+
+echo '</div>';
+?>
+</body>
+</html>

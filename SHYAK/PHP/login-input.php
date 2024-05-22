@@ -32,7 +32,7 @@
             <div id="login-all">
             <button type="submit" id="login-button">LOGIN</button>
             </div>
-        </form>
+      </form>
 
     <!-- Sign-Up Text and Line -->
     <div id="sign-up-container">
