@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>ログイン画面</title>
-        <link rel="stylesheet" href="../css/login-input.css">
-    </head>
-    <body>
-        <div id = "container">
-            <div id="background">
-                <div class="bottol-1"></div>
-                <div class="bottol-2"></div>
-                <div class="bottol-3"></div>
-                <div class="bottol-4"></div>
-                <div class="bottol-5"></div>
-                <div class="airplane"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+    <title>ログイン画面</title>
+    <link rel="stylesheet" href="../css/login-input.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div id="back-ground"></div>
+
+    <!-- Airplane Image -->
+    <div class="airplane"></div>
+
+    <!-- Bottles Images -->
+    <div class="bottol-1"></div>
+    <div class="bottol-2"></div>
+    <div class="bottol-3"></div>
+    <div class="bottol-4"></div>
+    <div class="bottol-5"></div>
+
+    <!-- Login Form Container -->
+
+        <form action="login-output.php" method="post">
+            <div id="username-all">
+                <input type="text" id="username" name="username" placeholder="USER NAME" required>
             </div>
-            <form action = "login-output.php" method="post">
-
-                <div id = "username-all">
-                    <div class="username">
-                    <input type="text" id="username" name="username" placeholder="USERNAME" required><br>
-                    </div>
-                </div>
-
-                <div id = "password-all">
-                    <div class = "password">
-                    <input type="password" id="password" name="password" placeholder="PASSWORD" required><br>
-                    </div>
-                </div>
-
-                <div id ="login-all"> 
-                    <div class="login"> 
-                    <input type="submit" value="LOGIN">
-                    </div>
-                </div>
-
-                <br><br>
-
-            <div id="sign-up">
-                <div class="sign-up-line">
-                <a href = "../php/sign-up-input.php">sign-up</a>
-                </div>
+            <div id="password-all">
+                <input type="password" id="password" name="password" placeholder="PASSWORD" required>
             </div>
-            </form>
-        </div>
-    </body>
+            <div id="login-all">
+            <button type="submit" id="login-button">LOGIN</button>
+            </div>
+        </form>
+
+    <!-- Sign-Up Text and Line -->
+    <div id="sign-up-container">
+        <a href="../php/sign-up-input.php" id="sign-up">SIGN-UP</a>
+        <div class="sign-up-line"></div>
+    </div>
+</body>
 </html>
