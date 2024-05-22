@@ -1,0 +1,82 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/transparent.png");
+  background-repeat: no-repeat;
+  background-position: 50% 70%;
+  background-size: 75% 90% ;
+  background-color: green;
+}
+
+h1{
+  padding: 1em,0em;
+}
+
+#content {
+  text-align: center; /* テキストを中央に配置 */
+  width: 80%; /* コンテンツの幅を80%に固定 */
+  margin: 0 auto; /* 左右中央に配置 */
+  
+  padding: -2px; /* 内側の余白 */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* 子要素の間に均等なスペースを配置 */
+  align-items: center; /* 子要素を中央に配置 */
+  margin-top: 20px;
+}
+.a{
+  
+  top: 30px; /* 上から10px */
+  left: 90%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+}
+.jp{
+
+  top: 320px; /* 上から10px */
+  left: 48%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+}
+.FR{
+  
+  top: 290px; /* 上から10px */
+  left: 23%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+}
+.RU{
+  
+  top: 220px; /* 上から10px */
+  left: 42%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+}
+.CN{
+  
+  top: 280px; /* 上から10px */
+  left: 43%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+}
+.EN{
+  
+  top: 300px;
+  left: 70%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+.PT{
+  
+  top: 470px;
+  left: 80%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+img {
+  max-width: 100%; /* 画像がコンテナの幅を超えないようにする */
+  height: auto; /* 高さを自動調整 */
+  margin-bottom: 20px; /* 画像とフォームの間に余白を追加 */
+}
