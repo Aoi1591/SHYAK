@@ -1,3 +1,3 @@
 function goBack() {
-    window.history.back();
+    window.location.href = "../html/login.html"; // ここに戻るページのURLを指定
 }
