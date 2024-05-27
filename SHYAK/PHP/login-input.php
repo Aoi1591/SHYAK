@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>ログイン画面</title>
-    </head>
-    <body>
-        <form action = "login-out.php" method="post">
-            <input type="text" id="username" name="username" placeholder="USERNAME" required><br>
+<head>
+    <meta charset="UTF-8">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+    <title>ログイン画面</title>
+    <link rel="stylesheet" href="../css/login-input.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div id="back-ground"></div>
 
-            <input type="password" id="password" name="password" placeholder="PASSWORD" required><br>
+    <!-- Airplane Image -->
+    <div class="airplane"></div>
 
-            <input type="submit" value="LOGIN">
+    <!-- Bottles Images -->
+    <div class="bottol-1"></div>
+    <div class="bottol-2"></div>
+    <div class="bottol-3"></div>
+    <div class="bottol-4"></div>
+    <div class="bottol-5"></div>
 
-            <br><br>
+    <!-- Login Form Container -->
 
-        <button onclick="window.location.href='signup-input.php';">SIGN-UP</button>
-        </form>
-        <img src="#" class="button" ondblclick="check()" id="promptBtn"><!--srcには飛行機とかの画像を入れてね-->
-        <script>
-        document.getElementById("promptBtn").addEventListener("dbclick", function() {
-            // ユーザーに管理者ログインページへ遷移するためのパス入力を求める
-            const userInput = prompt("Secret Pass"); 
-            // ユーザーがパスを入力したときの処理
-            if(userInput !== null){
-                // フォームを作成
-                const form = docment.createElement("form");
-                form.method = "POST";
-                form.action = "AdminLogin-check.php";// 入力値を指定のページへ飛ばす
+        <form action="login-output.php" method="post">
+            <div id="username-all">
+                <input type="text" id="username" name="username" placeholder="USER NAME" required>
+            </div>
+            <div id="password-all">
+                <input type="password" id="password" name="password" placeholder="PASSWORD" required>
+            </div>
+            <div id="login-all">
+            <button type="submit" id="login-button">LOGIN</button>
+            </div>
+      </form>
 
-                // 入力値送信用のテキストフィールド(非表示)を追加
-                const inputField =document.createElement("input");
-                inputField.type = "hidden";// 非表示指定
-                inputField.name = "userInput";// 遷移先でデータを受け取るための名前指定
-                inputField.value = userInput;// promptで取得した値を代入
-                form.appendChild(inputField);// このテキストフィールドをフォームに追加
-
-                // フォームをドキュメントに追加
-                document.body.appendChild(form); // フォームをドキュメントのボディに追加
-                form.submit();// 送信！
-            }
-        });
-        </script>
-    </body>
+    <!-- Sign-Up Text and Line -->
+    <div id="sign-up-container">
+        <a href="../php/sign-up-input.php" id="sign-up">SIGN-UP</a>
+        <div class="sign-up-line"></div>
+    </div>
+</body>
 </html>
