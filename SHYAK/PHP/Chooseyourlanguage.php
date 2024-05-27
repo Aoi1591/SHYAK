@@ -8,7 +8,7 @@
     <?php
     echo '<h1>Choose your language</h1>';
 
-    echo '<form action="Choose your language.php" method="post">';
+    echo '<form action="Chooseyourlanguage-output.php" method="post">';
         echo '<button type="submit" name="language" value="jp">日本語</button>';
         echo '<button type="submit" name="language" value="fr">Français</button>';
         echo '<button type="submit" name="language" value="ru">Русский</button>';
