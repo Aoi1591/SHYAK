@@ -4,7 +4,7 @@ session_start();
 require 'connect.php';
 
 try {
-    if (isset($_POST['userame']) && isset($_POST['password'])) {
+    if (isset($_POST['username']) && isset($_POST['password'])) {
         
         $pdo = new PDO($connect, USER, PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
