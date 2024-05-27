@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
 <div id="content">
 <div style="text-align: center">
             <h1>Choose your language</h1>
@@ -36,6 +35,5 @@
             </div>
         </form>
     </div>
-
 </body>
 </html>
