@@ -17,8 +17,21 @@
   $sql = $pdo -> prepare('select admin_name from Admins WHERE admin_id=? ');
   $sql -> execute([$_SESSION['Admin']['admin_id']]);
   $row = $sql->fetch(PDO::FETCH_ASSOC);
-
+  
+  //名前の表示
+  echo '<div class = name>';
   echo '<p>',$row['admin_name'],'</p>';
+  echo '</div>';
+  //ユーザー一覧の表示
+  echo '<div calss = uzer >';
+  echo '<a href="all_uzer.php">ユーザー一覧</a>';
+  echo '</div>';
+  //報告メッセージ一覧
+  echo '<div class= message >';
+  echo '<a href="message">メッセージ一覧</a>';
+  echo '</div>';
+  
+  
 
 
 
