@@ -243,3 +243,14 @@ body {
     transform: rotate(-23.7deg);
     z-index: 11;
 }
+
+/* エラーメッセージ用css */
+
+.error-message{
+    color: red;
+    font-size: smaller; /* 文字を小さく */
+    margin-top: 5px;
+}
+.error-boder{
+    border-color: red;   
+}
