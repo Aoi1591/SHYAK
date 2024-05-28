@@ -41,7 +41,7 @@
         echo '<br><br>';
 
         echo '<div class="row justify-content-center">';
-        echo '<div class="text-center col-6">';;
+        echo '<div class="text-center col-6">';
         echo '</form>';
         echo '</div>';
         echo '</div>';
