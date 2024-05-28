@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<?php require 'admin-humburger.php';?>
+<?php //require 'admin-humburger.php';?>
 <?php
   echo '<div class = title>';
   echo  '<p>管理者ページ</p>';
