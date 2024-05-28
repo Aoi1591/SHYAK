@@ -22,16 +22,28 @@
   echo '<div class = name>';
   echo '<p>',$row['admin_name'],'</p>';
   echo '</div>';
+
   //ユーザー一覧の表示
   echo '<div calss = uzer >';
-  echo '<a href="all_uzer.php">ユーザー一覧</a>';
+  echo '<p>ユーザー一覧</p>';
+  try{
+    $pdo = new PDO($connect,USER,PASS);
+    $sql = 'select * from Users'; 
+    $stmt = $pdo -> query($sql);
+
+    foreach( $stmt as $row){
+       echo $row['user_id'];//ID
+       echo $row['icon'];//アイコン
+       echo $row['countyr_id'];//国籍
+       echo $row['user_name'];//名前
+       echo $row[''];//報告件数
+       echo '<a href="">確認</a>';//報告されたメッセージの確認ボタン
+    }
+  }catch(PDOException $e){
+   exit('データベースに接続できませんでした' .$e -> getMessage());
+  }
   echo '</div>';
-  //報告メッセージ一覧
-  echo '<div class= message >';
-  echo '<a href="message">メッセージ一覧</a>';
-  echo '</div>';
-  
-  
+
 
 
 
