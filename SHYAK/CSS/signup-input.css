@@ -1,7 +1,7 @@
 body {
     position: relative;
-    width: 1400px;
-    height: 1200px;
+    width: 1920px;
+    height: 1080px;
     background-size: 100% 100%;
     z-index: 1;
 }
@@ -13,7 +13,7 @@ body {
     height: 100%;
     left: 0;
     top: 0;
-    background: url(../img/beach.png) no-repeat center center;
+    background: url(../image/beach.png) no-repeat center center;
     background-size: cover;
     z-index: 10;
 }
@@ -21,10 +21,10 @@ body {
 /* 言語選択フィールド */
 #Language-Choice {
     position: absolute;
-    width: 854px;
-    height: 73px;
-    left: 231px;
-    top: 559px;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -38,20 +38,20 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 52px;
+    /*font-size: 52px;*/
     text-align: center;
     color: #000000;
-    padding: 0 20px;
+    padding: 0 10px;
     box-sizing: border-box;
 }
 
 /* ユーザー名入力フィールド */
 #username-all {
     position: absolute;
-    width: 854px;
-    height: 73px;
-    left: 231px;
-    top: 677px;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -74,10 +74,10 @@ body {
 /* パスワード入力フィールド */
 #password-all {
     position: absolute;
-    width: 854px;
-    height: 77px;
-    left: 231px;
-    top: 806px;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -100,10 +100,10 @@ body {
 /* パスワード再入力フィールド */
 #re-enter-password-all {
     position: absolute;
-    width: 854px;
-    height: 73px;
-    left: 231px;
-    top: 935px;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -126,10 +126,10 @@ body {
 /* 登録ボタン */
 #register-all {
     position: absolute;
-    width: 594px;
-    height: 88px;
-    left: 403px;
-    top: 1064px;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,7 +160,7 @@ body {
     height: 70px;
     left: 1259px;
     top: 38px;
-    background: url(../img/back.png);
+    background: url(../image/back.png);
     background-size: cover;
     border: none;
     cursor: pointer;
@@ -174,7 +174,7 @@ body {
     height: 254px;
     left: 563.14px;
     top: 38px;
-    background: url(../img/airplane.png);
+    background: url(../image/airplane.png);
     background-size: cover;
     transform: rotate(15.33deg);
     z-index: 11; /* 背景の上に表示 */
@@ -191,7 +191,7 @@ body {
     height: 188.13px;
     left: 294px;
     top: 501.38px;
-    background: url(../img/bottol.png);
+    background: url(../image/bottol.png);
     background-size: cover;
     transform: rotate(-20.39deg);
     z-index: 11; /* 背景の上に表示 */
