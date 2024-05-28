@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,13 +55,12 @@
                     const userResponse = confirm(userInput+ "\n\nこの内容でよろしいですか？");
                     if (userResponse === true) {
                         alert("瓶を流しました");
-                        window.location.href = "Binnagasu-output.php";
                         document.getElementById("binnagasuForm").submit(); // フォームを送信
-                    } else {
+                    } else if (userResponse === false) {
                         window.location.href = "Binnagasu-input.php";
                     }
                 });
-            });
+            });  
         </script>
     </div>
 </body>
