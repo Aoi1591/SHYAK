@@ -8,12 +8,11 @@ body {
     justify-content: center;
     align-items: center;
     background-color: green;
+    z-index: 1;
 }
 
-#header {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
+h1 {
+    text-align: center; /* 中央に配置 */
 }
 
 #content {
@@ -23,10 +22,13 @@ body {
     padding: 20px; /* 内側の余白 */
     border-radius: 10px; /* 角を丸める */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影をつける */
+    margin-bottom: 20px;
+    z-index: 2;
 }
 
-input[type="submit"], a {
-    margin: 10px;
+button, a {
+    display: inline-block;
+    margin: 20px 20px 0; /* 上と左右にマージンを追加 */
     padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.7); /* 背景色（半透明） */
     border: none;
@@ -35,8 +37,28 @@ input[type="submit"], a {
     font-size: 16px;
     text-decoration: none; /* リンクの下線を消す */
     color: black;
+    z-index: 2;
 }
 
-input[type="submit"]:hover, a:hover {
+button:hover {
+    background-color: rgba(255, 255, 255, 1); /* 背景色（ホバー時に不透明） */
+}
+
+.button-link {
+    display: inline-block;
+    margin-left: 15%;
+    font-size: 40px;
+    padding: 10px 20px; /* パディングを調整してボタンの大きさを設定 */
+    background-color: rgba(255, 255, 255, 0.7); /* 背景色（半透明） */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* リンクの下線を消す */
+    color: black;
+    z-index: 2;
+}
+
+.button-link:hover {
     background-color: rgba(255, 255, 255, 1); /* 背景色（ホバー時に不透明） */
 }
