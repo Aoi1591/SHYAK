@@ -31,22 +31,20 @@
         <h2 class="text-center mt-5">瓶を流す</h2>
         <!-- テキストエリア -->
         <!-- 瓶を流すボタン中央に配置 -->
-        <?php
-        echo '<form action="Binnagasu-output.php" method="post" id="binnagasuForm">';
-        echo '<div class="row justify-content-center mt-5">';
-        echo '<div class="col-6">';
-        echo '<textarea class="form-control" name="sentmessage" id="userInput" rows="15" cols="40" placeholder="願いや祝福を入力してください"></textarea>';
-        echo '</div>';
-        echo '</div>';
-
-        echo '<br><br>';
-        echo '<div class="row justify-content-center">';
-        echo '<div class="text-center col-6">';
-        echo '<button type="button" id="nagasu" class="btn btn-outline-dark userinfoButton">瓶を流す</button>';
-        echo '</div>';
-        echo '</div>';
-        echo '</form>';
-        ?>
+        <form action="Binnagasu-output.php" method="post" id="binnagasuForm">
+            <div class="row justify-content-center mt-5">'
+                <div class="col-6">
+                <textarea class="form-control" name="sentmessage" id="userInput" rows="15" cols="40" placeholder="願いや祝福を入力してください" required></textarea>
+                    <div class="invalid-feedback">一文字以上のメッセージを入力してください</div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row justify-content-center">
+                <div class="text-center col-6">
+                    <button type="button" id="nagasu" class="btn btn-outline-dark userinfoButton">瓶を流す</button>
+                </div>
+            </div>
+        </form>
 
 <!-- ダイアログ -->
         <script type="text/javascript">

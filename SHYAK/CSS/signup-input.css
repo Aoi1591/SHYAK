@@ -1,0 +1,256 @@
+body {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+/* 背景画像 */
+#back-ground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url(../image/beach.png) no-repeat center center;
+    background-size: cover;
+    z-index: 10;
+}
+
+/* 言語選択フィールド */
+#Language-Choice {
+    position: absolute;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
+    background: #D9D9D9;
+    border-radius: 50px;
+    z-index: 11; /* 背景の上に表示 */
+}
+
+/* 言語選択 */
+.LanguageChoice {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    /*font-size: 52px;*/
+    text-align: center;
+    color: #000000;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* ユーザー名入力フィールド */
+#username-all {
+    position: absolute;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
+    background: #D9D9D9;
+    border-radius: 50px;
+    z-index: 11; /* 背景の上に表示 */
+}
+
+#username {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    text-align: center;
+    color: #000000;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* パスワード入力フィールド */
+#password-all {
+    position: absolute;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
+    background: #D9D9D9;
+    border-radius: 50px;
+    z-index: 11; /* 背景の上に表示 */
+}
+
+#password {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    text-align: center;
+    color: #000000;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* パスワード再入力フィールド */
+#re-enter-password-all {
+    position: absolute;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
+    background: #D9D9D9;
+    border-radius: 50px;
+    z-index: 11; /* 背景の上に表示 */
+}
+
+#re-enter-password {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    text-align: center;
+    color: #000000;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 登録ボタン */
+#register-all {
+    position: absolute;
+    width: 50%;
+    height: 7%;
+    margin-left: 25%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11; /* 背景の上に表示 */
+}
+
+#register-button {
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    font-size: 48px;
+    background: rgba(252, 145, 20, 0.83);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#register-button:hover {
+    background-color: #386ecb;
+}
+
+/* 戻るボタン */
+.back-button {
+    position: absolute;
+    width: 100px;
+    height: 70px;
+    left: 1259px;
+    top: 38px;
+    background: url(../image/back.png);
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    z-index: 11; /* 背景の上に表示 */
+}
+
+/* 飛行機の画像 */
+.airplane {
+    position: absolute;
+    width: 379.99px;
+    height: 254px;
+    left: 563.14px;
+    top: 38px;
+    background: url(../image/airplane.png);
+    background-size: cover;
+    transform: rotate(15.33deg);
+    z-index: 11; /* 背景の上に表示 */
+}
+
+/* 瓶の画像 */
+.bottol {
+    position: absolute;
+}
+
+.bottol-1 {
+    position: absolute;
+    width: 145.57px;
+    height: 188.13px;
+    left: 294px;
+    top: 501.38px;
+    background: url(../image/bottol.png);
+    background-size: cover;
+    transform: rotate(-20.39deg);
+    z-index: 11; /* 背景の上に表示 */
+}
+
+.bottol-2 {
+    position: absolute;
+    width: 115.9px;
+    height: 163.17px;
+    left: 796.59px;
+    top: 482px;
+    background: url(../img/bottol.png);
+    background-size: cover;
+    transform: rotate(36.3deg);
+    z-index: 11; /* 背景の上に表示 */
+}
+
+.bottol-3 {
+    position: absolute;
+    width: 136.94px;
+    height: 214.46px;
+    left: 922px;
+    top: 631.54px;
+    background: url(../img/bottol.png);
+    background-size: cover;
+    transform: rotate(-68.65deg);
+    z-index: 11; /* 背景の上に表示 */
+}
+
+.bottol-4 {
+    position: absolute;
+    width: 80.3px;
+    height: 213.5px;
+    left: 1150px;
+    top: 706.79px;
+    background: url(../img/bottol.png);
+    background-size: cover;
+    transform: rotate(-51.44deg);
+}
+
+.bottol-5 {
+    position: absolute;
+    width: 115.9px;
+    height: 163.17px;
+    left: 13px;
+    top: 566.59px;
+    background: url(../img/bottol.png);
+    background-size: cover;
+    transform: rotate(-23.7deg);
+    z-index: 11;
+}
+
+/* エラーメッセージ用css */
+
+.error-message{
+    color: red;
+    font-size: smaller; /* 文字を小さく */
+    margin-top: 5px;
+}
+.error-boder{
+    border-color: red;   
+}
