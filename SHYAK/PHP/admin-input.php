@@ -15,7 +15,7 @@
   
   $pdo = new PDO($connect,USER,PASS);
   $sql = $pdo -> prepare('select admin_name from Admins WHERE admin_id=? ');
-  $sql -> execute([$_SESSION['Admins']['admin_id']]);
+  $sql -> execute([$_SESSION['Admin']['admin_id']]);
   $row = $sql->fetch(PDO::FETCH_ASSOC);
   
   //名前の表示
