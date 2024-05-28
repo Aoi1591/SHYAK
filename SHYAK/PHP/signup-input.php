@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サインアップ</title>
-    <link rel="stylesheet" href="../css/signup-input.css">
+    <link rel="stylesheet" href="../CSS/signup-input.css">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
     </form>
     
     <!-- 戻るボタン -->
-    <button class="back-button" onclick="goBack()"></button>
+    <button class="back-button" onclick="goBack()">ログインページへ戻る</button>
     <script src="../JavaScript/pass-check.js"></script>
     <script src="../JavaScript/signup-input.js"></script>
 
