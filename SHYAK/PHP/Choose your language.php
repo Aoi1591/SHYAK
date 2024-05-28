@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require 'header.php'; ?>
+<?php
+    require 'header.php';
+?>
     <title>Choose your language</title>
     <link rel="stylesheet" href="../css/Chooseyourlanguage.css">
 </head>
@@ -18,4 +17,3 @@
     <script src="../js/Choose your laguage.js"></script>
 </body>
 </html>
-   

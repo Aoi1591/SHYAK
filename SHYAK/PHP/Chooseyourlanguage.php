@@ -17,24 +17,25 @@
                 <button type="submit" name="language" value="a">戻る</button>
             </div>
             <div class="jp">
-                <button type="submit" name="language" value="JP">日本語</button>
+                <button type="submit" name="language" value="jp">日本語</button>
             </div>
             <div class="FR">
-                <button type="submit" name="language" value="FR">Français</button>
+                <button type="submit" name="language" value="fr">Français</button>
             </div>
             <div class="RU">
-                <button type="submit" name="language" value="RU">Русский</button>
+                <button type="submit" name="language" value="ru">Русский</button>
             </div>
             <div class="CN">
-                <button type="submit" name="language" value="CN">中文</button>
+                <button type="submit" name="language" value="cn">中文</button>
             </div>
             <div class="EN">
-                <button type="submit" name="language" value="EN">English</button>
+                <button type="submit" name="language" value="en">English</button>
             </div>
             <div class="PT">
-                <button type="submit" name="language" value="PT">Português</button>
+                <button type="submit" name="language" value="pt">Português</button>
             </div>
         </form>
     </div>
+
 </body>
 </html>
