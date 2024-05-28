@@ -22,7 +22,7 @@ body {
 #Language-Choice {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 30%;
     margin-left: 25%;
     margin-top: 3%;
     background: #D9D9D9;
@@ -38,7 +38,7 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    /*font-size: 52px;*/
+    font-size: 48px;
     text-align: center;
     color: #000000;
     padding: 0 10px;
@@ -49,7 +49,7 @@ body {
 #username-all {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 35%;
     margin-left: 25%;
     margin-top: 3%;
     background: #D9D9D9;
@@ -64,7 +64,7 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 64px;
+    font-size: 48px;
     text-align: center;
     color: #000000;
     padding: 0 20px;
@@ -75,7 +75,7 @@ body {
 #password-all {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 40%;
     margin-left: 25%;
     margin-top: 3%;
     background: #D9D9D9;
@@ -90,7 +90,7 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 64px;
+    font-size: 48px;
     text-align: center;
     color: #000000;
     padding: 0 20px;
@@ -101,7 +101,7 @@ body {
 #re-enter-password-all {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 45%;
     margin-left: 25%;
     margin-top: 3%;
     background: #D9D9D9;
@@ -116,7 +116,7 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 64px;
+    font-size: 48px;
     text-align: center;
     color: #000000;
     padding: 0 20px;
@@ -127,7 +127,7 @@ body {
 #register-all {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 50%;
     margin-left: 25%;
     margin-top: 3%;
     display: flex;
@@ -154,7 +154,7 @@ body {
 }
 
 /* 戻るボタン */
-.back-button {
+#back-button {
     position: absolute;
     width: 100px;
     height: 70px;
@@ -203,7 +203,7 @@ body {
     height: 163.17px;
     left: 796.59px;
     top: 482px;
-    background: url(../img/bottol.png);
+    background: url(../image/bottol.png);
     background-size: cover;
     transform: rotate(36.3deg);
     z-index: 11; /* 背景の上に表示 */
@@ -215,7 +215,7 @@ body {
     height: 214.46px;
     left: 922px;
     top: 631.54px;
-    background: url(../img/bottol.png);
+    background: url(../image/bottol.png);
     background-size: cover;
     transform: rotate(-68.65deg);
     z-index: 11; /* 背景の上に表示 */
@@ -227,7 +227,7 @@ body {
     height: 213.5px;
     left: 1150px;
     top: 706.79px;
-    background: url(../img/bottol.png);
+    background: url(../image/bottol.png);
     background-size: cover;
     transform: rotate(-51.44deg);
 }
@@ -238,7 +238,7 @@ body {
     height: 163.17px;
     left: 13px;
     top: 566.59px;
-    background: url(../img/bottol.png);
+    background: url(../image/bottol.png);
     background-size: cover;
     transform: rotate(-23.7deg);
     z-index: 11;
