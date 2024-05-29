@@ -48,13 +48,14 @@ try {
         }
     } else {
         //なぜか入力項目満たしてないのに飛ばされてきたとき
-        echo '<script>alert("必須項目が未入力です。");</script>';
         header('Location: ./signup-input.php');
+        echo '<script>alert("必須項目が未入力です。");</script>';
         exit();
     }   
 } catch (PDOException $e) {
     // エラーハンドリング
-    echo '<script>alert("データベースエラー")</script>' . htmlspecialchars($e->getMessage());
     header('Location: ./signup-input.php');
+    echo '<script>alert("データベースエラー")</script>' . htmlspecialchars($e->getMessage());
+    exit();
 }
 ?>
