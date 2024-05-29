@@ -8,9 +8,6 @@
 </head>
 <body>
 
-    <!-- 背景画像 -->
-    <div id="back-ground"></div>
-
     <!-- 飛行機の画像 -->
     <div class="airplane"></div>
 
