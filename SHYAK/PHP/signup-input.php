@@ -7,17 +7,6 @@
     <link rel="stylesheet" href="../CSS/signup-input.css">
 </head>
 <body>
-
-    <!-- 飛行機の画像 -->
-    <div class="airplane"></div>
-
-    <!-- 瓶の画像 -->
-    <div class="bottol-1"></div>
-    <div class="bottol-2"></div>
-    <div class="bottol-3"></div>
-    <div class="bottol-4"></div>
-    <div class="bottol-5"></div>
-
     <script src="../JavaScript/signup-input.js"></script>
 
     <form action="signup-output.php" method="post">
