@@ -1,21 +1,16 @@
-/*body {
-    position: relative;
-    width: 1440px;
-    height: 1080px;
-    background-size: 100% 100%;
-    z-index: 1;
-}*/
 /*背景*/
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url("../image/beach.png");
+  background-image: url("../image/背景.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100% 100% ;
+  z-index: 1;
+  position: relative;
 }
 
-/* 背景画像 */
+/* 背景画像
 #back-ground {
     position: absolute;
     width: 100%;
@@ -25,13 +20,13 @@ body {
     background: url(../image/beach.png) no-repeat center center;
     background-size: cover;
     z-index: 10;
-}
+} */
 
 /* 言語選択フィールド */
 #Language-Choice {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 4%;
     margin-left: 25%;
     margin-top: 30%;
     background: #D9D9D9;
@@ -47,7 +42,7 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 48px;
+    font-size: 20px;
     text-align: center;
     color: #000000;
     padding: 0 10px;
@@ -58,9 +53,9 @@ body {
 #username-all {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 4%;
     margin-left: 25%;
-    margin-top: 35%;
+    margin-top: 32%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -73,7 +68,7 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 48px;
+    font-size: 20px;
     text-align: center;
     color: #000000;
     padding: 0 20px;
@@ -84,9 +79,9 @@ body {
 #password-all {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 4%;
     margin-left: 25%;
-    margin-top: 40%;
+    margin-top: 34%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -99,7 +94,7 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 48px;
+    font-size: 20px;
     text-align: center;
     color: #000000;
     padding: 0 20px;
@@ -110,9 +105,9 @@ body {
 #re-enter-password-all {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 4%;
     margin-left: 25%;
-    margin-top: 45%;
+    margin-top: 36%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -125,7 +120,7 @@ body {
     background: transparent;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 48px;
+    font-size: 20px;
     text-align: center;
     color: #000000;
     padding: 0 20px;
@@ -136,9 +131,9 @@ body {
 #register-all {
     position: absolute;
     width: 50%;
-    height: 7%;
+    height: 4%;
     margin-left: 25%;
-    margin-top: 50%;
+    margin-top: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,8 +143,8 @@ body {
 #register-button {
     width: 100%;
     height: 100%;
-    padding: 10px 20px;
-    font-size: 48px;
+    padding: 1% 20px;
+    font-size: 20px;
     background: rgba(252, 145, 20, 0.83);
     color: white;
     border: none;
