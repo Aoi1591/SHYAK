@@ -28,12 +28,12 @@
         <div id="Language-Choice">
             <select name="choice" class="LanguageChoice">
                 <option disabled selected>Language Choice</option>
-                <option value="Japanese">日本語</option>
-                <option value="English">English</option>
-                <option value="Russian">русский язык</option>
-                <option value="Portuguese">português</option>
-                <option value="French">français</option>
-                <option value="Chinese">中文</option>
+                <option value="jp">日本語</option>
+                <option value="en">English</option>
+                <option value="ru">русский язык</option>
+                <option value="pt">português</option>
+                <option value="fr">français</option>
+                <option value="cn">中文</option>
             </select>
         </div>
 
