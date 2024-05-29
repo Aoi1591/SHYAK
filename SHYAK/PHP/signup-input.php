@@ -25,21 +25,22 @@
         <div id="username-all">
             <input type="text" id="username" name="username" placeholder="USERNAME" required>
         </div>
-        
-        <!-- パスワード入力 -->
-        <div id="password-all">
-            <input type="password" id="password" v-model="pass1" name="password" :class="{'error-boder' : !isSamePass}" placeholder="PASSWORD" required>
-        </div>
-        
-        <!-- パスワード再入力 -->
-        <div id="re-enter-password-all">
-            <input type="password" id="re-enter-password" v-model="pass2" name="re-enter-password" :class="{'error-boder' : !isSamePass}" placeholder="RE-ENTER PASSWORD" required>
-            <span v-if="!isSamePass" class="error-message">パスワードが一致しません</span>
-        </div>
-        
-        <!-- 登録ボタン -->
-        <div id="register-all">
-            <button type="submit" id="register-button" :disabled="!isSamePass">Register</button>
+        <div id="app">
+            <!-- パスワード入力 -->
+            <div id="password-all">
+                <input type="password" id="password" v-model="pass1" name="password" :class="{'error-boder' : !isSamePass}" placeholder="PASSWORD" required>
+            </div>
+            
+            <!-- パスワード再入力 -->
+            <div id="re-enter-password-all">
+                <input type="password" id="re-enter-password" v-model="pass2" name="re-enter-password" :class="{'error-boder' : !isSamePass}" placeholder="RE-ENTER PASSWORD" required>
+                <span v-if="!isSamePass" class="error-message">パスワードが一致しません</span>
+            </div>
+            
+            <!-- 登録ボタン -->
+            <div id="register-all">
+                <button type="submit" id="register-button" :disabled="!isSamePass">Register</button>
+            </div>
         </div>
     </form>
     
