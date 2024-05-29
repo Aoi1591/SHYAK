@@ -27,25 +27,28 @@
   echo '<div calss = uzer >';
   echo '<p>ユーザー一覧</p>';
   try{
-    $pdo = new PDO($connect,USER,PASS);
     $sql = 'select * from Users'; 
     $stmt = $pdo -> query($sql);
 
     foreach( $stmt as $row){
+       $id = $row['user_id'];
+       $name = $row['user_name'];
+       $country = $row['country_id'];
+       echo '<div class = user-info>';
        echo $row['user_id'];//ID
        /*echo $row['icon'];//アイコン*/
        echo $row['countyr_id'];//国籍
        echo $row['user_name'];//名前
        /*echo $row[''];//報告件数*/
-       echo '<a href="admin_message.php">確認</a>';//報告されたメッセージの確認ボタン
+       //報告されたメッセージの確認ボタン
+       //urlencodeでadmin_messageにIDを飛ばしている
+       echo '<a href="admin_message.php?id='urlencode($id), '&name=' urlencode($name),'&country=' urlencode($country),'">確認</a>';
+       echo '</div>'
     }
   }catch(PDOException $e){
    exit('データベースに接続できませんでした' .$e -> getMessage());
   }
   echo '</div>';
-
-
-
 
 
 ?>
