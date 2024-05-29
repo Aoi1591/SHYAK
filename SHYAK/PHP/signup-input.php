@@ -45,6 +45,7 @@
     
     <!-- 戻るボタン -->
     <button class="back-button" onclick="goBack()">ログインページへ戻る</button>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="../JavaScript/pass-check.js"></script>
     <script src="../JavaScript/signup-input.js"></script>
 
