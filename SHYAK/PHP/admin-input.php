@@ -37,7 +37,7 @@
        echo $row['countyr_id'];//国籍
        echo $row['user_name'];//名前
        /*echo $row[''];//報告件数*/
-       echo '<a href="">確認</a>';//報告されたメッセージの確認ボタン
+       echo '<a href="admin_message.php">確認</a>';//報告されたメッセージの確認ボタン
     }
   }catch(PDOException $e){
    exit('データベースに接続できませんでした' .$e -> getMessage());
