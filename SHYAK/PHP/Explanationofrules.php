@@ -1,4 +1,6 @@
-
+<?php
+    require 'api.php';
+?>
 <?php
     require 'header.php';
 ?>
@@ -6,9 +8,6 @@
     <title>Explanation of rules</title>
 </head>
 <body>
-<?php
-    require 'api.php';
-?>
     <div class="row justify-content-end">
         <div class="col-12 col-md-2">
             <div class="row">
