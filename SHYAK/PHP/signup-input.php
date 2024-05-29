@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="../CSS/signup-input.css">
 </head>
 <body>
-    <script src="../JavaScript/signup-input.js"></script>
-
     <form action="signup-output.php" method="post">
         <!-- 言語選択 -->
         <div id="Language-Choice">
-            <select name="choice" class="LanguageChoice">
+            <select name="choice" class="LanguageChoice" required>
                 <option disabled selected>Language Choice</option>
                 <option value="jp">日本語</option>
                 <option value="en">English</option>
@@ -41,7 +39,7 @@
         
         <!-- 登録ボタン -->
         <div id="register-all">
-            <button type="submit" id="register-button">Register</button>
+            <button type="submit" id="register-button" :disabled="!isSamePass">Register</button>
         </div>
     </form>
     
