@@ -28,7 +28,7 @@ new Vue({
                 method: 'POST',
                 body: formData
             }).then(response => {
-                if(response.ok){
+                if(response){
                     // フォームの送信が成功したときの処理
                     console.log('アウトプットに遷移する');
                     window.location.href = 'signup-output.php';
