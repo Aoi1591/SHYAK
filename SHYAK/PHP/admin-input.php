@@ -27,8 +27,8 @@
   echo '<div calss = uzer >';
   echo '<p>ユーザー一覧</p>';
   try{
-    $sql = 'select * from Users'; 
-    $stmt = $pdo -> query($sql);
+    $User_sql = 'select * from Users'; 
+    $stmt = $pdo -> query($User_sql);
 
     foreach( $stmt as $row){
        $id = $row['user_id'];
