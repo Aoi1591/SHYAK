@@ -22,6 +22,7 @@ new Vue({
             formData.append("username", username);
             formData.append("password", password);
             formData.append("choice", choice);
+            console.log(formData);
             // fetch APIを使用し、フォームをPOSTメソッドで送信
             fetch('../PHP/signup-output.php',{
                 method: 'POST',
