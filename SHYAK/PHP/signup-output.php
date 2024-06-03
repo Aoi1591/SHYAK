@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'connect.php';
+echo $_POST['username'], $_POST['password'], $_POST['choice'];
 try {
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['choice'])) { 
         $pdo = new PDO($connect, USER, PASS);
