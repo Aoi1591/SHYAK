@@ -17,12 +17,12 @@ try {
             if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass']) && $existingUser['country_id'] === $_POST['choice']) {
                 // 認証成功(まったく同じユーザー名とパスワード,言語情報を持つユーザーが存在する)
                 echo '<script>alert("ユーザーが既に存在します。");</script>';
-                header('Location: ./signup-input.php');
+                //header('Location: ./signup-input.php');
                 exit(); // ここで処理を中断
             }else{
                 // ユーザー名は同じだけど、パスワードは違うor言語情報が違う(おそらく新規)
                 echo '<script>alert("同じ名前のユーザーが既に存在します。");</script>';
-                header('Location: ./signup-input.php');
+                //header('Location: ./signup-input.php');
                 exit(); // ここで処理を中断
             }
         }else{
@@ -43,18 +43,18 @@ try {
                 'lang' => $_POST['choice']
             ];
             // 登録が成功した場合、Chooseyourlangage.php にリダイレクト
-            header('Location: ./Chooseyourlanguage.php');
+            //header('Location: ./Chooseyourlanguage.php');
             exit();
         }
     } else {
         //なぜか入力項目満たしてないのに飛ばされてきたとき
-        header('Location: ./signup-input.php');
+        //header('Location: ./signup-input.php');
         echo '<script>alert("必須項目が未入力です。");</script>';
         exit();
     }   
 } catch (PDOException $e) {
     // エラーハンドリング
-    header('Location: ./signup-input.php');
+    //header('Location: ./signup-input.php');
     echo '<script>alert("データベースエラー")</script>' . htmlspecialchars($e->getMessage());
     exit();
 }
