@@ -23,7 +23,7 @@ new Vue({
             formData.append("password", password);
             formData.append("choice", choice);
             // fetch APIを使用し、フォームをPOSTメソッドで送信
-            fetch('signup-output.php',{
+            fetch('../PHP/signup-output.php',{
                 method: 'POST',
                 body: formData
 
@@ -31,7 +31,7 @@ new Vue({
                 if(response){
                     // フォームの送信が成功したときの処理
                     console.log('アウトプットに遷移する');
-                    window.location.href = 'signup-output.php';
+                    window.location.href = '../PHP/signup-output.php';
                 }else{
                     // フォームの送信が失敗したときの処理
                     alert('送信に失敗しました。');
