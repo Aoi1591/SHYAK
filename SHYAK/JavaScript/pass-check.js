@@ -11,11 +11,12 @@ new Vue({
     },
     methods: {
         submitForm: function() {
+            console.log('送信用のjsに飛んだよ');
             //フォームの入力値を取得
             const username =document.getElementById("username").value;
             const password =document.getElementById("password").value;
             const choice = document.querySelector(".LanguageChoice").value;
-
+            console.log(username);
             // 取得したデータをオブジェクトにまとめる
             const formData = new FormData();
             formData.append("username", username);
@@ -29,6 +30,7 @@ new Vue({
             }).then(response => {
                 if(response.ok){
                     // フォームの送信が成功したときの処理
+                    console.log('アウトプットに遷移する');
                     window.location.href = 'signup-output.php';
                 }else{
                     // フォームの送信が失敗したときの処理

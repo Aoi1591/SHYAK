@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <form @submit.prevent="submitForm">
+        <form @submit="submitForm">
             <!-- 言語選択 -->
             <div id="Language-Choice">
                 <select name="choice" class="LanguageChoice" required>
