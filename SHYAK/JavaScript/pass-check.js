@@ -20,7 +20,7 @@ new Vue({
             // 取得したデータをオブジェクトにまとめる
             const formData = new FormData();
             formData.append("username", username);
-            formData.append("password",  password);
+            formData.append("password", password);
             formData.append("choice", choice);
 
             // fetch APIを使用し、フォームをPOSTメソッドで送信
