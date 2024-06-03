@@ -1,0 +1,111 @@
+/*バックグラウンドのサイズ*/
+body {
+    width: 95vw;
+    height: 98vh;
+    background-image: url("../img/beach.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100% ;
+  }
+  
+  .header {
+      position: absolute;
+      background: #FFF4B9;
+      border-radius: 30px;
+  }
+  /*言語選択ボタン*/
+  #LanguageChoice-all {
+      position: absolute;
+      width: 300px;
+      height: 60px;
+      left: 80px;
+      top: 10px;
+      background: #FFF4B9;
+      border-radius: 30px;
+  }
+  
+  .LanguageChoice {
+      text-align: center;
+      line-height: 98px;
+      font-size: 36px;
+      color: #000000;
+  }
+  
+  /*戻るボタン*/
+  #backButton {
+      position: absolute;
+      width: 200px;
+      height: 60px;
+      left: 1100px;
+      top: 10px;
+      background: #FFF4B9;
+      border-radius: 30px;
+      text-align: center;
+      line-height: 60px;
+      font-size: 36px;
+      color: #000000;
+      border: none;
+      cursor: pointer;
+  }
+  /*プロフィール画像*/
+  /*.profile-box {
+      position: absolute;
+      left: 89px;
+      top: 425px;
+      width: 100px;
+      height: 232px;
+  }*/
+  
+  #image {
+      position: absolute;
+      width: 150px; 
+      height: 150px;
+      top: 240px ;
+      left: 100px;
+      border: 1px solid #000;
+  }
+  /*名前*/
+  .editable {
+      position: absolute;
+      width: 400px;
+      height: 60px;
+      left: 900px;
+      top: 320px; /* Adjust as needed */
+      background: #FFF4B9;
+      border-radius: 30px;
+      text-align: center;
+      line-height: 60px;
+      font-size: 36px;
+      color: #000000;
+  }
+  /*自己紹介文*/
+  .description-box {
+      position: absolute;
+      width: 1226px;
+      height: 290px;
+      left: 86.5px;
+      top: 400px;
+      background: #FFF4B9;
+      border-radius: 30px;
+      padding: 20px;
+      box-sizing: border-box;
+  }
+  /*[自己紹介文]*/
+  .intro-title {
+      font-size: 30px;
+      color: #000000;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+  /*自己紹介文の内容*/
+  .description {
+      font-size: 28px;
+      top: 60px;
+      left: auto;
+      color: #000000;
+      text-align: center;
+      word-wrap: break-word;
+      width: 95%;
+      height: 80%;
+  }
+  
