@@ -1,11 +1,18 @@
 <?php
 session_start();
 require 'connect.php';
-echo $_POST['username'], $_POST['password'], $_POST['choice'];
+echo $_POST['username'], $_POST['password'], $_POST['choice'],'<br>';
 try {
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['choice'])) { 
         $pdo = new PDO($connect, USER, PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = $pdo->prepare('select * from Country');
+        $sql->execute();
+        $rows = $sql->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $row) {
+            echo $row['country_id'], $row['country_name'] . "<br>";
+        }
+
         // ユーザー名の重複確認
         $sql = $pdo->prepare('select user_id,country_id from Users where user_name = ? and country_id = ?');
         $sql->execute([$_POST['username'],$_POST['choice']]);
