@@ -1,42 +1,59 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マイページ</title>
-    <link rel="stylesheet" href="../css/mypage.css">
-</head>
-<body>
-        <form method="POST" action="mypage-connect.php">
-            <select name="language" id="LanguageChoice-all" class="LanguageChoice">
-                <option disabled selected>Language Choice</option>
-                <option value="Japanese">日本語</option>
-                <option value="English">English</option>
-                <option value="Russian">русский язык</option>
-                <option value="Portuguese">português</option>
-                <option value="French">français</option>
-                <option value="Chinese">中文</option>
-            </select>
-            <div class="header back-box">
-                <button id="backButton" type="button">戻る</button>
-            </div>
-            <div class="profile-box">
-                <input type="file" id="fileInput" style="display: none;" />
-                <img src="../img/hutao.jpg" id="image" alt="クリックしてファイルを選択">
-                <div id="name" class="editable" contenteditable="true">名前をクリック</div>
-                <input type="hidden" name="name" id="nameInput">
-            </div>
-            <div class="description-box">
-                <div class="intro-title">［自己紹介文］</div>
-                <div id="description" class="description editable" contenteditable="true">お前にとってのここぞという瞬間は……今だった。</div>
-                <input type="hidden" name="description" id="descriptionInput">
-            </div>
-            <div id="confirmationDialog" style="display: none;">
-                <p>変更を保存しますか？</p>
-                <button id="confirmYes" type="submit">はい</button>
-                <button id="confirmNo" type="button">いいえ</button>
-            </div>
-        </form>
-    <script src="../js/mypage.js"></script>
-</body>
-</html>
+<?php session_start();?>
+<?php require 'connect.php';?>
+<?php require 'header.php';?>
+<?php
+      
+   echo ' <link rel="stylesheet" href="../CSS/mypage.css">';
+   echo '</head>';
+
+   echo '<body>';
+   echo '<form method="POST" action="mypage-connect.php">';
+
+   //言語選択
+   echo '<select name="language" id="LanguageChoice-all" class="LanguageChoice">';
+   echo '<select name="language" id="LanguageChoice-all" class="LanguageChoice">';
+   echo '<option disabled selected>Language Choice</option>';
+   echo '<option value="Japanese">日本語</option>';
+   echo '<option value="English">English</option>';
+   echo '<option value="Russian">русский язык</option>';
+   echo '<option value="Portuguese">português</option>';
+   echo '<option value="French">français</option>';
+   echo '<option value="Chinese">中文</option>';
+   echo '</select>';
+
+   //戻るボタン
+   echo '<div class="header back-box">';
+   echo '<button id="backButton" type="button">戻る</button>';
+   echo '</div>';
+
+   //DB
+   $pdo = new PDO($connect,USER,PASS);
+   $sql = $pdo -> prepare('select user_name,icon,message from Users WHERE user_id=?')//DB再構築後名前を確認
+   $sql -> execute([$_SESSION['Users']['user_id']]);
+   $row = $sql ->fetch(PDO::FETCH_ASSOC);
+
+   echo '<div class="profile-box">';
+   echo '<input type="file" id="fileInput" style="display: none;" />';
+   echo '<img src="../img/',$row['icon'],'" id="image" alt="クリックしてファイルを選択">';
+   echo '<div id="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
+   echo '<input type="hidden" name="name" id="nameInput">';
+   echo '</div>';
+
+   echo '<div class="description-box">';
+   echo '<div class="intro-title">［自己紹介文］</div>';
+   echo '<div id="description" class="description editable" contenteditable="true">',$row['message'],'</div>';
+   echo '<input type="hidden" name="description" id="descriptionInput">';
+   echo '</div>';
+
+   echo '<div id="confirmationDialog" style="display: none;">';
+   echo '<p>変更を保存しますか？</p>';
+   echo '<button id="confirmYes" type="submit">はい</button>';
+   echo '<button id="confirmNo" type="button">いいえ</button>';
+   echo '</div>';
+
+   echo '</form>';
+   echo '<script src="../JavaScrpt/mypage.js"></script>';
+   echo '</body>';
+   echo '</html>';
+   ?>
+   
