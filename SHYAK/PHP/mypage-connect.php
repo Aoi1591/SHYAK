@@ -1,29 +1,36 @@
+<?php session_start();?>
+<?php require 'connect.php';?>
+
 <?php
-// データベースへの接続
-$servername = ""; // サーバーネーム
-$username = ""; // データベースユーザー名
-$password = ""; // データベースパスワード
-$dbname = ""; // データベース名
+  
+  $pdo = new PDO($connect,USER,PASS);
 
-// 接続を作成
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// 接続を確認
-if ($conn->connect_error) {
-    die("接続に失敗しました: " . $conn->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームからデータを取得
     $name = $_POST["name"];
     $description = $_POST["description"];
-    $language = $_POST["language"];
+    $user_id = $_SESSION['Users']['user_id'];
 
-    // ステートメントを準備してバインド
-    $stmt = $conn->prepare("INSERT INTO user_data (name, description, language) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $description, $language);
+    //ファイルのアップロード
+    $targetDir = "../image/";
+    $iconPath = null;
 
-    // ステートメントを実行
+    if(isset($_FILES['icon']) && $_FILES['icon']['error'] == UPLOAD_ERR_OK){
+        $iconPath = basename($_FILES['icon']['name']);
+        $targetFilePath = $targetDir . $iconName;
+
+        if(move_uploaded_file($FILES['icon']['tmp_name'],$targetFilePath)){
+            $iconPath = $iconName;
+        }
+    }
+    if($iconPath){
+    $sql = $pdo->prepare('update Users set user_name = ? ,message = ? , icon = ? WHERE user_id = ?');
+    $sql -> execute(['$name,$description,$iconPath,$user_id']);
+    }else{
+        $sql = $pdo->prepare('update Users set user_name = ?, message = ? WHERE user_id = ?');
+        $sql->execute([$name, $description, $user_id]);
+    }
+
+
     if ($stmt->execute() === TRUE) {
         // 更新が成功した場合、top.phpにリダイレクト
         header("Location: ../php/top.php");
@@ -33,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->close();
-}
+
 
 $conn->close();
 ?>

@@ -1,5 +1,6 @@
 <?php session_start();?>
 <?php require 'connect.php';?>
+<?php require 'mypage-connect.php';?>
 <?php require 'header.php';?>
 <?php
       
@@ -10,7 +11,6 @@
    echo '<form method="POST" action="mypage-connect.php">';
 
    //言語選択
-   echo '<select name="language" id="LanguageChoice-all" class="LanguageChoice">';
    echo '<select name="language" id="LanguageChoice-all" class="LanguageChoice">';
    echo '<option disabled selected>Language Choice</option>';
    echo '<option value="Japanese">日本語</option>';
@@ -33,16 +33,16 @@
    $row = $sql ->fetch(PDO::FETCH_ASSOC);
 
    echo '<div class="profile-box">';
-   echo '<input type="file" id="fileInput" style="display: none;" />';
+   echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
    echo '<img src="../img/',$row['icon'],'" id="image" alt="クリックしてファイルを選択">';
    echo '<div id="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
-   echo '<input type="hidden" name="name" id="nameInput">';
+   echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
    echo '</div>';
 
    echo '<div class="description-box">';
    echo '<div class="intro-title">［自己紹介文］</div>';
    echo '<div id="description" class="description editable" contenteditable="true">',$row['message'],'</div>';
-   echo '<input type="hidden" name="description" id="descriptionInput">';
+   echo '<input type="hidden" name="description" id="descriptionInput" value="',$row['message'],'">';
    echo '</div>';
 
    echo '<div id="confirmationDialog" style="display: none;">';
@@ -52,7 +52,7 @@
    echo '</div>';
 
    echo '</form>';
-   echo '<script src="../JavaScrpt/mypage.js"></script>';
+   echo '<script src="../JavaScript/mypage.js"></script>';
    echo '</body>';
    echo '</html>';
    ?>
