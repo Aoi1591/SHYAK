@@ -1,21 +1,10 @@
 <?php
 session_start();
 require 'connect.php';
-echo $_POST['username'], $_POST['password'], $_POST['choice'],'<br>';
 try {
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['choice'])) { 
         $pdo = new PDO($connect, USER, PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $pdo->prepare('select * from Countries');
-        $sql->execute();
-        $rows = $sql->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $row) {
-            echo $row['country_id']. "<br>";
-            if($row['country_id'] == $_POST['choice']){
-                echo "OK";
-            }
-        }
-
         // ユーザー名の重複確認
         $sql = $pdo->prepare('select user_id,country_id,user_name from Users where user_name = ? and country_id = ?');
         $sql->execute([$_POST['username'],$_POST['choice']]);
@@ -54,18 +43,18 @@ try {
                 'lang' => $_POST['choice']
             ];
             // 登録が成功した場合、Chooseyourlangage.php にリダイレクト
-            //header('Location: ./Chooseyourlanguage.php');
+            header('Location: ./Chooseyourlanguage.php');
             exit();
         }
     } else {
         //なぜか入力項目満たしてないのに飛ばされてきたとき
-        //header('Location: ./signup-input.php');
+        header('Location: ./signup-input.php');
         echo '<script>alert("必須項目が未入力です。");</script>';
         exit();
     }   
 } catch (PDOException $e) {
     // エラーハンドリング
-    //header('Location: ./signup-input.php');
+    header('Location: ./signup-input.php');
     echo '<script>alert("データベースエラー")</script>' . htmlspecialchars($e->getMessage());
     exit();
 }
