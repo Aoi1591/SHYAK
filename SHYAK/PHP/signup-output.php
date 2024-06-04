@@ -23,7 +23,7 @@ try {
         if ($existingUser && $existingUser['user_name'] === $_POST['username']) {
             //言語情報が同じで同名のユーザーが存在した時、パスワードの重複チェック(本当に新規なのか、ログインと勘違いしたのか確認)
             $sql_pass = $pdo->prepare('select hash_pass from Password where user_id = ?');
-            $sql_pass->execute($existingUser['user_id']);
+            $sql_pass->execute([$existingUser['user_id']]);
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);
             if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass']) && $existingUser['country_id'] === $_POST['choice']) {
                 // 認証成功(まったく同じユーザー名とパスワード,言語情報を持つユーザーが存在する)
