@@ -18,7 +18,7 @@
   $sql -> execute([$_SESSION['Admin']['admin_id']]);
   $row = $sql->fetch(PDO::FETCH_ASSOC);
   
-  //名前の表示
+  //管理者の名前の表示
   echo '<div class = name>';
   echo '<p>',$row['admin_name'],'</p>';
   echo '</div>';
