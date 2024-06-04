@@ -10,7 +10,10 @@ try {
         $sql->execute();
         $rows = $sql->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $row) {
-            echo $row['country_id'], $row['country_name'] . "<br>";
+            echo $row['country_id']. "<br>";
+            if($row['country_id'] == $_POST['choice']){
+                echo "OK";
+            }
         }
 
         // ユーザー名の重複確認
