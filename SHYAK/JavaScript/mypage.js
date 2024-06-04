@@ -28,10 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let initialName = nameElement.textContent;
     let initialDescription = descriptionElement.textContent;
 
-    // 言語選択を保存
+    /* 言語選択を保存
     languageChoice.addEventListener("change", () => {
         localStorage.setItem("LanguageChoice-all", languageChoice.value);
     });
+    */
 
     // 編集可能にする関数
     const makeEditable = (element, storageKey) => {
