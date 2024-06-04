@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <form @submit="submitForm">
+        <form @submit="submitForm" action="./signup-output.php" method="POST">
             <!-- 言語選択 -->
             <div id="Language-Choice">
                 <select name="choice" class="LanguageChoice" required>
