@@ -16,13 +16,13 @@ try {
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);//当該ユーザーのidから保存されているパスワードを取得。新規の場合nullが返る
             if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
                 // 認証成功(まったく同じユーザー名とパスワード,言語情報を持つユーザーが存在する)
-                echo '<script>alert("ユーザーが既に存在します。");</script>';
                 header('Location: ./signup-input.php');
+                echo '<script>alert("ユーザーが既に存在します。");</script>';
                 exit(); // ここで処理を中断
             }else{
                 // ユーザー名は同じだけど、パスワードは違うor言語情報が違う(おそらく新規)
-                echo '<script>alert("同じ名前のユーザーが既に存在します。");</script>';
                 header('Location: ./signup-input.php');
+                echo '<script>alert("同じ名前のユーザーが既に存在します。");</script>';
                 exit(); // ここで処理を中断
             }
         }else{
