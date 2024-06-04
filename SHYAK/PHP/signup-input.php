@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="../CSS/signup-input.css">
 </head>
 <body>
+    <?php
+        session_start();
+        if(isset($_SESSION['signup']) && $_SESSION['signup'] == 'sameUser'){
+            echo '<script>alert("同じユーザーが存在します");</script>';
+        }else if(isset($_SESSION['signup']) && $_SESSION['signup'] == 'sameName'){
+            echo '<script>alert("同じ名前のユーザーが存在します");</script>';
+        }else if(isset($_SESSION['data']) && $_SESSION['data'] == 'notEnough'){
+            echo '<script>alert("必須項目が未入力です");</script>';
+        }
+    ?>
     <div id="app">
         <form @submit="submitForm" action="./signup-output.php" method="POST">
             <!-- 言語選択 -->
