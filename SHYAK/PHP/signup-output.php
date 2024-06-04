@@ -40,12 +40,12 @@ try {
             // ユーザーが存在しない場合、新規登録
             $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
             // 正しいSQLクエリを使用
-            $sql = $pdo->prepare('insert into Users (user_name) values (?)');
-            $sql->execute([$_POST['username']]);
+            $sql = $pdo->prepare('insert into Users (user_name,country_id) values (?,?)');
+            $sql->execute([$_POST['username'],$_POST['choice']]);
             // user_idを取得
             $id = $pdo->lastInsertId('user_id');
             // Passテーブルに挿入(パスワードを入れるとこ)
-            $sql = $pdo->prepare('insert into Pass (user_id, hash_pass, country_id) values (?,?,?)');
+            $sql = $pdo->prepare('insert into Pass (user_id, hash_pass) values (?,?)');
             $sql->execute([$id, $hashedPassword]);
             // セッションを設定
             $_SESSION['User'] = [
