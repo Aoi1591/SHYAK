@@ -17,7 +17,7 @@ try {
         }
 
         // ユーザー名の重複確認
-        $sql = $pdo->prepare('select user_id,country_id from Users where user_name = ? and country_id = ?');
+        $sql = $pdo->prepare('select user_id,country_id,user_name from Users where user_name = ? and country_id = ?');
         $sql->execute([$_POST['username'],$_POST['choice']]);
         $existingUser = $sql->fetch(PDO::FETCH_ASSOC);//この時点で、同じユーザー名が存在すればその情報が保持される
         if ($existingUser && $existingUser['user_name'] === $_POST['username']) {
