@@ -6,7 +6,7 @@ try {
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['choice'])) { 
         $pdo = new PDO($connect, USER, PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $pdo->prepare('select * from Country');
+        $sql = $pdo->prepare('select * from Countries');
         $sql->execute();
         $rows = $sql->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $row) {
