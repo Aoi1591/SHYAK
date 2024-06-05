@@ -11,7 +11,7 @@ body {
 }
 
 /* 入力フィールド */
-.app{
+#app{
     width: 50%;
     height: 40%;
     margin: 60% 25% 5% 25%;
