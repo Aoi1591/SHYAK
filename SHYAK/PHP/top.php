@@ -16,6 +16,9 @@
 <?php
 require 'menu-humburger.php';
 //require 'api.php';
+require 'CheckMessage.php';
+
+
 ?>
 <!--瓶 -->
 <img id="img_bin1" src="../image/瓶.png" alt="瓶">
@@ -31,9 +34,18 @@ require 'menu-humburger.php';
                 <a href="Morattahenji.php">
                 <br>
                 <?php
-                    //$translator = new Translator();
-                    //$originalText = $translator->translate($originalText);
-                    echo '<img src="../image/hon.png" alt="本" class="btn-hon-image">';
+
+                    $translator = new Translator();
+                    $originalText = "本";
+                    $originalText = $translator->translate($originalText);
+                    echo '<button type="submit" class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</button>';
+                    session_start();
+                    $userId = $_SESSION['user_id'];//ユーザ―idからセッションを取得
+
+                    $checkmessage = new CheckMessage();
+                    $hasNewMessage = $checkmessage->checkForNewMessages($userId);
+
+                    //echo '<img src="../image/hon.png" alt="本" class="btn-hon-image">';
                 ?>
                 </a>
             </div>
