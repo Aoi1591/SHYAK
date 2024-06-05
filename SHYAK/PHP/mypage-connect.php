@@ -18,10 +18,11 @@
         $iconPath = basename($_FILES['icon']['name']);
         $targetFilePath = $targetDir . $iconName;
 
-        if(move_uploaded_file($FILES['icon']['tmp_name'],$targetFilePath)){
+        if(move_uploaded_file($_FILES['icon']['tmp_name'],$targetFilePath)){
             $iconPath = $iconName;
         }
     }
+    //DBにデータ挿入
     if($iconPath){
     $sql = $pdo->prepare('update Users set user_name = ? ,message = ? , icon = ? WHERE user_id = ?');
     $sql -> execute(['$name,$description,$iconPath,$user_id']);
@@ -31,13 +32,13 @@
     }
 
 
-    if ($stmt->execute() === TRUE) {
+   // if ($stmt->execute() === TRUE) {
         // 更新が成功した場合、top.phpにリダイレクト
         header("Location: ../php/top.php");
         exit();
-    } else {
+   // } else {
         echo "エラー: " . $stmt->error;
-    }
+   // }
 
     $stmt->close();
 

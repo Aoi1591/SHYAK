@@ -28,11 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let initialName = nameElement.textContent;
     let initialDescription = descriptionElement.textContent;
 
-    /* 言語選択を保存
+    //言語選択を保存
     languageChoice.addEventListener("change", () => {
         localStorage.setItem("LanguageChoice-all", languageChoice.value);
     });
-    */
 
     // 編集可能にする関数
     const makeEditable = (element, storageKey) => {
@@ -80,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         nameInput.value = initialName;
         descriptionInput.value = initialDescription;
         confirmationDialog.style.display = "none";
+        document.querySelector('from').submit();//何かわからない
     });
 
     confirmNoButton.addEventListener("click", () => {
