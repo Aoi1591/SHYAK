@@ -12,7 +12,7 @@
         if(isset($_GET['signup']) && $_GET['signup'] == 'sameUser'){
             echo '<script>alert("同じユーザーが存在します");</script>';
         }else if(isset($_GET['signup']) && $_GET['signup'] == 'sameName'){
-            echo '<script>alert("同じ名前のユーザーが存在します");</script>';
+            echo '<script>alert("その名前は既に使用されています");</script>';
         }else if(isset($_GET['data']) && $_GET['data'] == 'notEnough'){
             echo '<script>alert("必須項目が未入力です");</script>';
         }

@@ -20,10 +20,14 @@ try {
                 echo '<script>alert("ユーザーが既に存在します。");</script>';
                 exit(); // ここで処理を中断
             }else{
-                // ユーザー名は同じだけど、パスワードは違うor言語情報が違う(おそらく新規)
+                // ユーザー名は同じだけど、パスワードは違う(おそらく新規)
                 header('Location: ./signup-input.php?signup=sameName');
                 exit(); // ここで処理を中断
             }
+        }else if ($existingUser && $existingUser['user_name'] === $_POST['username'] &&$existingUser['country_id'] != $_POST['choice']){
+            // ユーザー名は同じだけど言語情報が違う
+            header('Location: ./signup-input.php?signup=sameName');
+            exit(); // ここで処理を中断
         }else{
             // ユーザーが存在しない場合、新規登録
             $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
