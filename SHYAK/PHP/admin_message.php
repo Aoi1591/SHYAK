@@ -32,8 +32,8 @@
       echo '<tr>';
       echo '<td>',$row['sent_id'],'</td>';
       echo '<td>',$row['set_message'],'</td>';
-      echo '<td><a href = "delete_message.php?id=',['sent_id'],'">削除</a></td>';
-      echo '<td><a href = "rejected_message.php?id=',['sent_id'],'">却下</a></td>';
+      echo '<td><a href = "delete_message.php?id=',$row['sent_id'],'">削除</a></td>';
+      echo '<td><a href = "rejected_message.php?id=',$row['sent_id'],'">却下</a></td>';
       echo '</tr>';
     }
     

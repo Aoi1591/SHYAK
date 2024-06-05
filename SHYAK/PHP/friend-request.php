@@ -15,20 +15,22 @@
       echo '<a href = "friend-requset.php">フレンドリクエスト</a>';
 
 
-      //フレンド一覧の表示
+      //フレンドリクエスト一覧の表示
         echo '<div class = uzer>';
         $pdo = new PDO($connect,USER,PASS);
-        $User_sql = $pdo -> prepare ('select friend_id from Friend WHERE user_id = ?')//フレンド探す
+        $User_sql = $pdo -> prepare ('select id,friend_id from Friend WHERE user_id = ?')//フレンド探す
         $User_sql -> execute([$_SESSION['Users']['user_id']]);
         $stmt = $pdo -> query($User_sql);
 
+
           foreach($stmt as $row){
+            $Fid = $row['id'];
             $friend_sql = 'select * from Users WHERE user_id = ? && state = ?';
-            $friend_sql ->execute($row['friend_id'],1);
+            $friend_sql ->execute($row['friend_id'],2);
             $friend_stmt = $pdo -> query($friend_sql);
 
             echo '<table>';
-            echo '<tr><th></th><th>名前</th><th>国籍</th></tr>';
+            echo '<tr><th></th><th>名前</th><th>国籍</th><th>許可</th><th>不許可</th></tr>';
             foreach($friend_stmt as $row){
 
             $id = $row['user_id'];
@@ -44,9 +46,12 @@
             echo '<tr>';
             echo $row['countyr_id'];//国籍
             echo '</tr>';
+            echo '<tr>';
+            echo '<a href = "permission-friend.php?id=',$Fid,'">許可</a>';
+            echo '<tr>';
+            echo '<a href = "delete-friend.php?id=',$Fid,'">不許可</a>';
+            echo '</tr>';
             }
             echo '</table>';
       }
-
-
 
