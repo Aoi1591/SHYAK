@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +9,6 @@
 </head>
 <body>
     <?php
-        session_start();
         if(isset($_SESSION['signup']) && $_SESSION['signup'] == 'sameUser'){
             echo '<script>alert("同じユーザーが存在します");</script>';
         }else if(isset($_SESSION['signup']) && $_SESSION['signup'] == 'sameName'){
