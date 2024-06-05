@@ -28,7 +28,7 @@
 
    //DB
    $pdo = new PDO($connect,USER,PASS);
-   $sql = $pdo -> prepare('select user_name,icon,message from Users WHERE user_id=?')//DB再構築後名前を確認
+   $sql = $pdo -> prepare('select user_name,icon,message from Users WHERE user_id=?');//DB再構築後名前を確認
    $sql -> execute([$_SESSION['Users']['user_id']]);
    $row = $sql ->fetch(PDO::FETCH_ASSOC);
 
