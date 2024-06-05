@@ -1,4 +1,6 @@
-
+<?php
+    require 'api.php';
+?>
 <?php
     //require 'header.php';
 ?>
@@ -21,6 +23,18 @@
                         <button type="button" class="batu">×</button>
                     </a>
                 </div>
+    <div class="row justify-content-end">
+        <div class="col-12 col-md-2">
+            <div class="row">
+                <a href="top.php">
+                <br>
+                <?php
+                    $translator = new Translator();
+                    $originalText = "戻る";
+                    $originalText = $translator->translate($originalText);
+                    echo '<button type="submit" class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</button>';
+                ?>
+                </a>
             </div>
         </div>
         <br>
