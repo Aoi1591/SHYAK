@@ -24,7 +24,7 @@ try {
                 header('Location: ./signup-input.php?signup=sameName');
                 exit(); // ここで処理を中断
             }
-        }else if ($existingUser && $existingUser['user_name'] === $_POST['username'] &&$existingUser['country_id'] != $_POST['choice']){
+        }else if ($existingUser && $existingUser['user_name'] === $_POST['username'] && $existingUser['country_id'] !== $_POST['choice']){
             // ユーザー名は同じだけど言語情報が違う
             header('Location: ./signup-input.php?signup=sameName');
             exit(); // ここで処理を中断
