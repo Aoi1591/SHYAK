@@ -1,3 +1,3 @@
 function goBack() {
-    window.location.href = "../html/login.html"; // ここに戻るページのURLを指定
+    window.location.href = "../html/login-input.php"; // ここに戻るページのURLを指定
 }
