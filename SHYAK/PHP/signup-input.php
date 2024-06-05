@@ -9,11 +9,11 @@
 </head>
 <body>
     <?php
-        if(isset($_SESSION['signup']) && $_SESSION['signup'] == 'sameUser'){
+        if(isset($_GET['signup']) && $_GET['signup'] == 'sameUser'){
             echo '<script>alert("同じユーザーが存在します");</script>';
-        }else if(isset($_SESSION['signup']) && $_SESSION['signup'] == 'sameName'){
+        }else if(isset($_GET['signup']) && $_GET['signup'] == 'sameName'){
             echo '<script>alert("同じ名前のユーザーが存在します");</script>';
-        }else if(isset($_SESSION['data']) && $_SESSION['data'] == 'notEnough'){
+        }else if(isset($_GET['data']) && $_GET['data'] == 'notEnough'){
             echo '<script>alert("必須項目が未入力です");</script>';
         }
     ?>
