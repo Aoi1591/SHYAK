@@ -14,16 +14,18 @@
     <!-- ✘ボタン -->
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
-                <div class="row">
+                <div class="col-10">
                     <br>
-                    <a href="top.php">
-                        <button type="submit" class="batu">×
+                    <button type="submit" class="tuhou">
                         </button>
-                    </a>
+                    <a href="top.php">
+                        <button type="submit" class="batu">
+                        </button></a>
+                        
+                    
                 </div>
             </div>
         </div>
-
         <div class="row justify-content-center">
         <h2 class="text-center" style="width: 300px;">○○さんからの瓶</h2>
         </div>
