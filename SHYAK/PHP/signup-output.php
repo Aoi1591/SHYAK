@@ -17,11 +17,10 @@ try {
             if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
                 // 認証成功(まったく同じユーザー名とパスワード,言語情報を持つユーザーが存在する)
                 header('Location: ./signup-input.php?signup=sameUser');
-                echo '<script>alert("ユーザーが既に存在します。");</script>';
                 exit(); // ここで処理を中断
             }else{
                 // ユーザー名は同じだけど、パスワードは違う(おそらく新規)
-                header('Location: ./signup-input.php?signup=sameName');
+                header('Location: ./signup-input.php?signup=sameName');//うまくこのフラグ付与されてないけどいったん放置！！　リダイレクトはされるよ！
                 exit(); // ここで処理を中断
             }
         }else if ($existingUser && $existingUser['user_name'] === $_POST['username'] && $existingUser['country_id'] !== $_POST['choice']){
@@ -56,8 +55,7 @@ try {
     }   
 } catch (PDOException $e) {
     // エラーハンドリング
-    header('Location: ./signup-input.php');
-    echo '<script>alert("データベースエラー")</script>' . htmlspecialchars($e->getMessage());
+    header('Location: ./signup-input.php?data=DBerror');
     exit();
 }
 ?>
