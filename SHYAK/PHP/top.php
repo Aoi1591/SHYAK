@@ -15,6 +15,7 @@
 <?php
 require 'menu-humburger.php';
 require 'api.php';
+require 'CheckMessage.php';
 ?>
     <div class="container">
         <!-- 設定ボタンを右上に配置 -->
@@ -44,6 +45,11 @@ require 'api.php';
                     $originalText = "本";
                     $originalText = $translator->translate($originalText);
                     echo '<button type="submit" class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</button>';
+                    session_start();
+                    $userId = $_SESSION['user_id'];//ユーザ―idからセッションを取得
+
+                    $checkmessage = new CheckMessage();
+                    $hasNewMessage = $checkmessage->checkForNewMessages($userId);
                 ?>
                 </a>
             </div>
