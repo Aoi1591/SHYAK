@@ -26,7 +26,7 @@
         header("Location: ./top.php");
         exit;
     } else {//ユーザー認証できなかった時の処理
-        header("Location: ./login.php?flag=fail");
+        header("Location: ./login-input.php?flag=fail");
         exit;
     }
 ?>
