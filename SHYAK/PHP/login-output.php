@@ -3,9 +3,13 @@
     require 'connect.php';
     unset($_SESSION['User']); // セッションの初期化
     $pdo = new PDO($connect, USER, PASS);
+    echo $_POST['username'];
+    echo $_POST['password'];
     $sql = $pdo->prepare('select user_id,country_id from Users where user_name = ?');
     $sql->execute([$_POST['username']]);
     foreach ($sql as $row) {
+        echo $row['user_id'];
+        echo $row['country_id'];
         $userId = $row['user_id'];
         $lang = $row['country_id'];
         // パスワードを取得するクエリを修正
