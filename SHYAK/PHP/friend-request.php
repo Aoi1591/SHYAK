@@ -7,9 +7,15 @@
    <link rel="stylesheet" href="../CSS/humburger.css">
    </head>
    <body>
+    <!--ここにapi.phpを入れる-->
    <?php require 'menu-humburger.php';?>
    <?php
-      
+
+      /*$translator = new Translator();
+      $friend_list = "ふれんどりすと";
+      $friend_request = "ふれんどりくえすと";
+      */
+
       echo '<img src = "">'; //friendマークの画僧挿入
       echo '<a href = "friend.php">フレンドリスト</a>';
       echo '<a href = "friend-requset.php">フレンドリクエスト</a>';
