@@ -17,7 +17,6 @@
             $sql_pass = $pdo->prepare('select hash_pass from Password where user_id = ?');
             $sql_pass->execute([$userId]);
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);
-
             if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
                 // 認証成功
                 $_SESSION['User'] = [
@@ -25,13 +24,13 @@
                     'username' => $_POST['username'],
                     'lang' => $lang
                 ];
+            } else {//ユーザー認証できなかった時の処理
+                header("Location: ./login-input.php?flag=miss");
+                exit;
             }
         }
         if (isset($_SESSION['User'])) {
             header("Location: ./top.php");
-            exit;
-        } else {//ユーザー認証できなかった時の処理
-            header("Location: ./login-input.php?flag=miss");
             exit;
         }
     }catch(Exception $e){
