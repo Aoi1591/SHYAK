@@ -4,13 +4,13 @@
 <?php
   
   //パラメーターから取得
-  $message_id = issset($_GET['id']) ? $_GET['id'] : null;
+  $sent_id = issset($_GET['sent_id']) ? $_GET['sent_id'] : null;
 
   try{
     $pdo = new PDO($connect,USER,PASS);
     $ssql = "delete from Sents where sent_id = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$message_id]);
+    $stmt->execute([$sent_id]);
 
     //削除成功
     header("Location: admin_message.php")

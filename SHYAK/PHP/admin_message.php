@@ -29,11 +29,12 @@
     echo '<tr><th>ID</th><th>メッセージ内容</th><th>削除</th><th>却下</th></tr>';
 
     foreach($stmt as $row){
+      $sent_id = $row['sent_id'];
       echo '<tr>';
       echo '<td>',$row['sent_id'],'</td>';
       echo '<td>',$row['set_message'],'</td>';
-      echo '<td><a href = "delete_message.php?id=',$row['sent_id'],'">削除</a></td>';
-      echo '<td><a href = "rejected_message.php?id=',$row['sent_id'],'">却下</a></td>';
+      echo '<td><a href = "delete_message.php?id='urlencode($sent_id),'">削除</a></td>';
+      echo '<td><a href = "rejected_message.php?id='urldecode($sent_id),'">却下</a></td>';
       echo '</tr>';
     }
     
