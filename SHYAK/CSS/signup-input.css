@@ -20,8 +20,7 @@ body {
 #Language-Choice {
     position: absolute;
     width: 50%;
-    height: 4%;
-    margin-left: 25%;
+    height: 5%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -47,6 +46,7 @@ body {
     position: absolute;
     width: 50%;
     height: 4%;
+    margin-top: 8%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -71,6 +71,7 @@ body {
     position: absolute;
     width: 50%;
     height: 4%;
+    margin-top: 14%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -95,6 +96,7 @@ body {
     position: absolute;
     width: 50%;
     height: 4%;
+    margin-top: 20%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -119,6 +121,7 @@ body {
     position: absolute;
     width: 50%;
     height: 6%;
+    margin-top: 26%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,7 +146,7 @@ body {
 }
 
 /* 戻るボタン */
-#back-button {
+.back-button {
     position: absolute;
     width: 100px;
     height: 70px;
