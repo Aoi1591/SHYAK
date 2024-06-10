@@ -96,7 +96,7 @@ body {
     position: absolute;
     width: 50%;
     height: 4%;
-    margin-top: 26%;
+    margin-top: 20%;
     background: #D9D9D9;
     border-radius: 50px;
     z-index: 11; /* 背景の上に表示 */
@@ -121,6 +121,7 @@ body {
     position: absolute;
     width: 50%;
     height: 6%;
+    margin-top: 26%;
     display: flex;
     justify-content: center;
     align-items: center;
