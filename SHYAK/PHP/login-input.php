@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
     <title>ログイン画面</title>
-    <link rel="stylesheet" href="../css/login-input.css">
+    <link rel="stylesheet" href="../CSS/login-input.css">
 </head>
 <body>
+<?php
+        if(isset($_GET['flag']) && $_GET['flag'] == 'fail'){
+            echo '<script>alert("認証に失敗しました。");</script>';
+        }
+    ?>
     <!-- Background Image -->
     <div id="back-ground"></div>
 
