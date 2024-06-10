@@ -8,8 +8,10 @@
 </head>
 <body>
 <?php
-        if(isset($_GET['flag']) && $_GET['flag'] == 'fail'){
+        if(isset($_GET['flag']) && $_GET['flag'] == 'miss'){
             echo '<script>alert("認証に失敗しました。");</script>';
+        }else if(isset($_GET['flag']) && $_GET['flag'] == 'fail'){
+            echo '<script>alert("エラーが発生しました。");</script>';
         }
     ?>
     <!-- Background Image -->
