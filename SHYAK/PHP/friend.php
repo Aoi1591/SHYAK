@@ -18,13 +18,13 @@
       //フレンド一覧の表示
         echo '<div class = uzer>';
         $pdo = new PDO($connect,USER,PASS);
-        $User_sql = $pdo -> prepare ('select friend_id from Friend WHERE user_id = ?')//フレンド探す
+        $User_sql = $pdo -> prepare ('select friend_id from Friend WHERE user_id = ?');//フレンド探す
         $User_sql -> execute([$_SESSION['Users']['user_id']]);
         $stmt = $pdo -> query($User_sql);
 
           foreach($stmt as $row){
-            $friend_sql = 'select * from Users WHERE user_id = ? && state = ?';
-            $friend_sql ->execute($row['friend_id'],1);
+            $sql =  $pdo -> prepare('select * from Users WHERE user_id = ? && state = ?');
+            $sql->execute($row['friend_id'],1);
             $friend_stmt = $pdo -> query($friend_sql);
 
             echo '<table>';
@@ -39,7 +39,7 @@
             echo '</tr>';
             echo '<tr>';
             //名前の部分を押したらユーザーページへ遷移
-            echo  '<a href = "user.php?id=',urldecode($id),'&name=',urldecode($name),'">'$row['user_name']'</a>';
+            echo  '<a href = "user.php?id=',urldecode($id),'&name=',urldecode($name),'">',$row['user_name'],'</a>';
             echo '</tr>';
             echo '<tr>';
             echo $row['countyr_id'];//国籍

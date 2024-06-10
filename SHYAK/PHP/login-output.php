@@ -2,6 +2,7 @@
     session_start();
     require 'connect.php';
     unset($_SESSION['User']); // セッションの初期化
+
     try{
         $pdo = new PDO($connect, USER, PASS);
         echo $_POST['username'];
