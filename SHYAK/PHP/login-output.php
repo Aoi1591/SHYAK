@@ -27,7 +27,7 @@
             }
         }
         if (isset($_SESSION['User'])) {
-            header("Location: ./top.php?lang=",$_SESSION['User']['lang']);
+            header("Location: ./top.php?lang=".$_SESSION['User']['lang']);
             exit;
         }
     }catch(Exception $e){
