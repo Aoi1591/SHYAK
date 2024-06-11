@@ -16,7 +16,7 @@
     echo '</header>';
     echo '<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>';*/
 ?>
-<link rel="stylesheet" href="../css/humburger.css">
+<link rel="stylesheet" href="../CSS/humburger.css">
     <title>ハンバーガーメニュー専用</title>
 </head>
 <!--ヘッダー↓-->
@@ -43,6 +43,7 @@
       </nav>
     </div>
   </div>
+  <script src="../JavaScript/hamburger.js"></script>
   <!-- spハンバーガーメニュー ↑ -->
 </header>
 <!--ヘッダー↑-->
