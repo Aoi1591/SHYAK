@@ -15,7 +15,6 @@
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
                 <div class="row">
-                    
                     <a href="top.php">
                         <button type="button" class="batu"></button>
                     </a>
@@ -24,6 +23,9 @@
         </div>
         <br>
         <div class="row justify-content-center">
+            <?php
+                
+            ?>
         <h2 class="text-center" style="width: 300px;">瓶を流す</h2>
         </div>
 

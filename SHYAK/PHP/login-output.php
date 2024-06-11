@@ -2,7 +2,6 @@
     session_start();
     require 'connect.php';
     unset($_SESSION['User']); // セッションの初期化
-
     try{
         $pdo = new PDO($connect, USER, PASS);
         $sql = $pdo->prepare('select user_id,country_id from Users where user_name = ?');
@@ -27,7 +26,7 @@
             }
         }
         if (isset($_SESSION['User'])) {
-            header("Location: ./top.php");
+            header("Location: ./top.php?kang=",$_SESSION['User']['lang']);
             exit;
         }
     }catch(Exception $e){
