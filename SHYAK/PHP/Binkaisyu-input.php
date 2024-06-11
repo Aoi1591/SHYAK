@@ -21,45 +21,45 @@
                     <a href="top.php">
                         <button type="submit" class="batu">
                         </button></a>
-                        
-                    
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-        <h2 class="text-center" style="width: 300px;">○○さんからの瓶</h2>
+            <?php
+                // 翻訳クラスのインスタンス化
+                $translator = new Translator();
+                // 翻訳するテキスト
+                $originalText = "からの瓶";
+                $translatedText = $translator->translate($originalText);
+                echo "<h2 class='text-center' style='width: 300px;'>$translatedText</h2>";
+            ?>
         </div>
-
- <?php
-
-       
-        
-        echo '<form action="Binkaisyu-output.php" method="post">';
-        echo '<div class="row justify-content-center mt-5">';
-        echo '<div class="col-6">';
-
-        echo '<div class="bun"><p>"願いや祝福"</p>';
-
-        
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-
-        echo '<!--瓶を回収ボタンを中央に配置 --><br><br>';
-
-        echo '<div class="row justify-content-center">';
-        echo '<div class="text-center col-6">';
-        echo '<button type="submit" class="btn-binwokaisyu">瓶を回収';
-        echo '</button>';
-        echo '</form>';
-        echo '</div>';
-        echo '</div>';
-
-
-        echo '</div>';
-        ?>
-
-
-
+        <form action="Binkaisyu-output.php" method="post">
+            <div class="row justify-content-center mt-5">
+                <div class="col-6">
+                    <div class="bun">
+                        <?php
+                            $translator = new Translator();
+                            $text = "願いや祝福";
+                            $translatedText = $translator->translate($text);
+                            echo '<p>', $translatedText, '</p>';
+                        ?>
+                    </div>
+                </div>
+            </div>
+        <!--瓶を回収ボタンを中央に配置 -->
+            <br><br>
+            <div class="row justify-content-center">
+                <div class="text-center col-6">
+                    <?php
+                        $translator = new Translator();
+                        $text = "瓶を回収";
+                        $translatedText = $translator->translate($text);
+                        echo '<button type="submit" class="btn-binwokaisyu">', $translatedText, '</button>';
+                    ?>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

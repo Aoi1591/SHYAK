@@ -1,19 +1,31 @@
 <?php
     require 'header.php';
 ?>
+    <link rel="stylesheet" href="../CSS/Choose your language.css">
     <title>Choose your language</title>
-    <link rel="stylesheet" href="../css/Chooseyourlanguage.css">
 </head>
 <body>
-    <div id="content">
-        <h1>Choose your language</h1>
-    
-        <h1 style="margin:13%;">この瓶でよろしいですか？</h1>
-        <form action="top.php"method="post">
-        <input type="submit" value="はい"style="margin-right: 15%;font-size: 40px;">
-        <button type="button" class="button-link" onclick="goback()"style="margin-left: 15%;font-size: 40px;">いいえ</button>
-        </form>
-    </div>
-    <script src="../js/Choose your laguage.js"></script>
+<?php require 'api.php'; ?>
+
+<?php
+echo '<div style="text-align: center">';
+echo '<h1>Choose your language</h1>';
+
+// 翻訳クラスのインスタンス化
+$translator = new Translator();
+
+// 翻訳するテキスト
+$originalText = "この瓶でよろしいですか？";
+$translatedText = $translator->translate($originalText);
+echo "<h1>$translatedText</h1>";
+
+// ボタンのテキストも翻訳
+$yesText = $translator->translate("はい");
+$noText = $translator->translate("いいえ");
+echo "<input type='submit' value='$yesText'>";
+echo "<a href='Chooseyourlanguage.php'>$noText</a>";
+
+echo '</div>';
+?>
 </body>
 </html>
