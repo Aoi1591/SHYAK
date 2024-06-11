@@ -13,7 +13,7 @@
     $stmt->execute([$Fid]);
 
     //削除成功
-    header("Location: friend-request.php")
+    header("Location: friend-request.php");
     exit();
   }catch(PDOException $e){
     //エラー発生
