@@ -13,7 +13,7 @@ if($message_id){
         $pdo = new PDO($connect,USER,PASS);
 
         //フラグをリセット
-        $sql = "UPDATE SentsSET report_flag = 0 WHERE sent_id = ?";
+        $sql = "UPDATE Sents SET report_flag = 0 WHERE sent_id = ?";
 
         $stmt = $pdo -> prepare($sql);
         $stmt -> execute([$message_id1]);
