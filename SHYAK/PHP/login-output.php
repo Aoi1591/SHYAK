@@ -20,7 +20,7 @@
                     'username' => $_POST['username'],
                     'lang' => $lang
                 ];
-                echo $_SESSION['User']['lang'];
+                //echo $_SESSION['User']['lang'];
             } else {//ユーザー認証できなかった時の処理
                 header("Location: ./login-input.php?flag=miss");
                 exit;
