@@ -43,7 +43,7 @@
 
     <!-- Sign-Up Text and Line -->
     <div id="sign-up-container">
-        <a href="../php/sign-up-input.php" id="sign-up">SIGN-UP</a>
+        <a href="../php/signup-input.php" id="sign-up">SIGN-UP</a>
         <div class="sign-up-line"></div>
     </div>
 </body>
