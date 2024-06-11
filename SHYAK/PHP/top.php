@@ -28,7 +28,7 @@ require 'CheckMessage.php';
 <img id="img_bin5" src="../image/瓶.png" alt="瓶">
     <div class="container">
 
-        <!-- 本ボタンを左下に配置 -->
+    <!-- 本ボタンを左下に配置 -->
         <div class="row justify-content-start">
             <div class="col-12 col-md-10">
                 <a href="Morattahenji.php">
