@@ -4,7 +4,7 @@
 <?php
   
   //パラメーターから取得
-  $sent_id = issset($_GET['sent_id']) ? $_GET['sent_id'] : null;
+  $sent_id = isset($_GET['sent_id']) ? $_GET['sent_id'] : null;
 
   try{
     $pdo = new PDO($connect,USER,PASS);
