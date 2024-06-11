@@ -3,7 +3,7 @@
 <head>
     <?php require 'header.php'; ?>
     <title>Choose your language</title>
-    <link rel="stylesheet" href="../css/Chooseyourlanguage.css">
+    <link rel="stylesheet" href="../CSS/Chooseyourlanguage.css">
 </head>
 
 <body>
