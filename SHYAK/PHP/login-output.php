@@ -20,13 +20,14 @@
                     'username' => $_POST['username'],
                     'lang' => $lang
                 ];
+                echo $_SESSION['User']['lang'];
             } else {//ユーザー認証できなかった時の処理
                 header("Location: ./login-input.php?flag=miss");
                 exit;
             }
         }
         if (isset($_SESSION['User'])) {
-            header("Location: ./top.php?kang=",$_SESSION['User']['lang']);
+            header("Location: ./top.php?lang=",$_SESSION['User']['lang']);
             exit;
         }
     }catch(Exception $e){
