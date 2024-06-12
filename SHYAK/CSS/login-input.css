@@ -223,10 +223,12 @@ body {
     transform: rotate(-23.7deg);
     z-index: 11;
 }
+/*管理者画面の秘密のボタン*/
 #admin{
  line-height: 1;
  height: 10px;
  font-size: 100px;
  text-decoration: none;
+ opacity: 0.01;
 
 }
