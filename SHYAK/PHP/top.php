@@ -30,7 +30,7 @@ require 'CheckMessage.php';
                     $originalText = "本";
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                     echo '<button type="submit" class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</button>';
-                    $userId = $_SESSION['User']['id'];//ユーザ―idからセッションを取得
+                    $userName = $_SESSION['User']['username'];//ユーザ―idからセッションを取得
                     $checkmessage = new CheckMessage();
                     $hasNewMessage = $checkmessage->checkForNewMessages($userId);
                     //echo '<img src="../image/hon.png" alt="本" class="btn-hon-image">';

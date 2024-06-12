@@ -3,7 +3,7 @@ require 'connect.php';
 $pdo = new PDO($connect, USER, PASS);
 
 class CheckMessage {
-    public function checkForNewMessages($userId) {
+    public function checkForNewMessages($userName) {
         try {
             global $pdo;
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -12,9 +12,9 @@ class CheckMessage {
             return false;
         }
         // 新しいメッセージがあるかチェックするクエリ
-        $sql = 'SELECT COUNT(*) FROM Recieves WHERE user_id = :userId AND is_read = 0';
+        $sql = 'SELECT COUNT(*) FROM Recieves WHERE user_name = :userName AND is_read = 0';
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':userName', $userName, PDO::PARAM_INT);
         $stmt->execute();
         $newMessagesCount = $stmt->fetchColumn();
         return $newMessagesCount > 0;
