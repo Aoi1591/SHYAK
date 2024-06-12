@@ -1,9 +1,11 @@
 <?php
 require 'connect.php';
+$pdo = new PDO($connect, USER, PASS);
+
 class CheckMessage {
     public function checkForNewMessages($userId) {
         try {
-            $pdo = new PDO(SERVER, USER, PASS);
+            global $pdo;
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
