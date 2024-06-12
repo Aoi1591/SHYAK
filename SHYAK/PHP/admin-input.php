@@ -1,6 +1,9 @@
 <?php session_start();?>
-<?php require 'connect.php';?>
-<?php require 'header.php';?>
+<?php 
+  require 'connect.php';
+  require 'header.php';
+  require 'api.php';
+?>
 
 <link rel="stylesheet" href="../CSS/humburger.css">
 <title> 管理者画面 </title>

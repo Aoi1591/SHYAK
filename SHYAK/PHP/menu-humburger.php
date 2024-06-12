@@ -16,7 +16,7 @@
     echo '</header>';
     echo '<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>';*/
 ?>
-<link rel="stylesheet" href="../css/humburger.css">
+<link rel="stylesheet" href="../CSS/humburger.css">
     <title>ハンバーガーメニュー専用</title>
 </head>
 <!--ヘッダー↓-->
@@ -30,9 +30,7 @@
       <span class="hamburger_linebottom"></span>
     </div>
     <div class="sidemenu">
-
       <?php $user_id = isset($_SESSION['User']['id']) ? $_SESSION['User']['id'] : ''; ?>
-
       <nav>
         <ul>
           <li><a href="mypage.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"></i>マイページ</a></li>
@@ -43,9 +41,9 @@
       </nav>
     </div>
   </div>
+  <script src="../JavaScript/hamburger.js"></script>
   <!-- spハンバーガーメニュー ↑ -->
 </header>
 <!--ヘッダー↑-->
-
 <!-- ハンバーガーメニューを表示させたいときは、bodyの中にhamburger.phpを呼ぶんだ。 -->
 <!-- ハンバーガーメニューを表示させたいときは、/bodyから下を消してfooter.phpを呼ぶんだ。 -->

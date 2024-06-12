@@ -4,7 +4,6 @@ class Translator {
     public function translate($text): string {//返り値をvoidからstringに変更
         // cURLの初期化
         $ch = curl_init();
-
         // キーとリージョンの指定
         $key = "8d961f7fadf3441d9b12285b07e0ed50";
         $region = "Japanwest";
@@ -13,22 +12,18 @@ class Translator {
             "Ocp-Apim-Subscription-Region: " . $region,
             "Content-Type: application/json; charset=UTF-8"
         ));
-
         // URLと翻訳言語の指定
         $from = 'ja';
         $to = $_SESSION['User']['lang'];
         $url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=".$from."&to=".$to;
         curl_setopt($ch, CURLOPT_URL, $url);
-
         // 翻訳テキストの指定
         $json = json_encode([['Text' => $text]]);
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
         // 送信と応答
         $result = curl_exec($ch);
-
         // レスポンスをデコード
         $decode = json_decode($result);
 
