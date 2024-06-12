@@ -12,22 +12,18 @@ class Translator {
             "Ocp-Apim-Subscription-Region: " . $region,
             "Content-Type: application/json; charset=UTF-8"
         ));
-
         // URLと翻訳言語の指定
         $from = 'ja';
         $to = $_SESSION['User']['lang'];
         $url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=".$from."&to=".$to;
         curl_setopt($ch, CURLOPT_URL, $url);
-
         // 翻訳テキストの指定
         $json = json_encode([['Text' => $text]]);
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
         // 送信と応答
         $result = curl_exec($ch);
-
         // レスポンスをデコード
         $decode = json_decode($result);
 

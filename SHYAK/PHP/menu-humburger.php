@@ -30,9 +30,7 @@
       <span class="hamburger_linebottom"></span>
     </div>
     <div class="sidemenu">
-
       <?php $user_id = isset($_SESSION['User']['id']) ? $_SESSION['User']['id'] : ''; ?>
-
       <nav>
         <ul>
           <li><a href="mypage.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"></i>マイページ</a></li>
@@ -47,6 +45,5 @@
   <!-- spハンバーガーメニュー ↑ -->
 </header>
 <!--ヘッダー↑-->
-
 <!-- ハンバーガーメニューを表示させたいときは、bodyの中にhamburger.phpを呼ぶんだ。 -->
 <!-- ハンバーガーメニューを表示させたいときは、/bodyから下を消してfooter.phpを呼ぶんだ。 -->
