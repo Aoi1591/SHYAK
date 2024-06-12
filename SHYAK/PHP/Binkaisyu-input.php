@@ -14,15 +14,16 @@
         <!-- ✘ボタン -->
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
-                <div class="row">
+                <div class="col-10">
                     <br>
+                    <button type="submit" class="tuhou">
+                    </button>
                     <a href="top.php">
-                        <button type="button" class="batu">×</button>
-                    </a>
+                    <button type="submit" class="batu">
+                    </button></a>
                 </div>
             </div>
         </div>
-
         <div class="row justify-content-center">
             <h2 class="text-center" style="width: 300px;"><span id="userName">○○</span>さんからの瓶</h2>
         </div>
@@ -70,3 +71,4 @@ if ($result->num_rows > 0) {
 // データベース接続を閉じる
 $conn->close();
 ?>
+

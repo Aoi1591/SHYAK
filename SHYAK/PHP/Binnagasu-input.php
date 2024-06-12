@@ -15,7 +15,6 @@
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
                 <div class="row">
-                    
                     <a href="top.php">
                         <button type="button" class="batu"></button>
                     </a>
