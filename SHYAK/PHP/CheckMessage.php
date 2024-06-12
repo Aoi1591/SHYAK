@@ -12,7 +12,7 @@ class CheckMessage {
             return false;
         }
         // 新しいメッセージがあるかチェックするクエリ
-        $sql = 'SELECT COUNT(*) FROM Recieves WHERE user_name = :userName AND is_read = 0';
+        $sql = 'SELECT COUNT(*) FROM Recieves WHERE user_name = :userName';
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':userName', $userName, PDO::PARAM_INT);
         $stmt->execute();
