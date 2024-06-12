@@ -202,3 +202,11 @@ body {
     transform: rotate(-23.7deg);
     z-index: 11;
 }
+#admin{
+ position:absolute;
+ width: 10px;
+ height: 10px;
+ left: 10px;
+ top: 10px;
+   
+}
