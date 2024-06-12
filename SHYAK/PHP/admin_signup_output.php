@@ -11,7 +11,7 @@ try {
         $existingUser = $sql->fetch(PDO::FETCH_ASSOC);//この時点で、同じユーザー名が存在すればその情報が保持される
         if ($existingUser && $existingUser['admin_name'] === $_POST['adminname']) {
             //同名のユーザーが存在した時、パスワードの重複チェック(本当に新規なのか、ログインと勘違いしたのか確認)
-            $sql_pass = $pdo->prepare('select hash_pass from ADminPass where admin_id = ?');
+            $sql_pass = $pdo->prepare('select hash_pass from AdminPass where admin_id = ?');
             $sql_pass->execute([$existingUser['admin_id']]);
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);//当該ユーザーのidから保存されているパスワードを取得。新規の場合nullが返る
             if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
@@ -23,10 +23,11 @@ try {
                 header('Location: ./admin_signup_input.php?signup=sameName');//うまくこのフラグ付与されてないけどいったん放置！！　リダイレクトはされるよ！
                 exit(); // ここで処理を中断
             }
-        }else if ($existingUser && $existingUser['user_name'] === $_POST['username'] && $existingUser['country_id'] !== $_POST['choice']){
+       /* }else if ($existingUser && $existingUser['user_name'] === $_POST['username'] && $existingUser['country_id'] !== $_POST['choice']){
             // ユーザー名は同じだけど言語情報が違う
             header('Location: ./signup-input.php?signup=sameName');
             exit(); // ここで処理を中断
+        */
         }else{
             // ユーザーが存在しない場合、新規登録
             $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
