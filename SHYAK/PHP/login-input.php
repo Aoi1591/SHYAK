@@ -28,7 +28,7 @@
     <div class="bottol-5"></div>
 
     <!-- Login Form Container -->
-
+        <a href="adminlogin_check.php">●</a>
         <form action="login-output.php" method="post">
             <div id="username-all">
                 <input type="text" id="username" name="username" placeholder="USER NAME" required>
