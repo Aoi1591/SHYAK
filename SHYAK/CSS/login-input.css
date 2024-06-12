@@ -203,10 +203,9 @@ body {
     z-index: 11;
 }
 #admin{
- position:absolute;
- width: 10px;
+ line-height: 1;
  height: 10px;
- left: 10px;
- top: 10px;
-   
+ font-size: 100px;
+ text-decoration: none;
+
 }
