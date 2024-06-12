@@ -1,6 +1,5 @@
 <?php session_start();?>
 <?php require 'connect.php';?>
-<?php require 'mypage-connect.php';?>
 <?php require 'header.php';?>
 <?php
       
@@ -35,7 +34,7 @@
    echo '<div class="profile-box">';
    echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
    echo '<img src="../img/',$row['icon'],'" id="image" alt="クリックしてファイルを選択">';
-   echo '<div id="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
+   echo '<div id="name" name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
    echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
    echo '</div>';
 
