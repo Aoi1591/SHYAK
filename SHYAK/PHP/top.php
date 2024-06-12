@@ -23,6 +23,7 @@ require 'CheckMessage.php';
                 <a href="Morattahenji.php">
                 <br>
                 <?php
+                    echo $_SESSION['User']['lang'];
                     $translator = new Translator();
                     $originalText = "本";
                     $originalText = $translator->translate($originalText);
