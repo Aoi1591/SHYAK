@@ -28,8 +28,7 @@ require 'CheckMessage.php';
                 <?php
                     $translator = new Translator();
                     $originalText = "本";
-                    $originalText = $translator->translate($originalText);
-                    echo $to;
+                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                     echo '<button type="submit" class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</button>';
                     session_start();
                     $userId = $_SESSION['user_id'];//ユーザ―idからセッションを取得
