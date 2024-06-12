@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo $_SESSION['User']['lang'];
 class Translator {
     public function translate($text): string {//返り値をvoidからstringに変更
         // cURLの初期化
