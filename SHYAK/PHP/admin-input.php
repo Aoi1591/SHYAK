@@ -1,6 +1,9 @@
 <?php session_start();?>
-<?php require 'connect.php';?>
-<?php require 'header.php';?>
+<?php 
+  require 'connect.php';
+  require 'header.php';
+  require 'api.php';
+?>
 
 <link rel="stylesheet" href="../CSS/humburger.css">
 <title> 管理者画面 </title>
@@ -42,8 +45,8 @@
        /*echo $row[''];//報告件数*/
        //報告されたメッセージの確認ボタン
        //urlencodeでadmin_messageにIDを飛ばしている
-       echo '<a href="admin_message.php?id='urlencode($id), '&name=' urlencode($name),'&country=' urlencode($country),'">確認</a>';
-       echo '</div>'
+       echo '<a href="admin_message.php?id='($id), '&name=' ($name),'&country=' ($country),'">確認</a>';
+       echo '</div>';
     }
   }catch(PDOException $e){
    exit('データベースに接続できませんでした' .$e -> getMessage());

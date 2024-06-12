@@ -4,16 +4,16 @@
 <?php
   
   //パラメーターから取得
-  $sent_id = isset($_GET['sent_id']) ? $_GET['sent_id'] : null;
+  $Fid = issset($_GET['Fid']) ? $_GET['Fid'] : null;
 
   try{
     $pdo = new PDO($connect,USER,PASS);
-    $ssql = "delete from Sents where sent_id = ?";
+    $ssql = "update Friends set  flag = 1 where id = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$sent_id]);
+    $stmt->execute([$Fid]);
 
     //削除成功
-    header("Location: admin_message.php");
+    header("Location: friend-request.php");
     exit();
   }catch(PDOException $e){
     //エラー発生
