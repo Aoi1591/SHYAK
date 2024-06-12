@@ -1,5 +1,8 @@
 <?php
 session_start(); // セッションを開始
+require 'connect.php';
+$pdo = new PDO($connect, USER, PASS); // データベース接続を確立
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // POSTでデータが送られてきた場合に処理
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
