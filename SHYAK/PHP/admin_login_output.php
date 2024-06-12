@@ -2,7 +2,6 @@
     session_start();
     require 'connect.php';
     unset($_SESSION['Admin']); // セッションの初期化
-
     try{
         $pdo = new PDO($connect, USER, PASS);
         $sql = $pdo->prepare('select admin_id from Admins where admin_name = ?');
