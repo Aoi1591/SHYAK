@@ -13,7 +13,8 @@ class Translator {
         ));
         // URLと翻訳言語の指定
         $from = 'ja';
-        $url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=".$from."&to=".$to;
+        $url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=ja&to=en";
+        // $url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=".$from."&to=".$to;
         curl_setopt($ch, CURLOPT_URL, $url);
         // 翻訳テキストの指定
         $json = json_encode([['Text' => $text]]);
