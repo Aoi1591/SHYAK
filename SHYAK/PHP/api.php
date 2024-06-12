@@ -1,11 +1,10 @@
 <?php
 session_start();
-echo $_SESSION['User']['lang'];
 class Translator {
     public function translate($text): string {//返り値をvoidからstringに変更
         // cURLの初期化
         $ch = curl_init();
-
+        echo $_SESSION['User']['lang'];
         // キーとリージョンの指定
         $key = "8d961f7fadf3441d9b12285b07e0ed50";
         $region = "Japanwest";
