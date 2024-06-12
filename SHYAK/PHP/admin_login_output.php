@@ -14,6 +14,7 @@
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);
             if ($pass_row && password_verify($_POST['password'], $pass_row['hass_pass'])) {
                 // 認証成功
+                echo '成功';
                 $_SESSION['Admin'] = [
                     'id' => $adminId,
                     'adminname' => $_POST['adminname'],
@@ -27,6 +28,8 @@
             header("Location: ./admin-input.php");
             echo 'aoi';
             exit;
+        }else{
+            echo 'errro';
         }
     }catch(Exception $e){
         echo '<script>alert("エラーが発生しました")</script>'. htmlspecialchars($e->getMessage());

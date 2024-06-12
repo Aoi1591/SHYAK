@@ -11,10 +11,10 @@ try {
         $existingUser = $sql->fetch(PDO::FETCH_ASSOC);//この時点で、同じユーザー名が存在すればその情報が保持される
         if ($existingUser && $existingUser['admin_name'] === $_POST['adminname']) {
             //同名のユーザーが存在した時、パスワードの重複チェック(本当に新規なのか、ログインと勘違いしたのか確認)
-            $sql_pass = $pdo->prepare('select hass_pass from ADminPass where admin_id = ?');
+            $sql_pass = $pdo->prepare('select hash_pass from ADminPass where admin_id = ?');
             $sql_pass->execute([$existingUser['admin_id']]);
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);//当該ユーザーのidから保存されているパスワードを取得。新規の場合nullが返る
-            if ($pass_row && password_verify($_POST['password'], $pass_row['hass_pass'])) {
+            if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
                 // 認証成功(まったく同じユーザー名とパスワード,言語情報を持つユーザーが存在する)
                 header('Location: ./admin_signup_input.php?signup=sameUser');
                 exit(); // ここで処理を中断
@@ -36,7 +36,7 @@ try {
             // user_idを取得
             $id = $pdo->lastInsertId('admin_id');
             // Passテーブルに挿入(パスワードを入れるとこ)
-            $sql = $pdo->prepare('insert into AdminPass (admin_id, hass_pass) values (?,?)');
+            $sql = $pdo->prepare('insert into AdminPass (admin_id, hash_pass) values (?,?)');
             $sql->execute([$id, $hashedPassword]);
             // セッションを設定
             $_SESSION['Admin'] = [
