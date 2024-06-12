@@ -23,9 +23,6 @@
         </div>
         <br>
         <div class="row justify-content-center">
-            <?php
-                
-            ?>
         <h2 class="text-center" style="width: 300px;">瓶を流す</h2>
         </div>
 
