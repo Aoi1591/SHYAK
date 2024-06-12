@@ -26,10 +26,10 @@ require 'CheckMessage.php';
                 <a href="Morattahenji.php">
                 <br>
                 <?php
-                    echo $_SESSION['User']['lang'];
                     $translator = new Translator();
                     $originalText = "本";
                     $originalText = $translator->translate($originalText);
+                    echo $to;
                     echo '<button type="submit" class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</button>';
                     session_start();
                     $userId = $_SESSION['user_id'];//ユーザ―idからセッションを取得

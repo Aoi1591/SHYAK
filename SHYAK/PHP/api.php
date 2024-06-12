@@ -33,7 +33,7 @@ class Translator {
         //echo $decode[0]->translations[0]->text;
         //翻訳結果を取得、返り値に指定
         $translatedText = $decode[0]->translations[0]->text;
-        return $translatedText;
+        return $translatedText.$to;
     }
 }
 
