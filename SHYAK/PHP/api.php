@@ -26,12 +26,10 @@ class Translator {
         $result = curl_exec($ch);
         // レスポンスをデコード
         $decode = json_decode($result);
-
         // エラーチェック
         if (isset($decode->error)) {
             throw new Exception("翻訳に失敗しました。code:". $decode->error->code . " message:" . $decode->error->message);
         }
-
         // 翻訳結果表示
         //echo $decode[0]->translations[0]->text;
         //翻訳結果を取得、返り値に指定
