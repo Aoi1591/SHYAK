@@ -25,6 +25,7 @@
         }
         if (isset($_SESSION['Admin'])) {
             header("Location: ./admin-input.php");
+            echo 'aoi';
             exit;
         }
     }catch(Exception $e){
