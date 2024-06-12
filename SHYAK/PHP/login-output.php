@@ -2,7 +2,6 @@
     session_start();
     require 'connect.php';
     unset($_SESSION['User']); // セッションの初期化
-
     try{
         $pdo = new PDO($connect, USER, PASS);
         $sql = $pdo->prepare('select user_id,country_id from Users where user_name = ?');
@@ -21,13 +20,14 @@
                     'username' => $_POST['username'],
                     'lang' => $lang
                 ];
+                //echo $_SESSION['User']['lang'];
             } else {//ユーザー認証できなかった時の処理
                 header("Location: ./login-input.php?flag=miss");
                 exit;
             }
         }
         if (isset($_SESSION['User'])) {
-            header("Location: ./top.php");
+            header("Location: ./top.php?lang=".$_SESSION['User']['lang']);
             exit;
         }
     }catch(Exception $e){
