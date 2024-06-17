@@ -10,7 +10,7 @@
             $userId = $row['user_id'];
             $lang = $row['country_id'];
             // パスワードを取得するクエリを修正
-            $sql_pass = $pdo->prepare('select hash_pass from Password where user_id = ?');
+            $sql_pass = $pdo->prepare('select hash_pass from Pass where user_id = ?');
             $sql_pass->execute([$userId]);
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);
             if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
