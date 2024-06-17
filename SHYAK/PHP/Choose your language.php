@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
     require 'header.php';
 ?>
     <link rel="stylesheet" href="../CSS/Choose your language.css">
@@ -17,8 +17,8 @@ echo '<h1>Choose your language</h1>';
 $translator = new Translator();
 
 // 翻訳するテキスト
-//$originalText = "この瓶でよろしいですか？";
-$translatedText = $translator->translate("この瓶でよろしいですか？",$_SESSION['User']['lang']);
+$originalText = "この瓶でよろしいですか？";
+$translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
 echo "<h1>$translatedText</h1>";
 
 // ボタンのテキストも翻訳
