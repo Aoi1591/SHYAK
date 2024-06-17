@@ -35,6 +35,7 @@
 
     foreach( $stmt as $row){
        $id = $row['user_id'];
+       $icon = $row['icon']
        $name = $row['user_name'];
        $country = $row['country_id'];
        echo '<div class = user-info>';
@@ -45,7 +46,7 @@
        /*echo $row[''];//報告件数*/
        //報告されたメッセージの確認ボタン
        //urlencodeでadmin_messageにIDを飛ばしている
-       echo '<a href="admin_message.php?id='.urlencode($id).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
+       echo '<a href="admin_message.php?id='.urlencode($id).'$icon='.urldecode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
        echo '</div>';
     }
   }catch(PDOException $e){
