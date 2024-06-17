@@ -20,7 +20,7 @@
         $pdo = new PDO($connect,USER,PASS);
         $User_sql = $pdo -> prepare ('select id,friend_id from Friend WHERE user_id = ?');//フレンド探す
         $User_sql -> execute([$_SESSION['Users']['user_id']]);
-        $stmt = $pdo -> query($User_sql);
+        $stmt = $User_sql->fetchAll(PDO::FETCH_ASSOC);
 
 
           foreach($stmt as $row){
@@ -54,4 +54,8 @@
             }
             echo '</table>';
       }
+      echo '</div>';
+    ?>
+  </body>
+</html>   
 
