@@ -6,6 +6,7 @@
   
   //admin_input.phpからIDを取得
   $id = isset($_GET['id']) ? $_GET['id'] : null;
+  $id = isset($_GET['icon']) ? $_GET['icon'] : null;
   $name = isset($_GET['name']) ? $_GET['name']  : null;
   $country = isset($_GET['country']) ? $_GET['country'] : null;
 
