@@ -14,7 +14,6 @@
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);
             if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
                 // 認証成功
-                echo '成功';
                 $_SESSION['Admin'] = [
                     'id' => $adminId,
                     'adminname' => $_POST['adminname'],
@@ -26,7 +25,6 @@
         }
         if (isset($_SESSION['Admin'])) {
             header("Location: ./admin-input.php");
-            echo 'aoi';
             exit;
         }else{
             echo 'errro';
