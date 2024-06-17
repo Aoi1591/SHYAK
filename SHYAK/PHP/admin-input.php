@@ -35,7 +35,7 @@
 
     foreach( $stmt as $row){
        $id = $row['user_id'];
-       $icon = $row['icon']
+       $icon = $row['icon'];
        $name = $row['user_name'];
        $country = $row['country_id'];
        echo '<div class = user-info>';
