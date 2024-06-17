@@ -18,12 +18,12 @@ $translator = new Translator();
 
 // 翻訳するテキスト
 $originalText = "この瓶でよろしいですか？";
-$translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+$translatedText = $translator->translate($originalText);
 echo "<h1>$translatedText</h1>";
 
 // ボタンのテキストも翻訳
-$yesText = $translator->translate("はい",$_SESSION['User']['lang']);
-$noText = $translator->translate("いいえ",$_SESSION['User']['lang']);
+$yesText = $translator->translate("はい");
+$noText = $translator->translate("いいえ");
 echo "<input type='submit' value='$yesText'>";
 echo "<a href='Chooseyourlanguage.php'>$noText</a>";
 
