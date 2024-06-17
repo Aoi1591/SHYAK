@@ -39,7 +39,7 @@
        $country = $row['country_id'];
        echo '<div class = user-info>';
        echo $row['user_id'];//ID
-       /*echo $row['icon'];//アイコン*/
+       echo $row['icon'];//アイコン
        echo $row['country_id'];//国籍
        echo $row['user_name'];//名前
        /*echo $row[''];//報告件数*/
