@@ -27,8 +27,8 @@
 
    //DB
    $pdo = new PDO($connect,USER,PASS);
-   $sql = $pdo -> prepare('select user_name,icon,message from Users WHERE user_id=?');//DB再構築後名前を確認
-   $sql -> execute([$_SESSION['Users']['user_id']]);
+   $sql = $pdo -> prepare('select user_name,icon,message from users WHERE id=?');//DB再構築後名前を確認
+   $sql -> execute([$_SESSION['users']['id']]);
    $row = $sql ->fetch(PDO::FETCH_ASSOC);
 
    echo '<div class="profile-box">';

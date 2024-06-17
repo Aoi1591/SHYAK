@@ -61,5 +61,5 @@ require 'CheckMessage.php';
                 <button type="button" class="btn-binwokaisyu">瓶を回収</button>
             </a>
 </div>
-
+<script src="../JavaScript/hamburger.js"></script>
 <?php require 'footer.php' ;?>
