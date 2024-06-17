@@ -36,7 +36,7 @@ try {
             // user_idを取得
             $id = $pdo->lastInsertId('user_id');
             // Passテーブルに挿入(パスワードを入れるとこ)
-            $sql = $pdo->prepare('insert into Password (user_id, hash_pass) values (?,?)');
+            $sql = $pdo->prepare('insert into Pass (user_id, hash_pass) values (?,?)');
             $sql->execute([$id, $hashedPassword]);
             // セッションを設定
             $_SESSION['User'] = [
