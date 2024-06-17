@@ -10,6 +10,9 @@ require 'header.php';
 <?php require 'menu-humburger.php'; ?>
 
 <?php
+      echo '<img src = "">'; //friendマークの画僧挿入
+      echo '<a href = "friend.php">フレンドリスト</a>';
+      echo '<a href = "friend-requset.php">フレンドリクエスト</a>';
 // エラーハンドリングのためのtry-catchブロックを追加
 try {
     // データベース接続の設定
@@ -21,7 +24,7 @@ try {
         $user_id = $_SESSION['Users']['user_id'];
 
         // 友達のIDを取得するSQLクエリ
-        $user_sql = $pdo->prepare('SELECT friend_id FROM Friend WHERE user_id = ?');
+        $user_sql = $pdo->prepare('SELECT friend_id FROM Friends WHERE user_id = ?');
         $user_sql->execute([$user_id]);
 
         // 友達の情報を表示するためのテーブルを作成
@@ -31,7 +34,7 @@ try {
         // 友達のIDごとに情報を取得し表示
         while ($row = $user_sql->fetch(PDO::FETCH_ASSOC)) {
             $friend_id = $row['friend_id'];
-            $sql = $pdo->prepare('SELECT * FROM Users WHERE user_id = ? AND state = ?');
+            $sql = $pdo->prepare('SELECT * FROM Users WHERE user_id = ?');
             $sql->execute([$friend_id, 1]);
             $friend_stmt = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -48,8 +51,14 @@ try {
             }
         }
         echo '</table>';
-    } else {
-        echo 'ユーザーがログインしていません。';
+   } else {
+    ob_start();
+    include('header.php');
+
+    echo '<script>alert("Please log in");</script>';
+    header('Location:login-input.php');
+    ob_end_flush();
+    exit();
     }
 } catch (PDOException $e) {
     echo 'エラーが発生しました: ' . $e->getMessage();
@@ -58,5 +67,3 @@ try {
 
 </body>
 </html>
-
-
