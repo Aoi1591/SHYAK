@@ -18,7 +18,7 @@
         }
     ?>
     <div id="app">
-        <form @submit="submitForm" action="./admin_signup_output.php" method="POST">
+        <form @submit="submitForm" action="admin_signup_output.php" method="POST">
             <!-- 言語選択 
             <div id="Language-Choice">
                 <select name="choice" class="LanguageChoice" required>

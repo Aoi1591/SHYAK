@@ -18,7 +18,7 @@
   
   $pdo = new PDO($connect,USER,PASS);
   $sql = $pdo -> prepare('select admin_name from Admins WHERE admin_id=? ');
-  $sql -> execute([$_SESSION['Admin']['admin_id']]);
+  $sql -> execute([$_SESSION['Admin']['id']]);
   $row = $sql->fetch(PDO::FETCH_ASSOC);
   
   //管理者の名前の表示
@@ -40,7 +40,7 @@
        echo '<div class = user-info>';
        echo $row['user_id'];//ID
        /*echo $row['icon'];//アイコン*/
-       echo $row['countyr_id'];//国籍
+       echo $row['country_id'];//国籍
        echo $row['user_name'];//名前
        /*echo $row[''];//報告件数*/
        //報告されたメッセージの確認ボタン
