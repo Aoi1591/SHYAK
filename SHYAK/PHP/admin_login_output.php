@@ -9,10 +9,10 @@
         foreach ($sql as $row) {
             $adminId = $row['admin_id'];
             // パスワードを取得するクエリを修正
-            $sql_pass = $pdo->prepare('select hass_pass from AdminPass where admin_id = ?');
+            $sql_pass = $pdo->prepare('select hash_pass from AdminPass where admin_id = ?');
             $sql_pass->execute([$adminId]);
             $pass_row = $sql_pass->fetch(PDO::FETCH_ASSOC);
-            if ($pass_row && password_verify($_POST['password'], $pass_row['hass_pass'])) {
+            if ($pass_row && password_verify($_POST['password'], $pass_row['hash_pass'])) {
                 // 認証成功
                 echo '成功';
                 $_SESSION['Admin'] = [
