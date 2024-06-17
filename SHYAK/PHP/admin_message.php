@@ -13,14 +13,15 @@
   echo '<body>';
   
   if($id){
-    echo '<p>',$id,'  ',$name,'  ',$country,'</p>';
+    echo '<p>',$id,'  ',$icon,'  ',$name,'  ',$country,'</p>';
     
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);
     $sql = $pdo -> prepare('select * from Sents WHERE user_name=? ');
     $sql -> execute([$name]);
-    $row = $sql->fetch(PDO::FETCH_ASSOC);
     $stmt = $pdo -> query($sql);
+    $row = $sql->fetch(PDO::FETCH_ASSOC);
+   
     
 
 
