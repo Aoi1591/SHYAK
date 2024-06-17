@@ -1,6 +1,6 @@
 <?php
 class Translator {
-    public function translate($text): string {//返り値をvoidからstringに変更
+    public function translate($text,$to): string {//返り値をvoidからstringに変更
         // cURLの初期化
         $ch = curl_init();
         // キーとリージョンの指定
@@ -13,7 +13,7 @@ class Translator {
         ));
         // URLと翻訳言語の指定
         $from = 'ja';
-        $to = 'ja';
+        //$to = 'ja';
         echo $from,$to;
         //$url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=ja&to=en";
         $url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=".$from."&to=".$to;
