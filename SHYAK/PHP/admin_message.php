@@ -12,7 +12,7 @@
 
   echo '</head>';
   echo '<body>';
-  echo '$id';
+  echo '<p>',$id,'</p>';
   if($id){
     echo '<p>',$id,'  ',$icon,'  ',$name,'  ',$country,'</p>';
     
