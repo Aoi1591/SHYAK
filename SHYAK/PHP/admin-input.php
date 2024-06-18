@@ -7,6 +7,7 @@
 
 <link rel="stylesheet" href="../CSS/humburger.css">
 <title> 管理者画面 </title>
+<link rel="stylesheet" href="../css/admin_input.css">
 </head>
 
 <body>
@@ -33,7 +34,12 @@
     $User_sql = 'select * from Users'; 
     $stmt = $pdo -> query($User_sql);
 
+
+    echo "<div class=table>";
     foreach( $stmt as $row){
+      echo '<tr>';
+      echo '<th>ID</th>','<th>アイコン</th>','<th>国籍</th>',
+           '<th>名前</th>','<th></th>';
        $id = $row['user_id'];
        $icon = $row['icon'];
        $name = $row['user_name'];
@@ -49,6 +55,9 @@
        echo '<a href="admin_message.php?id='.urlencode($id).'$icon='.urldecode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
        echo '</div>';
     }
+echo "</div class=table>";
+
+
   }catch(PDOException $e){
    exit('データベースに接続できませんでした' .$e -> getMessage());
   }
