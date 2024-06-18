@@ -35,15 +35,25 @@
     $stmt = $pdo -> query($User_sql);
 
 
-    echo "<div class=table>";
+    echo "<div table=table='1'>";
     foreach( $stmt as $row){
       echo '<tr>';
       echo '<th>ID</th>','<th>アイコン</th>','<th>国籍</th>',
            '<th>名前</th>','<th></th>';
+      echo "</div class=table>";
+      echo '<tr>';
+      echo '<th>';
        $id = $row['user_id'];
+      echo '</th>';
+      echo '<th>';
        $icon = $row['icon'];
+      echo '</th>';
+      echo '<th>';
        $name = $row['user_name'];
+      echo '</th>';
+      echo '<th>';
        $country = $row['country_id'];
+      echo '</th>';
        echo '<div class = user-info>';
        echo $row['user_id'];//ID
        echo $row['icon'];//アイコン
@@ -55,7 +65,7 @@
        echo '<a href="admin_message.php?id='.urlencode($id).'$icon='.urldecode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
        echo '</div>';
     }
-echo "</div class=table>";
+
 
 
   }catch(PDOException $e){
