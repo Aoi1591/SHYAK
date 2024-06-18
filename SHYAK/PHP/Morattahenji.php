@@ -26,29 +26,23 @@
         <!-- 文字真ん中　下に返事の内容表示 -->
         <div class="row justify-content-center">
         <h2 class="text-center mt-5" style="width: 300px;">○○さんからもらった返事</h2>
+        </div>   
+            <form action="Binkaisyu-output.php" method="post">
+                <div class="row justify-content-center mt-5">
+                    <div class="col-6">
+                        <div class="bun">
+                            <p>"返事の内容"</p>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row justify-content-center">
+                    <div class="text-center col-6">'
+                </div>
+                </div>
+            </form>
         </div>
-    <?php    
-        
-        echo '<form action="Binkaisyu-output.php" method="post">';
-        echo '<div class="row justify-content-center mt-5">';
-        echo '<div class="col-6">';
-
-        echo '<div class="bun"><p>"返事の内容"</p></div><br>';
-
-        echo '</div>';
-        echo '</div>';
-
-        echo '<br><br>';
-
-        echo '<div class="row justify-content-center">';
-        echo '<div class="text-center col-6">';;
-        echo '</form>';
-        echo '</div>';
-        echo '</div>';
-
-
-        echo '</div>';
-        ?>
 </body>
 </html>
 

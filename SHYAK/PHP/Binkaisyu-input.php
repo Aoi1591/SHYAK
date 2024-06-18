@@ -7,59 +7,68 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/Binkaisyu.css">
+    <script src="../JavaScript/Binkaisyu.js" defer></script>
 </head>
 <body>
-    <br>
     <div class="container">
-    <!-- ✘ボタン -->
+        <!-- ✘ボタン -->
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
                 <div class="col-10">
                     <br>
                     <button type="submit" class="tuhou">
-                        </button>
+                    </button>
                     <a href="top.php">
-                        <button type="submit" class="batu">
-                        </button></a>
-                        
-                    
+                    <button type="submit" class="batu">
+                    </button></a>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-        <h2 class="text-center" style="width: 300px;">○○さんからの瓶</h2>
+            <h2 class="text-center" style="width: 300px;"><span id="userName">○○</span>さんからの瓶</h2>
         </div>
 
- <?php
+        <div class="row justify-content-center mt-5">
+            <div class="col-6">
+                <div id="sentMessage"></div>
+            </div>
+        </div>
 
-       
-        
-        echo '<form action="Binkaisyu-output.php" method="post">';
-        echo '<div class="row justify-content-center mt-5">';
-        echo '<div class="col-6">';
-
-        echo '<div class="bun"><p>"願いや祝福"</p>';
-
-        
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-
-        echo '<!--瓶を回収ボタンを中央に配置 --><br><br>';
-
-        echo '<div class="row justify-content-center">';
-        echo '<div class="text-center col-6">';
-        echo '<button type="submit" class="btn-binwokaisyu">瓶を回収';
-        echo '</button>';
-        echo '</form>';
-        echo '</div>';
-        echo '</div>';
-
-
-        echo '</div>';
-        ?>
-
-
-
+        <div class="row justify-content-center mt-3">
+            <div class="col-6 text-center">
+                <form action="Binkaisyu-output.php" method="post">
+                <input type="hidden" id="hiddenUserName" name="userName">
+                <input type="hidden" id="hiddenMessage" name="message">
+                    <button type="submit" class="btn btn-primary">返信</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
+<?php
+// コンテンツタイプをJSONに設定
+header('Content-Type: application/json');
+
+// データベース接続情報
+require 'connect.php';
+
+// ランダムなユーザー名とメッセージを取得するクエリ
+$sql = "SELECT user_name, sent_message FROM Sents ORDER BY RAND() LIMIT 1";
+$result = $conn->query($sql);
+
+// クエリ結果をチェック
+if ($result->num_rows > 0) {
+    // ユーザー名とメッセージを取得し、JSON形式で返す
+    $row = $result->fetch_assoc();
+    echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
+} else {
+    // ユーザーが見つからない場合、エラーメッセージを返す
+    echo json_encode(['error' => 'No messages found']);
+}
+
+// データベース接続を閉じる
+$conn->close();
+?>
+

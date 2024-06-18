@@ -5,6 +5,25 @@
     <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
     <title>ログイン画面</title>
     <link rel="stylesheet" href="../CSS/login-input.css">
+    <script>
+        function adminLogin(){
+            var userInput = prompt("秘密の質問を入力してください");
+            if(userInput){
+                var form = document.createElement("form");
+                form.method = "POST";
+                form.action = "adminlogin_check.php";
+
+                var input = document.createElement("input");
+                input.type = "hidden";
+                input.name = "userInput";
+                input.value = userInput;
+
+                form.appendChild(input);
+                document.body.appendChild(form);
+                form.submit();
+        }
+    }
+    </script>
 </head>
 <body>
 <?php
@@ -28,7 +47,7 @@
     <div class="bottol-5"></div>
 
     <!-- Login Form Container -->
-
+        <a href="#" id="admin" onclick="adminLogin()">■</a>
         <form action="login-output.php" method="post">
             <div id="username-all">
                 <input type="text" id="username" name="username" placeholder="USER NAME" required>

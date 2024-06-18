@@ -20,14 +20,14 @@
         $pdo = new PDO($connect,USER,PASS);
         $User_sql = $pdo -> prepare ('select id,friend_id from Friend WHERE user_id = ?');//フレンド探す
         $User_sql -> execute([$_SESSION['Users']['user_id']]);
-        $stmt = $pdo -> query($User_sql);
+        $stmt = $User_sql->fetchAll(PDO::FETCH_ASSOC);
 
 
           foreach($stmt as $row){
             $Fid = $row['id'];
-            $friend_sql = 'select * from Users WHERE user_id = ? && state = ?';
-            $friend_sql ->execute($row['friend_id'],2);
-            $friend_stmt = $pdo -> query($friend_sql);
+            $friend_sql = $pdo -> prepare('select * from Users WHERE user_id = ? && state = ?');
+            $friend_sql ->execute([$row['friend_id'],2]);
+            $friend_stmt = $friend_sql->fetchAll(PDO::FETCH_ASSOC);
 
             echo '<table>';
             echo '<tr><th></th><th>名前</th><th>国籍</th><th>許可</th><th>不許可</th></tr>';
@@ -54,4 +54,8 @@
             }
             echo '</table>';
       }
+      echo '</div>';
+    ?>
+  </body>
+</html>   
 
