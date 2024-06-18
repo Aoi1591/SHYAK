@@ -46,7 +46,7 @@
        /*echo $row[''];//報告件数*/
        //報告されたメッセージの確認ボタン
        //urlencodeでadmin_messageにIDを飛ばしている
-       echo '<a href="admin_message.php?id='.urlencode($id).'&icon='.urldencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
+       echo '<a href="admin_message.php?id='.urlencode($id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
        echo '</div>';
     }
   }catch(PDOException $e){
