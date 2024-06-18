@@ -36,12 +36,12 @@
      '6.プライバシーの尊重: 個人情報やプライバシーに関する情報を共有する際は、慎重に扱いましょう。他のユーザーのプライバシーを尊重し、安全なコミュニケーションを確保します。',
      '以上が漂流瓶の基本的なルールです。これらのルールに従いながら、他のユーザーとの素敵な交流を楽しんでください。');
     
-    //$translator = new Translator();
-    for($i = 0; $i < count($ruleArry); $i++)//{
+    $translator = new Translator();
+    for($i = 0; $i < count($ruleArry); $i++){
         $originalText = $ruleArry[$i];
-       //$originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-    echo $originalText.'<br>';
-   // }
+        $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+        echo $originalText.'<br>';
+    }
     echo '</div>';
     echo '</div>';
 
