@@ -1,25 +1,22 @@
 <?php
+require 'connect.php';
+$pdo = new PDO($connect, USER, PASS);
+
 class CheckMessage {
-    public function checkForNewMessages($userId) {
-        // データベース接続
-        $dsn = 'mysql:host=mysql304.phy.lolipop.lan;dbname=LAA1516890-shyak';
-        $username = 'LAA1516890';
-        $password = 'Saoao1913K';
+    public function checkForNewMessages($userName) {
         try {
-            $pdo = new PDO($dsn, $username, $password);
+            global $pdo;
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
             return false;
         }
-
         // 新しいメッセージがあるかチェックするクエリ
-        $sql = 'SELECT COUNT(*) FROM Recieves WHERE user_id = :userId AND is_read = 0';
+        $sql = 'SELECT COUNT(*) FROM Recieves WHERE user_name = :userName';
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':userName', $userName, PDO::PARAM_INT);
         $stmt->execute();
         $newMessagesCount = $stmt->fetchColumn();
-
         return $newMessagesCount > 0;
     }
 }

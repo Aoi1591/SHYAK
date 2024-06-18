@@ -23,12 +23,12 @@
             <div id="Language-Choice">
                 <select name="choice" class="LanguageChoice" required>
                     <option disabled selected>Language Choice</option>
-                    <option value="jp">日本語</option>
+                    <option value="ja">日本語</option>
                     <option value="en">English</option>
                     <option value="ru">русский язык</option>
                     <option value="pt">português</option>
                     <option value="fr">français</option>
-                    <option value="cn">中文</option>
+                    <option value="zh-Hans">简体中文</option>
                 </select>
             </div>
 
