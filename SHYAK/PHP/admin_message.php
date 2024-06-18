@@ -18,7 +18,7 @@
     
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);
-    $sql = $pdo -> prepare('select * from Sents WHERE user_name=? ');
+    $sql = $pdo -> prepare('select * from Sents WHERE user_name=? && flag == 1');
     $sql -> execute([$name]);
     $stmt = $pdo -> query($sql);
     $row = $sql->fetch(PDO::FETCH_ASSOC);
