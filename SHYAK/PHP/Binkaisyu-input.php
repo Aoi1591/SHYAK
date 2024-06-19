@@ -36,10 +36,12 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($row) {
         // ユーザー名とメッセージを取得し、JSON形式で返す
-        echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
+        $_SESSION['flash'] = ['username' => $row['username'], 'message' => $row['message']];
+        //echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
     } else {
         // ユーザーが見つからない場合、エラーメッセージを返す
-        echo json_encode(['error' => 'No messages found']);
+        //echo json_encode(['error' => 'No messages found']);
+        echo '<script>データが存在しません</script>';
     }
 
 } catch (PDOException $e) {
@@ -79,7 +81,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <h2 class="text-center" style="width: 300px;">
-                <span id="userName"></span>
+                <span id="userName"><?php echo $_SESSION['flash']['username'];?></span>
                 <?php
                     $translator = new Translator();
                     $originalText = "からの瓶";
@@ -90,7 +92,7 @@ try {
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-6">
-                <div id="sentMessage"></div>
+                <div id="sentMessage"><?php echo $_SESSION['flash']['message'];?></div>
             </div>
         </div>
         <div class="row justify-content-center mt-3">
