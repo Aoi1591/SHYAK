@@ -44,6 +44,10 @@
       echo '<th></th>';
       echo '</tr>';
     foreach( $stmt as $row){
+      $id = $row['user_id'];
+      $icon = $row['icon'];
+      $name = $row['user_name'];
+      $country = $row['country_id'];
       echo '<th>';
        echo '<td>'.htmlspecialchars($row['user_id'],ENT_QUOTES,'UTF-8').'</td>';
        echo '<td><img src="'.htmlspecialchars($row['icon'], ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></td>';
