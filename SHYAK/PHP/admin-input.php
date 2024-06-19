@@ -36,12 +36,12 @@
 
 
     echo "<div table=table='1'>";
-    foreach( $stmt as $row){
-      echo '<tr>';
+    echo '<tr>';
       echo '<th>ID</th>','<th>アイコン</th>','<th>国籍</th>',
            '<th>名前</th>','<th></th>';
       echo "</div class=table>";
       echo '<tr>';
+    foreach( $stmt as $row){
       echo '<th>';
        $id = $row['user_id'];
       echo '</th>';
