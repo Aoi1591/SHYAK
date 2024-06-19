@@ -26,28 +26,9 @@
     </script>
 </head>
 <body>
-<?php
-        if(isset($_GET['flag']) && $_GET['flag'] == 'miss'){
-            echo '<script>alert("認証に失敗しました。");</script>';
-        }else if(isset($_GET['flag']) && $_GET['flag'] == 'fail'){
-            echo '<script>alert("エラーが発生しました。");</script>';
-        }
-    ?>
-    <!-- Background Image -->
-    <div id="back-ground"></div>
-
-    <!-- Airplane Image -->
-    <div class="airplane"></div>
-
-    <!-- Bottles Images -->
-    <div class="bottol-1"></div>
-    <div class="bottol-2"></div>
-    <div class="bottol-3"></div>
-    <div class="bottol-4"></div>
-    <div class="bottol-5"></div>
 
     <!-- Login Form Container -->
-        <a href="#" id="admin" onclick="adminLogin()">■</a>
+        <a href="adminlogin_check.php" id="admin">■</a>
         <form action="login-output.php" method="post">
             <div id="username-all">
                 <input type="text" id="username" name="username" placeholder="USER NAME" required>

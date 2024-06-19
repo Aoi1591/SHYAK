@@ -6,7 +6,7 @@
   
   //admin_input.phpからIDを取得
   $id = isset($_GET['id']) ? $_GET['id'] : null;
-  $id = isset($_GET['icon']) ? $_GET['icon'] : null;
+  $icon = isset($_GET['icon']) ? $_GET['icon'] : null;
   $name = isset($_GET['name']) ? $_GET['name']  : null;
   $country = isset($_GET['country']) ? $_GET['country'] : null;
 
@@ -18,10 +18,9 @@
     
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);
-    $sql = $pdo -> prepare('select * from Sents WHERE user_name=? && flag == 1');
+    $sql = $pdo -> prepare('select * from Sents WHERE user_name=? AND flag = 1');
     $sql -> execute([$name]);
-    $stmt = $pdo -> query($sql);
-    $row = $sql->fetch(PDO::FETCH_ASSOC);
+    //$stmt = $sql->fetch(PDO::FETCH_ASSOC);
    
     
 
@@ -30,13 +29,13 @@
     echo '<table>';
     echo '<tr><th>ID</th><th>メッセージ内容</th><th>削除</th><th>却下</th></tr>';
 
-    foreach($stmt as $row){
+    foreach($sql as $row){
       $sent_id = $row['sent_id'];
       echo '<tr>';
       echo '<td>',$row['sent_id'],'</td>';
-      echo '<td>',$row['set_message'],'</td>';
-      echo '<td><a href = "delete_message.php?id='($sent_id),'">削除</a></td>';
-      echo '<td><a href = "rejected_message.php?id='($sent_id),'">却下</a></td>';
+      echo '<td>',$row['sent_message'],'</td>';
+      echo '<td><a href = "delete_message.php?sent_id='.urlencode($sent_id).'">削除</a></td>';
+      echo '<td><a href = "rejected_message.php?sent_id='.urlencode($sent_id).'">却下</a></td>';
       echo '</tr>';
     }
     
