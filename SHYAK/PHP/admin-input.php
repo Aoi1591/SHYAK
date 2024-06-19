@@ -48,11 +48,11 @@
       $icon = $row['icon'];
       $name = $row['user_name'];
       $country = $row['country_id'];
-      echo '<th>';
+      echo '<tr>';
        echo '<td>'.htmlspecialchars($row['user_id'],ENT_QUOTES,'UTF-8').'</td>';
        echo '<td><img src="'.htmlspecialchars($row['icon'], ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></td>';
-       echo '<td>' . htmlspecialchars($row['user_name'], ENT_QUOTES, 'UTF-8') . '</td>';
        echo '<td>' . htmlspecialchars($row['country_id'], ENT_QUOTES, 'UTF-8') . '</td>';
+       echo '<td>' . htmlspecialchars($row['user_name'], ENT_QUOTES, 'UTF-8') . '</td>';
        echo '<td><a href="admin_message.php?id=' . urlencode($row['user_id']) . '&icon=' . urlencode($row['icon']) . '&name=' . urlencode($row['user_name']) . '&country=' . urlencode($row['country_id']) . '">確認</a></td>';
        echo '</tr>';
        //echo '<div class = user-info>';
