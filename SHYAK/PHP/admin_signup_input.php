@@ -18,7 +18,7 @@
         }
     ?>
     <div id="app">
-        <form @submit="submitForm" action="./admin_signup_output.php" method="POST">
+        <form @submit="submitForm" action="admin_signup_output.php" method="POST">
             <!-- 言語選択 
             <div id="Language-Choice">
                 <select name="choice" class="LanguageChoice" required>
@@ -58,7 +58,7 @@
     <button class="back-button" onclick="goBack()">ログインページへ戻る</button>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
     <script src="../JavaScript/pass-check.js"></script>
-    <script src="../JavaScript/signup-input.js"></script>
+    <script src="../JavaScript/admin_sinup.js"></script>
 
 </body>
 </html>

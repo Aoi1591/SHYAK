@@ -13,6 +13,8 @@ class Translator {
         ));
         // URLと翻訳言語の指定
         $from = 'ja';
+
+        //$url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=ja&to=en";
         $url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=".$from."&to=".$to;
         curl_setopt($ch, CURLOPT_URL, $url);
         // 翻訳テキストの指定
@@ -26,13 +28,14 @@ class Translator {
         $decode = json_decode($result);
         // エラーチェック
         if (isset($decode->error)) {
+            echo $to;
             throw new Exception("翻訳に失敗しました。code:". $decode->error->code . " message:" . $decode->error->message);
         }
         // 翻訳結果表示
         //echo $decode[0]->translations[0]->text;
         //翻訳結果を取得、返り値に指定
         $translatedText = $decode[0]->translations[0]->text;
-        return $translatedText.$to;
+        return $translatedText;
     }
 }
 

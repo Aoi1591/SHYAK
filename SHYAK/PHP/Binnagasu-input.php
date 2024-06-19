@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,9 @@
     <link rel="stylesheet" href="../CSS/Binnagasu.css">
 </head>
 <body>
+<?php require 'api.php';?>
     <br>
-    <div class="container">
+    < class="container">
         <!-- ✘ボタン -->
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
@@ -23,47 +25,64 @@
         </div>
         <br>
         <div class="row justify-content-center">
+        <h2 class="text-center" style="width: 300px;">
             <?php
-                
+                $translator = new Translator();
+                $originalText = "瓶を流す";
+                $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                echo $translatedText;
             ?>
-        <h2 class="text-center" style="width: 300px;">瓶を流す</h2>
+        </h2>
         </div>
 
         <!-- テキストエリア -->
         <!-- 瓶を流すボタン中央に配置 -->
         <?php
-        echo '<form action="Binnagasu-output.php" method="post" id="binnagasuForm">';
-        echo '<div class="row justify-content-center mt-5">';
-        echo '<div class="col-6">';
-        echo '<textarea class="form-control" name="sentmessage" id="userInput" rows="15" cols="40" placeholder="願いや祝福を入力してください"></textarea>';
-        echo '</div>';
-        echo '</div>';
-
-        echo '<br><br>';
-
-        echo '<div class="row justify-content-center">';
-        echo '<button type="submit" id="kaisyu" class="btn-binwonagasu ">瓶を流す</button>';
-        echo '</div>';
-        echo '</div>';
-
-        echo '</form>';
+            $txtArr = array('願いや祝福を入力してください','瓶を流す');
+            $translator = new Translator();
+            for($i = 0; $i < count($txtArr); $i++){
+                $originalText = $ruleArry[$i];
+                $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                $txtArr[i] = $originalText;
+            }
         ?>
+        <form action="Binnagasu-output.php" method="post" id="binnagasuForm">
+        <div class="row justify-content-center mt-5">
+        <div class="col-6">
+        <textarea class="form-control" name="sentmessage" id="userInput" rows="15" cols="40" placeholder="<?php echo $txtArr[1];?>"></textarea>
+        </div>
+        </div>
+        <br><br>
+        <div class="row justify-content-center">
+        <button type="submit" id="kaisyu" class="btn-binwonagasu "><?php echo $txtArr[1];?></button>
+        </div>
+        </div>
+        </form>
 
 <!-- ダイアログ -->
         <script type="text/javascript">
+            <?php
+                $txtArr = array('この内容でよろしいですか？','瓶を流しました');
+                $translator = new Translator();
+                for($i = 0; $i < count($txtArr); $i++){
+                    $originalText = $txtArr[$i];
+                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                    $txtArr[$i] = $originalText;
+                }
+            ?>
             document.addEventListener("DOMContentLoaded", function() {
-    const nagasu = document.getElementById("nagasu");
-    nagasu.addEventListener("click", function() {
-        const userInput = document.getElementById("userInput").value;
-        const userResponse = confirm(userInput+ "\n\nこの内容でよろしいですか？");
-        if (userResponse === true) {
-            alert("瓶を流しました");
-            document.getElementById("binnagasuForm").submit(); // フォームを送信
-        } else if (userResponse === false) {
-            window.location.href = "Binnagasu-input.php";
-        }
-    });
-});  
+                const nagasu = document.getElementById("nagasu");
+                nagasu.addEventListener("click", function() {
+                    const userInput = document.getElementById("userInput").value;
+                    const userResponse = confirm(userInput+ "\n\n"+<?php echo json_encode($txtArr[0]);?>);
+                    if (userResponse === true) {
+                        alert(<?php echo json_encode($txtArr[1]);?>);
+                        document.getElementById("binnagasuForm").submit(); // フォームを送信
+                    } else if (userResponse === false) {
+                        window.location.href = "Binnagasu-input.php";
+                    }
+                });
+            });  
         </script>
     </div>
 </body>
