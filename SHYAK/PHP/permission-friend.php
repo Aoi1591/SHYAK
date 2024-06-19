@@ -4,7 +4,7 @@
 <?php
   
   //パラメーターから取得
-  $Fid = issset($_GET['Fid']) ? $_GET['Fid'] : null;
+  $Fid = isset($_GET['Fid']) ? $_GET['Fid'] : null;
 
   try{
     $pdo = new PDO($connect,USER,PASS);
