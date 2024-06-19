@@ -53,7 +53,9 @@
        echo '<td><img src="'.htmlspecialchars($row['icon'], ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></td>';
        echo '<td>' . htmlspecialchars($row['user_name'], ENT_QUOTES, 'UTF-8') . '</td>';
        echo '<td>' . htmlspecialchars($row['country_id'], ENT_QUOTES, 'UTF-8') . '</td>';
-       echo '<div class = user-info>';
+       echo '<td><a href="admin_message.php?id=' . urlencode($row['user_id']) . '&icon=' . urlencode($row['icon']) . '&name=' . urlencode($row['user_name']) . '&country=' . urlencode($row['country_id']) . '">確認</a></td>';
+       echo '</tr>';
+       //echo '<div class = user-info>';
        //echo $row['user_id'];//ID
        //echo $row['icon'];//アイコン
        //echo $row['country_id'];//国籍
@@ -61,9 +63,8 @@
        /*echo $row[''];//報告件数*/
        //報告されたメッセージの確認ボタン
        //urlencodeでadmin_messageにIDを飛ばしている
-       echo '<a href="admin_message.php?id='.urlencode($id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
-       echo '</div>';
-       echo '</tr>';
+       //echo '<a href="admin_message.php?id='.urlencode($id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
+       //echo '</div>';
     }
 
 
