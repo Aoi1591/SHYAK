@@ -12,9 +12,9 @@
 
   echo '</head>';
   echo '<body>';
-  echo '<p>ID',$id,'</p>';
+  echo '<p>通報メッセージ一覧</p>';
   if($user_id){
-    echo '<p>',$user_id,'  ',$icon,'  ',$name,'  ',$country,'</p>';
+    echo '<p>ユーザーID:',$user_id,'',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
     
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);
