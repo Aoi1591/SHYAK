@@ -1,3 +1,4 @@
+/*背景*/
 body {
     position: relative;
     width: 1400px;
@@ -6,8 +7,6 @@ body {
     z-index: 1;
 }
 
-
-/*背景*/
 body {
     width: 100vw;
     height: 100vh;
@@ -15,220 +14,183 @@ body {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 100% 100% ;
+    z-index: 1;
+    position: relative;
   }
-
-/* Login container */
-#login-all {
-    width: 50vw;
-    height: 6vh;
-    left: 25%;
-    top: 80%;
-    position: absolute;
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 11; /* Ensure login container is above background */
-}
-
-
-/* Username container */
-#username-all {
-    position: absolute;
-    width: 60vw;
-    height: 5vh;
-    left: 20%;
-    top: 50%;
-    background: #D9D9D9;
-    border-radius: 50px;
-    z-index: 11; /* Ensure username container is above background */
-}
-
-#username {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: transparent;
-    border-radius: 50px;
-    font-family: 'Inter', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    color: #000000;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-#adminname {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: transparent;
-    border-radius: 50px;
-    font-family: 'Inter', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    color: #000000;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-
-/* Password container */
-#password-all {
-    position: absolute;
-    width: 60vw;
-    height: 5vh;
-    left: 20%;
-    top: 60%;
-    background: #D9D9D9;
-    border-radius: 50px;
-    z-index: 11; /* Ensure password container is above background */
-}
-
-#password {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: transparent;
-    border-radius: 50px;
-    font-family: 'Inter', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    color: #000000;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-/* Submit button */
-#login-button {
-    width: 50vw;
-    height: 8vh;
-    left: 20%;
-    top: 80%;
-    padding: 10px 20px;
-    font-size: 48px;
-    background: rgba(252, 145, 20, 0.83);
-    color: white;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 11; /* Ensure button is above background */
-}
-
-#login-button:hover {
-    background-color: #386ecb;
-}
-
-/* Sign-up text and line */
-#sign-up-container {
-    position: absolute;
-    width: 60vw;
-    height: 10vh;
-    left: 20%;
-    top: 70%;
-    text-align: center;
-    z-index: 11; /* Ensure sign-up container is above background */
-}
-
-#sign-up {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 38px;
-    color: #000000;
-    text-decoration: none;
-}
-
-.sign-up-line {
-    width: 170px;
-    height: 0;
-    margin: 0 auto;
-    border: 1px solid #000000;
-
-}
-
-/* Airplane image */
-.airplane {
-    position: absolute;
-    width: 379.99px;
-    height: 254px;
-    left: 550.14px;
-    top: 59px;
-    background: url(../img/airplane.png);
-    background-size: cover;
-    transform: rotate(15.33deg);
-    z-index: 11; /* Ensure airplane is above background */
-}
-
-/* Bottle images */
-.bottol-1 {
-    position: absolute;
-    width: 137.66px;
-    height: 152.55px;
-    left: 76px;
-    top: 647.69px;
-    background: url(../img/bottol.png);
-    background-size: cover;
-    transform: rotate(-44.04deg);
-    z-index: 11; /* Ensure bottles are above background */
-}
-
-.bottol-2 {
-    position: absolute;
-    width: 145.34px;
-    height: 192.19px;
-    left: 290px;
-    top: 655.01px;
-    background: url(../img/bottol.png);
-    background-size: cover;
-    transform: rotate(-67.23deg);
-    z-index: 11;
-}
-
-.bottol-3 {
-    position: absolute;
-    width: 115.9px;
-    height: 163.17px;
-    left: 711.59px;
-    top: 531px;
-    background: url(../img/bottol.png);
-    background-size: cover;
-    transform: rotate(36.3deg);
-    z-index: 11;
-}
-
-.bottol-4 {
-    position: absolute;
-    width: 116.22px;
-    height: 196.15px;
-    left: 1094px;
-    top: 678.47px;
-    background: url(../img/bottol.png);
-    background-size: cover;
-    transform: rotate(-49.57deg);
-    z-index: 11;
-}
-
-.bottol-5 {
-    position: absolute;
-    width: 115.9px;
-    height: 163.17px;
-    left: 869px;
-    top: 548.59px;
-    background: url(../img/bottol.png);
-    background-size: cover;
-    transform: rotate(-23.7deg);
-    z-index: 11;
-}
-/*管理者画面の秘密のボタン*/
-#admin{
- line-height: 1;
- height: 10px;
- font-size: 100px;
- text-decoration: none;
- opacity: 0.01;
-
-}
+  
+  /* 入力フィールド */
+  #app{
+    position: fixed;
+      width: 100%;
+      height: 100%;
+      margin-left: 25%;
+      top: 30%;
+  }
+  /* 言語選択フィールド */
+  #Language-Choice {
+      position: absolute;
+      width: 50%;
+      height: 5%;
+      background: #D9D9D9;
+      border-radius: 50px;
+      z-index: 11; /* 背景の上に表示 */
+  }
+  
+  /* 言語選択 */
+  .LanguageChoice {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: #000000;
+      padding: 0 10px;
+      box-sizing: border-box;
+  }
+  
+  /* ユーザー名入力フィールド */
+  #username-all {
+      position: absolute;
+      width: 50%;
+      height: 4%;
+      margin-top: 8%;
+      background: #D9D9D9;
+      border-radius: 50px;
+      z-index: 11; /* 背景の上に表示 */
+  }
+  
+  #username {
+  
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: #000000;
+      padding: 0 20px;
+      box-sizing: border-box;
+  }
+  #adminname {
+      
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: #000000;
+      padding: 0 20px;
+      box-sizing: border-box;
+  }
+  /* パスワード入力フィールド */
+  #password-all {
+      position: absolute;
+      width: 50%;
+      height: 4%;
+      margin-top: 14%;
+      background: #D9D9D9;
+      border-radius: 50px;
+      z-index: 11; /* 背景の上に表示 */
+  }
+  
+  #password {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: #000000;
+      padding: 0 20px;
+      box-sizing: border-box;
+  }
+  
+  /* パスワード再入力フィールド */
+  #re-enter-password-all {
+      position: absolute;
+      width: 50%;
+      height: 4%;
+      margin-top: 20%;
+      background: #D9D9D9;
+      border-radius: 50px;
+      z-index: 11; /* 背景の上に表示 */
+  }
+  
+  #re-enter-password {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: #000000;
+      padding: 0 20px;
+      box-sizing: border-box;
+  }
+  
+  /* 登録ボタン */
+  #register-all {
+      position: absolute;
+      width: 50%;
+      height: 6%;
+      margin-top: 26%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 11; /* 背景の上に表示 */
+  }
+  
+  #register-button {
+      width: 100%;
+      height: 100%;
+      padding: 1% 20px;
+      font-size: 20px;
+      background: rgba(252, 145, 20, 0.83);
+      color: white;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  
+  #register-button:hover {
+      background-color: #386ecb;
+  }
+  
+  /* 戻るボタン */
+  .back-button {
+      position: absolute;
+      width: 100px;
+      height: 70px;
+      left: 1259px;
+      top: 38px;
+      background: url(../image/back-btn.png);
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+      z-index: 11; /* 背景の上に表示 */
+  }
+  
+  
+  /* エラーメッセージ用css */
+  
+  .error-message{
+      color: red;
+      font-size: smaller; /* 文字を小さく */
+      margin-top: 5px;
+  }
+  .error-boder{
+      border-color: red;   
+  }
