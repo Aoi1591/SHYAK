@@ -1,26 +1,5 @@
 <?php session_start();?>
 <?php
-// コンテンツタイプをJSONに設定
-/*
-// データベース接続情報
-require 'connect.php';
-// ランダムなユーザー名とメッセージを取得するクエリ
-$pdo = new PDO($connect, USER, PASS);
-$sql = "SELECT user_name, sent_message FROM Sents ORDER BY RAND() LIMIT 1";
-$result = $pdo->query($sql);
-// クエリ結果をチェック
-if ($result->num_rows > 0) {
-    // ユーザー名とメッセージを取得し、JSON形式で返す
-    $row = $result->fetch_assoc();
-    echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
-} else {
-    // ユーザーが見つからない場合、エラーメッセージを返す
-    echo json_encode(['error' => 'No messages found']);
-}
-// データベース接続を閉じる
-$conn->close();*/
-// コンテンツタイプをJSONに設定
-//header('Content-Type: application/json');
 // データベース接続情報
 require 'connect.php';
 try {
@@ -35,12 +14,10 @@ try {
     // クエリ結果をチェック
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($row) {
-        // ユーザー名とメッセージを取得し、JSON形式で返す
+        // ユーザー名とメッセージを取得し、flashメッセージとして格納
         $_SESSION['flash'] = ['username' => $row['user_name'], 'message' => $row['sent_message']];
-        //echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
     } else {
         // ユーザーが見つからない場合、エラーメッセージを返す
-        //echo json_encode(['error' => 'No messages found']);
         echo '<script>データが存在しません</script>';
     }
 
@@ -114,4 +91,3 @@ try {
     </div>
 </body>
 </html>
-
