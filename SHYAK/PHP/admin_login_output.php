@@ -6,6 +6,7 @@
         $pdo = new PDO($connect, USER, PASS);
         $sql = $pdo->prepare('select admin_id from Admins where admin_name = ?');
         $sql->execute([$_POST['adminname']]);
+        $adminId = null;
         foreach ($sql as $row) {
             $adminId = $row['admin_id'];
             // パスワードを取得するクエリを修正
@@ -18,17 +19,18 @@
                     'id' => $adminId,
                     'adminname' => $_POST['adminname'],
                 ];
+                header("Location: ./admin-input.php");
             } else {//ユーザー認証できなかった時の処理
                 header("Location: ./admin_login_input.php?flag=miss");
                 exit;
             }
         }
-        if (isset($_SESSION['Admin'])) {
+        /*if (isset($_SESSION['Admin'])) {
             header("Location: ./admin-input.php");
             exit;
         }else{
             echo 'errro';
-        }
+        }*/
     }catch(Exception $e){
         echo '<script>alert("エラーが発生しました")</script>'. htmlspecialchars($e->getMessage());
         header("Location:./admin_login_input.php?flag=fail");
