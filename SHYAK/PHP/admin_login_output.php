@@ -30,7 +30,7 @@
             echo 'errro';
         }
     }catch(Exception $e){
-        echo '<script>alert("エラーが発生しました")</script>'. htmlspecialchars($e->getMessage());
+        //echo '<script>alert("エラーが発生しました")</script>'. htmlspecialchars($e->getMessage());
         header("Location:./admin_login_input.php?flag=fail");
         exit;
     }
