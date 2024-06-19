@@ -18,7 +18,7 @@ if($message_id){
         //$stmt = $pdo -> prepare($sql);
 
         //フラグリセットが成功した場合の処理
-        header("Location : admin?message.php");
+        header("Location : admin_message.php");
         exit();
         }catch(PDOException $e){
             echo "エラー:" . $e -> getMessage();
