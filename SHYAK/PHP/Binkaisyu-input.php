@@ -36,7 +36,7 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($row) {
         // ユーザー名とメッセージを取得し、JSON形式で返す
-        $_SESSION['flash'] = ['username' => $row['username'], 'message' => $row['message']];
+        $_SESSION['flash'] = ['username' => $row['user_name'], 'message' => $row['sent_message']];
         //echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
     } else {
         // ユーザーが見つからない場合、エラーメッセージを返す
