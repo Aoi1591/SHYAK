@@ -41,9 +41,9 @@
             $txtArr = array('願いや祝福を入力してください','瓶を流す');
             $translator = new Translator();
             for($i = 0; $i < count($txtArr); $i++){
-                $originalText = $ruleArry[$i];
+                $originalText = $txtArr[$i];
                 $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                $txtArr[i] = $originalText;
+                $txtArr[$i] = $originalText;
             }
         ?>
         <form action="Binnagasu-output.php" method="post" id="binnagasuForm">
