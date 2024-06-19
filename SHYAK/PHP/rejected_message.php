@@ -15,7 +15,7 @@ if($message_id){
         //フラグをリセット
         $sql = $pdo -> prepare("update Sents set flag = 0 WHERE sent_id = ?");
         $sql -> execute([$message_id]);
-        $stmt = $pdo -> prepare($sql);
+        //$stmt = $pdo -> prepare($sql);
 
         //フラグリセットが成功した場合の処理
         header("Location : admin?message.php");
