@@ -45,7 +45,7 @@
     echo '<div class="waku">';
     echo '<div class="row justify-content-center mt-5">';
     echo '<div class="col-6">';
-    echo '<div class="bun"><p>"' . $_SESSION['flash']['message'] . '"</p></div><br>';
+    echo '<div class="bun"><p>' . $_SESSION['flash']['message'] . '</p></div><br>';
     echo '</div>';
     echo '</div>';
 
