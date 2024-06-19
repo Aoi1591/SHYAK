@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php
 // コンテンツタイプをJSONに設定
-header('Content-Type: application/json');/*
+/*
 // データベース接続情報
 require 'connect.php';
 // ランダムなユーザー名とメッセージを取得するクエリ
@@ -20,6 +20,7 @@ if ($result->num_rows > 0) {
 // データベース接続を閉じる
 $conn->close();*/
 // コンテンツタイプをJSONに設定
+//header('Content-Type: application/json');
 // データベース接続情報
 require 'connect.php';
 try {
