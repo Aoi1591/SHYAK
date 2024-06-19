@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require 'api.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +32,15 @@
 <br>
  
         <?php
+        $txtArr = array('への返事','返事を入力してください','瓶の返信');
+        $translator = new Translator();
+        for($i = 0; $i < count($txtArr); $i++){
+            $originalText = $txtArr[$i];
+            $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+            $txtArr[$i] = $originalText;
+        }
         echo '<div class="row justify-content-center">';
-        echo '<h2 class="text-center" style="width: 300px;">' . htmlspecialchars($user_name) . 'さんへの返事</h2>';
+        echo '<h2 class="text-center" style="width: 300px;">' . htmlspecialchars($user_name) . $txtArr[0] . '</h2>';
         echo '</div><br>';
         echo '<form id="binkaisyuForm" action="Binkaisyu-output2.php" method="post">';
         echo '<div class="waku">';
@@ -41,14 +52,14 @@
  
         echo '<div class="row justify-content-center">';
         echo '<div class="text-center col-6">';
-        echo '<textarea class="form-control" name="kaisyu" id="userInput2" rows="10" cols="40" placeholder="返事を入力してください"></textarea>';
+        echo '<textarea class="form-control" name="kaisyu" id="userInput2" rows="10" cols="40" placeholder='. $txtArr[1] .'></textarea>';
         echo '</div>';
         echo '</div>';
         echo '</div><br>';
  
         echo '<div class="row justify-content-center">';
         echo '<div class="text-center col-6">';
-        echo '<button type="submit" id="kaisyu" class="btn-binwokaisyu">瓶の返信</button>';
+        echo '<button type="submit" id="kaisyu" class="btn-binwokaisyu">'. $txtArr[2] .'</button>';
         echo '</div>';
         echo '</div>';
  
@@ -57,17 +68,26 @@
     
             <!-- ダイアログ -->
 <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", function() {
-                const nagasu = document.getElementById("kaisyu");
-                nagasu.addEventListener("click", function() {
-                    const userInput = document.getElementById("userInput2").value;
-                    const userResponse = confirm(userInput + "\n\nこの内容でよろしいですか？");
-                    if (userResponse) {
-                        alert("瓶を流しました");
-                        document.getElementById("binkaisyuForm").submit(); // フォームを送信
-                    }
-                });
-            });
+    <?php
+        $txtArr = array('この内容でよろしいですか？','瓶を流しました');
+        $translator = new Translator();
+        for($i = 0; $i < count($txtArr); $i++){
+            $originalText = $txtArr[$i];
+            $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+            $txtArr[$i] = $originalText;
+        }
+    ?>
+    document.addEventListener("DOMContentLoaded", function() {
+        const nagasu = document.getElementById("kaisyu");
+        nagasu.addEventListener("click", function() {
+            const userInput = document.getElementById("userInput2").value;
+            const userResponse = confirm(userInput + "\n\n"+<?php echo json_encode($txtArr[0]);?>);
+            if (userResponse) {
+                alert(<?php echo json_encode($txtArr[1]);?>);
+                document.getElementById("binkaisyuForm").submit(); // フォームを送信
+            }
+        });
+    });
 </script>
 
 </body>

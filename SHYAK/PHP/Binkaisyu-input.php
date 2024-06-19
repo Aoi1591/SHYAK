@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
     <script src="../JavaScript/Binkaisyu.js" defer></script>
 </head>
 <body>
+    <?php require 'api.php';?>
     <div class="container">
         <!-- ✘ボタン -->
         <div class="row justify-content-end">
@@ -25,7 +27,15 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <h2 class="text-center" style="width: 300px;"><span id="userName">○○</span>さんからの瓶</h2>
+            <h2 class="text-center" style="width: 300px;">
+                <span id="userName"></span>
+                <?php
+                    $translator = new Translator();
+                    $originalText = "からの瓶";
+                    $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                    echo $translatedText;
+                ?>
+            </h2>
         </div>
 
         <div class="row justify-content-center mt-5">
@@ -39,7 +49,14 @@
                 <form action="Binkaisyu-output.php" method="post">
                 <input type="hidden" id="hiddenUserName" name="userName">
                 <input type="hidden" id="hiddenMessage" name="message">
-                    <button type="submit" class="btn btn-primary">返信</button>
+                    <button type="submit" class="btn btn-primary">
+                        <?php
+                            $translator = new Translator();
+                            $originalText = "返信";
+                            $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                            echo $translatedText;
+                        ?>
+                    </button>
                 </form>
             </div>
         </div>

@@ -11,7 +11,7 @@
 <?php
 require 'menu-humburger.php';
 require 'api.php';
-require 'CheckMessage.php';
+//require 'CheckMessage.php';
 ?>
 <!--瓶 -->
 <img id="img_bin1" src="../image/瓶.png" alt="瓶">
@@ -29,10 +29,11 @@ require 'CheckMessage.php';
                     $translator = new Translator();
                     $originalText = "本";
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo '<button type="submit" class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</button>';
-                    $userId = $_SESSION['User']['id'];//ユーザ―idからセッションを取得
-                    $checkmessage = new CheckMessage();
-                    $hasNewMessage = $checkmessage->checkForNewMessages($userId);
+                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
+
+                    //$userName = $_SESSION['User']['username'];//ユーザ―idからセッションを取得
+                    //$checkmessage = new CheckMessage();
+                    //$hasNewMessage = $checkmessage->checkForNewMessages($userId);
                     //echo '<img src="../image/hon.png" alt="本" class="btn-hon-image">';
                 ?>
                 </a>
@@ -46,4 +47,6 @@ require 'CheckMessage.php';
                 <button type="button" class="btn-binwokaisyu">瓶を回収</button>
             </a>
 </div>
+
+<script src="../JavaScript/hamburger.js"></script>
 <?php require 'footer.php' ;?>
