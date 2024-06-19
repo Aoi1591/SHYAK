@@ -5,7 +5,7 @@
 
 //パラメータから却下するメッセージのIDを取得
 $message_id = isset($_GET['sent_id']) ? $_GET['sent_id'] : null;
-
+echo $message_id;
 //メッセージIDが指定されているかチェック
 if($message_id){
     try{
