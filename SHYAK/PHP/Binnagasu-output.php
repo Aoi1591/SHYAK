@@ -19,8 +19,8 @@ if (isset($_SESSION['User'])) { // ユーザーがログインしているか確
         $user_name = $_SESSION['User']['username'];
 
         // メッセージをデータベースに挿入する準備をする
-        $sql = $pdo->prepare('INSERT INTO Sents(user_name, sent_message) VALUES (?, ?)');
-        $sql->execute([$user_name, $_POST['sentmessage']]); // SQLクエリを実行
+        $sql = $pdo->prepare('INSERT INTO Sents(user_name, country_id,sent_message) VALUES (?, ?)');
+        $sql->execute([$user_name, $_SESSION['User']['lang'] , $_POST['sentmessage']]); // SQLクエリを実行
 
         // 成功した場合、top.phpにリダイレクト
         header('Location: ./top.php');
