@@ -41,7 +41,7 @@
       echo '<th>アイコン</th>';
       echo '<th>国籍</th>';
       echo '<th>名前</th>';
-      echo '<th></th>';
+      echo '<th> </th>';
       echo '</tr>';
     foreach( $stmt as $row){
       $id = $row['user_id'];
@@ -53,17 +53,17 @@
        echo '<td><img src="'.htmlspecialchars($row['icon'], ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></td>';
        echo '<td>' . htmlspecialchars($row['user_name'], ENT_QUOTES, 'UTF-8') . '</td>';
        echo '<td>' . htmlspecialchars($row['country_id'], ENT_QUOTES, 'UTF-8') . '</td>';
-      echo '</tr>';
        echo '<div class = user-info>';
-       echo $row['user_id'];//ID
-       echo $row['icon'];//アイコン
-       echo $row['country_id'];//国籍
-       echo $row['user_name'];//名前
+       //echo $row['user_id'];//ID
+       //echo $row['icon'];//アイコン
+       //echo $row['country_id'];//国籍
+       //echo $row['user_name'];//名前
        /*echo $row[''];//報告件数*/
        //報告されたメッセージの確認ボタン
        //urlencodeでadmin_messageにIDを飛ばしている
        echo '<a href="admin_message.php?id='.urlencode($id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
        echo '</div>';
+       echo '</tr>';
     }
 
 
