@@ -6,8 +6,8 @@
 ?>
 
 <link rel="stylesheet" href="../CSS/humburger.css">
+<link rel="stylesheet" href="../CSS/admin_input.css">
 <title> 管理者画面 </title>
-<link rel="stylesheet" href="../css/admin_input.css">
 </head>
 
 <body>
@@ -35,25 +35,21 @@
     $stmt = $pdo -> query($User_sql);
 
 
-    echo "<div table=table='1'>";
+    echo "<table borber='1'>";
     echo '<tr>';
-      echo '<th>ID</th>','<th>アイコン</th>','<th>国籍</th>',
-           '<th>名前</th>','<th></th>';
-      echo "</div class=table>";
-      echo '<tr>';
+      echo '<th>ID</th>';
+      echo '<th>アイコン</th>';
+      echo '<th>国籍</th>';
+      echo '<th>名前</th>';
+      echo '<th></th>';
+      echo '</tr>';
     foreach( $stmt as $row){
       echo '<th>';
-       $id = $row['user_id'];
-      echo '</th>';
-      echo '<th>';
-       $icon = $row['icon'];
-      echo '</th>';
-      echo '<th>';
-       $name = $row['user_name'];
-      echo '</th>';
-      echo '<th>';
-       $country = $row['country_id'];
-      echo '</th>';
+       echo '<td>'.htmlspecialchars($row['user_id'],ENT_QUOTES,'UTF-8').'</td>';
+       echo '<td><img src="'.htmlspecialchars($row['icon'], ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></td>';
+       echo '<td>' . htmlspecialchars($row['user_name'], ENT_QUOTES, 'UTF-8') . '</td>';
+       echo '<td>' . htmlspecialchars($row['country_id'], ENT_QUOTES, 'UTF-8') . '</td>';
+      echo '</tr>';
        echo '<div class = user-info>';
        echo $row['user_id'];//ID
        echo $row['icon'];//アイコン
