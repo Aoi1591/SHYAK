@@ -6,8 +6,8 @@
 ?>
 
 <link rel="stylesheet" href="../CSS/humburger.css">
-<title> 管理者画面 </title>
 <link rel="stylesheet" href="../css/admin_input.css">
+<title> 管理者画面 </title>
 </head>
 
 <body>
