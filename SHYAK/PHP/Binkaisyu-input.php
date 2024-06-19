@@ -1,12 +1,13 @@
 <?php session_start();?>
 <?php
 // コンテンツタイプをJSONに設定
-header('Content-Type: application/json');
+header('Content-Type: application/json');/*
 // データベース接続情報
 require 'connect.php';
 // ランダムなユーザー名とメッセージを取得するクエリ
+$pdo = new PDO($connect, USER, PASS);
 $sql = "SELECT user_name, sent_message FROM Sents ORDER BY RAND() LIMIT 1";
-$result = $conn->query($sql);
+$result = $pdo->query($sql);
 // クエリ結果をチェック
 if ($result->num_rows > 0) {
     // ユーザー名とメッセージを取得し、JSON形式で返す
@@ -17,7 +18,36 @@ if ($result->num_rows > 0) {
     echo json_encode(['error' => 'No messages found']);
 }
 // データベース接続を閉じる
-$conn->close();
+$conn->close();*/
+// コンテンツタイプをJSONに設定
+// データベース接続情報
+require 'connect.php';
+try {
+    // PDO接続を確立
+    $pdo = new PDO($connect, USER, PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // ランダムなユーザー名とメッセージを取得するクエリ
+    $sql = "SELECT user_name, sent_message FROM Sents ORDER BY RAND() LIMIT 1";
+    $stmt = $pdo->query($sql);
+
+    // クエリ結果をチェック
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($row) {
+        // ユーザー名とメッセージを取得し、JSON形式で返す
+        echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
+    } else {
+        // ユーザーが見つからない場合、エラーメッセージを返す
+        echo json_encode(['error' => 'No messages found']);
+    }
+
+} catch (PDOException $e) {
+    // エラーが発生した場合、エラーメッセージを返す
+    echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+} finally {
+    // PDO接続を閉じる
+    $pdo = null;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
