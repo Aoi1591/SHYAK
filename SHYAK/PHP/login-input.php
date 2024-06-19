@@ -28,7 +28,7 @@
 <body>
 
     <!-- Login Form Container -->
-  　　　 <a href="adminlogin_check.php" id="admin">■</a>
+        <a href="adminlogin_check.php" id="admin">■</a>
         <form action="login-output.php" method="post">
             <div id="username-all">
                 <input type="text" id="username" name="username" placeholder="USER NAME" required>
@@ -43,7 +43,7 @@
 
     <!-- Sign-Up Text and Line -->
     <div id="sign-up-container">
-        <a href="../php/sign-up-input.php" id="sign-up">SIGN-UP</a>
+        <a href="signup-input.php" id="sign-up">SIGN-UP</a>
         <div class="sign-up-line"></div>
     </div>
 </body>
