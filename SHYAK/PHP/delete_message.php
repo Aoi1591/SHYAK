@@ -13,7 +13,7 @@
     $stmt->execute([$sent_id]);
 
     //削除成功
-    header("Location: admin_message.php");
+    header("Location: admin-input.php");
     exit();
   }catch(PDOException $e){
     //エラー発生
