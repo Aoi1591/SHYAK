@@ -17,7 +17,8 @@ if($message_id){
         $sql -> execute([$message_id]);
         //$stmt = $pdo -> prepare($sql);
         //フラグリセットが成功した場合の処理
-        header("Location: admin_message.php?id=".urlencode($user_id)."&icon=".urlencode($icon)."&name=".urlencode($name)."&country=".urlencode($country).);
+        header("Location:admin-input.php");
+       // header("Location: admin_message.php?id=".urlencode($user_id)."&icon=".urlencode($icon)."&name=".urlencode($name)."&country=".urlencode($country).);
         exit();
         }catch(PDOException $e){
             echo "エラー:" . $e -> getMessage();
