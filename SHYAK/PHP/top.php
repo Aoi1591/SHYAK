@@ -30,11 +30,6 @@ require 'api.php';
                     $originalText = "本";
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                     echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
-
-                    //$userName = $_SESSION['User']['username'];//ユーザ―idからセッションを取得
-                    //$checkmessage = new CheckMessage();
-                    //$hasNewMessage = $checkmessage->checkForNewMessages($userId);
-                    //echo '<img src="../image/hon.png" alt="本" class="btn-hon-image">';
                 ?>
                 </a>
             </div>
