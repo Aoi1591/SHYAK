@@ -16,6 +16,7 @@
       <?php $user_id = isset($_SESSION['User']['id']) ? $_SESSION['User']['id'] : ''; ?>
       <nav>
         <ul>
+          <li><a href="top.php"><i class="fa-solid fa-bottle-droplet" style="color: #ffffff;"></i>トップ</a></li>
           <li><a href="mypage.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"></i>マイページ</a></li>
           <li><a href="friend.php"><i class="fa-solid fa-user-group" style="color: #aed6f4;"></i>フレンド</a></li>
           <li><a href="Explanationofrules.php"><i class="fa-regular fa-envelope" style="color: #5291ff;"></i>ルール</a></li>
