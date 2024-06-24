@@ -6,6 +6,7 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100% 100% ;
+  z-index: 1;
 }
 
 
@@ -24,6 +25,7 @@ body {
     height: 70px;
     box-shadow: 0px 0.5px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
     transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+    z-index: 11;
 }
  
   /*ボタンを押したとき*/
@@ -41,6 +43,7 @@ body {
   border-radius: 20px; /* 角 */
   width: 100%; /* フォームの幅に合わせる */
   box-sizing: border-box; /* パディングを含めた幅にする */
+  z-index: 11;
     }
 
     .form-control {
@@ -80,6 +83,7 @@ background-position: center; /* 画像を中央に配置する */
 border-radius: 9px;
 color: #fff; /* テキストの色を白にする */
 text-align: center; /* テキストを中央揃えにする */
+z-index: 11;
 }
 
 /* batuボタン */
@@ -96,18 +100,17 @@ background-position: center; /* 画像を中央に配置する */
 border-radius: 9px;
 color: #fff; /* テキストの色を白にする */
 text-align: center; /* テキストを中央揃えにする */
+z-index: 11;
 }
 
 #sentMessage {
-    padding: 10px;
-    font-size: 16px;
-    background: #ffd782;
-    border-radius: 20px;
-    display: block;
-    width:100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  background: #ffd782;
     font-weight: 400;
     line-height: 1.5;
     color: #212528;
-    border: 1px solid #ced4da;
     appearance: none;
+    z-index: 11;
 }
