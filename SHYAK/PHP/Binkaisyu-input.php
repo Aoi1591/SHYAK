@@ -9,8 +9,12 @@ try {
 
     // ランダムなユーザー名とメッセージを取得するクエリ
     $sql = "select user_name, sent_message from Sents where user_name != :myname order by RAND() LIMIT 1";
-    $stmt = $pdo->query($sql);
+    /*$stmt = $pdo->query($sql);
+    $stmt->bindParam(':myname', $_SESSION['User']['username'], PDO::PARAM_STR);*/
+    $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':myname', $_SESSION['User']['username'], PDO::PARAM_STR);
+    $stmt->execute();
+    
 
     // クエリ結果をチェック
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
