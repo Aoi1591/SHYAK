@@ -10,9 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recieve_message'])) {
     $userName = $_SESSION['user_name']; // セッションからユーザー名を取得
 
     // データベースに返信を保存するクエリ
-    $stmt = $conn->prepare("INSERT INTO Recieves (user_name, recieve_message) VALUES (?, ?)");
-    $stmt->bind_param("ss", $userName, $recieveText); // 'ss'は2つの文字列型のパラメータを意味する
-
+    $stmt = $pdo->prepare("INSERT INTO Recieves (user_name, recieve_message) VALUES (?, ?)");
+    //$stmt->bindParam("ss", $userName, $recieveText);  'ss'は2つの文字列型のパラメータを意味する
+    $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
+    $stmt->bindParam(':recieveText', $recieveText, PDO::PARAM_STR);
+    
     // クエリの実行
     if ($stmt->execute()) {
         // 成功した場合、JavaScriptを用いてアラートを表示し、別のページにリダイレクトする
@@ -22,9 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recieve_message'])) {
         echo "<script>alert('返信に失敗しました。'); window.location.href='Binkaisyu-input2.php';</script>";
     }
 
-    $stmt->close(); // ステートメントのクローズ
 }
-$conn->close(); // データベース接続のクローズ
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
