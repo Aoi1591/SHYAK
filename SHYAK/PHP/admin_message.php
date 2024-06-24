@@ -14,7 +14,7 @@
   echo '<body>';
   echo '<p>通報メッセージ一覧</p>';
   if($user_id){
-    echo '<p>ユーザーID:',$user_id,'',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
+    echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
     
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);
