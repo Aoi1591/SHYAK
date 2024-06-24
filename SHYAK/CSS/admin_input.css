@@ -7,9 +7,9 @@ body {
     background-size: 100% 100% ;
   }
 
-  .table{
+  /*.table{
     border: 1;
-  }
+  }*/
   .title {
     font-size: 24px;
     margin-bottom: 20px;
@@ -34,6 +34,21 @@ th {
 }
 
 .table{
-top: 200px;
 margin: auto;
+background-color: #99c2ff;
+}
+
+.title{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.name{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.uzer{
+    font-size: 30px;
+    font-weight: bold;
 }
