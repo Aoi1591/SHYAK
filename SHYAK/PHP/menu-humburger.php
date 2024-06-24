@@ -1,3 +1,4 @@
+<?php require "header.php";?>
 <link rel="stylesheet" href="../CSS/humburger.css">
     <title>ハンバーガーメニュー専用</title>
 </head>
