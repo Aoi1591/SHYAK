@@ -103,7 +103,7 @@ text-align: center; /* テキストを中央揃えにする */
 z-index: 11;
 }
 
-.container .row .col-6 #sentMessage {
+.message {
   padding: 10px;
   font-size: 16px;
   border-radius: 20px;

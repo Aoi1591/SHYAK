@@ -40,7 +40,7 @@
 
         <div class="row justify-content-center mt-5">
             <div class="col-6">
-                <div id="sentMessage"></div>
+                <div class="message"id="sentMessage"></div>
             </div>
         </div>
 
