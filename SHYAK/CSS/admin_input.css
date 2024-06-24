@@ -1,16 +1,54 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/背景.png");
+    background-image: url("../image/beach.png");
     background-repeat: no-repeat;
     background-position: 50% 70%;
-    background-size: 75% 90% ;
+    background-size: 100% 100% ;
   }
 
-  .table{
+  /*.table{
     border: 1;
+  }*/
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.name {
+    margin-bottom: 20px;
+}
+.user {
+    margin-top: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
 
+.table{
+margin: auto;
+background-color: #99c2ff;
+}
 
+.title{
+    font-size: 50px;
+    font-weight: bold;
+}
 
+.name{
+    font-size: 30px;
+    font-weight: bold;
+}
 
-  }
+.uzer{
+    font-size: 30px;
+    font-weight: bold;
+}

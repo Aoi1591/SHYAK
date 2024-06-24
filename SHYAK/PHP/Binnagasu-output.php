@@ -8,7 +8,7 @@ if (isset($_SESSION['User'])) { // ユーザーがログインしているか確
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // セッションからユーザーIDを取得
-        $user_id = $_SESSION['user_id'];
+        $user_id = $_SESSION['User']['id'];
 
         // ユーザーIDを使用してユーザー名を取得
         $stmt = $pdo->prepare('SELECT user_name FROM Users WHERE user_id = ?');
@@ -16,11 +16,11 @@ if (isset($_SESSION['User'])) { // ユーザーがログインしているか確
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // ユーザー名を取得
-        $user_name = $user['user_name'];
+        $user_name = $_SESSION['User']['username'];
 
         // メッセージをデータベースに挿入する準備をする
-        $sql = $pdo->prepare('INSERT INTO Sents(user_name, sent_message) VALUES (?, ?)');
-        $sql->execute([$user_name, $_POST['sent_message']]); // SQLクエリを実行
+        $sql = $pdo->prepare('INSERT INTO Sents(user_name, country_id,sent_message) VALUES (?, ?, ?)');
+        $sql->execute([$user_name, $_SESSION['User']['lang'] , $_POST['sentmessage']]); // SQLクエリを実行
 
         // 成功した場合、top.phpにリダイレクト
         header('Location: ./top.php');

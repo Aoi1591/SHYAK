@@ -22,10 +22,11 @@
           <li><a href="Explanationofrules.php"><i class="fa-regular fa-envelope" style="color: #5291ff;"></i>ルール</a></li>
           <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #0b5fef;"></i>ログアウト</a></li>
         </ul>
+        <img src="../image/あわ.gif" alt="メニュー画像" class="menu-image">
       </nav>
     </div>
   </div>
-  <script src="../JavaScript/hamburger.js"></script>
+  <script src="../JS/hamburger.js"></script>
   <!-- spハンバーガーメニュー ↑ -->
 </header>
 <!--ヘッダー↑-->
