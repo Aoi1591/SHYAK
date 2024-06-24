@@ -8,7 +8,7 @@
 
   try{
     $pdo = new PDO($connect,USER,PASS);
-    $ssql = "delete from Sents where sent_id = ?";
+    $sql = "delete from Sents where sent_id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$sent_id]);
 
