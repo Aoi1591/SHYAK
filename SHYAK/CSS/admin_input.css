@@ -4,7 +4,7 @@ body {
     background-image: url("../image/beach.png");
     background-repeat: no-repeat;
     background-position: 50% 70%;
-    background-size: 75% 90% ;
+    background-size: 100% 100% ;
   }
 
   .table{
@@ -31,4 +31,9 @@ th, td {
 }
 th {
     background-color: #f2f2f2;
+}
+
+.table{
+top: 200px;
+margin: auto;
 }

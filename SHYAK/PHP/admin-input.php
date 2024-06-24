@@ -35,6 +35,7 @@
     $stmt = $pdo -> query($User_sql);
 
 
+    echo '<div class="table">';
     echo "<table borber='1'>";
     echo '<tr>';
       echo '<th>ID</th>';
@@ -66,6 +67,7 @@
        //echo '<a href="admin_message.php?id='.urlencode($id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">確認</a>';
        //echo '</div>';
     }
+    echo '</div>';
 
 
 
