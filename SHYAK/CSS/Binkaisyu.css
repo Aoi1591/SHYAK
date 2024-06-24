@@ -103,14 +103,14 @@ text-align: center; /* テキストを中央揃えにする */
 z-index: 11;
 }
 
-#sentMessage {
+.container .row .col-6 #sentMessage {
   padding: 10px;
   font-size: 16px;
   border-radius: 20px;
   background: #ffd782;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212528;
-    appearance: none;
-    z-index: 11;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212528;
+  appearance: none;
+  z-index: 11;
 }
