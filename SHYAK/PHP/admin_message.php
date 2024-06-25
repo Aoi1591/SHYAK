@@ -2,7 +2,7 @@
 <?php require 'header.php';?>
 <?php require 'connect.php';?>
 
-<link rel="stylesheet" href="../CSS/admin_input.css">
+<link rel="stylesheet" href="../CSS/admin_message.css">
 <?php
   
   //admin_input.phpからIDを取得

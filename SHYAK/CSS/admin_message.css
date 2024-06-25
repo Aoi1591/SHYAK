@@ -10,3 +10,7 @@ body {
     font-size: 50px;
     font-weight: bold;
   }
+  .table{
+    margin: auto;
+    background-color: #99c2ff;
+    }
