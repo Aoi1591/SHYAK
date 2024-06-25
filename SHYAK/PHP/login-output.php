@@ -20,7 +20,6 @@
                     'username' => $_POST['username'],
                     'lang' => $lang
                 ];
-                //echo $_SESSION['User']['lang'];
             } else {//ユーザー認証できなかった時の処理
                 header("Location: ./login-input.php?flag=miss");
                 exit;
@@ -31,7 +30,7 @@
             exit;
         }
     }catch(Exception $e){
-        echo '<script>alert("エラーが発生しました")</script>'. htmlspecialchars($e->getMessage());
+        //echo '<script>alert("エラーが発生しました")</script>'. htmlspecialchars($e->getMessage());
         header("Location:./login-input.php?flag=fail");
         exit;
     }
