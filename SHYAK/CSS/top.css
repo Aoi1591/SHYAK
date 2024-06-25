@@ -173,7 +173,7 @@ body {
   position: absolute;
   transform: translateX(-50%);
   display: inline-block;
-  padding: 0.5em 2em; /* 上下左右の余白を大きくする */
+  padding: 0.5em; /* 上下左右の余白を大きくする */
   font-size: 24px; /* フォントサイズを大きくする */
   text-decoration: none;
   background: #ffbf00;
