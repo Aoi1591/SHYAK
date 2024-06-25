@@ -13,6 +13,14 @@ require 'menu-humburger.php';
 require 'api.php';
 //require 'CheckMessage.php';
 ?>
+<!-- ログアウトの時にのみ使用-->
+ <?php
+      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
+        echo '<script>';
+        echo 'alert("ログアウトしました")';
+        echo '</script>';
+      }
+      ?>
 <!--瓶 -->
 <img id="img_bin1" src="../image/瓶.png" alt="瓶">
 <img id="img_bin2" src="../image/瓶.png" alt="瓶">
