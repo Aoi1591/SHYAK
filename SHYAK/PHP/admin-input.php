@@ -34,6 +34,7 @@
     $User_sql = 'select * from Users'; 
     $stmt = $pdo -> query($User_sql);
 
+    echo '</div>';
 
     echo '<div class="table">';
     echo "<table borber='1'>";
