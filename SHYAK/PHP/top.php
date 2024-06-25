@@ -36,11 +36,25 @@ require 'api.php';
         </div>
         <!-- 瓶を流すボタンと瓶を回収ボタンを中央に配置 -->
         <a href="Binnagasu-input.php">
-                    <button type="submit" class="btn-binwonagasu">瓶を流す</button>
-                    </a>
-            <a href="Binkaisyu-input.php">
-                <button type="button" class="btn-binwokaisyu">瓶を回収</button>
-            </a>
+            <button type="submit" class="btn-binwonagasu">
+                <?php
+                    $translator = new Translator();
+                    $originalText = "瓶を流す";
+                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
+                ?>
+            </button>
+        </a>
+        <a href="Binkaisyu-input.php">
+            <button type="button" class="btn-binwokaisyu">
+                <?php
+                    $translator = new Translator();
+                    $originalText = "瓶を回収";
+                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
+                ?>
+            </button>
+        </a>
 </div>
 
 <script src="../JavaScript/hamburger.js"></script>
