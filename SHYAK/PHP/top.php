@@ -41,7 +41,7 @@ require 'api.php';
                     $translator = new Translator();
                     $originalText = "瓶を流す";
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
+                    echo $originalText;
                 ?>
             </button>
         </a>
@@ -51,7 +51,7 @@ require 'api.php';
                     $translator = new Translator();
                     $originalText = "瓶を回収";
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
+                    echo $originalText;
                 ?>
             </button>
         </a>
