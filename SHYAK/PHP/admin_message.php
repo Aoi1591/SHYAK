@@ -5,16 +5,18 @@
 <?php
   
   //admin_input.phpからIDを取得
-  $id = isset($_GET['id']) ? $_GET['id'] : null;
+  $user_id = isset($_GET['id']) ? $_GET['id'] : null;
   $icon = isset($_GET['icon']) ? $_GET['icon'] : null;
   $name = isset($_GET['name']) ? $_GET['name']  : null;
   $country = isset($_GET['country']) ? $_GET['country'] : null;
 
   echo '</head>';
   echo '<body>';
-  echo '<p>ID',$id,'</p>';
-  if($id){
-    echo '<p>',$id,'  ',$icon,'  ',$name,'  ',$country,'</p>';
+  echo '<div class=title>';
+  echo '<p>通報メッセージ一覧</p>';
+  echo '</div>';
+  if($user_id){
+    echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
     
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);
@@ -34,8 +36,8 @@
       echo '<tr>';
       echo '<td>',$row['sent_id'],'</td>';
       echo '<td>',$row['sent_message'],'</td>';
-      echo '<td><a href = "delete_message.php?sent_id='.urlencode($sent_id).'">削除</a></td>';
-      echo '<td><a href = "rejected_message.php?sent_id='.urlencode($sent_id).'">却下</a></td>';
+      echo '<td><a href = "delete_message.php?sent_id='.urlencode($sent_id).'&id='.urlencode($user_id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">削除</a></td>';
+      echo '<td><a href = "rejected_message.php?sent_id='.urlencode($sent_id).'&id='.urlencode($user_id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">却下</a></td>';
       echo '</tr>';
     }
     
@@ -48,6 +50,4 @@
 
   ?>
   <?php require 'footer.php';?>
-
-
   
