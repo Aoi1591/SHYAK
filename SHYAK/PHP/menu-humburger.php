@@ -1,3 +1,4 @@
+<?php require "header.php";?>
 <link rel="stylesheet" href="../CSS/humburger.css">
     <title>ハンバーガーメニュー専用</title>
 </head>
@@ -15,10 +16,11 @@
       <?php $user_id = isset($_SESSION['User']['id']) ? $_SESSION['User']['id'] : ''; ?>
       <nav>
         <ul>
-          <li><a href="mypage.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"></i>　マイページ</a></li>
-          <li><a href="friend.php"><i class="fa-solid fa-user-group" style="color: #aed6f4;"></i>　フレンド</a></li>
-          <li><a href="Explanationofrules.php"><i class="fa-regular fa-envelope" style="color: #5291ff;"></i>　ルール</a></li>
-          <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #0b5fef;"></i>　ログアウト</a></li>
+          <li><a href="top.php"><i class="fa-solid fa-bottle-droplet" style="color: #ffffff;"></i>トップ</a></li>
+          <li><a href="mypage.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"></i>マイページ</a></li>
+          <li><a href="friend.php"><i class="fa-solid fa-user-group" style="color: #aed6f4;"></i>フレンド</a></li>
+          <li><a href="Explanationofrules.php"><i class="fa-regular fa-envelope" style="color: #5291ff;"></i>ルール</a></li>
+          <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #0b5fef;"></i>ログアウト</a></li>
         </ul>
         <img src="../image/あわ.gif" alt="メニュー画像" class="menu-image">
       </nav>

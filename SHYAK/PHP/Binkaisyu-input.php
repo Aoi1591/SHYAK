@@ -1,26 +1,5 @@
 <?php session_start();?>
 <?php
-// コンテンツタイプをJSONに設定
-/*
-// データベース接続情報
-require 'connect.php';
-// ランダムなユーザー名とメッセージを取得するクエリ
-$pdo = new PDO($connect, USER, PASS);
-$sql = "SELECT user_name, sent_message FROM Sents ORDER BY RAND() LIMIT 1";
-$result = $pdo->query($sql);
-// クエリ結果をチェック
-if ($result->num_rows > 0) {
-    // ユーザー名とメッセージを取得し、JSON形式で返す
-    $row = $result->fetch_assoc();
-    echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
-} else {
-    // ユーザーが見つからない場合、エラーメッセージを返す
-    echo json_encode(['error' => 'No messages found']);
-}
-// データベース接続を閉じる
-$conn->close();*/
-// コンテンツタイプをJSONに設定
-//header('Content-Type: application/json');
 // データベース接続情報
 require 'connect.php';
 try {
@@ -29,17 +8,20 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // ランダムなユーザー名とメッセージを取得するクエリ
-    $sql = "SELECT user_name, sent_message FROM Sents ORDER BY RAND() LIMIT 1";
-    $stmt = $pdo->query($sql);
+    $sql = "select user_name, sent_message from Sents where user_name != :myname order by RAND() LIMIT 1";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':myname', $_SESSION['User']['username'], PDO::PARAM_STR);
+    $stmt->execute();
+    
 
     // クエリ結果をチェック
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($row) {
-        // ユーザー名とメッセージを取得し、JSON形式で返す
-        echo json_encode(['user_name' => $row['user_name'], 'sent_message' => $row['sent_message']]);
+        // ユーザー名とメッセージを取得し、flashメッセージとして格納
+        $_SESSION['flash'] = ['username' => $row['user_name'], 'message' => $row['sent_message']];
     } else {
         // ユーザーが見つからない場合、エラーメッセージを返す
-        echo json_encode(['error' => 'No messages found']);
+        $_SESSION['flash'] = ['none' => '拾える瓶が存在しません'];
     }
 
 } catch (PDOException $e) {
@@ -77,39 +59,55 @@ try {
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <h2 class="text-center" style="width: 300px;">
-                <span id="userName"></span>
-                <?php
-                    $translator = new Translator();
-                    $originalText = "からの瓶";
-                    $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $translatedText;
-                ?>
-            </h2>
-        </div>
-        <div class="row justify-content-center mt-5">
-            <div class="col-6">
-                <div id="sentMessage"></div>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-6 text-center">
-                <form action="Binkaisyu-output.php" method="post">
-                <input type="hidden" id="hiddenUserName" name="userName">
-                <input type="hidden" id="hiddenMessage" name="message">
-                    <button type="submit" class="btn btn-primary">
-                        <?php
-                            $translator = new Translator();
-                            $originalText = "返信";
-                            $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                            echo $translatedText;
-                        ?>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
+        <?php
+            if(isset($_SESSION['flash']['none'])){
+                echo '<div class="row justify-content-center mt-5">';
+                echo '<div class="col-6 text-center">';
+                echo '<div class="alert alert-danger" role="alert">';
+                $translator = new Translator();
+                $originalText = $_SESSION['flash']['none'];
+                $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                echo $translatedText;
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                unset($_SESSION['flash']['none']);
+                echo '</div>';
+            }else{
+                echo '<div class="row justify-content-center">';
+                echo '<h2 class="text-center" style="width: 300px;">';
+                echo '<span id="userName">';
+                echo $_SESSION['flash']['username'];
+                echo '</span>';
+                $translator = new Translator();
+                $originalText = "からの瓶";
+                $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                echo $translatedText;
+                echo '</h2>';
+                echo '</div>';
+                echo '<div class="row justify-content-center mt-5">';
+                echo '<div class="col-6">';
+                echo '<div class="message" id="sentMessage">';
+                echo $_SESSION['flash']['message'];
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '<div class="row justify-content-center mt-3">';
+                echo '<div class="col-6 text-center">';
+                echo '<form action="Binkaisyu-output.php" method="post">';
+                echo '<input type="hidden" id="hiddenUserName" name="userName">';
+                echo '<input type="hidden" id="hiddenMessage" name="message">';
+                echo '<button type="submit" class="btn btn-primary">';
+                $translator = new Translator();
+                $originalText = "返信";
+                $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                echo $translatedText;
+                echo '</button>';
+                echo '</form>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+        ?>
 </body>
 </html>
-

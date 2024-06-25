@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,10 @@
     <link rel="stylesheet" href="../CSS/Morattahenji.css">
 </head>
 <body>
+    <?php
+        require 'connect.php'; // データベース接続
+        require 'api.php';
+    ?>
     <br>
     <div class="container">
     <!-- ✘ボタン 背景透明　触ったら黒　 -->
@@ -24,25 +29,53 @@
             </div>
         </div>
         <!-- 文字真ん中　下に返事の内容表示 -->
-        <div class="row justify-content-center">
-        <h2 class="text-center mt-5" style="width: 300px;">○○さんからもらった返事</h2>
-        </div>   
-            <form action="Binkaisyu-output.php" method="post">
-                <div class="row justify-content-center mt-5">
-                    <div class="col-6">
-                        <div class="bun">
-                            <p>"返事の内容"</p>
-                        </div>
-                        <br>
-                    </div>
-                </div>
-                <br><br>
-                <div class="row justify-content-center">
-                    <div class="text-center col-6">'
-                </div>
-                </div>
-            </form>
-        </div>
+        <?php
+            $pdo = new PDO($connect, USER, PASS); // データベース接続を確立
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// エラーモードを指定。エラーをキャッチできるように
+
+            // 変身された瓶があるか確認
+            $user_name = $_SESSION['User']['username']; // セッションからユーザーIDを取得
+            $sql = $pdo->prepare('select sent_id from Sents where user_name =?');
+            $sql->execute([$user_name]);
+            $binkaisyu = $sql->fetchAll(PDO::FETCH_ASSOC);
+            if($binkaisyu){
+                foreach($binkaisyu as $row){
+                    $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
+                    $sql->execute([$row['sent_id']]);
+                    $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    $translator = new Translator();
+                    $txtArr = array('からもらった返事',$recieves['sent_message']);
+                    for($i = 0; $i < count($txtArr); $i++){
+                        $originalText = $txtArr[$i];
+                        $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                        $txtArr[$i] = $originalText;
+                    }
+                    echo '<div class="row justify-content-center">';
+                    echo '<h2 class="text-center mt-5" style="width: 300px;">';
+                    echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
+                    echo '</div>';
+                    echo '<div class="row justify-content-center mt-5">';
+                    echo '<div class="col-6">';
+                    echo '<div class="bun">';
+                    echo '<p>'. $txtArr[1].'</p>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            }else{
+                $translator = new Translator();
+                $originalText = "もらった返事はここに表示されます";
+                $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                echo '<div class="row justify-content-center mt-5">';
+                echo '<div class="col-6">';
+                echo '<div class="bun">';
+                echo '<p>'. $originalText .'</p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+        ?>     
+    </div>
 </body>
 </html>
 

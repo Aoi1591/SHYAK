@@ -1,99 +1,116 @@
 /*背景*/
 body {
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../image/背景.jpg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 100% 100% ;
-  }
-  
-
-
-    /* 瓶を流すボタン */
-    .btn-binwokaisyu {
-      display: inline-block;
-      padding: 0.5em 2em; /* 上下左右の余白を大きくする */
-      font-size: 20px; /* フォントサイズを大きくする */
-      text-decoration: none;
-      background: #ffbf00;
-      color: #FFF;
-      border-bottom: solid 4px #bc8d00;
-      border-radius: 5px;
-      width: 240px;
-      height: 70px;
-      box-shadow: 0px 0.5px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
-      transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
-  }
-   
-    /*ボタンを押したとき*/
-    .btn-binwokaisyu:active {
-      -webkit-transform: translateY(4px);
-      transform: translateY(4px);
-      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
-      border-bottom: none;
-    }
-  
-  .bun{
-    padding: 20px;
-    font-size: 16px;
-    background: #ffd782;
-    border-radius: 20px; /* 角 */
-    width: 100%; /* フォームの幅に合わせる */
-    box-sizing: border-box; /* パディングを含めた幅にする */
-      }
-
-      .form-control {
-        padding: 10px;
-        font-size: 16px;
-        background: #ffd782;
-        border-radius: 20px; /* 角 */
-    }
-
-  h2 {
-    justify-content: center;
-    padding: 1em 0em;
-    font-size: 20px;
-    background: #ff9500;
-    border-radius: 20px;
-  }
-  
-.waku{
-    background: rgba(253, 255, 213, 0.6);
-    padding: 1px 0px 40px 0px; 
-    margin-left:   55px;
-    margin-right:  55px; 
-    border-radius: 30px;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../image/背景.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100% ;
+  z-index: 1;
 }
 
-  /* 通報ボタン */
-.tuhou {
-  display: inline-block;
-  padding: 0.5em 0.5em; /* 上下左右の余白を大きくする */
-  font-size: 50px; /* フォントサイズを大きくする */
-  text-decoration: none;
-  background: #ffbf00;
-  background-image: url("../image/通報.png");
-  background-size: 80%;
-  background-repeat: no-repeat; 
-  background-position: center; /* 画像を中央に配置する */
-  border-radius: 9px;
-  color: #fff; /* テキストの色を白にする */
-  text-align: center; /* テキストを中央揃えにする */
-}
 
-  /* batuボタン */
-  .batu {
+
+  /* 瓶を流すボタン */
+  .btn-binwokaisyu {
     display: inline-block;
-  padding: 0.5em 0.5em; /* 上下左右の余白を大きくする */
-  font-size: 50px; /* フォントサイズを大きくする */
-  text-decoration: none;
-  background: #ffbf00;
-  background-image: url("../image/batu.png");
-  background-size: 70%;
-  background-repeat: no-repeat; 
-  background-position: center; /* 画像を中央に配置する */
-  border-radius: 9px;
-  color: #fff; /* テキストの色を白にする */
-  text-align: center; /* テキストを中央揃えにする */
+    padding: 0.5em 2em; /* 上下左右の余白を大きくする */
+    font-size: 20px; /* フォントサイズを大きくする */
+    text-decoration: none;
+    background: #ffbf00;
+    color: #FFF;
+    border-bottom: solid 4px #bc8d00;
+    border-radius: 5px;
+    width: 240px;
+    height: 70px;
+    box-shadow: 0px 0.5px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
+    transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+    z-index: 11;
+}
+ 
+  /*ボタンを押したとき*/
+  .btn-binwokaisyu:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
   }
+
+.bun{
+  padding: 20px;
+  font-size: 16px;
+  background: #ffd782;
+  border-radius: 20px; /* 角 */
+  width: 100%; /* フォームの幅に合わせる */
+  box-sizing: border-box; /* パディングを含めた幅にする */
+  z-index: 11;
+    }
+
+    .form-control {
+      padding: 10px;
+      font-size: 16px;
+      background: #ffd782;
+      border-radius: 20px; /* 角 */
+  }
+
+h2 {
+  justify-content: center;
+  padding: 1em 0em;
+  font-size: 20px;
+  background: #ff9500;
+  border-radius: 20px;
+}
+
+.waku{
+  background: rgba(253, 255, 213, 0.6);
+  padding: 1px 0px 40px 0px; 
+  margin-left:   55px;
+  margin-right:  55px; 
+  border-radius: 30px;
+}
+
+/* 通報ボタン */
+.tuhou {
+display: inline-block;
+padding: 0.5em 0.5em; /* 上下左右の余白を大きくする */
+font-size: 50px; /* フォントサイズを大きくする */
+text-decoration: none;
+background: #ffbf00;
+background-image: url("../image/通報.png");
+background-size: 80%;
+background-repeat: no-repeat; 
+background-position: center; /* 画像を中央に配置する */
+border-radius: 9px;
+color: #fff; /* テキストの色を白にする */
+text-align: center; /* テキストを中央揃えにする */
+z-index: 11;
+}
+
+/* batuボタン */
+.batu {
+  display: inline-block;
+padding: 0.5em 0.5em; /* 上下左右の余白を大きくする */
+font-size: 50px; /* フォントサイズを大きくする */
+text-decoration: none;
+background: #ffbf00;
+background-image: url("../image/batu.png");
+background-size: 70%;
+background-repeat: no-repeat; 
+background-position: center; /* 画像を中央に配置する */
+border-radius: 9px;
+color: #fff; /* テキストの色を白にする */
+text-align: center; /* テキストを中央揃えにする */
+z-index: 11;
+}
+
+.message {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  background: #ffd782;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212528;
+  appearance: none;
+  z-index: 11;
+}
