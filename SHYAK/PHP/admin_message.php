@@ -2,6 +2,7 @@
 <?php require 'header.php';?>
 <?php require 'connect.php';?>
 
+<link rel="stylesheet" href="../CSS/admin_input.css">
 <?php
   
   //admin_input.phpからIDを取得
@@ -12,7 +13,9 @@
 
   echo '</head>';
   echo '<body>';
+  echo '<div class=title>';
   echo '<p>通報メッセージ一覧</p>';
+  echo '</div>';
   if($user_id){
     echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
     
@@ -48,6 +51,4 @@
 
   ?>
   <?php require 'footer.php';?>
-
-
   
