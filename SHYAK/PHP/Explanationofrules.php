@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-    //require 'api.php';
+    require 'api.php';
 ?>
 <br>
     <div class="container">
