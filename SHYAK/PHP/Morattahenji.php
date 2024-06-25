@@ -30,14 +30,16 @@
         </div>
         <!-- 文字真ん中　下に返事の内容表示 -->
         <?php
+            echo 'try1';
             $pdo = new PDO($connect, USER, PASS); // データベース接続を確立
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// エラーモードを指定。エラーをキャッチできるように
-
+            echo 'try2';
             // 変身された瓶があるか確認
             $user_name = $_SESSION['User']['username']; // セッションからユーザーIDを取得
             $sql = $pdo->prepare('select sent_id from Sents where user_name =?');
             $sql->execute([$user_name]);
             $binkaisyu = $sql->fetchAll(PDO::FETCH_ASSOC);
+            echo 'try3'.$binkaisyu;
             if($binkaisyu){
                 foreach($binkaisyu as $row){
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
@@ -76,6 +78,7 @@
                 echo '</div>';
                 echo '</div>';
             }
+            echo 'try4';
         ?>     
     </div>
 </body>
