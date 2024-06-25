@@ -28,20 +28,20 @@ require 'api.php';
                 <?php
                     $translator = new Translator();
                     $originalText = "本";
-                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
+                    $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+                    echo '<a href="Morattahenji.php?id=', $_SESSION['User']['id'], '" class="btn btn-outline-dark userinfoButton bg-light"><br><img src="../image/book.jpg" alt="icon" style="width: 20px; height: 20px;"> '. $translatedText .'</a>';
                 ?>
                 </a>
             </div>
         </div>
         <!-- 瓶を流すボタンと瓶を回収ボタンを中央に配置 -->
         <a href="Binnagasu-input.php">
-                    <button type="submit" class="btn-binwonagasu">瓶を流す</button>
-                    </a>
-            <a href="Binkaisyu-input.php">
-                <button type="button" class="btn-binwokaisyu">瓶を回収</button>
-            </a>
-</div>
+            <button type="submit" class="btn-binwonagasu">瓶を流す</button>
+        </a>
+        <a href="Binkaisyu-input.php">
+            <button type="button" class="btn-binwokaisyu">瓶を回収</button>
+        </a>
+    </div>
 
 <script src="../JavaScript/hamburger.js"></script>
-<?php require 'footer.php' ;?>
+<?php require 'footer.php';?>
