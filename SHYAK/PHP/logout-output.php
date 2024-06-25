@@ -13,6 +13,6 @@
 
    session_destroy();
 
-   header("Locatiion:login-input.php?yes");
+   header("Location:login-input.php?yes");
    exit;
    ?>
