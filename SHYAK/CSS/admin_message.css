@@ -14,3 +14,8 @@ body {
     margin: auto;
     background-color: #99c2ff;
     }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
