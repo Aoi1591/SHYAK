@@ -46,5 +46,6 @@
         <a href="signup-input.php" id="sign-up">SIGN-UP</a>
         <div class="sign-up-line"></div>
     </div>
+    <script src="../JavaScript/login.js"></script>
 </body>
 </html>
