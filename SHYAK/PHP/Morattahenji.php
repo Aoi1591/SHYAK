@@ -30,7 +30,7 @@
         </div>
         <!-- 文字真ん中　下に返事の内容表示 -->
         <?php
-            require 'connect.php'; // データベース接続
+            //require 'connect.php'; // データベース接続
             $pdo = new PDO($connect, USER, PASS); // データベース接続を確立
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// エラーモードを指定。エラーをキャッチできるように
 
