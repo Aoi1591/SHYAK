@@ -74,7 +74,9 @@ try {
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-6">
-                <div id="sentMessage"><?php echo $_SESSION['flash']['message'];?></div>
+
+                <div class="message" id="sentMessage"><?php echo $_SESSION['flash']['message'];?></div>
+
             </div>
         </div>
         <div class="row justify-content-center mt-3">
