@@ -13,6 +13,14 @@ require 'menu-humburger.php';
 require 'api.php';
 //require 'CheckMessage.php';
 ?>
+<!-- ログアウトの時にのみ使用-->
+ <?php
+      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
+        echo '<script>';
+        echo 'alert("ログアウトしました")';
+        echo '</script>';
+      }
+      ?>
 <!--瓶 -->
 <img id="img_bin1" src="../image/瓶.png" alt="瓶">
 <img id="img_bin2" src="../image/瓶.png" alt="瓶">
@@ -21,15 +29,15 @@ require 'api.php';
 <img id="img_bin5" src="../image/瓶.png" alt="瓶">
     <div class="container">
     <!-- 本ボタンを左下に配置 -->
-        <div class="row justify-content-start">
+    <div class="row justify-content-start">
             <div class="col-12 col-md-10">
                 <a href="Morattahenji.php">
                 <br>
                 <?php
                     $translator = new Translator();
-                    $originalText = "本";
-                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
+                    //$originalText = $translator->translate($originalText);
+                    $originalText = $translator->translate("本",$_SESSION['User']['lang']);
+                    echo '<a href="Morattahenji,php?id="',$_SESSION['User']['id'],'img src="../image/hon.png" alt=$originalText class="btn-hon-image">';
                 ?>
                 </a>
             </div>

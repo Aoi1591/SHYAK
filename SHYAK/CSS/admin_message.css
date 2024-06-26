@@ -35,7 +35,7 @@ body {
     color: #000000; /* テキストの色を白に設定 */
     text-align: center; /* テキストを中央揃えに設定 */
     margin: 3px;
-    /*width: 100px;*/
+    /*width: 400px;*/
     height: 30px;
     line-height: 60px; /* ボタン内のテキストを垂直方向に中央揃え */
     background: #ffe38f;

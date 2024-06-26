@@ -1,41 +1,53 @@
 <?php
 session_start();
+if (isset($_SESSION['User']['id'])) {
+    // ユーザーがログインしている場合の処理
+} else {
+    echo '<script>alert("Please log in");</script>';
+    echo '<script>window.location.href = "https:login-input.php";</script>';
+    exit();
+}
 require 'connect.php';
 require 'header.php';
 ?>
 
 <link rel="stylesheet" href="../CSS/humburger.css">
+<link rel="stylesheet" href="../CSS/friend.css">
 </head>
 <body>
-<?php require 'menu-humburger.php'; ?>
+
+<br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 d-flex align-items-center justify-content-center">
+            <a href="friend.php" class="flex-fill">
+                <button type="button" class="friend1">フレンドリスト</button>
+            </a>
+            <a href="friend-request.php" class="flex-fill">
+                <button type="button" class="friend2">フレンドリクエスト</button>
+            </a>
+            <a href="top.php">
+                <button type="button" class="batu"></button>
+            </a>
+        </div>
+    </div>
+</div>
 
 <?php
-      echo '<img src = "">'; //friendマークの画僧挿入
-      echo '<a href = "friend.php">フレンドリスト</a>';
-      echo '<a href = "friend-requset.php">フレンドリクエスト</a>';
-// エラーハンドリングのためのtry-catchブロックを追加
 try {
-    // データベース接続の設定
     $pdo = new PDO($connect, USER, PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // セッション変数が定義されているか確認
-    if (isset($_SESSION['Users']['user_id'])) {
-        $user_id = $_SESSION['Users']['user_id'];
-
-        // 友達のIDを取得するSQLクエリ
+    if (isset($_SESSION['User']['id'])) {
+        $user_id = $_SESSION['User']['id'];
         $user_sql = $pdo->prepare('SELECT friend_id FROM Friends WHERE user_id = ?');
         $user_sql->execute([$user_id]);
 
-        // 友達の情報を表示するためのテーブルを作成
-        echo '<table>';
-        echo '<tr><th>名前</th><th>国籍</th></tr>';
 
-        // 友達のIDごとに情報を取得し表示
         while ($row = $user_sql->fetch(PDO::FETCH_ASSOC)) {
             $friend_id = $row['friend_id'];
             $sql = $pdo->prepare('SELECT * FROM Users WHERE user_id = ?');
-            $sql->execute([$friend_id, 1]);
+            $sql->execute([$friend_id]);
             $friend_stmt = $sql->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($friend_stmt as $friend) {
@@ -43,27 +55,16 @@ try {
                 $name = htmlspecialchars($friend['user_name']);
                 $country = htmlspecialchars($friend['country_id']);
 
-                echo '<tr>';
-                // 名前の部分を押したらユーザーページへ遷移
-                echo '<td><a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a></td>';
-                echo '<td>' . $country . '</td>';
-                echo '</tr>';
+                echo '<div class="sen">';
+                echo '<a class="friend-link" href="UserPage.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a>';
+                echo '</div>';
             }
         }
         echo '</table>';
-   } else {
-    ob_start();
-    include('header.php');
-
-    echo '<script>alert("Please log in");</script>';
-    header('Location:login-input.php');
-    ob_end_flush();
-    exit();
     }
 } catch (PDOException $e) {
     echo 'エラーが発生しました: ' . $e->getMessage();
 }
 ?>
-
 </body>
 </html>
