@@ -21,7 +21,7 @@
             <div class="col-12 col-md-2">
                 <div class="row">
                     <br>
-                    <a href="top.php">
+                    <a href="./top.php">
                         <button type="submit" class="batu">
                         </button>
                     </a>
