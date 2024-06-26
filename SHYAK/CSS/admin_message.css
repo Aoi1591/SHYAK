@@ -48,5 +48,8 @@ body {
             position: relative;
     }
     .b{
-      left: 20%;
+      margin-left: 6%;
+    }
+    .c{
+      margin-top: 5%;
     }
