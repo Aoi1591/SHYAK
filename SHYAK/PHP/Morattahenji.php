@@ -58,7 +58,7 @@
                             $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                             $txtArr[$i] = $originalText;
                         }
-                        echo 'try8';
+                        echo 'try8---';
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
                         echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
