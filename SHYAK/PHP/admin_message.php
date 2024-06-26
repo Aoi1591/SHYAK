@@ -17,7 +17,8 @@
   echo '<p>通報メッセージ一覧</p>';
   echo '</div>';
   if($user_id){
-    echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
+    // echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
+    echo '<img src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></td>';
     
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);

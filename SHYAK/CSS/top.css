@@ -165,6 +165,7 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100% 100% ;
+  z-index: 0;
 }
 
 .btn-binwonagasu {
@@ -223,6 +224,7 @@ body {
   width: 70px;
   height: 60px;
   transition: transform 0.1s, box-shadow 0.1s;
+  z-index: 99;
 
 }
 img.btn-hon-image:active{

@@ -36,8 +36,8 @@ require 'api.php';
                 <?php
                     $translator = new Translator();
                     //$originalText = $translator->translate($originalText);
-                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo '<a href="Morattahenji,php?id="',$_SESSION['user']['id'],'img src="../image/hon.png" alt="本" class="btn-hon-image">';
+                    $originalText = $translator->translate("本",$_SESSION['User']['lang']);
+                    echo '<a href="Morattahenji,php?id="',$_SESSION['User']['id'],'img src="../image/hon.png" alt=$originalText class="btn-hon-image">';
                 ?>
                 </a>
             </div>
