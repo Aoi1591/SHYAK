@@ -65,6 +65,7 @@ body {
     font-size: 20px;
     background: #ff9500;
     border-radius: 20px;
+    text-align: center;
   }
   
   .bun{
@@ -75,3 +76,6 @@ body {
     width: 100%; /* フォームの幅に合わせる */
     box-sizing: border-box; /* パディングを含めた幅にする */
       }
+  .bun p{
+    text-align: center;
+  }
