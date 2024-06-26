@@ -10,10 +10,6 @@ body {
     font-size: 50px;
     font-weight: bold;
   }
-  .table{
-    margin: auto;
-    background-color: #99c2ff;
-    }
     th, td {
         padding: 8px;
         text-align: left;
@@ -25,4 +21,5 @@ body {
     table {
         width: 100%;
         border-collapse: collapse;
+        background-color: #99c2ff;
     }
