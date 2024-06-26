@@ -44,8 +44,8 @@ try {
                 'username' => $_POST['username'],
                 'lang' => $_POST['choice']
             ];
-            // 登録が成功した場合、Chooseyourlangage.php にリダイレクト
-            header('Location: ./Chooseyourlanguage.php');
+            // 登録が成功した場合、top.php にリダイレクト
+            header('Location: ./top.php');
             exit();
         }
     } else {
