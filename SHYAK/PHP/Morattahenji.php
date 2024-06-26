@@ -49,8 +49,10 @@
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
                     echo 'try5';
+                    var_dump($recieves);
                     foreach($recieves as $res){
                         echo 'try6';
+
                         $txtArr = array('からもらった返事',$res['sent_message']);
                         for($i = 0; $i < count($txtArr); $i++){
                             echo 'try7';
