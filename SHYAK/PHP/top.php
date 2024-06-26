@@ -46,7 +46,7 @@ require 'api.php';
         <a href="Binnagasu-input.php">
             <button type="submit" class="btn-binwonagasu">
                 <?php
-                    $translator = new Translator();
+                    //$translator = new Translator();
                     $originalText = "瓶を流す";
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                     echo $originalText;
