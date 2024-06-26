@@ -48,15 +48,17 @@
                     $sql->execute([$row['sent_id']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
+                    echo 'try5';
                     foreach($recieves as $res){
-                        echo 'try5';
+                        echo 'try6';
                         $txtArr = array('からもらった返事',$res['sent_message']);
                         for($i = 0; $i < count($txtArr); $i++){
+                            echo 'try7';
                             $originalText = $txtArr[$i];
                             $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                             $txtArr[$i] = $originalText;
                         }
-                        echo 'try6';
+                        echo 'try8';
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
                         echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
@@ -71,7 +73,7 @@
                     }
                 }
             }else{
-                echo 'try7';
+                echo 'try9';
                 $translator = new Translator();
                 $originalText = "もらった返事はここに表示されます";
                 $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
