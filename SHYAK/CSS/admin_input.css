@@ -78,7 +78,7 @@ background-color: #99c2ff;
     font-size: 10px;
     font-weight: bold;
 
-    /*display: inline-block;*/
+    display: inline-block;
     padding: 0.5em 0.5em; /* 上下左右の余白を設定 */
     /*font-size: 20px;*/ /* フォントサイズを統一 */
     text-decoration: none;

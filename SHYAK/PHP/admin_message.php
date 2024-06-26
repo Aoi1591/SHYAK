@@ -37,8 +37,8 @@
       echo '<tr>';
       echo '<td>',$row['sent_id'],'</td>';
       echo '<td>',$row['sent_message'],'</td>';
-      echo '<td><a href = "delete_message.php?sent_id='.urlencode($sent_id).'&id='.urlencode($user_id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">削除</a></td>';
-      echo '<td><a href = "rejected_message.php?sent_id='.urlencode($sent_id).'&id='.urlencode($user_id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">却下</a></td>';
+      echo '<td><a class="a" href = "delete_message.php?sent_id='.urlencode($sent_id).'&id='.urlencode($user_id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">削除</a></td>';
+      echo '<td><a class="a" href = "rejected_message.php?sent_id='.urlencode($sent_id).'&id='.urlencode($user_id).'&icon='.urlencode($icon).'&name='.urlencode($name).'&country='.urlencode($country).'">却下</a></td>';
       echo '</tr>';
     }
     
