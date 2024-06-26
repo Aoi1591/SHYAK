@@ -41,18 +41,22 @@
             $binkaisyu = $sql->fetchAll(PDO::FETCH_ASSOC);
             //echo 'try3'.$binkaisyu;
             if($binkaisyu){
+                echo 'try3';
                 foreach($binkaisyu as $row){
+                    echo 'try4';
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
                     $sql->execute([$row['sent_id']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
                     foreach($recieves as $res){
+                        echo 'try5';
                         $txtArr = array('からもらった返事',$res['sent_message']);
                         for($i = 0; $i < count($txtArr); $i++){
                             $originalText = $txtArr[$i];
                             $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                             $txtArr[$i] = $originalText;
                         }
+                        echo 'try6';
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
                         echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
@@ -67,6 +71,7 @@
                     }
                 }
             }else{
+                echo 'try7';
                 $translator = new Translator();
                 $originalText = "もらった返事はここに表示されます";
                 $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
@@ -78,7 +83,7 @@
                 echo '</div>';
                 echo '</div>';
             }
-            echo 'try4';
+            echo 'try8';
         ?>     
     </div>
 </body>
