@@ -11,7 +11,9 @@
 
 <?php
 echo '<div style="text-align: center">';
-echo '<h1>Choose your language</h1>';
+// 拾う瓶の言語を選んでくださいって意味ね！
+echo '<h1>Please choose the language of the bottle you pick up</h1>';
+echo $_SESSION['Pick']['lang'];
 
 // 翻訳クラスのインスタンス化
 $translator = new Translator();
