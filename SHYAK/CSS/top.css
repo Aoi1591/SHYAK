@@ -216,8 +216,8 @@ body {
 }
 
 .btn-hon-image {
-  top: 73%; /* 上から10px */
-  left: 15%;
+  top: 70%; /* 上から10px */
+  left: 10%;
   position: absolute;
   transform: translateX(-50%); /* 左から20px */
   width: 70px;
