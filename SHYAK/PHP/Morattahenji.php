@@ -40,8 +40,8 @@
             $sql->execute([$user_name]);
             $binkaisyu = $sql->fetchAll(PDO::FETCH_ASSOC);
             //echo 'try3'.$binkaisyu;
-            if($binkaisyu){
-                echo 'try3';
+            if(empty($binkaisyu)){
+                echo 'try3--';
                 foreach($binkaisyu as $row){
                     echo 'try4';
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
