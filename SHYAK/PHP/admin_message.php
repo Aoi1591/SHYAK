@@ -19,7 +19,8 @@
   if($user_id){
     // echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
     echo '<img src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></td>';
-    
+    echo '<p class="b">ユーザーID:',$user_id,'<br>','ユーザー:',$name,'国籍:',$country,'</p>';
+
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);
     $sql = $pdo -> prepare('select * from Sents WHERE user_name=? AND flag = 1');
