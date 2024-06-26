@@ -313,3 +313,8 @@ img.btn-hon-image:active{
   width: 100px;
   animation: animateImageSlide 34s infinite ease;
 }
+
+.book{
+  position: absolute;
+  top: 84%;
+}

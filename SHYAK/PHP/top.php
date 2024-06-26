@@ -31,15 +31,17 @@ require 'api.php';
     <!-- 本ボタンを左下に配置 -->
         <div class="row justify-content-start">
             <div class="col-12 col-md-10">
+                <div class ="book">
                 <a href="Morattahenji.php">
                 <br>
                 <?php
                     $translator = new Translator();
                     $originalText = "本";
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br>'. $originalText.'</a>';
+                    echo '<a href="Morattahenji.php?id="',$_SESSION['User']['id'],' class="btn btn-outline-dark userinfoButton bg-light"><br><img src="../image/book.jpg" alt="icon" style="width:20px; height: 20px">'. $originalText.'</a>';
                 ?>
                 </a>
+                </div>
             </div>
         </div>
         <!-- 瓶を流すボタンと瓶を回収ボタンを中央に配置 -->
