@@ -34,7 +34,7 @@ require 'api.php';
                 <a href="Morattahenji.php">
                 <br>
                 <?php
-                    //$translator = new Translator();
+                    $translator = new Translator();
                     //$originalText = $translator->translate($originalText);
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                     echo '<a href="Morattahenji,php?id="',$_SESSION['user']['id'],'img src="../image/hon.png" alt="本" class="btn-hon-image">';
