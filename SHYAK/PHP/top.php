@@ -13,6 +13,14 @@ require 'menu-humburger.php';
 require 'api.php';
 //require 'CheckMessage.php';
 ?>
+<!-- ログアウトの時にのみ使用-->
+ <?php
+      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
+        echo '<script>';
+        echo 'alert("ログアウトしました")';
+        echo '</script>';
+      }
+      ?>
 <!--瓶 -->
 <img id="img_bin1" src="../image/瓶.png" alt="瓶">
 <img id="img_bin2" src="../image/瓶.png" alt="瓶">
@@ -26,7 +34,7 @@ require 'api.php';
                 <a href="Morattahenji.php">
                 <br>
                 <?php
-                    //$translator = new Translator();
+                    $translator = new Translator();
                     //$originalText = $translator->translate($originalText);
                     $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                     echo '<a href="Morattahenji,php?id="',$_SESSION['user']['id'],'img src="../image/hon.png" alt="本" class="btn-hon-image">';
@@ -36,11 +44,25 @@ require 'api.php';
         </div>
         <!-- 瓶を流すボタンと瓶を回収ボタンを中央に配置 -->
         <a href="Binnagasu-input.php">
-                    <button type="submit" class="btn-binwonagasu">瓶を流す</button>
-                    </a>
-            <a href="Binkaisyu-input.php">
-                <button type="button" class="btn-binwokaisyu">瓶を回収</button>
-            </a>
+            <button type="submit" class="btn-binwonagasu">
+                <?php
+                    $translator = new Translator();
+                    $originalText = "瓶を流す";
+                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                    echo $originalText;
+                ?>
+            </button>
+        </a>
+        <a href="Binkaisyu-input.php">
+            <button type="button" class="btn-binwokaisyu">
+                <?php
+                    $translator = new Translator();
+                    $originalText = "瓶を回収";
+                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                    echo $originalText;
+                ?>
+            </button>
+        </a>
 </div>
 
 <script src="../JavaScript/hamburger.js"></script>
