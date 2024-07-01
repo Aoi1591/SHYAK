@@ -18,8 +18,18 @@
   echo '</div>';
   if($user_id){
     // echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
-    echo '<class="c" img src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></td>';
-    echo '<p class="b">ユーザーID:',$user_id,'<br>','ユーザー:',$name,'国籍:',$country,'</p>';
+    //echo '<img class="c" src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></img>';
+    //echo '<p class="b">ユーザーID:',$user_id,'<br>','ユーザー:',$name,'国籍:',$country,'</p>';
+
+    echo '<div class="container">';
+        echo '<div class="image">';
+            echo '<img src="/mnt/data/スクリーンショット 2024-06-26 124405.png" alt="Screenshot">';
+        echo '</div>';
+        echo '<div class="text">';
+            echo '<p>ユーザーID:6</p>';
+            echo '<p>ユーザー:ひろし国籍:ja</p>';
+        echo '</div>';
+    echo '</div>';
 
     //DBの接続
     $pdo = new PDO($connect,USER,PASS);
