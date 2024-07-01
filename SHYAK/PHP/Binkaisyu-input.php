@@ -20,6 +20,7 @@ try {
     if ($row) {
         // ユーザー名とメッセージを取得し、flashメッセージとして格納
         $_SESSION['flash'] = ['username' => $row['user_name'], 'message' => $row['sent_message']];
+        $sent_id = $row['sent_id'];
     } else {
         // ユーザーが見つからない場合、エラーメッセージを返す
         $_SESSION['flash'] = ['none' => '拾える瓶が存在しません'];
@@ -46,14 +47,27 @@ try {
 </head>
 <body>
     <?php require 'api.php';?>
+    <?php
+    if(isset($_GET['tuho'])&&$_GET['tuho'] == 1){
+        echo '<script>';
+        $translator = new Translator();
+        $originalText = "メッセージを通報しました";
+        $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+        echo $translatedText;
+        echo '</script>';
+      }
+      ?>
     <div class="container">
-        <!-- ✘ボタン -->
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
                 <div class="col-10">
                     <br>
+                    <!--通報-->
+                    <a href="tuhou-output.php?sent_id=",$sent_id>
                     <button type="submit" class="tuhou">
                     </button>
+                    </a>
+                    <!-- ✘ボタン -->
                     <a href="top.php">
                     <button type="submit" class="batu">
                     </button></a>
