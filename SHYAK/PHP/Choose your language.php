@@ -13,7 +13,7 @@
 echo '<div style="text-align: center">';
 // 拾う瓶の言語を選んでくださいって意味ね！
 echo '<h1>Please choose the language of the bottle you pick up</h1>';
-echo $_SESSION['Pick']['lang'];
+echo $_SESSION['Pick'];
 
 // 翻訳クラスのインスタンス化
 $translator = new Translator();
@@ -26,7 +26,7 @@ echo "<h1>$translatedText</h1>";
 // ボタンのテキストも翻訳
 $yesText = $translator->translate("はい",$_SESSION['User']['lang']);
 $noText = $translator->translate("いいえ",$_SESSION['User']['lang']);
-echo "<a href='Binkaisyu-input.php?lang=".$_SESSION['Pick']['lang']."' value='$yesText'>";
+echo "<a href='Binkaisyu-input.php?lang=".$_SESSION['Pick']."' value='$yesText'>";
 echo "<a href='Chooseyourlanguage.php'>$noText</a>";
 
 echo '</div>';
