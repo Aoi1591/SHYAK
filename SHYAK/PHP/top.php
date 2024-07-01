@@ -53,7 +53,7 @@ require 'api.php';
                 ?>
             </button>
         </a>
-        <a href="Choose your language.php">
+        <a href="Chooseyourlanguage.php">
             <button type="button" class="btn-binwokaisyu">
                 <?php
                     $translator = new Translator();
