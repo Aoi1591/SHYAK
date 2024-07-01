@@ -23,7 +23,7 @@
 
     echo '<div class="container">';
         echo '<div class="image">';
-            echo '<img src="/mnt/data/スクリーンショット 2024-06-26 124405.png" alt="Screenshot">';
+            echo '<img class="c" src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></img>';
         echo '</div>';
         echo '<div class="text">';
             echo '<p>ユーザーID:6</p>';
