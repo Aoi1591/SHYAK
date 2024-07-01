@@ -13,7 +13,27 @@
 echo '<div style="text-align: center">';
 // 拾う瓶の言語を選んでくださいって意味ね！
 echo '<h1>Please choose the language of the bottle you pick up</h1>';
-echo $_SESSION['User']['pick'];
+//echo $_SESSION['User']['pick'];
+switch($_SESSION['User']['pick']){
+    case "ja":
+        echo '<img src="../img/日本.png" alt="日本の国旗">';
+        break;
+    case "en":
+        echo '<img src="../images/アメリカ.png" alt="アメリカの国旗">';
+        break;
+    case "fr":
+        echo '<img src="../images/フランス.png" alt="フランスの国旗">';
+        break;
+    case "pt":
+        echo '<img src="../images/ポルトガル.png" alt="ポルトガルの国旗">';
+        break;
+    case "ru":
+        echo '<img src="../images/ロシア.png" alt="ロシアの国旗">';
+        break;
+    case "zh-Hans":
+        echo '<img src="../images/中国.png" alt="中国の国旗">';
+        break;
+}
 
 // 翻訳クラスのインスタンス化
 $translator = new Translator();
