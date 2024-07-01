@@ -8,7 +8,7 @@ try{
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = $pdo->prepare('update Users set country_id = ? where user_id = ? and user_name = ?');
         $sql->execute([$_POST['language'],$_SESSION['User']['id'],$_SESSION['User']['username']]);
-        $_SESSION['Pick'] = ['lang' => $_POST['language']];
+        $_SESSION['Pick'] = $_POST['language'];
         header('Location: ./Choose your language.php');
         exit();
     }else{
