@@ -26,7 +26,7 @@ echo "<h1>$translatedText</h1>";
 // ボタンのテキストも翻訳
 $yesText = $translator->translate("はい",$_SESSION['User']['lang']);
 $noText = $translator->translate("いいえ",$_SESSION['User']['lang']);
-echo "<a href='Binkaisyu-input.php?lang=".$_SESSION['Pick']."' value='$yesText'>";
+echo "<a href='Binkaisyu-input.php?lang=".$_SESSION['User']['pick']."' value='$yesText'>";
 echo "<a href='Chooseyourlanguage.php'>$noText</a>";
 
 echo '</div>';
