@@ -1,37 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
-<h2 class="text-center mt-5">この内容でよろしいですか？</h2>
 <?php
-            if(isset($_POST['a'])) {
-                $a = $_POST['a'];
-                echo '<div class="text-center">';
-                echo "<p>入力された内容<br>$a</p>";
-            }
-            ?>
-            <div class="row justify-content-center">
-            
-            <div class="col-6">
-<a href="top.php">
-<button type="submit" class="btn btn-outline-dark userinfoButton">はい<br>
-</button>
-</a>
-</div>
-            <div class="col-6">
-<a href="Binnagasu-input.php">
-<button type="submit" class="btn btn-outline-dark userinfoButton">いいえ<br>
-</button>
-</a>
-</a>
+session_start(); // セッションを開始
+require 'connect.php'; // データベース接続ファイルをインクルード
 
-</div>
-</div>
-</body>
-</html>
+if (isset($_SESSION['User'])) { // ユーザーがログインしているか確認
+    try {
+        $pdo = new PDO($connect, USER, PASS); // データベース接続を確立
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // セッションからユーザーIDを取得
+        $user_id = $_SESSION['User']['id'];
+
+        // ユーザーIDを使用してユーザー名を取得
+        $stmt = $pdo->prepare('SELECT user_name FROM Users WHERE user_id = ?');
+        $stmt->execute([$user_id]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // ユーザー名を取得
+        $user_name = $_SESSION['User']['username'];
+
+        // メッセージをデータベースに挿入する準備をする
+        $sql = $pdo->prepare('INSERT INTO Sents(user_name, country_id,sent_message) VALUES (?, ?, ?)');
+        $sql->execute([$user_name, $_SESSION['User']['lang'] , $_POST['sentmessage']]); // SQLクエリを実行
+
+        // 成功した場合、top.phpにリダイレクト
+        header('Location: ./top.php');
+        exit();
+    } catch (PDOException $e) {
+        // エラーハンドリング
+        echo 'データベースエラー: ' . $e->getMessage();
+    }
+} else {
+    // ユーザーがログインしていない場合、アラートを表示し、ログインページにリダイレクト
+    echo '<script>alert("Please log in");</script>';
+    header('Location: ./login.php');
+    exit();
+}
+?>
