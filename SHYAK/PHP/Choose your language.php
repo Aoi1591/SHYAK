@@ -13,7 +13,7 @@
 echo '<div style="text-align: center">';
 // 拾う瓶の言語を選んでくださいって意味ね！
 echo '<h1>Please choose the language of the bottle you pick up</h1>';
-//echo $_SESSION['User']['pick'];
+echo $_SESSION['User']['pick'];
 
 // 翻訳クラスのインスタンス化
 $translator = new Translator();
