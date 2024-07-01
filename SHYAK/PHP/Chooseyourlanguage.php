@@ -20,7 +20,7 @@
             echo "<h1>".$translatedText."</h1>";
         ?>
     </div>
-    <form action="Choose your language.php" method="post">
+    <form action="Chooseyourlanguage-output.php" method="post">
         <div class="a">
             <a href="top.php">
                 <?php

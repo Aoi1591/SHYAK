@@ -9,8 +9,8 @@ try{
         $sql = $pdo->prepare('update Users set country_id = ? where user_id = ? and user_name = ?');
         $sql->execute([$_POST['language'],$_SESSION['User']['id'],$_SESSION['User']['username']]);
         $_SESSION['User']['pick'] = $_POST['language'];
-        echo $_SESSION['User']['pick'];
-        //header('Location: ./Choose your language.php?pick=',$_SESSION['User']['pick']);
+        //echo $_SESSION['User']['pick'];
+        header('Location: ./Choose your language.php?pick=',$_SESSION['User']['pick']);
         exit();
     }else{
         // セッション情報ない(未サインイン)のに飛ばされてきたとき
