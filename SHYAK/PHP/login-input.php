@@ -26,6 +26,13 @@
     </script>
 </head>
 <body>
+    <?php
+      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
+        echo '<script>';
+        echo 'alert("ログアウトしました")';
+        echo '</script>';
+      }
+      ?>
 
     <!-- Login Form Container -->
         <a href="adminlogin_check.php" id="admin">■</a>
