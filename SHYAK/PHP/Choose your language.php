@@ -19,19 +19,19 @@ switch($_SESSION['User']['pick']){
         echo '<img src="../img/日本.png" alt="日本の国旗">';
         break;
     case "en":
-        echo '<img src="../images/アメリカ.png" alt="アメリカの国旗">';
+        echo '<img src="../img/アメリカ.png" alt="アメリカの国旗">';
         break;
     case "fr":
-        echo '<img src="../images/フランス.png" alt="フランスの国旗">';
+        echo '<img src="../img/フランス.png" alt="フランスの国旗">';
         break;
     case "pt":
-        echo '<img src="../images/ポルトガル.png" alt="ポルトガルの国旗">';
+        echo '<img src="../img/ポルトガル.png" alt="ポルトガルの国旗">';
         break;
     case "ru":
-        echo '<img src="../images/ロシア.png" alt="ロシアの国旗">';
+        echo '<img src="../img/ロシア.png" alt="ロシアの国旗">';
         break;
     case "zh-Hans":
-        echo '<img src="../images/中国.png" alt="中国の国旗">';
+        echo '<img src="../img/中国.png" alt="中国の国旗">';
         break;
 }
 
