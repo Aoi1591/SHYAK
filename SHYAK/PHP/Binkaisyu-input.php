@@ -63,7 +63,7 @@ try {
                 <div class="col-10">
                     <br>
                     <!--通報-->
-                    <a href="tuhou-output.php?sent_id=",$sent_id>
+                    <a href="tuhou-output.php?sent_id=<?php echo $sent_id; ?>">
                     <button type="submit" class="tuhou">
                     </button>
                     </a>
