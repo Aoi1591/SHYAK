@@ -14,7 +14,6 @@ try {
     $stmt->bindParam(':lang', $_SESSION['User']['pick'], PDO::PARAM_STR);
     $stmt->execute();
     
-
     // クエリ結果をチェック
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($row) {

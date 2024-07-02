@@ -32,7 +32,7 @@
             </a>
         </div>
         <div class="jp">
-            <button type="submit" name="language" value="jp">日本語</button>
+            <button type="submit" name="language" value="ja">日本語</button>
         </div>
         <div class="FR">
             <button type="submit" name="language" value="fr">Français</button>
@@ -41,7 +41,7 @@
             <button type="submit" name="language" value="ru">Русский</button>
         </div>
         <div class="CN">
-            <button type="submit" name="language" value="cn">中文</button>
+            <button type="submit" name="language" value="zh-Hans">中文</button>
         </div>
         <div class="EN">
             <button type="submit" name="language" value="en">English</button>
