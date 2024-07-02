@@ -20,12 +20,7 @@
     <form action="Chooseyourlanguage-output.php" method="post">
         <div class="a">
             <a href="top.php">
-                <?php
-                    $translator = new Translator();
-                    $originalText = "戻る";
-                    $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $translatedText;
-                ?>
+                <img src="../image/back-btn.png" alt="return">
             </a>
         </div>
         <div class="jp">
