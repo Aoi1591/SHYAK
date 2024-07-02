@@ -19,7 +19,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // ランダムなユーザー名とメッセージを取得するクエリ
-    $sql = "select sent_id,user_name, sent_message from Sents where user_name != :myname and country_id = :lang order by RAND() LIMIT 1";
+    $sql = "select sent_id,user_name, sent_message from Sents where user_name != :myname and flag != 1 and country_id = :lang order by RAND() LIMIT 1";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':myname', $_SESSION['User']['username'], PDO::PARAM_STR);
     $stmt->bindParam(':lang', $_SESSION['User']['pick'], PDO::PARAM_STR);
