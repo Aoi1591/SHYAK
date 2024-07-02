@@ -62,3 +62,8 @@ button:hover {
 .button-link:hover {
     background-color: rgba(255, 255, 255, 1); /* 背景色（ホバー時に不透明） */
 }
+
+img{
+    width: 100%;
+    margin: 20px auto;
+}
