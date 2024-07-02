@@ -1,4 +1,15 @@
 <?php session_start();?>
+<?php require 'api.php';?>
+    <?php
+    if(isset($_GET['tuho'])&&$_GET['tuho'] == 1){
+        echo '<script>';
+        $translator = new Translator();
+        $originalText = "メッセージを通報しました";
+        $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+        echo $translatedText;
+        echo '</script>';
+      }
+      ?>
 <?php
 // データベース接続情報
 require 'connect.php';
@@ -45,17 +56,6 @@ try {
     <script src="../JavaScript/Binkaisyu.js" defer></script>
 </head>
 <body>
-    <?php require 'api.php';?>
-    <?php
-    if(isset($_GET['tuho'])&&$_GET['tuho'] == 1){
-        echo '<script>';
-        $translator = new Translator();
-        $originalText = "メッセージを通報しました";
-        $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-        echo $translatedText;
-        echo '</script>';
-      }
-      ?>
     <div class="container">
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
