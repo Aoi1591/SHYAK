@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recieve_message'])) {
     // クエリの実行
     if ($stmt->execute()) {
         // 成功した場合、JavaScriptを用いてアラートを表示し、別のページにリダイレクトする
-        echo "<script>alert('返信に成功しました。'); window.location.href='./top.php';</script>";
+        echo "<script>window.location.href='./top.php';</script>";
     } else {
         // 失敗した場合、エラーメッセージを表示
         echo "<script>alert('返信に失敗しました。'); window.location.href='Binkaisyu-input2.php';</script>";
