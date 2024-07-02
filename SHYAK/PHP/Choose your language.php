@@ -4,7 +4,7 @@
 ?>
     <link rel="stylesheet" href="../CSS/Choose your language.css">
     <title>Choose your language</title>
-    <link rel="stylesheet" href="../CSS/Chooseyourlanguage.css">
+    <!--<link rel="stylesheet" href="../CSS/Chooseyourlanguage.css">-->
 </head>
 <body>
 <?php require 'api.php'; ?>
