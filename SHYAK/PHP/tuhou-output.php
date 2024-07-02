@@ -8,3 +8,4 @@
     $sql -> execute([$sent_id]);
     
     header("Location:Binkaisyu-input.php?tuho=1");
+?>
