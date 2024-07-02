@@ -6,7 +6,7 @@
         $translator = new Translator();
         $originalText = "メッセージを通報しました";
         $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-        echo $translatedText;
+        echo 'alert("' . addslashes($translatedText) . '");';
         echo '</script>';
       }
       ?>
