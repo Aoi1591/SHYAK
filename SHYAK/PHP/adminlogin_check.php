@@ -3,11 +3,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // PHPの処理を実行
     $secretDate = date('Ymd');
     if ($_POST['userInput'] === $secretDate) {
-        header("Location: ./admin_login_input.php");
+        echo '<script>
+            alert("Correct answer. Redirecting to login page.");
+            window.location.href = "./admin_login_input.php";
+        </script>';
         exit;
     } else {
-        echo '<script>alert("Error: Incorrect answer to the secret question.");</script>';
-        header("Location: ./login.php?flag=fail");
+        echo '<script>
+            alert("Error: Incorrect answer to the secret question.");
+            window.location.href = "./login.php?flag=fail";
+        </script>';
         exit;
     }
 } else {
