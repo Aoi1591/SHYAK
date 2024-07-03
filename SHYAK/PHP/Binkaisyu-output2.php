@@ -1,32 +1,38 @@
 <?php
-session_start(); // セッションを開始
-require 'connect.php'; // データベース接続
-$pdo = new PDO($connect, USER, PASS); // データベース接続を確立
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+session_start(); // セッションの開始
+require 'connect.php'; // データベース接続スクリプト
 
-// フォームからのデータがPOSTされたか確認
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recieve_message'])) {
-    $recieveText = $_POST['recieve_message']; // ユーザーが入力した返信内容
-    $userName = $_SESSION['user_name']; // セッションからユーザー名を取得
+try {
+    $pdo = new PDO($connect, USER, PASS); // データベース接続の確立
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // エラーモードを例外に設定
 
-    // データベースに返信を保存するクエリ
-    $stmt = $pdo->prepare("INSERT INTO Recieves (user_name, recieve_message) VALUES (?, ?)");
-    //$stmt->bindParam("ss", $userName, $recieveText);  'ss'は2つの文字列型のパラメータを意味する
-    $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
-    $stmt->bindParam(':recieveText', $recieveText, PDO::PARAM_STR);
-    
-    // クエリの実行
-    if ($stmt->execute()) {
-        // 成功した場合、JavaScriptを用いてアラートを表示し、別のページにリダイレクトする
-        echo "<script>alert('返信に成功しました。'); window.location.href='top.php';</script>";
-    } else {
-        // 失敗した場合、エラーメッセージを表示
-        echo "<script>alert('返信に失敗しました。'); window.location.href='Binkaisyu-input2.php';</script>";
+    // フォームからのデータがPOSTされたか確認
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recieve_message']) && isset($_POST['sent_id'])) {
+        $recieveText = $_POST['recieve_message']; // フォームからの返信テキスト
+        $sentId = $_POST['sent_id']; // フォームからの送信先ID
+        $userName = $_SESSION['user_name']; // セッションからユーザー名を取得
+
+        // データベースにデータを挿入するための SQL クエリを準備
+        $stmt = $pdo->prepare("INSERT INTO Recieves (user_name, sent_id, sent_message) VALUES (:userName, :sentId, :recieveText)");
+        $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
+        $stmt->bindParam(':sentId', $sentId, PDO::PARAM_INT);
+        $stmt->bindParam(':recieveText', $recieveText, PDO::PARAM_STR);
+
+        // クエリの実行
+        if ($stmt->execute()) {
+            // 成功した場合、別のページにリダイレクト
+            echo "<script>window.location.href='./top.php';</script>";
+        } else {
+            // 失敗した場合、エラーメッセージを表示しリダイレクト
+            echo "<script>alert('返信に失敗しました。'); window.location.href='Binkaisyu-input2.php';</script>";
+        }
     }
-
+} catch (PDOException $e) {
+    // PDO操作中に発生した例外/エラーを処理
+    echo "<script>alert('データベースエラー: " . $e->getMessage() . "'); window.location.href='Binkaisyu-input2.php';</script>";
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         nameInput.value = initialName;
         descriptionInput.value = initialDescription;
         confirmationDialog.style.display = "none";
-        document.querySelector('from').submit();//何かわからない
+        document.querySelector('form').submit();//何かわからない
     });
 
     confirmNoButton.addEventListener("click", () => {
