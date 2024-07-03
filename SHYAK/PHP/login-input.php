@@ -38,7 +38,7 @@
     <script>
         document.getElementById('admin').addEventListener('click', function(event) {
             event.preventDefault();
-            var userInput = prompt("秘密の質問を入力してください（今日の日付を入力してください。例：20240703）:");
+            var userInput = prompt("秘密の質問を入力してください");
             if (userInput) {
                 var currentDate = new Date();
                 var year = currentDate.getFullYear();
