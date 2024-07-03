@@ -10,7 +10,7 @@ require 'api.php';
 <?php
     if(isset($_GET['you'])){
         $you = $_GET['you'];
-
+        $pdo = new PDO($connect,USER,PASS);
         $stmt = $pdo->prepare('SELECT * FROM Users WHERE id = :you');
         $stmt->bindParam(':you', $you);
         $stmt->execute();
