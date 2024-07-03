@@ -39,6 +39,11 @@ require 'api.php';
    $sql = $pdo -> prepare('select user_name,icon,message from Users WHERE user_id=?');//DB再構築後名前を確認
    $sql -> execute([$_SESSION['User']['id']]);
    $row = $sql ->fetch(PDO::FETCH_ASSOC);
+   echo "<hr>";
+   var_dump($row);
+   echo "<hr>";
+   var_dump($txtArr);
+   echo "<hr>";
    echo '<div class="profile-box">';
    echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
    echo '<img src="../img/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
