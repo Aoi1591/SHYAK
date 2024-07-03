@@ -35,18 +35,22 @@ try {
     $yousql->execute();
     $yourow = $yousql->fetch(PDO::FETCH_ASSOC);
     // クエリ結果をチェック
-    if (!$row) {
-        // ユーザーが見つからない場合、エラーメッセージをセット
-        $_SESSION['flash'] = ['none' => '拾える瓶が存在しません'];
+    if ($row) {
+    // ユーザー名とメッセージを取得し、flashメッセージとして格納
+    $_SESSION['flash'] = ['username' => $row['user_name'], 'message' => $row['sent_message']];
+    $sent_id = $row['sent_id'];
+    } else {
+    // ユーザーが見つからない場合、エラーメッセージを返す
+    $_SESSION['flash'] = ['none' => '拾える瓶が存在しません'];
     }
 
-} catch (PDOException $e) {
+    } catch (PDOException $e) {
     // エラーが発生した場合、エラーメッセージを返す
-    echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
-} finally {
+     echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+    } finally {
     // PDO接続を閉じる
     $pdo = null;
-}
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
