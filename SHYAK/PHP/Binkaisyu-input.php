@@ -1,4 +1,15 @@
 <?php session_start();?>
+<?php require 'api.php';?>
+    <?php
+    if(isset($_GET['tuho'])&&$_GET['tuho'] == 1){
+        echo '<script>';
+        $translator = new Translator();
+        $originalText = "メッセージを通報しました";
+        $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+        echo 'alert("' . addslashes($translatedText) . '");';
+        echo '</script>';
+      }
+      ?>
 <?php
 // データベース接続情報
 require 'connect.php';
@@ -8,7 +19,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // ランダムなユーザー名とメッセージを取得するクエリ
-    $sql = "select user_name, sent_message from Sents where user_name != :myname and country_id = :lang order by RAND() LIMIT 1";
+    $sql = "select sent_id,user_name, sent_message from Sents where user_name != :myname and flag != 1 and country_id = :lang order by RAND() LIMIT 1";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':myname', $_SESSION['User']['username'], PDO::PARAM_STR);
     $stmt->bindParam(':lang', $_SESSION['User']['pick'], PDO::PARAM_STR);
@@ -19,6 +30,7 @@ try {
     if ($row) {
         // ユーザー名とメッセージを取得し、flashメッセージとして格納
         $_SESSION['flash'] = ['username' => $row['user_name'], 'message' => $row['sent_message']];
+        $sent_id = $row['sent_id'];
     } else {
         // ユーザーが見つからない場合、エラーメッセージを返す
         $_SESSION['flash'] = ['none' => '拾える瓶が存在しません'];
@@ -44,15 +56,17 @@ try {
     <script src="../JavaScript/Binkaisyu.js" defer></script>
 </head>
 <body>
-    <?php require 'api.php';?>
     <div class="container">
-        <!-- ✘ボタン -->
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
                 <div class="col-10">
                     <br>
+                    <!--通報-->
+                    <a href="tuhou-output.php?sent_id=<?php echo $sent_id; ?>">
                     <button type="submit" class="tuhou">
                     </button>
+                    </a>
+                    <!-- ✘ボタン -->
                     <a href="top.php">
                     <button type="submit" class="batu">
                     </button></a>

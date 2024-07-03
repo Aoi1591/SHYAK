@@ -21,7 +21,7 @@
             <div class="col-12 col-md-2">
                 <div class="row">
                     <br>
-                    <a href="top.php">
+                    <a href="./top.php">
                         <button type="submit" class="batu">
                         </button>
                     </a>
@@ -37,29 +37,32 @@
             $sql = $pdo->prepare('select sent_id from Sents where user_name =?');
             $sql->execute([$user_name]);
             $binkaisyu = $sql->fetchAll(PDO::FETCH_ASSOC);
-            if($binkaisyu){
+            if(empty($binkaisyu)){
                 foreach($binkaisyu as $row){
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
                     $sql->execute([$row['sent_id']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
-                    $txtArr = array('からもらった返事',$recieves['sent_message']);
-                    for($i = 0; $i < count($txtArr); $i++){
-                        $originalText = $txtArr[$i];
-                        $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                        $txtArr[$i] = $originalText;
+                    var_dump($recieves);
+                    foreach($recieves as $res){
+                        $txtArr = array('からもらった返事',$res['sent_message']);
+                        for($i = 0; $i < count($txtArr); $i++){
+                            $originalText = $txtArr[$i];
+                            $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+                            $txtArr[$i] = $originalText;
+                        }
+                        echo '<div class="row justify-content-center">';
+                        echo '<h2 class="text-center mt-5" style="width: 300px;">';
+                        echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
+                        echo '</div>';
+                        echo '<div class="row justify-content-center mt-5">';
+                        echo '<div class="col-6">';
+                        echo '<div class="bun">';
+                        echo '<p>'. $txtArr[1].'</p>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
                     }
-                    echo '<div class="row justify-content-center">';
-                    echo '<h2 class="text-center mt-5" style="width: 300px;">';
-                    echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
-                    echo '</div>';
-                    echo '<div class="row justify-content-center mt-5">';
-                    echo '<div class="col-6">';
-                    echo '<div class="bun">';
-                    echo '<p>'. $txtArr[1].'</p>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo '</div>';
                 }
             }else{
                 $translator = new Translator();
@@ -73,7 +76,7 @@
                 echo '</div>';
                 echo '</div>';
             }
-        ?>     
+        ?>  
     </div>
 </body>
 </html>

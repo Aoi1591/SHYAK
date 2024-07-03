@@ -165,6 +165,7 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100% 100% ;
+  z-index: 0;
 }
 
 .btn-binwonagasu {
@@ -216,13 +217,14 @@ body {
 }
 
 .btn-hon-image {
-  top: 73%; /* 上から10px */
-  left: 15%;
+  top: 70%; /* 上から10px */
+  left: 10%;
   position: absolute;
   transform: translateX(-50%); /* 左から20px */
   width: 70px;
   height: 60px;
   transition: transform 0.1s, box-shadow 0.1s;
+  z-index: 99;
 
 }
 img.btn-hon-image:active{
@@ -312,4 +314,9 @@ img.btn-hon-image:active{
   transform: translateX(-50%);
   width: 100px;
   animation: animateImageSlide 34s infinite ease;
+}
+
+.book{
+  position: absolute;
+  top: 84%;
 }

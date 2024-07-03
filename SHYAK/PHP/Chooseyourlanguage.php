@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="../CSS/Chooseyourlanguage.css">
 </head>
 <body>
-<?php require 'api.php';?>
+<?php 
+   require 'menu-humburger.php';
+   require 'api.php';
+   ?>
 <div id="content">
     <div style="text-align: center">
         <?php
@@ -43,5 +46,6 @@
         </div>
     </form>
 </div>
+    <script src="../JavaScript/hamburger.js"></script>
 </body>
 </html>
