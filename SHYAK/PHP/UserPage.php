@@ -19,8 +19,8 @@ require 'api.php';
         foreach($users as $user){
             echo '<div class="profile-box">';
             echo '<img src="'.$user['icon'].'" alt="user icon">';
-            echo '<h2>'.$user['name'].'</h2>';
-            switch ($user['country']) {
+            echo '<h2>'.$user['user_name'].'</h2>';
+            switch ($user['country_id']) {
                 case "ja":
                     echo '<img src="../img/日本.png">';
                     break;
