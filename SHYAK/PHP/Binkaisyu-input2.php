@@ -88,6 +88,6 @@
         });
     });
 </script>
-<?php unset($_SESSION['flash']);?>
+<!--<?php //unset($_SESSION['flash']);?>-->
 </body>
 </html>
