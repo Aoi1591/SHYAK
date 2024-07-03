@@ -5,8 +5,8 @@
 </head>
 <body> 
     <h1>ログアウトしますか？<h1>
-        <button onclick="location.href='logout-output.php'">はい</button>
-        <button onclick="noevent()">いいえ</button>
+        <button onclick="location.href='logout-output.php'" id="yes=button">はい</button>
+        <button onclick="noevent()" id="no-button">いいえ</button>
        
     <script src="../JavaScript/logout.js"></script>
 </body>
