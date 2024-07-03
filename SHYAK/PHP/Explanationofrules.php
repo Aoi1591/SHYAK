@@ -23,6 +23,9 @@
             </div>
         </div>
         <br>
+        <div class="image-container">
+        <div class="img-fluid">
+            <div class="centered-text">
     <?php
     echo '<div class="center_box">';
     $ruleArry = array('[ルール説明]',
@@ -44,6 +47,10 @@
     echo '</div>';
 
 ?>
+</div>
+        </div>
+        </div>
 </body>
 </html>
+
 

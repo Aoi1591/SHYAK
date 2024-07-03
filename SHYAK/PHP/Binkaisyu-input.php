@@ -23,7 +23,7 @@ try {
     $sql = "SELECT sent_id, user_name, sent_message FROM Sents WHERE user_name != :myname AND flag != 1 AND country_id = :lang ORDER BY RAND() LIMIT 1";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':myname', $_SESSION['User']['username'], PDO::PARAM_STR);
-    $stmt->bindParam(':lang', $_SESSION['Pick']['lang'], PDO::PARAM_STR);
+    $stmt->bindParam(':lang', $_SESSION['User']['pick'], PDO::PARAM_STR);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -34,7 +34,6 @@ try {
     $yousql->bindParam(':username', $row['user_name'], PDO::PARAM_STR);
     $yousql->execute();
     $yourow = $yousql->fetch(PDO::FETCH_ASSOC);
-
     // クエリ結果をチェック
     if (!$row) {
         // ユーザーが見つからない場合、エラーメッセージをセット
