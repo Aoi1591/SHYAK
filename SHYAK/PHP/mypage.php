@@ -32,7 +32,7 @@ require 'api.php';
        $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
        $txtArr[$i] = $originalText;
    }
-   echo '<button id="backButton" type="button">'.$txtArr[0].'</button>';
+   echo '<button id="backButton" type="button" onclick="history.back()">'.$txtArr[0].'</button>';
    echo '</div>';
    //DB
    $pdo = new PDO($connect,USER,PASS);
