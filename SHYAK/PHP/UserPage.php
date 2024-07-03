@@ -7,6 +7,7 @@ require 'api.php';
     <link rel="stylesheet" href="../CSS/UserPage.css">
 </head>
 <body>
+<a href="javascript:history.back();">戻る</a>
 <?php
     if(isset($_GET['you'])){
         $you = $_GET['you'];
