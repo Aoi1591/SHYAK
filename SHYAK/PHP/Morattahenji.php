@@ -82,7 +82,7 @@
                 echo '<div class="row justify-content-center mt-5">';
                 echo '<div class="col-6">';
                 echo '<div class="bun">';
-                echo '<p>'. $originalText .'</p>';
+                echo '<p>'.$originalText.'</p>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
