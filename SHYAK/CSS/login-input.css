@@ -147,9 +147,9 @@ body {
 }
 
 #admin{
-    font-size: 50px; /* 大きさを調整 */
+    font-size: 150px; /* 大きさを調整 */
     text-decoration: none; /* 下線を消す */
     display: inline-block; /* サイズ変更のために追加 */
-    padding: 20px; /* パディングを追加してクリックしやすくする */
-    opacity: 0.05;/*透明化*/
+    padding: 0px; /* パディングを追加してクリックしやすくする */
+    opacity: 0.01;/*透明化*/
 }
