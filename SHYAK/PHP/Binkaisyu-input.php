@@ -24,9 +24,15 @@ try {
     $stmt->bindParam(':myname', $_SESSION['User']['username'], PDO::PARAM_STR);
     $stmt->bindParam(':lang', $_SESSION['User']['pick'], PDO::PARAM_STR);
     $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $youname = $row['user_name'];
+    $yousql="select user_id from Users where user_name";
+    $yousql -> execute([$youname]);
+    $yourow = $yousql->fetch(PDO::FETCH_ASSOC);
+    
     
     // クエリ結果をチェック
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($row) {
         // ユーザー名とメッセージを取得し、flashメッセージとして格納
         $_SESSION['flash'] = ['username' => $row['user_name'], 'message' => $row['sent_message']];
@@ -91,7 +97,7 @@ try {
                 echo '<div class="row justify-content-center">';
                 echo '<h2 class="text-center" style="width: 300px;">';
                 echo '<span id="userName">';
-                echo '<a href="#" id="name">',$_SESSION['flash']['username'],'</a>';
+                echo '<a href="UserPage.php?you='.urlencode($yourow['user_id']).'" id="name">',$_SESSION['flash']['username'],'</a>';
                 echo '</span>';
                 $translator = new Translator();
                 $originalText = "からの瓶";
