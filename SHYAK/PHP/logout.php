@@ -1,6 +1,7 @@
 <?php require "header.php";?>
 <?php require "connect.php";?>
 <title>管理者ログイン画面</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
     <link rel="stylesheet" href="../CSS/logout.css">
 </head>
 <body> 
