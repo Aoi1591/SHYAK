@@ -145,3 +145,9 @@ body {
     margin: 0 auto;
     border: 1px solid #000000;
 }
+
+#admin{
+    width: 50px;
+    height: 50px;
+    opacity: 0.3;
+}
