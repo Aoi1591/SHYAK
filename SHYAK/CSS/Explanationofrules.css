@@ -22,8 +22,13 @@ body {
   background-position: 50% 50%;
   background-size: 100% 100% ;
 }
-
-.center_box {
+.center_box{
+  font-size: 1.8vh; 
+  padding : 5vh;
+  height: 65vh;
+  overflow: auto;
+}
+.img-fluid{
   width: 80vw;
   height: 80vh;
   background-image: url("../image/ルール.png");
@@ -37,4 +42,30 @@ body {
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
+  position: relative;
+  color: white;
+
+  
 }
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

@@ -9,6 +9,10 @@ body {
     align-items: center;
     background-color: green;
     z-index: 1;
+    background-image: url("../img/transparent.png");
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: 75% 90% 
 }
 
 h1 {
@@ -61,4 +65,9 @@ button:hover {
 
 .button-link:hover {
     background-color: rgba(255, 255, 255, 1); /* 背景色（ホバー時に不透明） */
+}
+
+img{
+    width: 20%;
+    margin: 20px auto;
 }

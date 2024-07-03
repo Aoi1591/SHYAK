@@ -37,9 +37,9 @@ require 'api.php';
                     $translator = new Translator();
                     //$originalText = $translator->translate($originalText);
                     $originalText = $translator->translate("本",$_SESSION['User']['lang']);
-                    echo '<a href="Morattahenji,php?id="',$_SESSION['User']['id'],'img src="../image/hon.png" alt=$originalText class="btn-hon-image">';
+
+                    echo '<a href="Morattahenji.php?id=', $_SESSION['User']['id'], '"><img src="../image/hon.png" alt="', htmlspecialchars($originalText), '" class="btn-hon-image"></a>';
                 ?>
-                </a>
             </div>
         </div>
         <!-- 瓶を流すボタンと瓶を回収ボタンを中央に配置 -->
@@ -53,7 +53,7 @@ require 'api.php';
                 ?>
             </button>
         </a>
-        <a href="Binkaisyu-input.php">
+        <a href="Chooseyourlanguage.php">
             <button type="button" class="btn-binwokaisyu">
                 <?php
                     $translator = new Translator();

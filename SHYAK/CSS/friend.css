@@ -1,0 +1,108 @@
+/* 背景 */
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../image/背景.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.batu {
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    font-size: 50px;
+    text-decoration: none;
+    background: #ffbf00;
+    background-image: url("../image/batu.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 9px;
+    color: #fff;
+    text-align: center;
+    margin: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.friend1, .friend2 {
+    padding: 0.5em 0.5em;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 9px;
+    color: #000000;
+    text-align: center;
+    height: 55px;
+    line-height: 60px;
+    background: #ffe38f;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 70px;
+    margin: 10px;
+    width: 90%; /* 幅を120%に設定 */
+    max-width: 600px; /* 最大幅を設定 */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
+    transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+}
+
+
+.friend1 {
+    background-image: url("../image/友達.png");
+    background-size: 80px;
+    margin-right:10vw;
+}
+.friend1:active {
+    transform: translate(0px,5px); /* ボタンを下に動かす */
+    box-shadow: 0px 0px 0px #bc8d00;
+  }
+
+.friend2 {
+    background-image: url("../image/友達プラス.png");
+    background-size: 55px;
+    margin-left:7vw;
+}
+.friend2:active {
+    transform: translate(0px,5px); /* ボタンを下に動かす */
+    box-shadow: 0px 0px 0px #bc8d00;
+  }
+
+.friend-link {
+    padding: 0.5em 0.5em;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 9px;
+    text-align: center;
+    width: 80%;
+    height: 55px;
+    background: #fff6db;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right:20vw;
+    margin-left:25vw;
+    margin-top:1vw;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.col-12.col-md-8 {
+    display: flex;
+    justify-content: center;
+}
+
+.sen{
+    display: flex;
+    justify-content: center;
+}

@@ -32,17 +32,19 @@ require 'api.php';
        $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
        $txtArr[$i] = $originalText;
    }
-   echo '<button id="backButton" type="button">'.$txtArr[0].'</button>';
+   echo '<button id="backButton" type="button" onclick="history.back()">'.$txtArr[0].'</button>';
    echo '</div>';
    //DB
    $pdo = new PDO($connect,USER,PASS);
-   $sql = $pdo -> prepare('select user_name,icon,message from users WHERE id=?');//DB再構築後名前を確認
-   $sql -> execute([$_SESSION['users']['id']]);
+   $sql = $pdo -> prepare('select user_name,icon,message from Users WHERE user_id=?');//DB再構築後名前を確認
+   $sql -> execute([$_SESSION['User']['id']]);
    $row = $sql ->fetch(PDO::FETCH_ASSOC);
    echo '<div class="profile-box">';
    echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
    echo '<img src="../img/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
-   echo '<div id="name" name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
+//    echo '<div id="name" name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
+   echo '<div name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
+   echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
    echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
    echo '</div>';
 

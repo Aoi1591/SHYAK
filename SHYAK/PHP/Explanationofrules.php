@@ -1,8 +1,6 @@
-
-
 <?php
-    //session_start();
-    //require 'header.php';
+    session_start();
+    require 'header.php';
 ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Explanation of rules</title>
@@ -10,7 +8,7 @@
 </head>
 <body>
 <?php
-    //require 'api.php';
+    require 'api.php';
 ?>
 <br>
     <div class="container">
@@ -18,7 +16,6 @@
         <div class="row justify-content-end">
             <div class="col-12 col-md-2">
                 <div class="row">
-                    
                     <a href="top.php">
                         <button type="button" class="batu"></button>
                     </a>
@@ -26,6 +23,9 @@
             </div>
         </div>
         <br>
+        <div class="image-container">
+        <div class="img-fluid">
+            <div class="centered-text">
     <?php
     echo '<div class="center_box">';
     $ruleArry = array('[ルール説明]',
@@ -47,6 +47,10 @@
     echo '</div>';
 
 ?>
+</div>
+        </div>
+        </div>
 </body>
 </html>
+
 
