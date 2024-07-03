@@ -44,17 +44,24 @@ require 'api.php';
    echo "<hr>";
    var_dump($txtArr);
    echo "<hr>";
+   var_dump($row['user_name']);
+   echo "<hr>";
+   var_dump($row['message']);
+   echo "<hr>";
    echo '<div class="profile-box">';
    echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
    echo '<img src="../img/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
-   echo '<div id="name" name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
-   echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
+//    echo '<div id="name" name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
+   echo '<div id="name" name="name" class="editable" contenteditable="true">nakaba</div>';
+//    echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
+//    echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
    echo '</div>';
 
    echo '<div class="description-box">';
    echo '<div class="intro-title">［'.$txtArr[2].'］</div>';
-   echo '<div id="description" class="description editable" contenteditable="true">',$row['message'],'</div>';
-   echo '<input type="hidden" name="description" id="descriptionInput" value="',$row['message'],'">';
+//    echo '<div id="description" class="description editable" contenteditable="true">',$row['message'],'</div>';
+   echo '<div id="description" class="description editable" contenteditable="true">msg</div>';
+//    echo '<input type="hidden" name="description" id="descriptionInput" value="',$row['message'],'">';
    echo '</div>';
 
    echo '<div id="confirmationDialog" style="display: none;">';
