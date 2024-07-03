@@ -29,7 +29,7 @@ require 'api.php';
    $txtArr = array('戻る','クリックしてファイルを選択','自己紹介文','はい','いいえ');
    for($i = 0; $i < count($txtArr); $i++){
        $originalText = $txtArr[$i];
-       $originalText = $translator->translate($originalText,$_SESSION['User']['Sents']);
+       $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
        $txtArr[$i] = $originalText;
    }
    echo '<button id="backButton" type="button">'.$txtArr[0].'</button>';
@@ -39,6 +39,11 @@ require 'api.php';
    $sql = $pdo -> prepare('select user_name,icon,message from Users WHERE user_id=?');//DB再構築後名前を確認
    $sql -> execute([$_SESSION['User']['id']]);
    $row = $sql ->fetch(PDO::FETCH_ASSOC);
+   echo "<hr>";
+   var_dump($row);
+   echo "<hr>";
+   var_dump($txtArr);
+   echo "<hr>";
    echo '<div class="profile-box">';
    echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
    echo '<img src="../img/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
