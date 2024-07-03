@@ -51,7 +51,8 @@
 
     echo '<div class="row justify-content-center">';
     echo '<div class="text-center col-6">';
-    echo '<textarea class="form-control" name="kaisyu" id="userInput2" rows="10" cols="40" placeholder='. $txtArr[1] .'></textarea>';
+    echo '<input type="hidden" name="sent_id" value="' . $_SESSION['flash']['sent_id'] . '">';
+    echo '<textarea class="form-control" name="recieve_message" id="userInput2" rows="10" cols="40" placeholder="'. $txtArr[1] .'"></textarea>';
     echo '</div>';
     echo '</div>';
     echo '</div><br>';
