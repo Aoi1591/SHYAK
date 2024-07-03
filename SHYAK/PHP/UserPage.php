@@ -8,9 +8,8 @@ require 'api.php';
 </head>
 <body>
 <?php
-    if(isset($_GET['you']) && isset($_GET['me'])){
+    if(isset($_GET['you'])){
         $you = $_GET['you'];
-        $me = $_GET['me'];
 
         $stmt = $pdo->prepare('SELECT * FROM Users WHERE id = :you');
         $stmt->bindParam(':you', $you);
@@ -49,10 +48,10 @@ require 'api.php';
             echo '</div>';
             echo '<div class="relation">';
             echo '<div class="friend">';
-            echo 'フレンド申請';
+            echo '<a href="UserPage-output.php?flg=2you="'.$you.'">フレンド申請</a>';
             echo '</div>';
             echo '<div class="block">';
-            echo 'ブロックする';
+            echo '<a href="UserPage-output.php?flg=1you="'.$you.'">ブロックする</a>';
             echo '</div>';
             echo '</div>';
         }
