@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (userInput !== null) {
             var form = document.createElement("form");
             form.method = "POST";
-            form.action = "./admin_login_input.php";
+            form.action = ""; // 同じページに送信
             
             var input = document.createElement("input");
             input.type = "hidden";
