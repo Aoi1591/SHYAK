@@ -52,7 +52,7 @@ require 'api.php';
    echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
    echo '<img src="../img/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
 //    echo '<div id="name" name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
-   echo '<div id="name" name="name" class="editable" contenteditable="true">nakaba</div>';
+//    echo '<div id="name" name="name" class="editable" contenteditable="true">nakaba</div>';
 //    echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
 //    echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
    echo '</div>';
@@ -60,7 +60,7 @@ require 'api.php';
    echo '<div class="description-box">';
    echo '<div class="intro-title">［'.$txtArr[2].'］</div>';
 //    echo '<div id="description" class="description editable" contenteditable="true">',$row['message'],'</div>';
-   echo '<div id="description" class="description editable" contenteditable="true">msg</div>';
+//    echo '<div id="description" class="description editable" contenteditable="true">msg</div>';
 //    echo '<input type="hidden" name="description" id="descriptionInput" value="',$row['message'],'">';
    echo '</div>';
 
