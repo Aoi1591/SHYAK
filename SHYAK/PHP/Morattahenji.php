@@ -32,7 +32,6 @@
         <?php
             $pdo = new PDO($connect, USER, PASS); // データベース接続を確立
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// エラーモードを指定。エラーをキャッチできるように
-
             // 変身された瓶があるか確認
             $user_name = $_SESSION['User']['username']; // セッションからユーザーIDを取得
             $sql = $pdo->prepare('select sent_id from Sents where user_name =?');
