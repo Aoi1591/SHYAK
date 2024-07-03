@@ -91,7 +91,7 @@ try {
                 echo '<div class="row justify-content-center">';
                 echo '<h2 class="text-center" style="width: 300px;">';
                 echo '<span id="userName">';
-                echo '<a href="#">',$_SESSION['flash']['username'],'</a>';
+                echo '<a href="#" id="name">',$_SESSION['flash']['username'],'</a>';
                 echo '</span>';
                 $translator = new Translator();
                 $originalText = "からの瓶";
