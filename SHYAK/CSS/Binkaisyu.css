@@ -115,7 +115,7 @@ z-index: 11;
   z-index: 11;
 }
 
-#name{
+a{
   text-decoration: none; /* 下線を消す */
   color: #000;
 }
