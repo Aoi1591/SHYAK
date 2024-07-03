@@ -18,7 +18,11 @@ require 'api.php';
 
         foreach($users as $user){
             echo '<div class="profile-box">';
-            echo '<img src="'.$user['icon'].'" alt="user icon">';
+            if(empty($user['icon'])){
+                echo '<img src="../img/default.png" alt="user icon">';
+            }else{
+                echo '<img src="'.$user['icon'].'" alt="user icon">';
+            }
             echo '<h2>'.$user['user_name'].'</h2>';
             switch ($user['country_id']) {
                 case "ja":
@@ -42,8 +46,7 @@ require 'api.php';
             }
             echo '<div class="description-box">';
             echo '<div class="intro-title">［自己紹介］</div>';
-            echo '<div id="description" class="description editable" contenteditable="true">',$user['message'],'</div>';
-            echo '<input type="hidden" name="description" id="descriptionInput" value="',$user['message'],'">';
+            echo '<div id="description">',$user['message'],'</div>';
             echo '</div>';
             echo '</div>';
             echo '<div class="relation">';
