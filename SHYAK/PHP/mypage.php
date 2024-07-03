@@ -29,7 +29,7 @@ require 'api.php';
    $txtArr = array('戻る','クリックしてファイルを選択','自己紹介文','はい','いいえ');
    for($i = 0; $i < count($txtArr); $i++){
        $originalText = $txtArr[$i];
-       $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+       $originalText = $translator->translate($originalText,$_SESSION['User']['Sents']);
        $txtArr[$i] = $originalText;
    }
    echo '<button id="backButton" type="button">'.$txtArr[0].'</button>';
