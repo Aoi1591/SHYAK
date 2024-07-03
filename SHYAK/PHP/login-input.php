@@ -11,7 +11,7 @@
             if(userInput){
                 var form = document.createElement("form");
                 form.method = "POST";
-                form.action = "adminlogin_check.php";
+                form.action = "admin_login_input.php";
 
                 var input = document.createElement("input");
                 input.type = "hidden";
