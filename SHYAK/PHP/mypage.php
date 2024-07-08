@@ -55,9 +55,8 @@ require 'api.php';
    echo '</div>';
 
    echo '<div id="confirmationDialog" style="display: none;">';
-   echo '<p>'.$txtArr[3].'</p>';
-   echo '<button id="confirmYes" type="submit">'.$txtArr[4].'</button>';
-   echo '<button id="confirmNo" type="button">'.$txtArr[5].'</button>';
+   echo '<button id="confirmYes" type="submit">'.$txtArr[3].'</button>';
+   echo '<button id="confirmNo" type="button">'.$txtArr[4].'</button>';
    echo '</div>';
 
    echo '</form>';
