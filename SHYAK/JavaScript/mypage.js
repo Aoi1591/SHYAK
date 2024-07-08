@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameElement = document.getElementById("name");
     const descriptionElement = document.getElementById("description");
     const backButton = document.getElementById("backButton");
-    console.log(backButton);
     const confirmationDialog = document.getElementById("confirmationDialog");
+    const confirmationDialogCon = document.getElementById("confirmationDialogCon");
     const confirmYesButton = document.getElementById("confirmYes");
     const confirmNoButton = document.getElementById("confirmNo");
     const languageChoice = document.getElementById("LanguageChoice-all");
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     backButton.addEventListener("click", () => {
 
         confirmationDialog.style.display = "block";
+        confirmationDialogCon.style.display = "block";
 
     });
 
@@ -29,10 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     confirmNoButton.addEventListener("click", () => {
         // 情報を保存せずに top.php に遷移
-        nameElement.textContent = initialName;
-        descriptionElement.textContent = initialDescription;
         confirmationDialog.style.display = "none";
-        window.location.href = "../php/top.php";
+        confirmationDialogCon.style.display = "none";
     });
 });
 

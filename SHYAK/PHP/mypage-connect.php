@@ -27,6 +27,6 @@
         $sql = $pdo->prepare('update Users set user_name = ?, message = ?, country_id = ? WHERE user_id = ?');
         $sql->execute([$name, $description, $language ,$user_id]);
     }
-        header("Location: mypage.php");
-        exit();
+    header("Location: top.php");
+    exit();
 ?>

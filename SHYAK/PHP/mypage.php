@@ -51,10 +51,15 @@ require 'api.php';
    echo '<input class="description editable" name="description" id="descriptionInput" value="',$row['message'],'">';
    echo '</div>';
 
-   echo '<div id="confirmationDialog" style="display: none;">';
-   echo '<button id="confirmYes" type="submit">'.$txtArr[3].'</button>';
-   echo '<button id="confirmNo" type="button">'.$txtArr[4].'</button>';
+   // モーダルの部分を追加する
+   echo '<div id="confirmationDialog" style="display: none !important; margin-top 10%; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1000;">';
+   echo '<div id="confirmationDialogCon" class="dialog-content" style="background: #FFF4B9; border-radius: 20px; padding:7%;  text-align: center; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">';
+   echo '<label>マジで更新しますか？</label>';
+   echo '<button id="confirmYes" type="submit" style="width: 100px; height: 40px; margin: 10px; border: none; border-radius: 20px; font-size: 16px; color: #fff; cursor: pointer; background-color: #4CAF50; transition: background-color 0.3s ease;">' . $txtArr[3] . '</button>';
+   echo '<button id="confirmNo" type="button" style="width: 100px; height: 40px; margin: 10px; border: none; border-radius: 20px; font-size: 16px; color: #fff; cursor: pointer; background-color: #f44336; transition: background-color 0.3s ease;">' . $txtArr[4] . '</button>';
    echo '</div>';
+   echo '</div>';
+
 
    echo '</form>';
    echo '<script src="../JavaScript/mypage.js"></script>';
