@@ -41,7 +41,7 @@ h1{
 
 #no-button{
     top: 84%; /* 上から10px */
-    right: 30%; /* 左から20px */
+    right: 210px; /* 左から20px */
     position: absolute;
     transform: translateX(-50%);
     display: inline-block;
