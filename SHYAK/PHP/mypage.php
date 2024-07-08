@@ -5,22 +5,27 @@ require 'header.php';
 require 'api.php';
 ?>
 <?php
-      
+   $pdo = new PDO($connect,USER,PASS);
+   $sql = $pdo -> prepare('select user_name,icon,message,country_id from Users WHERE user_id=?');//DB再構築後名前を確認
+   $sql -> execute([$_SESSION['User']['id']]);
+   $row = $sql ->fetch(PDO::FETCH_ASSOC);
+
    echo ' <link rel="stylesheet" href="../CSS/mypage.css">';
    echo '</head>';
 
    echo '<body>';
-   echo '<form method="POST" action="mypage-connect.php">';
+   echo '<form method="POST" action="mypage-connect.php" enctype="multipart/form-data">';
 
-   //言語選択
+   $selectedLanguage = $row['country_id']; // ここは実際のデータベースクエリから取得した値に置き換えます
+
    echo '<select name="language" id="LanguageChoice-all" class="LanguageChoice">';
-   echo '<option disabled selected>Language Choice</option>';
-   echo '<option value="ja">日本語</option>';
-   echo '<option value="en">English</option>';
-   echo '<option value="ru">русский язык</option>';
-   echo '<option value="pt">português</option>';
-   echo '<option value="fr">français</option>';
-   echo '<option value="zh-Hans">简体中文</option>';
+   echo '<option disabled ' . (!$selectedLanguage ? 'selected' : '') . '>Language Choice</option>';
+   echo '<option value="ja" ' . ($selectedLanguage == 'ja' ? 'selected' : '') . '>日本語</option>';
+   echo '<option value="en" ' . ($selectedLanguage == 'en' ? 'selected' : '') . '>English</option>';
+   echo '<option value="ru" ' . ($selectedLanguage == 'ru' ? 'selected' : '') . '>русский язык</option>';
+   echo '<option value="pt" ' . ($selectedLanguage == 'pt' ? 'selected' : '') . '>português</option>';
+   echo '<option value="fr" ' . ($selectedLanguage == 'fr' ? 'selected' : '') . '>français</option>';
+   echo '<option value="zh-Hans" ' . ($selectedLanguage == 'zh-Hans' ? 'selected' : '') . '>简体中文</option>';
    echo '</select>';
 
    //戻るボタン
@@ -34,24 +39,16 @@ require 'api.php';
    }
    echo '<button id="backButton" type="button">'.$txtArr[0].'</button>';//戻るボタン
    echo '</div>';
-   //DB
-   $pdo = new PDO($connect,USER,PASS);
-   $sql = $pdo -> prepare('select user_name,icon,message from Users WHERE user_id=?');//DB再構築後名前を確認
-   $sql -> execute([$_SESSION['User']['id']]);
-   $row = $sql ->fetch(PDO::FETCH_ASSOC);
    echo '<div class="profile-box">';
    echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
-   echo '<img src="../img/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
-//    echo '<div id="name" name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
-   echo '<div name="name" class="editable" contenteditable="true">',$row['user_name'],'</div>';
-   echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
-   echo '<input type="hidden" name="name" id="nameInput" value="',$row['user_name'],'">';
-   echo '</div>';
+   echo '<img src="../image/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
+
+   echo '<input class="editable" name="user_name" id="nameInput" value="',$row['user_name'],'">';// 名前入力ボックス
 
    echo '<div class="description-box">';
    echo '<div class="intro-title">［'.$txtArr[2].'］</div>';
    echo '<div id="description" class="description editable" contenteditable="true">',$row['message'],'</div>';
-   echo '<input type="hidden" name="description" id="descriptionInput" value="',$row['message'],'">';
+   echo '<input class="description editable" name="description" id="descriptionInput" value="',$row['message'],'">';
    echo '</div>';
 
    echo '<div id="confirmationDialog" style="display: none;">';
@@ -64,4 +61,6 @@ require 'api.php';
    echo '</body>';
    echo '</html>';
    ?>
+   
+
    
