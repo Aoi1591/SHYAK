@@ -1,37 +1,27 @@
 <?php
-session_start(); // セッションの開始
-require 'connect.php'; // データベース接続スクリプト
+session_start();
+require 'connect.php';  // データベース接続の設定を読み込む
 
+// POSTデータを受け取る
+$userName = $_POST['user_name'];
+$sentId = $_POST['sent_id'];
+$sentMessage = $_POST['sent_message'];
+
+// データベースにデータを挿入
 try {
-    $pdo = new PDO($connect, USER, PASS); // データベース接続の確立
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // エラーモードを例外に設定
+    $pdo = new PDO($connect, USER, PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // フォームからのデータがPOSTされたか確認
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recieve_message']) && isset($_POST['sent_id'])) {
-        $recieveText = $_POST['recieve_message']; // フォームからの返信テキスト
-        $sentId = $_POST['sent_id']; // フォームからの送信先ID
-        $userName = $_SESSION['user_name']; // セッションからユーザー名を取得
-
-        // データベースにデータを挿入するための SQL クエリを準備
-        $stmt = $pdo->prepare("INSERT INTO Recieves (user_name, sent_id, sent_message) VALUES (:userName, :sentId, :recieveText)");
-        $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
-        $stmt->bindParam(':sentId', $sentId, PDO::PARAM_INT);
-        $stmt->bindParam(':recieveText', $recieveText, PDO::PARAM_STR);
-
-        // クエリの実行
-        if ($stmt->execute()) {
-            // 成功した場合、別のページにリダイレクト
-            echo "<script>window.location.href='./top.php';</script>";
-        } else {
-            // 失敗した場合、エラーメッセージを表示しリダイレクト
-            echo "<script>alert('返信に失敗しました。'); window.location.href='Binkaisyu-input2.php';</script>";
-        }
-    }
+    $stmt = $pdo->prepare('INSERT INTO Recieves (user_name, sent_id, sent_message) VALUES (:user_name, :sent_id, :sent_message)');
+    $stmt->bindParam(':user_name', $userName);
+    $stmt->bindParam(':sent_id', $sentId);
+    $stmt->bindParam(':sent_message', $sentMessage);
+    $stmt->execute();
 } catch (PDOException $e) {
-    // PDO操作中に発生した例外/エラーを処理
-    echo "<script>alert('データベースエラー: " . $e->getMessage() . "'); window.location.href='Binkaisyu-input2.php';</script>";
+    die('Database error: ' . $e->getMessage());  // エラー処理
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
