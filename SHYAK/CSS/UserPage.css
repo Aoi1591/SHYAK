@@ -18,133 +18,155 @@
  }
 */
 
-
- /*バックグラウンドのサイズ*/
+/*バックグラウンドのサイズ*/
 body {
-    width: 95vw;
-    height: 98vh;
-    background-image: url("../img/a.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../image/背景.jpg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 100% 100% ;
   }
-  
-  .header {
-      position: absolute;
-      background: #FFF4B9;
-      border-radius: 30px;
-  }
-  /*言語選択ボタン*/
-  #LanguageChoice-all {
-      position: absolute;
-      width: 20%;
-      height: 9%;
-      left: 6%;
-      top: 2%;
-      background: #FFF4B9;
-      border-radius: 30px;
-  }
-  
-  .LanguageChoice {
-      text-align: center;
-      line-height: 98px;
-      font-size: 3vh;
-      color: #000000;
-  }
-  
-  /*戻るボタン*/
-  #backButton {
-      position: absolute;
-      width: 10vw;
-      height: 9vh;
-      left: 80vw;
-      top: 1vh;
-      background: #FFF4B9;
-      border-radius: 30px;
-      text-align: center;
-      line-height: 4vw;
-      font-size: 3vw;
-      color: #000000;
-      border: none;
-      cursor: pointer;
-  }
-  /*プロフィール画像*/
-  /*.profile-box {
-      position: absolute;
-      left: 89px;
-      top: 425px;
-      width: 100px;
-      height: 232px;
-  }*/
-  
-  #image {
-      position: absolute;
-      width: 11%; 
-      height: 21%;
-      top: 34% ;
-      left: 7%;
-      border: 1px solid #000;
-  }
-  /*名前*/
-  .editable {
-      position: absolute;
-      width: 40%;
-      height: 8%;
-      left: 47%;
-      top: 47%; /* Adjust as needed */
-      background: #FFF4B9;
-      border-radius: 30px;
-      text-align: center;
-      line-height:8vh;
-      font-size: 5vh;
-      color: #000000;
-  }
-  /*自己紹介文*/
-  .description-box {
-      position: absolute;
-      width: 81%;
-      height: 42%;
-      left: 6%;
-      top: 57%;
-      background: #FFF4B9;
-      border-radius: 30px;
-      padding: 1vh;
-      box-sizing: border-box;
-  }
-  /*[自己紹介文]*/
-  .intro-title {
-      font-size: 4vh;
-      color: #000000;
-      text-align: center;
-      margin-bottom: 20px;
-  }
-  /*自己紹介文の内容*/
-  .description {
-      font-size: 5vh;
-      top: 20%;
-      left: auto;
-      color: #000000;
-      text-align: center;
-      word-wrap: break-word;
-      width: 95%;
-      height: 80%;
-  }
 
-/*フレンド追加*/
-  #LanguageChoice-a {
+.header {
     position: absolute;
-    width: 20%;
-    height: 9%;
-    left: 6%;
-    top: 12%;
     background: #FFF4B9;
     border-radius: 30px;
 }
 
-/*フレンド追加のフォント*/
-.LanguageChoice-a {
+/*言語選択ボタン*/
+#LanguageChoice-all {
+    position: absolute;
+    width: 20%;
+    height: 9%;
+    left: 6%;
+    top: 2%;
+    background: #FFF4B9;
+    border-radius: 30px;
+}
+
+.LanguageChoice {
     text-align: center;
-    line-height: 8vh;
+    line-height: 98px;
     font-size: 3vh;
     color: #000000;
+}
+
+/*戻るボタン*/
+#backButton {
+    position: absolute;
+    width: 10vw;
+    height: 9vh;
+    left: 80vw;
+    top: 1vh;
+    background: #FFF4B9;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 4vw;
+    font-size: 3vw;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+}
+
+/*プロフィール画像*/
+
+    .profile-box {
+        position: absolute; /* または fixed */
+        width: 170px;
+        height: 170px;
+        top: 35%;
+        left: 6%;
+        border: 1px solid #000;
+    }
+    
+
+
+/*名前*/
+.name {
+    position: absolute;
+    width: 40%;
+    height: 8%;
+    left: 47%;
+    top: 43%; /* Adjust as needed */
+    background: #FFF4B9;
+    border-radius: 30px;
+    text-align: center;
+    line-height:8vh;
+    font-size: 5vh;
+    color: #000000;
+}
+
+/*自己紹介文*/
+.description-box {
+    position: absolute;
+    width: 81%;
+    height: 42%;
+    left: 6%;
+    top: 57%;
+    background: #FFF4B9;
+    border-radius: 30px;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+
+/*[自己紹介文]*/
+.intro-title {
+    font-size: 4vh;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*自己紹介文の内容*/
+.description {
+    font-size: 5vh;
+    top: 20%;
+    left: auto;
+    color: #000000;
+    text-align: center;
+    word-wrap: break-word;
+    width: 95%;
+    height: 80%;
+}
+
+/*フレンド追加*/
+.friend{
+    position: absolute;
+    width: 25%;
+    height: 7%;
+    left: 3%;
+    top: 4%;
+    background: #FFF4B9;
+    border-radius: 30px;
+    text-align: center;
+    line-height:8vh;
+    font-size: 2.5vh;
+    color: #000000;
+}
+
+.block{
+    position: absolute;
+    width: 25%;
+    height: 7%;
+    left: 3%;
+    top: 12%;
+    background: #FFF4B9;
+    border-radius: 30px;
+    text-align: center;
+    line-height:8vh;
+    font-size: 2.5vh;
+    color: #000000;
+}
+ 
+
+    
+
+.kuni {
+    position: absolute; /* または fixed */
+    width: 170px;
+    height: 100px;
+    top: 35%;
+    left: 60%;
+    border: 1px solid #000;
 }
