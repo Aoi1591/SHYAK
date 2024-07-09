@@ -67,7 +67,5 @@ require 'api.php';
    echo '<script src="../JavaScript/hamburger.js"></script>';
     require 'footer.php' ;
    ?>
-   
-   
 
    
