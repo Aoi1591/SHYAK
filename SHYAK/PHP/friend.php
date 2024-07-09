@@ -56,7 +56,7 @@ try {
                 $country = htmlspecialchars($friend['country_id']);
 
                 echo '<div class="sen">';
-                echo '<a class="friend-link" href="UserPage.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a>';
+                echo '<a class="friend-link" href="UserPage.php?you=' . urldecode($id).'</a>';
                 echo '</div>';
             }
         }
