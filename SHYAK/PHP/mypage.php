@@ -64,10 +64,11 @@ require 'api.php';
 
    echo '</form>';
    echo '<script src="../JavaScript/mypage.js"></script>';
+   echo '<script src="../JavaScript/hamburger.js"></script>';
    echo '</body>';
    echo '</html>';
    ?>
-   <script src="../JavaScript/hamburger.js"></script>
+   
    
 
    
