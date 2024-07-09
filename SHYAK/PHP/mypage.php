@@ -5,6 +5,7 @@ require 'header.php';
 require 'api.php';
 ?>
 <?php
+   require 'menu-humburger.php';
    $pdo = new PDO($connect,USER,PASS);
    $sql = $pdo -> prepare('select user_name,icon,message,country_id from Users WHERE user_id=?');//DB再構築後名前を確認
    $sql -> execute([$_SESSION['User']['id']]);
@@ -66,6 +67,7 @@ require 'api.php';
    echo '</body>';
    echo '</html>';
    ?>
+   <script src="../JavaScript/hamburger.js"></script>
    
 
    
