@@ -7,16 +7,18 @@ require 'api.php';
     <link rel="stylesheet" href="../CSS/UserPage.css">
 </head>
 <body>
-<a href="javascript:history.back();">戻る</a>
 <?php
     if(isset($_GET['you'])){
+        if(isset($_GET['err'])){
+            echo '<script>alert("リクエストに失敗しました"\n"再度実行してください")</script>';
+        }
+        echo '<a href="javascript:history.back();">戻る</a>';
         $you = $_GET['you'];
         $pdo = new PDO($connect,USER,PASS);
         $stmt = $pdo->prepare('SELECT * FROM Users WHERE user_id = :you');
         $stmt->bindParam(':you', $you);
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
         foreach($users as $user){
             echo '<div class="profile-box">';
             if(empty($user['icon'])){
@@ -52,14 +54,15 @@ require 'api.php';
             echo '</div>';
             echo '<div class="relation">';
             echo '<div class="friend">';
-            echo '<a href="UserPage-output.php?flg=2you="'.$you.'">フレンド申請</a>';
+            echo '<a href="UserPage-output.php?flg=2&you="'.$you.'">フレンド申請</a>';
             echo '</div>';
             echo '<div class="block">';
-            echo '<a href="UserPage-output.php?flg=1you="'.$you.'">ブロックする</a>';
+            echo '<a href="UserPage-output.php?flg=1&you="'.$you.'">ブロックする</a>';
             echo '</div>';
             echo '</div>';
         }
+    }else{
+        header('Location:top.php');
     }
-
 ?>
 </body>
