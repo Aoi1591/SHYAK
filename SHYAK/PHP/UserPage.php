@@ -62,7 +62,7 @@ require 'api.php';
             echo '</div>';
         }
     }else{
-        header('Location:top.php');
+       // header('Location:top.php');
     }
 ?>
 </body>
