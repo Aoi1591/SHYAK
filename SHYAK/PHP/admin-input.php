@@ -27,7 +27,7 @@
   echo '</div>';
   //ログアウト
   echo '<div class = userlogout>';
-  echo '<a href="admin-logout.php" class = userlogout>ログアウト</a>';
+  echo '<a href="admin-logout_input.php" class = userlogout>ログアウト</a>';
   echo '</div>';
   //管理者の名前の表示
   echo '<div class = name>';
