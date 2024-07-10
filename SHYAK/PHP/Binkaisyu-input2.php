@@ -41,7 +41,7 @@
     // セッションから取得
     $sentId = isset($_SESSION['flash']['sent_id']) ? $_SESSION['flash']['sent_id'] : 'デフォルト値';
     $userId = $_SESSION['User']['id']; 
-    $userName = isset($_SESSION['User']['name']) ? $_SESSION['User']['name'] : 'デフォルト名前';
+    $userName = isset($_SESSION['User']['username']) ? $_SESSION['User']['username'] : 'デフォルト名前';
 
     echo '<div class="row justify-content-center">';
     echo '<h2 class="text-center" style="width: 300px;">' . $_SESSION['flash']['username'] . $txtArr[0] . '</h2>';
@@ -57,7 +57,7 @@
     echo '<div class="row justify-content-center">';
     echo '<div class="text-center col-6">';
     echo '<input type="hidden" name="sent_id" value="' . $sentId . '">';
-    echo '<textarea class="form-control" name="recieve_message" id="userInput2" rows="10" cols="40" placeholder="'. $txtArr[1] .'"></textarea>';
+    echo '<textarea class="form-control" name="sent_message" id="userInput2" rows="10" cols="40" placeholder="'. $txtArr[1] .'"></textarea>';
     echo '</div>';
     echo '</div>';
     echo '</div><br>';
