@@ -39,7 +39,6 @@ if (isset($_GET['you'])) {
             } else {
                 echo '<img src="'.$user['icon'].'" alt="user icon">';
                 
-                
             }
             echo '</div>';
             echo '<h2 class="name">'.$user['user_name'].'</h2>';
