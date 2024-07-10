@@ -38,10 +38,11 @@
         $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
         $txtArr[$i] = $originalText;
     }
-    // セッションから sent_id を取得
+    // セッションから取得
     $sentId = isset($_SESSION['flash']['sent_id']) ? $_SESSION['flash']['sent_id'] : 'デフォルト値';
-    $userId = $_SESSION['User']['id']; // 送り主の user_id
-    $userName = $_SESSION['User']['name']; // 送り主の名前
+    $userId = $_SESSION['User']['id']; 
+    $userName = isset($_SESSION['User']['name']) ? $_SESSION['User']['name'] : 'デフォルト名前';
+
     echo '<div class="row justify-content-center">';
     echo '<h2 class="text-center" style="width: 300px;">' . $_SESSION['flash']['username'] . $txtArr[0] . '</h2>';
     echo '</div><br>';
