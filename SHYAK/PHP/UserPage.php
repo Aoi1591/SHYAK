@@ -2,6 +2,7 @@
 session_start();
 require 'connect.php';
 require 'header.php';
+require 'api.php';
 ?>
 <!DOCTYPE html>
 <html lang="ja">
