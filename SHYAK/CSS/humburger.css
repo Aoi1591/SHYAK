@@ -51,7 +51,7 @@ header ul li a:hover::after {
   width: 30%; /* メニュー幅 */
   z-index: 2;
   background: linear-gradient(to bottom, rgb(222, 248, 255), rgb(0, 162, 255)); /* 初期状態でもグラデーション */
-  overflow-y: scroll;
+
   overflow-x: hidden; /* 横スクロールを隠す */
 }
 .sidemenu nav ul li {
@@ -143,7 +143,6 @@ header ul li a:hover::after {
 }
 
 .menu-image {
-  top:5000px;
   bottom: 0; 
   display: block;
   width: 100%; /* 画像がメニューの幅全体に対応するように調整 */
@@ -154,7 +153,7 @@ header ul li a:hover::after {
 
   position: relative; /* 位置を相対的に設定 */
   bottom: 0; /* 必要に応じて調整 */
-  margin-top: -4770px; /* 必要に応じて調整 */
+  margin-top: auto; /* 必要に応じて調整 */
   left: 0; /* 必要に応じて調整 */
 }
 /*filter: invert(8%) sepia(99%) saturate(6000%) hue-rotate(200deg) brightness(120%) contrast(100%);
