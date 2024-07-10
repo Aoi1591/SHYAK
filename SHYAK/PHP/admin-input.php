@@ -21,7 +21,10 @@
   $sql = $pdo -> prepare('select admin_name from Admins WHERE admin_id=? ');
   $sql -> execute([$_SESSION['Admin']['id']]);
   $row = $sql->fetch(PDO::FETCH_ASSOC);
-  
+  //ユーザーログインへ
+  echo '<div class = userlogin>';
+  echo '<a href="login-input.php">ユーザーログインへ</a>';
+  echo '</div>';
   //管理者の名前の表示
   echo '<div class = name>';
   echo '<p>',$row['admin_name'],'</p>';
