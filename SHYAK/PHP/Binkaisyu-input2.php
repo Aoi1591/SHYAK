@@ -67,7 +67,7 @@
     echo '</div>';
     echo '</div>';
     echo '<input type="hidden" name="sender_id" value="<?php echo $userId; ?>">';
-    echo '<input type="hidden" name="sender_name" value="<?php echo htmlspecialchars($userName, ENT_QUOTES, 'UTF-8'); ?>">';
+    echo '<input type="hidden" name="sender_name" value="' . htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') . '">';
     echo '</form>';
     ?>
     
