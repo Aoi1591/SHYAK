@@ -23,11 +23,11 @@
   $row = $sql->fetch(PDO::FETCH_ASSOC);
   //ユーザーログインへ
   echo '<div class = userlogin>';
-  echo '<a href="login-input.php" class = userlogin>ユーザーログインへ</a>';
+  echo '<a href="login-input.php" class = login>ユーザーログインへ</a>';
   echo '</div>';
   //ログアウト
   echo '<div class = userlogout>';
-  echo '<a href="admin_logout_input.php" class = userlogout>ログアウト</a>';
+  echo '<a href="admin_logout_input.php" class = logout>ログアウト</a>';
   echo '</div>';
   //管理者の名前の表示
   echo '<div class = name>';
