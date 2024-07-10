@@ -11,6 +11,13 @@ require 'api.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ユーザーページ</title>
     <link rel="stylesheet" href="../CSS/UserPage.css">
+    <script>
+        function confirmBlock(url) {
+            if (confirm("ブロックしますか？")) {
+                window.location.href = url;
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -37,11 +44,8 @@ if (isset($_GET['you'])) {
             if (empty($user['icon'])) {
                 echo '<img src="../img/default.png" alt="user icon">';
             } else {
-                echo '<img src="../image/日本.png" alt="user icon">';
-                
+                echo '<img src="'.$user['icon'].'" alt="user icon">';
             } 
-                //'.$user['icon'].'
-            
             echo '</div>';
             echo '<h2 class="name">'.$user['user_name'].'</h2>';
             echo '<div class="kuni">';
@@ -68,7 +72,7 @@ if (isset($_GET['you'])) {
                     break;
             }
             if ($country_flag) {
-                echo '<img src="../image/'.$country_flag.'" alt="国旗">';
+                echo '<img src="../img/'.$country_flag.'" alt="国旗">';
             }
             echo '</div>';
 
@@ -77,14 +81,13 @@ if (isset($_GET['you'])) {
             echo '<div id="description">'.$user['message'].'</div>';
             echo '</div>';
 
-
             // フレンド申請・ブロック機能
             echo '<div class="relation">';
             echo '<div class="friend">';
             echo '<a href="UserPage-output.php?flg=2&you='.$you.'">フレンド申請</a>';
             echo '</div>';
             echo '<div class="block">';
-            echo '<a href="UserPage-output.php?flg=1&you='.$you.'">ブロックする</a>';
+            echo '<a href="javascript:void(0);" onclick="confirmBlock(\'UserPage-output.php?flg=1&you='.$you.'\')">ブロックする</a>';
             echo '</div>';
             echo '</div>';
         } else {

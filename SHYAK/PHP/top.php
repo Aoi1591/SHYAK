@@ -1,6 +1,12 @@
 <?php
     session_start();
     require 'header.php';
+
+    if (isset($_SESSION['message'])) {
+        echo '<div class="message">' . htmlspecialchars($_SESSION['message'], ENT_QUOTES, 'UTF-8') . '</div>';
+        unset($_SESSION['message']); // メッセージを表示後に削除
+    }
+    
 ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Document</title>
