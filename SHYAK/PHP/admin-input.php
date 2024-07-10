@@ -25,6 +25,10 @@
   echo '<div class = userlogin>';
   echo '<a href="login-input.php" class = userlogin>ユーザーログインへ</a>';
   echo '</div>';
+  //ログアウト
+  echo '<div class = userlogout>';
+  echo '<a href="admin-logout.php" class = userlogout>ログアウト</a>';
+  echo '</div>';
   //管理者の名前の表示
   echo '<div class = name>';
   echo '<p>',$row['admin_name'],'</p>';
