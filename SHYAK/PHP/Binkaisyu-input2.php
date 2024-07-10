@@ -39,7 +39,7 @@
         $txtArr[$i] = $originalText;
     }
     // セッションから取得
-    $sentId = isset($_SESSION['flash']['sent_id']) ? $_SESSION['flash']['sent_id'] : 'デフォルト値';
+    $sentId = isset($_GET['sent_id']) ? $_GET['sent_id'] : 'デフォルト値';
     $userId = $_SESSION['User']['id']; 
     $userName = isset($_SESSION['User']['username']) ? $_SESSION['User']['username'] : 'デフォルト名前';
 
