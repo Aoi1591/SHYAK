@@ -1,32 +1,28 @@
 <?php
-session_start(); // セッションを開始
-require 'connect.php'; // データベース接続
-$pdo = new PDO($connect, USER, PASS); // データベース接続を確立
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+session_start();
+require 'connect.php';  // データベース接続の設定を読み込む
 
-// フォームからのデータがPOSTされたか確認
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recieve_message'])) {
-    $recieveText = $_POST['recieve_message']; // ユーザーが入力した返信内容
-    $userName = $_SESSION['user_name']; // セッションからユーザー名を取得
+// POSTデータを受け取る
+$userName = $_POST['user_name'];
+$sentId = $_POST['sent_id'];
+$sentMessage = $_POST['sent_message'];
 
-    // データベースに返信を保存するクエリ
-    $stmt = $pdo->prepare("INSERT INTO Recieves (user_name, recieve_message) VALUES (?, ?)");
-    //$stmt->bindParam("ss", $userName, $recieveText);  'ss'は2つの文字列型のパラメータを意味する
-    $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
-    $stmt->bindParam(':recieveText', $recieveText, PDO::PARAM_STR);
-    
-    // クエリの実行
-    if ($stmt->execute()) {
-        // 成功した場合、JavaScriptを用いてアラートを表示し、別のページにリダイレクトする
-        echo "<script>alert('返信に成功しました。'); window.location.href='top.php';</script>";
-    } else {
-        // 失敗した場合、エラーメッセージを表示
-        echo "<script>alert('返信に失敗しました。'); window.location.href='Binkaisyu-input2.php';</script>";
-    }
+// データベースにデータを挿入
+try {
+    $pdo = new PDO($connect, USER, PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    $stmt = $pdo->prepare('INSERT INTO Recieves (user_name, sent_id, sent_message) VALUES (:user_name, :sent_id, :sent_message)');
+    $stmt->bindParam(':user_name', $userName);
+    $stmt->bindParam(':sent_id', $sentId);
+    $stmt->bindParam(':sent_message', $sentMessage);
+    $stmt->execute();
+} catch (PDOException $e) {
+    die('Database error: ' . $e->getMessage());  // エラー処理
 }
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

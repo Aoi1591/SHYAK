@@ -4,101 +4,66 @@ require 'connect.php';
 require 'header.php';
 require 'api.php';
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ユーザーページ</title>
     <link rel="stylesheet" href="../CSS/UserPage.css">
 </head>
 <body>
-
 <?php
-if (isset($_GET['you'])) {
-    $you = intval($_GET['you']); // 安全のために数値型に変換
-
-    try {
-        $pdo = new PDO($connect, USER, PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    if(isset($_GET['you'])){
+        if(isset($_GET['err'])){
+            echo '<script>alert("リクエストに失敗しました"\n"再度実行してください")</script>';
+        }
+        echo '<a href="javascript:history.back();">戻る</a>';
+        $you = $_GET['you'];
+        $pdo = new PDO($connect,USER,PASS);
         $stmt = $pdo->prepare('SELECT * FROM Users WHERE user_id = :you');
-        $stmt->bindParam(':you', $you, PDO::PARAM_INT);
+        $stmt->bindParam(':you', $you);
         $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user) {
-            // ユーザー情報が見つかった場合
-            echo '<div class="header back-box">';
-            echo '<button id="backButton" type="button" onclick="javascript:history.back();">戻る</button>';
-            echo '</div>';
-
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach($users as $user){
             echo '<div class="profile-box">';
-            if (empty($user['icon'])) {
+            if(empty($user['icon'])){
                 echo '<img src="../img/default.png" alt="user icon">';
-            } else {
+            }else{
                 echo '<img src="'.$user['icon'].'" alt="user icon">';
-                
             }
-            echo '</div>';
-            echo '<h2 class="name">'.$user['user_name'].'</h2>';
-            echo '<div class="kuni">';
-            // 国旗表示
-            $country_flag = '';
+            echo '<h2>'.$user['user_name'].'</h2>';
             switch ($user['country_id']) {
                 case "ja":
-                    $country_flag = '日本.png';
+                    echo '<img src="../img/日本.png">';
                     break;
                 case "en":
-                    $country_flag = 'アメリカ.png';
+                    echo '<img src="../img/アメリカ.png">';
                     break;
                 case "fr":
-                    $country_flag = 'フランス.png';
+                    echo '<img src="../img/フランス.png">';
                     break;
                 case "pt":
-                    $country_flag = 'ポルトガル.png';
+                    echo '<img src="../img/ポルトガル.png">';
                     break;
                 case "ru":
-                    $country_flag = 'ロシア.png';
+                    echo '<img src="../img/ロシア.png">';
                     break;
                 case "zh-Hans":
-                    $country_flag = '中国.png';
+                    echo '<img src="../img/中国.png">';
                     break;
             }
-            if ($country_flag) {
-                echo '<img src="../img/'.$country_flag.'" alt="国旗">';
-            }
-            echo '</div>';
-
             echo '<div class="description-box">';
             echo '<div class="intro-title">［自己紹介］</div>';
-            echo '<div id="description">'.$user['message'].'</div>';
+            echo '<div id="description">',$user['message'],'</div>';
             echo '</div>';
-
-
-            // フレンド申請・ブロック機能
+            echo '</div>';
             echo '<div class="relation">';
             echo '<div class="friend">';
-            echo '<a href="UserPage-output.php?flg=2&you='.$you.'">フレンド申請</a>';
+            echo '<a href="UserPage-output.php?flg=2&you="'.$you.'">フレンド申請</a>';
             echo '</div>';
             echo '<div class="block">';
-            echo '<a href="UserPage-output.php?flg=1&you='.$you.'">ブロックする</a>';
+            echo '<a href="UserPage-output.php?flg=1&you="'.$you.'">ブロックする</a>';
             echo '</div>';
             echo '</div>';
-        } else {
-            // ユーザーが見つからない場合
-            echo '<script>alert("ユーザーが見つかりませんでした");</script>';
-            echo '<script>window.location.href = "top.php";</script>';
         }
-    } catch (PDOException $e) {
-        echo '<script>alert("データベースエラーが発生しました");</script>';
-        echo '<script>window.location.href = "top.php";</script>';
+    }else{
+       // header('Location:top.php');
     }
-} else {
-    // ユーザーIDが提供されていない場合
-    header('Location: top.php');
-}
 ?>
-
 </body>
-</html>
+

@@ -30,37 +30,27 @@
         </div>
         <!-- 文字真ん中　下に返事の内容表示 -->
         <?php
-            echo 'try1';
             $pdo = new PDO($connect, USER, PASS); // データベース接続を確立
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// エラーモードを指定。エラーをキャッチできるように
-            echo 'try2';
             // 変身された瓶があるか確認
             $user_name = $_SESSION['User']['username']; // セッションからユーザーIDを取得
             $sql = $pdo->prepare('select sent_id from Sents where user_name =?');
             $sql->execute([$user_name]);
             $binkaisyu = $sql->fetchAll(PDO::FETCH_ASSOC);
-            //echo 'try3'.$binkaisyu;
             if(empty($binkaisyu)){
-                echo 'try3--';
                 foreach($binkaisyu as $row){
-                    echo 'try4';
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
                     $sql->execute([$row['sent_id']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
-                    echo 'try5';
                     var_dump($recieves);
                     foreach($recieves as $res){
-                        echo 'try6';
-
                         $txtArr = array('からもらった返事',$res['sent_message']);
                         for($i = 0; $i < count($txtArr); $i++){
-                            echo 'try7';
                             $originalText = $txtArr[$i];
                             $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                             $txtArr[$i] = $originalText;
                         }
-                        echo 'try8---';
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
                         echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
@@ -75,20 +65,18 @@
                     }
                 }
             }else{
-                echo 'try9';
                 $translator = new Translator();
                 $originalText = "もらった返事はここに表示されます";
                 $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                 echo '<div class="row justify-content-center mt-5">';
                 echo '<div class="col-6">';
                 echo '<div class="bun">';
-                echo '<p>'. $originalText .'</p>';
+                echo '<p>'.$originalText.'</p>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
             }
-            //echo 'try8';
-        ?>     
+        ?>  
     </div>
 </body>
 </html>

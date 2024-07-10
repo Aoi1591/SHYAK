@@ -1,61 +1,114 @@
-<?php session_start();?>
-<?php require 'connect.php';?>
-<?php require 'header.php';?>
+<?php
+session_start();
+// ユーザーがログインしているか確認
+if (isset($_SESSION['User']['id'])) {
+    // ユーザーがログインしている場合の処理
+} else {
+    // ログインしていない場合はログインページにリダイレクト
+    echo '<script>alert("Please log in");</script>';
+    echo '<script>window.location.href = "https://login-input.php";</script>';
+    exit();
+}
 
+// データベース接続ファイルとヘッダーファイルをインクルード
+require 'connect.php';
+require 'header.php';
+?>
+<!-- 外部スクリプトとスタイルシートのインクルード -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="../CSS/humburger.css">
+<link rel="stylesheet" href="../CSS/friend.css">
+</head>
+<body>
 
+<br><br>
+<!-- フレンドリストとフレンドリクエストのリンクボタンを配置 -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 d-flex align-items-center justify-content-center">
+            <a href="friend.php" class="flex-fill">
+                <button type="button" class="friend1">フレンドリスト</button>
+            </a>
+            <a href="friend-request.php" class="flex-fill">
+                <button type="button" class="friend2">フレンドリクエスト</button>
+            </a>
+            <a href="top.php">
+                <button type="button" class="batu"></button>
+            </a>
+        </div>
+    </div>
+</div>
 
-   <link rel="stylesheet" href="../CSS/humburger.css">
-   </head>
-   <body>
-   <?php require 'menu-humburger.php';?>
-   <?php
-      
-      echo '<img src = "">'; //friendマークの画僧挿入
-      echo '<a href = "friend.php">フレンドリスト</a>';
-      echo '<a href = "friend-requset.php">フレンドリクエスト</a>';
+<?php
+try {
+    // データベース接続設定
+    $pdo = new PDO($connect, USER, PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    // フレンドリクエスト一覧の表示
+    echo '<div class="uzer">';
+    $user_id = $_SESSION['User']['id'];
 
-      //フレンドリクエスト一覧の表示
-        echo '<div class = uzer>';
-        $pdo = new PDO($connect,USER,PASS);
-        $User_sql = $pdo -> prepare ('select id,friend_id from Friend WHERE user_id = ?');//フレンド探す
-        $User_sql -> execute([$_SESSION['Users']['user_id']]);
-        $stmt = $User_sql->fetchAll(PDO::FETCH_ASSOC);
+    // フレンドリクエストを取得するSQLクエリを準備
+    $User_sql = $pdo->prepare('SELECT id, friend_id FROM Friends WHERE user_id = ? AND flag = 2'); // フラグ2はフレンド申請
+    $User_sql->execute([$user_id]);
+    $requests = $User_sql->fetchAll(PDO::FETCH_ASSOC);
 
+    // 各フレンドリクエストに対するユーザー情報を表示
+    foreach ($requests as $request) {
+        $Fid = $request['id'];
+        $friend_id = $request['friend_id'];
+        
+        // フレンドの詳細を取得するSQLクエリを準備
+        $friend_sql = $pdo->prepare('SELECT * FROM Users WHERE id = ?'); // 変更: user_id -> id
+        $friend_sql->execute([$friend_id]);
+        $friends = $friend_sql->fetchAll(PDO::FETCH_ASSOC);
 
-          foreach($stmt as $row){
-            $Fid = $row['id'];
-            $friend_sql = $pdo -> prepare('select * from Users WHERE user_id = ? && state = ?');
-            $friend_sql ->execute([$row['friend_id'],2]);
-            $friend_stmt = $friend_sql->fetchAll(PDO::FETCH_ASSOC);
-
-            echo '<table>';
-            echo '<tr><th></th><th>名前</th><th>国籍</th><th>許可</th><th>不許可</th></tr>';
-            foreach($friend_stmt as $row){
-
-            $id = $row['user_id'];
-            $name = $row['user_name'];
-
+        // フレンド情報を表示
+        foreach ($friends as $friend) {
+            $id = htmlspecialchars($friend['id']); // 変更: user_id -> id
+            $name = htmlspecialchars($friend['user_name']);
+        
             echo '<tr>';
-            /*echo $row['icon'];//アイコン*/
+            echo '<td><a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a></td>';
+            echo '<td><button class="approve-friend" data-id="' . $Fid . '">許可</button></td>';
+            echo '<td><button class="reject-friend" data-id="' . $Fid . '">却下</button></td>';
             echo '</tr>';
-            echo '<tr>';
-            //名前の部分を押したらユーザーページへ遷移
-            echo  '<a href = "user.php?id=',urldecode($id),'&name=',urldecode($name),'">',$row['user_name'],'</a>';
-            echo '</tr>';
-            echo '<tr>';
-            echo $row['countyr_id'];//国籍
-            echo '</tr>';
-            echo '<tr>';
-            echo '<a href = "permission-friend.php?id=',$Fid,'">許可</a>';
-            echo '<tr>';
-            echo '<a href = "delete-friend.php?id=',$Fid,'">不許可</a>';
-            echo '</tr>';
+        }
+    }
+    echo '</div>';
+} catch (PDOException $e) {
+    // データベース接続またはクエリ実行エラー時の処理
+    echo 'エラーが発生しました: ' . $e->getMessage();
+}
+?>
+<?php
+// 既存のコード
+?>
+<script>
+// フレンドリクエストの許可・却下ボタンのクリックイベントハンドラを設定
+$(document).ready(function() {
+    $('.approve-friend, .reject-friend').on('click', function() {
+        var id = $(this).data('id');
+        var action = $(this).hasClass('approve-friend') ? 'approve' : 'reject';
+
+        // Ajaxリクエストでフレンドリクエストの許可・却下をサーバーに送信
+        $.ajax({
+            url: 'friend_action.php',
+            type: 'POST',
+            data: { action: action, id: id },
+            success: function(response) {
+                // サーバーからの応答に基づいてアラートを表示し、ページをリロード
+                alert(response);
+                location.reload(); // ページをリロードして変更を反映
+            },
+            error: function() {
+                // エラーメッセージを表示
+                alert('エラーが発生しました。');
             }
-            echo '</table>';
-      }
-      echo '</div>';
-    ?>
-  </body>
-</html>   
-
+        });
+    });
+});
+</script>
+</body>
+</html>

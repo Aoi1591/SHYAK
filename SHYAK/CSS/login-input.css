@@ -145,3 +145,11 @@ body {
     margin: 0 auto;
     border: 1px solid #000000;
 }
+
+#admin{
+    font-size: 150px; /* 大きさを調整 */
+    text-decoration: none; /* 下線を消す */
+    display: inline-block; /* サイズ変更のために追加 */
+    padding: 0px; /* パディングを追加してクリックしやすくする */
+    opacity: 0.01;/*透明化*/
+}

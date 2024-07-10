@@ -2,7 +2,7 @@
 body {
     width: 95vw;
     height: 98vh;
-    background-image: url("../img/beach.png");
+    background-image: url("../image/beach.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 100% 100% ;
@@ -108,4 +108,3 @@ body {
       width: 95%;
       height: 80%;
   }
-  
