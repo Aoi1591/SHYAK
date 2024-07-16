@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'img/';
+        $uploadDir = '../img/';
         $uploadFile = $uploadDir . basename($_FILES['file']['name']);
 
         // ファイルをimgフォルダに移動
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "ファイルのアップロードに失敗しました。";
         }
     } else {
-        echo "ファイルのアップロード中にエラーが発生しました。";
+        echo "<script>console.log('ファイルアップロードに失敗しました')</script>";
     }
 } else {
     echo "無効なリクエストです。";
