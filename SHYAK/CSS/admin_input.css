@@ -101,7 +101,7 @@ background-color: #99c2ff;
 
 .userlogin{
     top: 10%; /* 上から10px */
-  left: 8%; /* 左から20px */
+  left: 150px; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: inline-block;
@@ -111,14 +111,14 @@ background-color: #99c2ff;
   background: #ffbf00;
   color: #FFF;
   border-radius: 12px;
-  width: 150px;
-  height: 20px;
+  width: 250px;
+  height: 40px;
   box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
   transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
 }
 .userlogout{
-    top: 10%; /* 上から10px */
-  left: 20%; /* 左から20px */
+    top: 22%; /* 上から10px */
+  left: 150px; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: inline-block;
@@ -128,8 +128,8 @@ background-color: #99c2ff;
   background: #ffbf00;
   color: #FFF;
   border-radius: 12px;
-  width: 150px;
-  height: 20px;
+  width: 250px;
+  height: 40px;
   box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
   transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
 }
