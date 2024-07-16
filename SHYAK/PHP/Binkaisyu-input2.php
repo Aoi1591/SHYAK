@@ -86,6 +86,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const nagasu = document.getElementById("kaisyu");
         nagasu.addEventListener("click", function() {
+        event.preventDefault(); // デフォルトのフォーム送信動作を停止する
             const userInput = document.getElementById("userInput2").value;
             const userResponse = confirm(userInput + "\n\n"+<?php echo json_encode($txtArr[0]);?>);
             if (userResponse) {
