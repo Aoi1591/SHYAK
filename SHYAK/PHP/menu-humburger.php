@@ -7,7 +7,11 @@
   <?php require "api.php";
    $translator = new Translator();
    $txtArr = array('トップ','マイページ','フレンド','メール','ログアウト');
-   $txtArr = $translator->translate($originalText,$_SESSION['User']['lang']);
+   for($i = 0; $i < count($txtArr); $i++){
+    $originalText = $txtArr[$i];
+    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+    $txtArr[$i] = $originalText;
+}
    ?>
   <!-- spハンバーガーメニュー ↓ -->
   <div class="sp_nav">
