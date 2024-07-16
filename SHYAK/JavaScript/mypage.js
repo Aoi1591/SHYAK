@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ファイルから画像をアップロードするためのスクリプト
 document.getElementById('image').addEventListener('click', function() {
     document.getElementById('fileInput').click();
+
 });
 
 // ファイルからアップロード
@@ -50,4 +51,19 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
         };
         reader.readAsDataURL(file);
     }
+    // ファイルをフォームに設定し、サーバーに送信
+    const formData = new FormData();
+    formData.append('file', file);
+
+    fetch('img-upload.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 });
