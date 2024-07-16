@@ -118,7 +118,7 @@ background-color: #99c2ff;
 }
 .userlogout{
     top: 10%; /* 上から10px */
-  left: 15%; /* 左から20px */
+  left: 20%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: inline-block;
