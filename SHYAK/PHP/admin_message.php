@@ -16,6 +16,11 @@
   echo '<div class=title>';
   echo '<p><font color=#fff>通報メッセージ一覧</font></p>';
   echo '</div>';
+  echo 'div class="a">';
+  echo '<a href="admin-input.php">';
+  echo'<img src="../image/back-btn.png" alt="return">';
+  echo '</a>';
+  echo'</div>';
   if($user_id){
     echo '<div class="container">';
         echo '<div class="image">';
