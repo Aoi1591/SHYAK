@@ -4,8 +4,9 @@ require 'connect.php';  // データベース接続の設定を読み込む
 
 // POSTデータを受け取る
 $senderId = $_POST['sender_id']; // 送り主の user_id
+$sentId = $_POST['sent_id']; // 送り先の ID 津田
+
 $userName = $_POST['sender_name']; // 送り主の名前
-$sentId = $_POST['sent_id']; // 送り先の ID
 $sentMessage = $_POST['sent_message']; // 送られたメッセージ
 
 // データベースにデータを挿入
@@ -13,10 +14,9 @@ try {
     $pdo = new PDO($connect, USER, PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $pdo->prepare('INSERT INTO Recieves (recieve_id, user_name, sent_id, sent_message) VALUES (:recieve_id, :user_name, :sent_id, :sent_message)');
-    $stmt->bindParam(':recieve_id', $senderId);
-    $stmt->bindParam(':user_name', $userName);
-    $stmt->bindParam(':sent_id', $sentId);
+    $stmt = $pdo->prepare('INSERT INTO Recieves (user_name, sent_id, sent_message) VALUES (:user_name, :sent_id, :sent_message)');
+    $stmt->bindParam(':user_name', $userName); //リプライ者
+    $stmt->bindParam(':sent_id', $sentId); //リプライ者
     $stmt->bindParam(':sent_message', $sentMessage);
     $stmt->execute();
 } catch (PDOException $e) {

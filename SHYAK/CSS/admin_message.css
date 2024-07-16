@@ -26,12 +26,11 @@ body {
         background-color: #99c2ff;
     }
     .a{
-    /* font-size: 10px; */
     font-weight: bold;
 
     display: inline-block;
     padding: 0.5em 0.5em; /* 上下左右の余白を設定 */
-    /*font-size: 20px;*/ /* フォントサイズを統一 */
+    font-size: 20px;/* フォントサイズを統一 */
     text-decoration: none;
     border-radius: 9px;
     color: #000000; /* テキストの色を白に設定 */
@@ -39,7 +38,7 @@ body {
     margin: 3px;
     /*width: 400px;*/
     height: 30px;
-    line-height: 60px; /* ボタン内のテキストを垂直方向に中央揃え */
+    /*line-height: 60px; /* ボタン内のテキストを垂直方向に中央揃え */
     background: #ffe38f;
  
     background-repeat: no-repeat;

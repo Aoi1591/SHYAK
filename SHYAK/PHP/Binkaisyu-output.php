@@ -15,7 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['user_message'] = $message;
 
     // 次のページへリダイレクト
-    header('Location: Binkaisyu-input2.php');
+// user_messageの内容をURLエンコード
+    $sent_id = urlencode($_GET["sent_id"]);
+
+    // リダイレクト先のURLを生成
+    $url = 'Binkaisyu-input2.php?sent_id='.$sent_id;
+    // リダイレクト
+    header('Location: ' . $url);
     exit();
 }
 
