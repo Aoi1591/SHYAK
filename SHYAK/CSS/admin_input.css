@@ -66,7 +66,7 @@ background-color: #99c2ff;
             align-items: center;
             justify-content: center;
             position: relative;
-            top: 20px;
+            /*top: 20px;*/
             left: 70vw;
 }
 
@@ -101,7 +101,7 @@ background-color: #99c2ff;
 
 .userlogin{
     top: 10%; /* 上から10px */
-  left: 10%; /* 左から20px */
+  left: 5%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: inline-block;
@@ -118,7 +118,7 @@ background-color: #99c2ff;
 }
 .userlogout{
     top: 10%; /* 上から10px */
-  left: 30%; /* 左から20px */
+  left: 15%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: inline-block;
