@@ -5,11 +5,11 @@
 <!--ヘッダー↓-->
 <header>
   <?php require "api.php";
-   $translator = new Translator();
+   $humtranslator = new Translator();
    $txtArr = array('トップ','マイページ','フレンド','メール','ログアウト');
    for($i = 0; $i < count($txtArr); $i++){
     $originalText = $txtArr[$i];
-    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+    $originalText = $humtranslator->translate($originalText,$_SESSION['User']['lang']);
     $txtArr[$i] = $originalText;
 }
    ?>
