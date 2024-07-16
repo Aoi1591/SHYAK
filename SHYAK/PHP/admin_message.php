@@ -22,7 +22,7 @@
             echo '<img class="c" src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></img>';
         echo '</div>';
         echo '<div class="text">';
-            echo '<h4>ユーザーID:',$user_id,'ユーザー:',$name,'国籍:',$country,'</h4>';
+            echo '<h4>ユーザーID:',$user_id,'　　ユーザー:',$name,'　　国籍:',$country,'</h4>';
         echo '</div>';
     echo '</div>';
 
