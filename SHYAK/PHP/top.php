@@ -15,7 +15,7 @@
 </head>
 <body>
 <?php
-require 'menu-humburger.php';
+//require 'menu-humburger.php';
 require 'api.php';
 //require 'CheckMessage.php';
 ?>
