@@ -23,9 +23,7 @@ require 'api.php';
  <?php
       if(isset($_GET['logout'])&&$_GET['logout'] == 1){
         echo '<script>';
-        $translator = new Translator();
-        $alertText = $translator->translate("ログアウトしました",$_SESSION['User']['lang']);
-        echo 'alert("',$alertText,'")';
+        echo 'alert("ログアウトしました")';
         echo '</script>';
       }
       ?>
