@@ -4,26 +4,7 @@ require 'connect.php';
 require 'header.php';
 require 'api.php';
 
-// Include the Translator class definition here
-
-// Function to translate text using Microsoft Translator API
-function translateText($text, $to) {
-    // Your Translator class implementation goes here
-    // Initialize Translator object or use directly within function
-    $translator = new Translator();
-
-    // Translate the text
-    try {
-        $translatedText = $translator->translate($text, $to);
-        return $translatedText;
-    } catch (Exception $e) {
-        echo 'Translation Error: ' . $e->getMessage();
-        return $text; // Return original text on error
-    }
-}
-
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -31,9 +12,17 @@ function translateText($text, $to) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ユーザーページ</title>
     <link rel="stylesheet" href="../CSS/UserPage.css">
+
+    <?php
+    $translator = new Translator();
+    $originalText = "ブロックしますか？";
+    $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+    ?>
+
     <script>
         function confirmBlock(url) {
-            if (confirm("ブロックしますか？")) {
+            var translatedText = "<?php echo $translatedText; ?>";
+            if (confirm(translatedText)) {
                 window.location.href = url;
             }
         }
@@ -58,10 +47,9 @@ if (isset($_GET['you'])) {
             // ユーザー情報が見つかった場合
             echo '<div class="header back-box">';
             echo '<button id="backButton" type="button" onclick="javascript:history.back();">';
-                    $translator = new Translator();
-                    $originalText = "戻る";
-                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $originalText;
+            $originalText = "戻る";
+            $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+            echo $translatedText;
             echo '</button>';
             echo '</div>';
 
@@ -70,7 +58,7 @@ if (isset($_GET['you'])) {
                 echo '<img src="../img/default.png" alt="user icon">';
             } else {
                 echo '<img src="'.$user['icon'].'" alt="user icon">';
-            } 
+            }
             echo '</div>';
             echo '<h2 class="name">'.$user['user_name'].'</h2>';
             echo '<div class="kuni">';
@@ -103,15 +91,12 @@ if (isset($_GET['you'])) {
 
             echo '<div class="description-box">';
             echo '<div class="intro-title">';
-            
-                    $translator = new Translator();
-                    $originalText = "［自己紹介］";
-                    $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $originalText;
-                
+            $originalText = "［自己紹介］";
+            $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+            echo $translatedText;
             echo '</div>';
             // Translate the user's message
-            $translatedMessage = translateText($user['message'], 'en');
+            $translatedMessage = $translator->translate($user['message'], $_SESSION['User']['lang']);
             echo '<div id="description">'.$translatedMessage.'</div>';
             echo '</div>';
 
@@ -119,18 +104,16 @@ if (isset($_GET['you'])) {
             echo '<div class="relation">';
             echo '<div class="friend">';
             echo '<a href="UserPage-output.php?flg=2&you='.$you.'">';
-            $translator = new Translator();
             $originalText = "フレンド申請";
-            $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-            echo $originalText;
+            $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+            echo $translatedText;
             echo '</a>';
             echo '</div>';
             echo '<div class="block">';
             echo '<a href="javascript:void(0);" onclick="confirmBlock(\'UserPage-output.php?flg=1&you='.$you.'\')">';
-            $translator = new Translator();
             $originalText = "ブロックする";
-            $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-            echo $originalText;
+            $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+            echo $translatedText;
             echo '</a>';
             echo '</div>';
             echo '</div>';
