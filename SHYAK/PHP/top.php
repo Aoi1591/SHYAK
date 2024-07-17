@@ -37,7 +37,6 @@ require 'menu-humburger.php';
                 <?php
                     $translator = new Translator();
                     $originalText = $translator->translate("本",$_SESSION['User']['lang']);
-
                     echo '<a href="Morattahenji.php?id=', $_SESSION['User']['id'], '"><img src="../image/hon.png" alt="', htmlspecialchars($originalText), '" class="btn-hon-image"></a>';
                 ?>
             </div>
