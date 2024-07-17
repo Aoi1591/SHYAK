@@ -40,7 +40,7 @@
             if($binkaisyu){
                 foreach($binkaisyu as $row){
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
-                    $sql->execute([$row['user_name']]);
+                    $sql->execute([$row['sent_id']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
                     var_dump($recieves);
@@ -53,7 +53,7 @@
                         }
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
-                        echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
+                        echo $_SESSION['User']['user_name'], $txtArr[0].'</h2>';
                         echo '</div>';
                         echo '<div class="row justify-content-center mt-5">';
                         echo '<div class="col-6">';
