@@ -32,7 +32,7 @@ $translator = new Translator();
                 <button type="button" class="friend1"> <?php echo $txtArr[0];?></button>
             </a>
             <a href="friend-request.php" class="flex-fill">
-                <button type="button" class="friend2"> <?php echo $txtArr[0];?></button>
+                <button type="button" class="friend2"> <?php echo $txtArr[1];?></button>
             </a>
             <a href="top.php">
                 <button type="button" class="batu"></button>
