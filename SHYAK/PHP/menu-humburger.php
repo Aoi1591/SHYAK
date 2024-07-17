@@ -41,7 +41,7 @@
       </nav>
     </div>
   </div>
-  <script src="../JS/hamburger.js"></script>
+  <script src="../JavaScript/hamburger.js"></script>
   <!-- spハンバーガーメニュー ↑ -->
 </header>
 <!--ヘッダー↑-->
