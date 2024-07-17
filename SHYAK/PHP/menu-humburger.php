@@ -4,14 +4,14 @@
 </head>
 <!--ヘッダー↓-->
 <header>
-  <?php require "api.php";
-   $humtranslator = new Translator();
-   $txtArr = array('トップ','マイページ','フレンド','メール','ログアウト');
+  <?php
+   $translator = new Translator();
+   $txtArr = array('トップ','マイページ','フレンド','ルール','ログアウト');
    for($i = 0; $i < count($txtArr); $i++){
-    $originalText = $txtArr[$i];
-    $originalText = $humtranslator->translate($originalText,$_SESSION['User']['lang']);
-    $txtArr[$i] = $originalText;
-}
+       $originalText = $txtArr[$i];
+       $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+       $txtArr[$i] = $originalText;
+   }
    ?>
   <!-- spハンバーガーメニュー ↓ -->
   <div class="sp_nav">
@@ -25,11 +25,16 @@
       <?php $user_id = isset($_SESSION['User']['id']) ? $_SESSION['User']['id'] : ''; ?>
       <nav>
         <ul>
-          <li><a href="top.php"><i class="fa-solid fa-bottle-droplet" style="color: #ffffff;"></i><?php $txtArr[0];?></a></li>
-          <li><a href="mypage.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"><?php $txtArr[1];?></i></a></li>
-          <li><a href="friend.php"><i class="fa-solid fa-user-group" style="color: #aed6f4;"></i><?php $txtArr[2];?></a></li>
-          <li><a href="Explanationofrules.php"><i class="fa-regular fa-envelope" style="color: #5291ff;"></i><?php $txtArr[3];?></a></li>
-          <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #0b5fef;"></i><?php $txtArr[4];?></a></li>
+          <li><a href="top.php"><i class="fa-solid fa-bottle-droplet" style="color: #ffffff;"></i>
+          <?php echo $txtArr[0];?></a></li>
+          <li><a href="mypage.php"><i class="fa-solid fa-anchor" style="color: #ffffff;"></i>
+          <?php echo $txtArr[1];?></a></li>
+          <li><a href="friend.php"><i class="fa-solid fa-user-group" style="color: #aed6f4;"></i>
+          <?php echo $txtArr[2];?></a></li>
+          <li><a href="Explanationofrules.php"><i class="fa-regular fa-envelope" style="color: #5291ff;"></i>
+          <?php echo $txtArr[3];?></a></li>
+          <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #0b5fef;"></i>
+          <?php echo $txtArr[4];?></a></li>
         </ul>
         <img src="../image/あわ.gif" alt="メニュー画像" class="menu-image">
       </nav>
