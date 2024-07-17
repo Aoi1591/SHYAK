@@ -20,13 +20,7 @@ require 'menu-humburger.php';
 ?>
 <!-- ログアウトの時にのみ使用-->
  <?php
-      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
-        $translator = new Translator();
-        $originalText = $translator->translate("ログアウトしました",$_SESSION['User']['lang']);
-        echo '<script>';
-        echo $originalText;
-        echo '</script>';
-      }
+      
       ?>
 <!--瓶 -->
 <img id="img_bin1" src="../image/瓶.png" alt="瓶">
