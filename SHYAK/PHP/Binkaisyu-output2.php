@@ -42,7 +42,7 @@ try {
         </a>
     </div>
     <div class="col-6">
-        <a href="Binkaisyu-output.php">
+        <a href="Binkaisyu-output2.php">
             <button type="submit" class="btn btn-outline-dark userinfoButton">いいえ<br></button>
         </a>
     </div>
