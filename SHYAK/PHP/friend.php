@@ -9,6 +9,13 @@ if (isset($_SESSION['User']['id'])) {
 }
 require 'connect.php';
 require 'header.php';
+$translator = new Translator();
+   $txtArr = array('フレンドリスト','フレンドリクエスト');
+   for($i = 0; $i < count($txtArr); $i++){
+       $originalText = $txtArr[$i];
+       $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
+       $txtArr[$i] = $originalText;
+   }
 ?>
 
 <link rel="stylesheet" href="../CSS/humburger.css">
@@ -21,10 +28,10 @@ require 'header.php';
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 d-flex align-items-center justify-content-center">
             <a href="friend.php" class="flex-fill">
-                <button type="button" class="friend1">フレンドリスト</button>
+                <button type="button" class="friend1"> <?php echo $txtArr[0];?></button>
             </a>
             <a href="friend-request.php" class="flex-fill">
-                <button type="button" class="friend2">フレンドリクエスト</button>
+                <button type="button" class="friend2"> <?php echo $txtArr[0];?></button>
             </a>
             <a href="top.php">
                 <button type="button" class="batu"></button>
