@@ -10,7 +10,7 @@
     <?php
       if(isset($_GET['logout'])&&$_GET['logout'] == 1){
         echo '<script>';
-        echo "alert(logged out);";
+        echo "alert('logged out');";
         echo '</script>';
       }
     ?>
