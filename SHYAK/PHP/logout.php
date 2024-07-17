@@ -11,6 +11,7 @@
 </head>
 <body>
     <?php
+        var_dump($_SESSION);
         $translator = new Translator();
         $translatedText = $translator->translate("ログアウトしますか？",$_SESSION['User']['lang']);
         echo "<h1>$translatedText</h1>";
