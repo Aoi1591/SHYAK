@@ -52,7 +52,7 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
         reader.readAsDataURL(file);
     }
     // ファイルをフォームに設定し、サーバーに送信
-    const formData = new FormData();
+    /*const formData = new FormData();
     formData.append('file', file);
 
     fetch('img-upload.php', {
@@ -65,5 +65,5 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     })
     .catch(error => {
         console.error('Error:', error);
-    });
+    });*/
 });
