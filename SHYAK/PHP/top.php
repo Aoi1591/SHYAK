@@ -22,8 +22,10 @@ require 'menu-humburger.php';
 <!-- ログアウトの時にのみ使用-->
  <?php
       if(isset($_GET['logout'])&&$_GET['logout'] == 1){
+        $translator = new Translator();
+        $originalText = $translator->translate("ログアウトしました",$_SESSION['User']['lang']);
         echo '<script>';
-        echo 'alert("ログアウトしました")';
+        echo $originalText;
         echo '</script>';
       }
       ?>
@@ -41,7 +43,6 @@ require 'menu-humburger.php';
                 <br>
                 <?php
                     $translator = new Translator();
-                    //$originalText = $translator->translate($originalText);
                     $originalText = $translator->translate("本",$_SESSION['User']['lang']);
 
                     echo '<a href="Morattahenji.php?id=', $_SESSION['User']['id'], '"><img src="../image/hon.png" alt="', htmlspecialchars($originalText), '" class="btn-hon-image"></a>';
