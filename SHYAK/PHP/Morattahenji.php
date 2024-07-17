@@ -40,7 +40,7 @@
             if($binkaisyu){
                 foreach($binkaisyu as $row){
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
-                    $sql->execute([$row['sent_id']]);
+                    $sql->execute([$row['user_name']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
                     var_dump($recieves);
