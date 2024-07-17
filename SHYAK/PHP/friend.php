@@ -9,6 +9,7 @@ if (isset($_SESSION['User']['id'])) {
 }
 require 'connect.php';
 require 'header.php';
+require 'api.php';
 $translator = new Translator();
    $txtArr = array('フレンドリスト','フレンドリクエスト');
    for($i = 0; $i < count($txtArr); $i++){
