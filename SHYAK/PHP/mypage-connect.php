@@ -8,10 +8,13 @@
     $user_id = $_SESSION['User']['id'];// Id
     $language = $_POST["language"];// 言語
 
-    $_SESSION['User'] = [
-        'username' => $name,
-        'lang' => $language
-    ];
+    // $_SESSION['User'] = [
+    //     'username' => $name,
+    //     'lang' => $language
+    // ];
+    $_SESSION['User']['username']=$name;
+    $_SESSION['User']['lang']=$language;
+
 
     //ファイルのアップロード
     $targetDir = "../img/";
