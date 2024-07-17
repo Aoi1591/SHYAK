@@ -1,6 +1,9 @@
-<?php require "header.php";?>
-<?php require "connect.php";?>
-<?php require "api.php";?>
+<?php
+    session_start();
+    require "header.php";
+    require "connect.php";
+    require "api.php";
+?>
 <title>log out</title>
 <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
  
@@ -8,6 +11,7 @@
 </head>
 <body>
     <?php
+        var_dump($_SESSION);
         $translator = new Translator();
         $translatedText = $translator->translate("ログアウトしますか？",$_SESSION['User']['lang']);
         echo "<h1>$translatedText</h1>";
