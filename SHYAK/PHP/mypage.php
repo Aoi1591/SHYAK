@@ -2,7 +2,6 @@
 <?php
 require 'connect.php';
 require 'header.php';
-require 'api.php';
 ?>
 <?php
    require 'menu-humburger.php';
