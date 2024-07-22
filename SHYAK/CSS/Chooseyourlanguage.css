@@ -35,7 +35,7 @@ h1{
 }
 .jp{
 
-  top: 320px; /* 上から10px */
+  top: 280px; /* 上から10px */
   left: 48%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
@@ -56,7 +56,7 @@ h1{
 .CN{
   
   top: 280px; /* 上から10px */
-  left: 43%; /* 左から20px */
+  left: 37%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
 }
@@ -88,4 +88,9 @@ button{
   padding: 0;
   width: 170%;
   outline: none;
+}
+.kokki{
+  border-radius: 100px;
+  width: 5%;
+  
 }
