@@ -95,9 +95,7 @@ if (isset($_GET['you'])) {
             $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
             echo $translatedText;
             echo '</div>';
-            // Translate the user's message
-            $translatedMessage = $translator->translate($user['message'], $_SESSION['User']['lang']);
-            echo '<div id="description">'.$translatedMessage.'</div>';
+            echo '<div id="description">'.$user['message'], $_SESSION['User']['lang'].'</div>';
             echo '</div>';
 
             // フレンド申請・ブロック機能
