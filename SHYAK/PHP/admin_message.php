@@ -14,20 +14,20 @@
   echo '</head>';
   echo '<body>';
   echo '<div class=title>';
-  echo '<p>通報メッセージ一覧</p>';
+  echo '<p><font color=#fff>通報メッセージ一覧</font></p>';
   echo '</div>';
+  echo 'div class="a">';
+  echo '<a href="admin-input.php">';
+  echo'<img src="../image/back-btn.png" alt="return">';
+  echo '</a>';
+  echo'</div>';
   if($user_id){
-    // echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
-    //echo '<img class="c" src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></img>';
-    //echo '<p class="b">ユーザーID:',$user_id,'<br>','ユーザー:',$name,'国籍:',$country,'</p>';
-
     echo '<div class="container">';
         echo '<div class="image">';
             echo '<img class="c" src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></img>';
         echo '</div>';
         echo '<div class="text">';
-            echo '<p>ユーザーID:6</p>';
-            echo '<p>ユーザー:ひろし国籍:ja</p>';
+            echo '<h4>ユーザーID:',$user_id,'　　ユーザー:',$name,'　　国籍:',$country,'</h4>';
         echo '</div>';
     echo '</div>';
 

@@ -8,9 +8,9 @@
 </head>
 <body>
     <?php
-      if(isset($_GET['logout']) && $_GET['logout'] == 1){
+      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
         echo '<script>';
-        echo 'alert("ログアウトしました")';
+        echo "alert('logged out');";
         echo '</script>';
       }
     ?>

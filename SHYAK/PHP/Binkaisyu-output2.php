@@ -3,9 +3,11 @@ session_start();
 require 'connect.php';  // データベース接続の設定を読み込む
 
 // POSTデータを受け取る
-$userName = $_POST['user_name'];
-$sentId = $_POST['sent_id'];
-$sentMessage = $_POST['sent_message'];
+$senderId = $_POST['sender_id']; // 送り主の user_id
+$sentId = $_POST['sent_id']; // 送り先の ID 津田
+
+$userName = $_POST['sender_name']; // 送り主の名前
+$sentMessage = $_POST['sent_message']; // 送られたメッセージ
 
 // データベースにデータを挿入
 try {
@@ -13,15 +15,16 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $pdo->prepare('INSERT INTO Recieves (user_name, sent_id, sent_message) VALUES (:user_name, :sent_id, :sent_message)');
-    $stmt->bindParam(':user_name', $userName);
-    $stmt->bindParam(':sent_id', $sentId);
+    $stmt->bindParam(':user_name', $userName); //リプライ者
+    $stmt->bindParam(':sent_id', $sentId); //リプライ者
     $stmt->bindParam(':sent_message', $sentMessage);
     $stmt->execute();
+    header("Location: top.php");
+    exit;
 } catch (PDOException $e) {
     die('Database error: ' . $e->getMessage());  // エラー処理
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,29 +36,18 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<h2 class="text-center mt-5">この返事でよろしいですか？</h2>
-<?php
-            if(isset($_POST['kaisyu'])) {
-                $kaisyu = $_POST['kaisyu'];
-                echo '<div class="text-center">';
-                echo "<p>入力された内容<br>$kaisyu</p>";
-            }
-            ?>
-            <div class="row justify-content-center">
-            
-            <div class="col-6">
-<a href="top.php">
-<button type="submit" class="btn btn-outline-dark userinfoButton">はい<br>
-</button>
-</a>
-</div>
-            <div class="col-6">
-<a href="Binkaisyu-output.php">
-<button type="submit" class="btn btn-outline-dark userinfoButton">いいえ<br>
-</button>
-</a>
-</a>
-</div>
-</div>
+<!-- <h2 class="text-center mt-5">この返事でよろしいですか？</h2> -->
+<!-- <div class="row justify-content-center"> -->
+    <!-- <div class="col-6"> -->
+        <!-- <a href="top.php"> -->
+            <!-- <button type="submit" class="btn btn-outline-dark userinfoButton">はい<br></button> -->
+        <!-- </a> -->
+    <!-- </div> -->
+    <!-- <div class="col-6"> -->
+        <!-- <a href="Binkaisyu-output.php"> -->
+            <!-- <button type="submit" class="btn btn-outline-dark userinfoButton">いいえ<br></button> -->
+        <!-- </a> -->
+    <!-- </div> -->
+<!-- </div> -->
 </body>
 </html>

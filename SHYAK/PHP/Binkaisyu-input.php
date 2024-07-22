@@ -114,7 +114,7 @@ try {
             echo '</div>';
             echo '<div class="row justify-content-center mt-3">';
             echo '<div class="col-6 text-center">';
-            echo '<form action="Binkaisyu-output.php" method="post">';
+            echo '<form action="Binkaisyu-output.php?sent_id='.$sent_id.'" method="post">';
             echo '<input type="hidden" id="hiddenUserName" name="userName">';
             echo '<input type="hidden" id="hiddenMessage" name="message">';
             echo '<button type="submit" class="btn btn-primary">';

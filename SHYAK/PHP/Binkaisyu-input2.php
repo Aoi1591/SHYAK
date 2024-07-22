@@ -38,6 +38,11 @@
         $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
         $txtArr[$i] = $originalText;
     }
+    // セッションから取得
+    $sentId = isset($_GET['sent_id']) ? $_GET['sent_id'] : 'デフォルト値';
+    $userId = $_SESSION['User']['id']; 
+    $userName = isset($_SESSION['User']['username']) ? $_SESSION['User']['username'] : 'デフォルト名前';
+
     echo '<div class="row justify-content-center">';
     echo '<h2 class="text-center" style="width: 300px;">' . $_SESSION['flash']['username'] . $txtArr[0] . '</h2>';
     echo '</div><br>';
@@ -51,10 +56,8 @@
 
     echo '<div class="row justify-content-center">';
     echo '<div class="text-center col-6">';
-   // セッションから sent_id を取得
-    $sentId = isset($_SESSION['flash']['sent_id']) ? $_SESSION['flash']['sent_id'] : 'デフォルト値';
     echo '<input type="hidden" name="sent_id" value="' . $sentId . '">';
-    echo '<textarea class="form-control" name="recieve_message" id="userInput2" rows="10" cols="40" placeholder="'. $txtArr[1] .'"></textarea>';
+    echo '<textarea class="form-control" name="sent_message" id="userInput2" rows="10" cols="40" placeholder="'. $txtArr[1] .'"></textarea>';
     echo '</div>';
     echo '</div>';
     echo '</div><br>';
@@ -64,6 +67,7 @@
     echo '<button type="submit" id="kaisyu" class="btn-binwokaisyu">'. $txtArr[2] .'</button>';
     echo '</div>';
     echo '</div>';
+
 
     echo '<div id="confirmationDialog" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 1000;">';
     echo '<div id="confirmationDialogCon" class="dialog-content" style="background: rgb(255, 244, 185); border-radius: 20px; padding: 7%; text-align: center; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; display: none;">';
@@ -75,6 +79,7 @@
     echo '</form>';
     ?>
     
+
 
 <!--<?php //unset($_SESSION['flash']);?>-->
 <script src="../JS/Binkaisyu.js"></script>

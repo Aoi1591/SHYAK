@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サインアップ</title>
+    <title>sign up</title>
     <link rel="stylesheet" href="../CSS/signup-input.css">
 </head>
 <body>
@@ -55,7 +55,7 @@
     </div>
     
     <!-- 戻るボタン -->
-    <button class="back-button" onclick="goBack()">ログインページへ戻る</button>
+    <button class="back-button" onclick="goBack()"></button>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
     <script src="../JavaScript/pass-check.js"></script>
     <script src="../JavaScript/signup-input.js"></script>

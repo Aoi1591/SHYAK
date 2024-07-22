@@ -14,7 +14,7 @@
 <?php //require 'admin-humburger.php';?>
 <?php
   echo '<div class = title>';
-  echo  '<p>管理者ページ</p>';
+  echo  '<p><font color=#fff>管理者ページ</font></p>';
   echo '</div>';
   
   $pdo = new PDO($connect,USER,PASS);
@@ -23,7 +23,11 @@
   $row = $sql->fetch(PDO::FETCH_ASSOC);
   //ユーザーログインへ
   echo '<div class = userlogin>';
-  echo '<a href="login-input.php" class = userlogin>ユーザーログインへ</a>';
+  echo '<a href="login-input.php" class = login>ユーザーログインへ</a>';
+  echo '</div>';
+  //ログアウト
+  echo '<div class = userlogout>';
+  echo '<a href="admin_logout_input.php" class = logout>ログアウト</a>';
   echo '</div>';
   //管理者の名前の表示
   echo '<div class = name>';
@@ -32,7 +36,6 @@
 
   //ユーザー一覧の表示
   echo '<div calss = uzer >';
-  echo '<p>ユーザー一覧</p>';
   try{
     $User_sql = 'select * from Users'; 
     $stmt = $pdo -> query($User_sql);

@@ -32,18 +32,18 @@
         <?php
             $pdo = new PDO($connect, USER, PASS); // データベース接続を確立
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// エラーモードを指定。エラーをキャッチできるように
-            // 変身された瓶があるか確認
+            // 返信された瓶があるか確認
             $user_name = $_SESSION['User']['username']; // セッションからユーザーIDを取得
             $sql = $pdo->prepare('select sent_id from Sents where user_name =?');
             $sql->execute([$user_name]);
             $binkaisyu = $sql->fetchAll(PDO::FETCH_ASSOC);
-            if(empty($binkaisyu)){
+            if($binkaisyu){
                 foreach($binkaisyu as $row){
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
                     $sql->execute([$row['sent_id']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
-                    var_dump($recieves);
+                    //var_dump($recieves);
                     foreach($recieves as $res){
                         $txtArr = array('からもらった返事',$res['sent_message']);
                         for($i = 0; $i < count($txtArr); $i++){
@@ -53,7 +53,7 @@
                         }
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
-                        echo $_SESSION['User']['id'], $txtArr[0].'</h2>';
+                        echo $res['user_name'], $txtArr[0].'</h2>';
                         echo '</div>';
                         echo '<div class="row justify-content-center mt-5">';
                         echo '<div class="col-6">';
