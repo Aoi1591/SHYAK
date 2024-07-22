@@ -53,7 +53,7 @@
                         }
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
-                        echo $_SESSION['User']['username'], $txtArr[0].'</h2>';
+                        echo $res['user_name'], $txtArr[0].'</h2>';
                         echo '</div>';
                         echo '<div class="row justify-content-center mt-5">';
                         echo '<div class="col-6">';
