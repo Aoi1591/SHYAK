@@ -78,7 +78,7 @@ if (isset($_GET['you'])) {
 
             echo '<div class="description-box">';
             echo '<div class="intro-title">［自己紹介］</div>';
-            echo '<div id="description">'.$user['message'].'</div>';
+            echo '<div id="description">'.$user["message"].'</div>';
             echo '</div>';
 
             // フレンド申請・ブロック機能
