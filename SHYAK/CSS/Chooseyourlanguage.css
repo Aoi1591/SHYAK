@@ -38,8 +38,6 @@ h1{
   left: 48%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
-  background-image: url("../img/日本.png");
-  border-radius: 50%;
 }
 .FR{
   
@@ -47,8 +45,6 @@ h1{
   left: 23%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
-  background-image: url("../img/フランス.png");
-  border-radius: 50%;
 }
 .RU{
   top: 220px; /* 上から10px */
