@@ -43,7 +43,7 @@
                     $sql->execute([$row['sent_id']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
-                    var_dump($recieves);
+                    //var_dump($recieves);
                     foreach($recieves as $res){
                         $txtArr = array('からもらった返事',$res['sent_message']);
                         for($i = 0; $i < count($txtArr); $i++){
