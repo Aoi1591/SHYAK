@@ -34,8 +34,8 @@ h1{
   transform: translateX(-50%);
 }
 .jp{
-  top: 280px; /* 上から10px */
-  left: 48%; /* 左から20px */
+  top: 253px; /* 上から10px */
+  left: 54%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: flex;
@@ -49,7 +49,7 @@ h1{
   display: flex;
 }
 .RU{
-  top: 220px; /* 上から10px */
+  top: 160px; /* 上から10px */
   left: 42%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
@@ -57,8 +57,8 @@ h1{
 }
 .CN{
   
-  top: 280px; /* 上から10px */
-  left: 37%; /* 左から20px */
+  top: 257px; /* 上から10px */
+  left: 40%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: flex;
