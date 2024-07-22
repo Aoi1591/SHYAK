@@ -66,7 +66,7 @@ try {
 
         // フレンド情報を表示
         foreach ($friends as $friend) {
-            $id = htmlspecialchars($friend['id']); // 変更: user_id -> id
+            $id = htmlspecialchars($friend['user_id']); // 変更: user_id -> id
             $name = htmlspecialchars($friend['user_name']);
         
             echo '<tr>';
