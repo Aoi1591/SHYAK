@@ -55,8 +55,6 @@ h1{
   left: 42%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
-  background-image: url("../img/ロシア.png");
-  border-radius: 50%;
 }
 .CN{
   
@@ -64,8 +62,6 @@ h1{
   left: 37%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
-  background-image: url("../img/中国.png");
-  border-radius: 50%;
 }
 .EN{
   
@@ -73,8 +69,6 @@ h1{
   left: 70%;
   position: absolute;
   transform: translateX(-50%);
-  background-image: url("../img/アメリカ.png");
-  border-radius: 50%;
 }
 .PT{
   
@@ -82,8 +76,6 @@ h1{
   left: 80%;
   position: absolute;
   transform: translateX(-50%);
-  background-image: url("../img/ブラジル.png");
-  border-radius: 50%;
 }
 img {
   max-width: 60px; /* 画像がコンテナの幅を超えないようにする */
@@ -101,7 +93,7 @@ button{
   outline: none;
 }
 .kokki{
-  border-radius: 100px;
-  width: 5%;
+  border-radius: 10px;
+  width: 50%;
 
 }
