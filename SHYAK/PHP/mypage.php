@@ -42,7 +42,7 @@ require 'api.php';
    echo '</div>';
    echo '<div class="profile-box">';
    echo '<input type="file"  name="icon" id="fileInput" style="display: none;" />';
-   echo '<img src="../image/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
+   echo '<img src="../img/',$row['icon'],'" id="image" alt="'.$txtArr[1].'">';
 
    echo '<input class="editable" name="user_name" id="nameInput" value="',$row['user_name'],'">';// 名前入力ボックス
 

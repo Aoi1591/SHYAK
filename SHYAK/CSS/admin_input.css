@@ -66,7 +66,7 @@ background-color: #99c2ff;
             align-items: center;
             justify-content: center;
             position: relative;
-            top: 20px;
+            /*top: 20px;*/
             left: 70vw;
 }
 
@@ -106,7 +106,7 @@ background-color: #99c2ff;
   transform: translateX(-50%);
   display: inline-block;
   padding: 0.5em; /* 上下左右の余白を大きくする */
-  font-size: 24px; /* フォントサイズを大きくする */
+  font-size: 16px; /* フォントサイズを大きくする */
   text-decoration: none;
   background: #ffbf00;
   color: #FFF;
@@ -123,7 +123,7 @@ background-color: #99c2ff;
   transform: translateX(-50%);
   display: inline-block;
   padding: 0.5em; /* 上下左右の余白を大きくする */
-  font-size: 24px; /* フォントサイズを大きくする */
+  font-size: 16px; /* フォントサイズを大きくする */
   text-decoration: none;
   background: #ffbf00;
   color: #FFF;

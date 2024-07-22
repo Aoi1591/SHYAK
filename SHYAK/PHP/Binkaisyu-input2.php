@@ -38,10 +38,11 @@
         $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
         $txtArr[$i] = $originalText;
     }
-    // セッションから sent_id を取得
-    $sentId = isset($_SESSION['flash']['sent_id']) ? $_SESSION['flash']['sent_id'] : 'デフォルト値';
-    $userId = $_SESSION['User']['id']; // 送り主の user_id
-    $userName = $_SESSION['User']['name']; // 送り主の名前
+    // セッションから取得
+    $sentId = isset($_GET['sent_id']) ? $_GET['sent_id'] : 'デフォルト値';
+    $userId = $_SESSION['User']['id']; 
+    $userName = isset($_SESSION['User']['username']) ? $_SESSION['User']['username'] : 'デフォルト名前';
+
     echo '<div class="row justify-content-center">';
     echo '<h2 class="text-center" style="width: 300px;">' . $_SESSION['flash']['username'] . $txtArr[0] . '</h2>';
     echo '</div><br>';
@@ -56,7 +57,7 @@
     echo '<div class="row justify-content-center">';
     echo '<div class="text-center col-6">';
     echo '<input type="hidden" name="sent_id" value="' . $sentId . '">';
-    echo '<textarea class="form-control" name="recieve_message" id="userInput2" rows="10" cols="40" placeholder="'. $txtArr[1] .'"></textarea>';
+    echo '<textarea class="form-control" name="sent_message" id="userInput2" rows="10" cols="40" placeholder="'. $txtArr[1] .'"></textarea>';
     echo '</div>';
     echo '</div>';
     echo '</div><br>';
@@ -67,7 +68,7 @@
     echo '</div>';
     echo '</div>';
     echo '<input type="hidden" name="sender_id" value="<?php echo $userId; ?>">';
-    echo '<input type="hidden" name="sender_name" value="<?php echo htmlspecialchars($userName, ENT_QUOTES, 'UTF-8'); ?>">';
+    echo '<input type="hidden" name="sender_name" value="' . htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') . '">';
     echo '</form>';
     ?>
     
@@ -85,6 +86,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const nagasu = document.getElementById("kaisyu");
         nagasu.addEventListener("click", function() {
+        event.preventDefault(); // デフォルトのフォーム送信動作を停止する
             const userInput = document.getElementById("userInput2").value;
             const userResponse = confirm(userInput + "\n\n"+<?php echo json_encode($txtArr[0]);?>);
             if (userResponse) {
