@@ -38,6 +38,7 @@ h1{
   left: 48%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .FR{
   
@@ -45,12 +46,14 @@ h1{
   left: 23%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .RU{
   top: 220px; /* 上から10px */
   left: 42%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .CN{
   
@@ -58,6 +61,7 @@ h1{
   left: 37%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .EN{
   
@@ -65,6 +69,7 @@ h1{
   left: 70%;
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .PT{
   
@@ -72,6 +77,7 @@ h1{
   left: 80%;
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 img {
   max-width: 60px; /* 画像がコンテナの幅を超えないようにする */
@@ -87,6 +93,7 @@ button{
   padding: 0;
   width: 170%;
   outline: none;
+  margin: 17% -8%;
 }
 .kokki{
   border-radius: 10px;
