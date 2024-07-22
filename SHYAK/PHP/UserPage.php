@@ -117,11 +117,15 @@ if (isset($_GET['you'])) {
             echo '</div>';
         } else {
             // ユーザーが見つからない場合
-            echo '<script>alert("ユーザーが見つかりませんでした");</script>';
+            $UsererrorText = "ユーザーが見つかりませんでした";
+            $UserText = $translator->translate($UsererrorText, $_SESSION['User']['lang']);
+            echo '<script>alert("'.$UserText.'");</script>';
             echo '<script>window.location.href = "top.php";</script>';
         }
     } catch (PDOException $e) {
-        echo '<script>alert("データベースエラーが発生しました");</script>';
+        $DBerrorText = "データベースエラーが発生しました";
+        $DBText = $translator->translate($DBerrorText, $_SESSION['User']['lang']);
+        echo '<script>alert("'.$DBText.'");</script>';
         echo '<script>window.location.href = "top.php";</script>';
     }
 } else {
