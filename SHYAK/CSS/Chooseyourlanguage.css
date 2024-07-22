@@ -82,3 +82,7 @@ img {
   margin-top: 20px;
   margin-right: 20px;
 }
+button{
+  border: none;
+  color:white;
+}
