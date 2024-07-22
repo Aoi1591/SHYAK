@@ -60,7 +60,7 @@ try {
         $friend_id = $request['friend_id'];
         
         // フレンドの詳細を取得するSQLクエリを準備
-        $friend_sql = $pdo->prepare('SELECT * FROM Users WHERE id = ?'); // 変更: user_id -> id
+        $friend_sql = $pdo->prepare('SELECT * FROM Users WHERE user_id = ?'); // 変更: user_id -> id
         $friend_sql->execute([$friend_id]);
         $friends = $friend_sql->fetchAll(PDO::FETCH_ASSOC);
 
