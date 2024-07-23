@@ -54,7 +54,7 @@ body {
       margin: 20px;
   }
   
-  .image{
+  .image img{
       max-width: 100%;
       height: auto;
   }
@@ -62,7 +62,7 @@ body {
   .text {
       margin-left: 20px;
   }
-  img {
+  .return {
     max-width: 60px; /* 画像がコンテナの幅を超えないようにする */
     height: auto; /* 高さを自動調整 */
     margin-bottom: 20px; /* 画像とフォームの間に余白を追加 */
