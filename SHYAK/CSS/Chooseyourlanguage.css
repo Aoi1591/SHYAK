@@ -92,10 +92,15 @@ button{
   width: 170%;
   outline: none;
   margin: 17% -8%;
+  background: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 .kokki{
   border-radius: 10px;
   width: 50%;
+  margin: 10% 24%;
 }
 span{
   color:white;
