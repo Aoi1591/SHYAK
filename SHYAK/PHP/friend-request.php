@@ -55,6 +55,8 @@ try {
     $requests = $User_sql->fetchAll(PDO::FETCH_ASSOC);
 
     // 各フレンドリクエストに対するユーザー情報を表示
+    echo '<div class="request">';
+
     foreach ($requests as $request) {
         $Fid = $request['id'];
         $friend_id = $request['friend_id'];
@@ -81,6 +83,8 @@ try {
     // データベース接続またはクエリ実行エラー時の処理
     echo 'エラーが発生しました: ' . $e->getMessage();
 }
+
+echo '</div>';
 ?>
 <?php
 // 既存のコード
