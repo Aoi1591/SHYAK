@@ -56,6 +56,7 @@ try {
 
     // 各フレンドリクエストに対するユーザー情報を表示
     echo '<div class="request">';
+    echo '<div class="s">';
 
     foreach ($requests as $request) {
         $Fid = $request['id'];
@@ -78,6 +79,7 @@ try {
             echo '</tr>';
         }
     }
+    echo '</div>';
     echo '</div>';
     echo '</div>';
 } catch (PDOException $e) {

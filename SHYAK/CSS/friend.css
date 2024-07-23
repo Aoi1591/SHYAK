@@ -125,3 +125,7 @@ body {
     margin-left:25vw;
     margin-top:1vw;
 }
+.s{
+    display: flex;
+    justify-content: center;
+}
