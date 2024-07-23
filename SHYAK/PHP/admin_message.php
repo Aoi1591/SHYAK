@@ -18,7 +18,7 @@
   echo '</div>';
   echo '<div class="return">';
   echo '<a href="admin-input.php">';
-  echo'<img src="../image/back-btn.png" alt="return">';
+  echo '戻る';
   echo '</a>';
   echo'</div>';
   if($user_id){

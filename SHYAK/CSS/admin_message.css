@@ -62,10 +62,11 @@ body {
   .text {
       margin-left: 20px;
   }
-  .return {
-    max-width: 60px; /* 画像がコンテナの幅を超えないようにする */
-    height: auto; /* 高さを自動調整 */
-    margin-bottom: 20px; /* 画像とフォームの間に余白を追加 */
+  /*.return {
+    max-width: 60px;  画像がコンテナの幅を超えないようにする 
+    height: auto;  高さを自動調整 
+    margin-bottom: 20px;  画像とフォームの間に余白を追加 
     margin-top: 20px;
     margin-right: 20px;
   }
+  */
