@@ -49,7 +49,6 @@
             </button>
         </div>
         <div class="RU">
-        <img src="../img/ロシア.png" class="kokki">
             <button type="submit" name="language" value="ru">
                 <img src="../img/ロシア.png" class="kokki">
                 <?php
