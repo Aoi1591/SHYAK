@@ -1,139 +1,160 @@
-    body,ul,li,h1,p {margin: 0;padding: 0;}
-    a {text-decoration: none; color: #000;}
-    li {list-style-type: none;}
-    /*------------------------------------
-    汎用 ↓
-    ------------------------------------*/
-    .flex {display: flex;}
-    .aic {align-items: center;}
-    .jcb {justify-content: space-between;}
-    /*------------------------------------
-    ヘッダー a hover:下線アンダーライン ↓
-    ------------------------------------*/
-    header ul li a {
-      position: relative;
-      display: inline-block;
-      text-decoration: none;
-    }
-    header ul li a::after {
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      content: '';
-      width: 100%;
-      height: 3px;
-      background: #000f20;
-      transform: scale(0, 1);
-      transform-origin: right top;
-      transition: transform .3s;
-    }
-    header ul li a:hover {
-      color: #3b5d82;
-    }
-    header ul li a:hover::after {
-      transform-origin: left top;
-      transform: scale(1, 1);
-    }
-    /*------------------------------------
-    ヘッダー spハンバーガーメニュー ↓
-    ------------------------------------*/
-    header .sp_nav {
-      text-align: center;
-    }
-    .sidemenu {
-      height: 50vh;
-      padding-top: 100px;
-      padding-bottom: 35vh;
-      position: fixed;
-      right: -40%; /*メニュー幅*/
-      transition: all 0.6s;
-      top: 0;
-      width: 40%; /*メニュー幅*/
-      z-index: 2;
-      background-color: #000;
-      overflow-y: scroll;
-    }
-    .sidemenu nav ul li {
-      padding: 20px;
-    }
-    .hamburger {
-      cursor: pointer;
-      height: 60px;
-      position: absolute;
-      right: 30px;
-      top: 40px;
-      width: 60px;
-      z-index: 3;
-    }
-    .hamburger span {
-      background-color: #000;  /*バックカラー*/
-      height: 4px;
-      left: 15px;
-      position: absolute;
-      transition: all 0.6s;
-      width: 30px;
-    }
-    .hamburger_linetop {
-      top: 20px;
-    }
-    .hamburger_linecenter {
-      top: 29px;
-    }
-    .hamburger_linebottom {
-      top: 38px;
-    }
-    /*------------------------------------
-    メニュークリックした後 ↓
-    ------------------------------------*/
-    .nav_open .sidemenu {
-      right: 0;
-    }
-    .nav_open .hamburger_linetop {
-      top: 26px;
-      transform: rotate(45deg);
-    }
-    .nav_open .hamburger_linecenter {
-      left: 50%;
-      width: 0;
-    }
-    .nav_open .hamburger_linebottom {
-      top: 26px;
-      transform: rotate(-45deg);
-    }
-    .nav_open .overlay {
-      opacity: 0.8;
-      visibility: visible;
-    }
-    /*------------------------------------
-    メニュークリック後メニュー外の背景 ↓
-    ------------------------------------*/
-    .overlay {
-      background-color: #000;
-      cursor: pointer;
-      height: 100vh;
-      left: 0;
-      opacity: 0;
-      position: fixed;
-      top: 0;
-      transition: all 0.6s;
-      visibility: hidden;
-      width: 100vw;
-      z-index: 1;
-    }
-    /*------------------------------------
-    @media screen 1000px~999px ↓
-    ------------------------------------*/
-    @media screen and (max-width: 1000px) {
-      .sp_no {
-        display: none;
-      }
-      .sidemenu {
-        right: -50%; /*メニュー幅*/
-        width: 50%; /*メニュー幅*/
-      }
-    }
-    @media screen and (min-width: 999px) {
-      .pc_no {
-        display: none;
-      }
-    }
+body, ul, li, h1, p { margin: 0; padding: 0; }
+a { text-decoration: none; color: #000; }
+li { list-style-type: none; }
+
+/*------------------------------------
+汎用 ↓
+------------------------------------*/
+.flex { display: flex; }
+.aic { align-items: center; }
+.jcb { justify-content: space-between; }
+
+/*------------------------------------
+ヘッダー a hover:下線アンダーライン ↓
+------------------------------------*/
+header ul li a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+header ul li a::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #000f20;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+}
+header ul li a:hover {
+  color: #3b5d82;
+}
+header ul li a:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+/*------------------------------------
+ヘッダー spハンバーガーメニュー ↓
+------------------------------------*/
+.sidemenu {
+  height: 100vh; /* 全画面の高さ */
+
+  padding-top: 100px;
+  position: fixed;
+  right: -30%; /* メニュー幅を右側に */
+  transition: all 0.6s;
+  top: 0;
+  width: 30%; /* メニュー幅 */
+  z-index: 2;
+  background: linear-gradient(to bottom, rgb(222, 248, 255), rgb(0, 162, 255)); /* 初期状態でもグラデーション */
+
+  overflow-x: hidden; /* 横スクロールを隠す */
+}
+.sidemenu nav ul li {
+  padding: 20px;
+}
+.hamburger {
+  cursor: pointer;
+  height: 60px;
+  position: absolute;
+  right: 30px; /* 左から右に変更 */
+  top: 40px;
+  width: 60px;
+  z-index: 3;
+}
+.hamburger span {
+  background-color: #000000c0;  /*バックカラー*/
+  height: 4px;
+  left: 15px;
+  position: absolute;
+  transition: all 0.6s;
+  width: 30px;
+}
+.hamburger_linetop {
+  top: 20px;
+}
+.hamburger_linecenter {
+  top: 29px;
+}
+.hamburger_linebottom {
+  top: 38px;
+}
+
+/*------------------------------------
+メニュークリックした後 ↓
+------------------------------------*/
+.nav_open .sidemenu {
+  right: 0;
+}
+.nav_open .hamburger_linetop {
+  top: 26px;
+  transform: rotate(45deg);
+}
+.nav_open .hamburger_linecenter {
+  left: 50%;
+  width: 0;
+}
+.nav_open .hamburger_linebottom {
+  top: 26px;
+  transform: rotate(-45deg);
+}
+.nav_open .overlay {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+/*------------------------------------
+メニュークリック後メニュー外の背景 ↓
+------------------------------------*/
+.overlay {
+  background-color: #00000087;
+  cursor: pointer;
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.6s;
+  visibility: hidden;
+  width: 100vw;
+  z-index: 1;
+}
+
+/*------------------------------------
+@media screen 1000px~999px ↓
+------------------------------------*/
+@media screen and (max-width: 1000px) {
+  .sp_no {
+    display: none;
+  }
+  .sidemenu {
+    right: -50%; /* メニュー幅を右側に */
+    width: 40%; /* メニュー幅 */
+  }
+}
+@media screen and (min-width: 999px) {
+  .pc_no {
+    display: none;
+  }
+}
+
+.menu-image {
+  bottom: 0; 
+  display: block;
+  width: 100%; /* 画像がメニューの幅全体に対応するように調整 */
+  height: auto; /* 画像のアスペクト比を保持 */
+  margin-top: auto; /* メニューの最下部に配置 */
+  filter: invert(65%) sepia(20%) saturate(300%) hue-rotate(180deg) brightness(110%) contrast(140%);
+  opacity: 0.6; /* 透明度を50%に設定 */
+
+  position: relative; /* 位置を相対的に設定 */
+  bottom: 0; /* 必要に応じて調整 */
+  margin-top: auto; /* 必要に応じて調整 */
+  left: 0; /* 必要に応じて調整 */
+}
+/*filter: invert(8%) sepia(99%) saturate(6000%) hue-rotate(200deg) brightness(120%) contrast(100%);
+ filter: invert(8%) sepia(91%) saturate(100%) hue-rotate(229deg) brightness(107%) contrast(101%) alpha(opacity=50);

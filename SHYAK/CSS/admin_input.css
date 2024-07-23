@@ -1,0 +1,136 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../image/beach.png");
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: 100% 100% ;
+  }
+
+  /*.table{
+    border: 1;
+  }*/
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+/*.name {
+    margin-bottom: 20px;
+}*/
+/*.user {
+    margin-top: 20px;
+}*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+.table{
+margin: auto;
+background-color: #99c2ff;
+}
+
+.title{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.name{
+    font-size: 30px;
+    font-weight: bold;
+
+    /*display: inline-block;*/
+    padding: 0.5em 0.5em; /* 上下左右の余白を設定 */
+    /*font-size: 20px;*/ /* フォントサイズを統一 */
+    text-decoration: none;
+    border-radius: 9px;
+    color: #000000; /* テキストの色を白に設定 */
+    text-align: center; /* テキストを中央揃えに設定 */
+    margin: 3px;
+    width: 400px;
+    height: 30px;
+    line-height: 60px; /* ボタン内のテキストを垂直方向に中央揃え */
+    background: #ffe38f;
+ 
+    background-repeat: no-repeat;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            /*top: 20px;*/
+            left: 70vw;
+}
+
+.uzer{
+    font-size: 30px;
+    font-weight: bold;
+}
+.a{
+    font-size: 10px;
+    font-weight: bold;
+
+    display: inline-block;
+    padding: 0.5em 0.5em; /* 上下左右の余白を設定 */
+    /*font-size: 20px;*/ /* フォントサイズを統一 */
+    text-decoration: none;
+    border-radius: 9px;
+    color: #000000; /* テキストの色を白に設定 */
+    text-align: center; /* テキストを中央揃えに設定 */
+    margin: 3px;
+    width: 400px;
+    height: 30px;
+    line-height: 60px; /* ボタン内のテキストを垂直方向に中央揃え */
+    background: #ffe38f;
+ 
+    background-repeat: no-repeat;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+}
+
+.userlogin{
+    top: 10%; /* 上から10px */
+  left: 7%; 
+  position: absolute;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 0.5em; /* 上下左右の余白を大きくする */
+  font-size: 16px; /* フォントサイズを大きくする */
+  text-decoration: none;
+  background: #ffbf00;
+  color: #FFF;
+  border-radius: 12px;
+  width: 150px;
+  height: 20px;
+  box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
+  transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+}
+.userlogout{
+  top: 10%; /* 上から10px */
+  left: 20%; /* 左から20px */
+
+  position: absolute;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 0.5em; /* 上下左右の余白を大きくする */
+  font-size: 16px; /* フォントサイズを大きくする */
+  text-decoration: none;
+  background: #ffbf00;
+  color: #FFF;
+  border-radius: 12px;
+  width: 150px;
+  height: 20px;
+  box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
+  transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+}

@@ -1,0 +1,74 @@
+  /* batuボタン */
+  .batu {
+    display: inline-block;
+  padding: 0.5em 0.5em; /* 上下左右の余白を大きくする */
+  font-size: 50px; /* フォントサイズを大きくする */
+  text-decoration: none;
+  background: #ffbf00;
+  background-image: url("../image/batu.png");
+  background-size: 70%;
+  background-repeat: no-repeat; 
+  background-position: center; /* 画像を中央に配置する */
+  border-radius: 9px;
+  color: #fff; /* テキストの色を白にする */
+  text-align: center; /* テキストを中央揃えにする */
+  }
+  /*背景*/
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../image/背景.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100% ;
+}
+.center_box{
+  font-size: 1.8vh; 
+  padding-left: 15vh;
+  padding-right: 15vh;
+  width: 40vw;
+  height: 65vh;
+  overflow: auto;
+}
+.img-fluid{
+  width: 80vw;
+  height: 80vh;
+  background-image: url("../image/ルール.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  color: white;
+
+  
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+

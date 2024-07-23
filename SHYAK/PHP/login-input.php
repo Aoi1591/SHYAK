@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>ログイン画面</title>
-        <link rel="stylesheet" href="../css/login-input.css">
-    </head>
-    <body>
-        <div id = "container">
-            <div id="background">
-                <div class="bottol-1"></div>
-                <div class="bottol-2"></div>
-                <div class="bottol-3"></div>
-                <div class="bottol-4"></div>
-                <div class="bottol-5"></div>
-                <div class="airplane"></div>
-            </div>
-            <form action = "login-output.php" method="post">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン画面</title>
+    <link rel="stylesheet" href="../CSS/login-input.css">
+</head>
+<body>
+    <?php
+      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
+        echo '<script>';
+        echo "alert('logged out');";
+        echo '</script>';
+      }
+    ?>
 
-                <div id = "username-all">
-                    <div class="username">
-                    <input type="text" id="username" name="username" placeholder="USERNAME" required><br>
-                    </div>
-                </div>
-
-                <div id = "password-all">
-                    <div class = "password">
-                    <input type="password" id="password" name="password" placeholder="PASSWORD" required><br>
-                    </div>
-                </div>
-
-                <div id ="login-all"> 
-                    <div class="login"> 
-                    <input type="submit" value="LOGIN">
-                    </div>
-                </div>
-
-                <br><br>
-
-            <div id="sign-up">
-                <div class="sign-up-line">
-                <a href = "../php/sign-up-input.php">sign-up</a>
-                </div>
-            </div>
-            </form>
+    <!-- Login Form Container -->
+    <a href="#" id="admin">■</a>
+    <form action="login-output.php" method="post">
+        <div id="username-all">
+            <input type="text" id="username" name="username" placeholder="USER NAME" required>
         </div>
-    </body>
+        <div id="password-all">
+            <input type="password" id="password" name="password" placeholder="PASSWORD" required>
+        </div>
+        <div id="login-all">
+            <button type="submit" id="login-button">LOGIN</button>
+        </div>
+    </form>
+
+    <!-- Sign-Up Text and Line -->
+    <div id="sign-up-container">
+        <a href="signup-input.php" id="sign-up">SIGN-UP</a>
+        <div class="sign-up-line"></div>
+    </div>
+
+    <script>
+        document.getElementById('admin').addEventListener('click', function(event) {
+            event.preventDefault();
+            var userInput = prompt("秘密の質問を入力してください");
+            if (userInput) {
+                var currentDate = new Date();
+                var year = currentDate.getFullYear();
+                var month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
+                var day = ('0' + currentDate.getDate()).slice(-2);
+                var secretDate = '' + year + month + day;
+
+                if (userInput === secretDate) {
+                    alert("正しい回答です。ログインページにリダイレクトします。");
+                    window.location.href = "./admin_login_input.php";
+                } else {
+                    alert("エラー: 秘密の質問の回答が正しくありません。");
+                }
+            }
+        });
+    </script>
+</body>
 </html>

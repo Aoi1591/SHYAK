@@ -1,0 +1,332 @@
+@charset "utf-8";
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+  top:0;
+    right: -120%;
+  width:100%;
+    height: 100vh;/*ナビの高さ*/
+  background:#999;
+    /*動き*/
+  transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    right: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+  list-style: none;
+    text-align: center;
+}
+
+#g-nav li a{
+  color: #333;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn1{
+  position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+  top:10px;
+  right: 10px;
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+  
+/*×に変化*/  
+.openbtn1 span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+  background-color: #666;
+    width: 45%;
+  }
+
+.openbtn1 span:nth-of-type(1) {
+  top:15px; 
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+h1{
+  font-size:1.2rem;
+}
+
+h2{
+  font-size:1.2rem;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+p{
+  margin-top:20px;  
+}
+
+small{
+  color:#fff;
+  display: block;
+  text-align: center;
+}
+
+#header{
+  width:100%;
+  background:#333;
+  color:#fff;
+  text-align: center;
+  padding: 20px;
+}
+
+section{
+  padding:100px 30px;
+}
+
+section:nth-child(2n){
+  background:#f3f3f3; 
+}
+
+#footer{
+  background:#333;
+  padding:20px;
+}
+
+/*背景*/
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../image/背景.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100% ;
+  z-index: 0;
+}
+
+.btn-binwonagasu {
+  top: 84%; /* 上から10px */
+  left: 30%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 0.5em; /* 上下左右の余白を大きくする */
+  font-size: 24px; /* フォントサイズを大きくする */
+  text-decoration: none;
+  background: #ffbf00;
+  color: #FFF;
+  border-radius: 12px;
+  width: 240px;
+  height: 70px;
+  box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
+  transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+}
+
+/*ボタンを押したとき*/
+.btn-binwonagasu:active {
+  transform: translate(-120px,5px); /* ボタンを下に動かす */
+  box-shadow: 0px 0px 0px #bc8d00; /* シャドウを削除して押された効果を表現 */
+}
+
+
+.btn-binwokaisyu {
+  top: 84%; /* 上から10px */
+  left: 70%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 0.5em 2em; /* 上下左右の余白を大きくする */
+  font-size: 24px; /* フォントサイズを大きくする */
+  text-decoration: none;
+  background: #ffbf00;
+  color: #FFF;
+  border-radius: 12px;
+  width: 240px;
+  height: 70px;
+  box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
+  transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+}
+/*ボタンを押したとき*/
+.btn-binwokaisyu:active {
+  transform: translate(-120px,5px); /* ボタンを下に動かす */
+  box-shadow: 0px 0px 0px #bc8d00;
+}
+
+.btn-hon-image {
+  top: 70%; /* 上から10px */
+  left: 10%;
+  position: absolute;
+  transform: translateX(-50%); /* 左から20px */
+  width: 70px;
+  height: 60px;
+  transition: transform 0.1s, box-shadow 0.1s;
+  z-index: 99;
+
+}
+img.btn-hon-image:active{
+ 
+	/* 要素を若干下に下げることで、押した感じを出す。*/
+ 
+	/* 今いる位置から相対的に3px下に配置する。*/
+	position: absolute;
+	transform: translate(-35px,3px) /* ボタンを下に動かす */
+}
+
+/* 瓶アニメーション */
+@keyframes animateImageSlide {
+  0% {
+      transform: translate(0px, 0px);
+  }
+  11% {
+      transform: translate(10px,-5px);
+  }
+  22% {
+      transform: translate(10px, 5px);
+  }
+  33% {
+      transform: translate(-10px,-5px);
+  }
+  44% {
+      transform: translate(-10px, 5px);
+  }
+  55% {
+      transform: translate(10px,-5px);
+  }
+  66% {
+    transform: translate(10px, 5px);
+  }
+  77% {
+    transform: translate(-10px,-5px);
+  }
+  88% {
+    transform: translate(-10px, 5px);
+  }
+  100% {
+    transform: translate(0px,0px);
+  }
+}
+
+
+#img_bin1 {
+  top: 45%; /* 上から10px */
+  left: 50%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100px;
+  animation: animateImageSlide 21s infinite ease;
+}
+
+#img_bin2 {
+  top: 43%; /* 上から10px */
+  left: 65%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100px;
+  animation: animateImageSlide 30s infinite ease;
+}
+
+#img_bin3 {
+  top: 47%; /* 上から10px */
+  left: 80%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100px;
+  animation: animateImageSlide 26s infinite ease;
+}
+
+#img_bin4 {
+  top: 50%; /* 上から10px */
+  left: 20%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100px;
+  animation: animateImageSlide 40s infinite ease;
+}
+
+#img_bin5 {
+  top: 49%; /* 上から10px */
+  left: 35%; /* 左から20px */
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100px;
+  animation: animateImageSlide 34s infinite ease;
+}
+
+.book{
+  position: absolute;
+  top: 84%;
+}
+
+
+.message {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: center;
+}
