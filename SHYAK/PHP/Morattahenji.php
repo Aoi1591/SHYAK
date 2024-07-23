@@ -51,7 +51,7 @@
                             $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
                             $txtArr[$i] = $originalText;
                         }
-                        echo '<div class="scroll">';
+                        echo '<div class="scrol">';
                         echo '<span>';
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
