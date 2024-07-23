@@ -34,7 +34,7 @@ h1{
   transform: translateX(-50%);
 }
 .jp{
-  top: 253px; /* 上から10px */
+  top: 300px; /* 上から10px */
   left: 54%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
