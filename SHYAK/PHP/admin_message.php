@@ -16,7 +16,7 @@
   echo '<div class=title>';
   echo '<p><font color=#fff>通報メッセージ一覧</font></p>';
   echo '</div>';
-  echo 'div class="return">';
+  echo '<div class="return">';
   echo '<a href="admin-input.php">';
   echo'<img src="../image/back-btn.png" alt="return">';
   echo '</a>';
