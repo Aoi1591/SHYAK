@@ -27,9 +27,8 @@
             </a>
         </div>
         <div class="jp">
-            
             <button type="submit" name="language" value="ja">
-            <img src="../img/日本.png" class="kokki">
+                <img src="../img/日本.png" class="kokki">
                 <?php
                     $translator = new Translator();
                     $originalText = "日本語";
@@ -39,57 +38,58 @@
             </button>
         </div>
         <div class="FR">
-        <img src="../img/フランス.png" class="kokki">
             <button type="submit" name="language" value="fr">
+                <img src="../img/フランス.png" class="kokki">
                 <?php
                     $translator = new Translator();
                     $originalText = "フランス語";
                     $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $translatedText;
+                    echo "<span>".$translatedText."</span>";
                 ?>
             </button>
         </div>
         <div class="RU">
         <img src="../img/ロシア.png" class="kokki">
             <button type="submit" name="language" value="ru">
+                <img src="../img/ロシア.png" class="kokki">
                 <?php
                     $translator = new Translator();
                     $originalText = "ロシア語";
                     $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $translatedText;
+                    echo "<span>".$translatedText."</span>";
                 ?>
             </button>
         </div>
         <div class="CN">
-        <img src="../img/中国.png" class="kokki">
             <button type="submit" name="language" value="zh-Hans">
+                <img src="../img/中国.png" class="kokki">
                 <?php
                     $translator = new Translator();
                     $originalText = "簡体中国語";
                     $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $translatedText;
+                    echo "<span>".$translatedText."</span>";
                 ?>
             </button>
         </div>
         <div class="EN">
-        <img src="../img/アメリカ.png" class="kokki">
             <button type="submit" name="language" value="en">
+                <img src="../img/アメリカ.png" class="kokki">
                 <?php
                     $translator = new Translator();
                     $originalText = "英語";
                     $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $translatedText;
+                    echo "<span>".$translatedText."</span>";
                 ?>
             </button>
         </div>
         <div class="PT">
-        <img src="../img/ブラジル.png" class="kokki">
             <button type="submit" name="language" value="pt">
+                <img src="../img/ブラジル.png" class="kokki">
                 <?php
                     $translator = new Translator();
                     $originalText = "ポルトガル語";
                     $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $translatedText;
+                    echo "<span>".$translatedText."</span>";
                 ?>
             </button>
         </div>
