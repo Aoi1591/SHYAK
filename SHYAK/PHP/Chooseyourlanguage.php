@@ -33,7 +33,7 @@
                     $translator = new Translator();
                     $originalText = "日本語";
                     $translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
-                    echo $translatedText;
+                    echo "<span>".$translatedText."</span>";
                 ?>
             </button>
         </div>
