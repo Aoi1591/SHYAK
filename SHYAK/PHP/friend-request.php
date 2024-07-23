@@ -79,12 +79,12 @@ try {
         }
     }
     echo '</div>';
+    echo '</div>';
 } catch (PDOException $e) {
     // データベース接続またはクエリ実行エラー時の処理
     echo 'エラーが発生しました: ' . $e->getMessage();
 }
 
-echo '</div>';
 ?>
 <?php
 // 既存のコード
