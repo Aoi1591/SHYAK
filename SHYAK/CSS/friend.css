@@ -106,26 +106,22 @@ body {
     display: flex;
     justify-content: center;
 }
-.request{
+.request {
     padding: 0.5em 0.5em;
     font-size: 20px;
     text-decoration: none;
     border-radius: 9px;
-    color: #000000;
     text-align: center;
+    width: 80%;
     height: 55px;
-    line-height: 60px;
-    background: #ffe38f;
+    background: #fff6db;
     background-repeat: no-repeat;
-    background-position: left;
-    padding-left: 70px;
-    margin: 10px;
-    width: 90%; /* 幅を120%に設定 */
-    max-width: 600px; /* 最大幅を設定 */
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
-    transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+    position: relative;
+    margin-right:20vw;
+    margin-left:25vw;
+    margin-top:1vw;
 }
