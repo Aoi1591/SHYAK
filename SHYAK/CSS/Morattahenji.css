@@ -76,6 +76,6 @@ body {
     box-sizing: border-box; /* パディングを含めた幅にする */
       }
     .scroll{
-      height: 500px;
+      height: 80px;
       overflow: auto;
     }
