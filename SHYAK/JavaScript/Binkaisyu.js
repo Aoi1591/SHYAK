@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const confirmYesButton = document.getElementById("confirmYes");
     const confirmNoButton = document.getElementById("confirmNo");
 
-    nagasu.addEventListener("click", function() {
+    kaisyu.addEventListener("click", function() {
         confirmationDialog.style.display = "flex";
         confirmationDialogCon.style.display = "block";
     });
 
     confirmYes.addEventListener("click", function() {
-        document.getElementById("binnagasuForm").submit(); // フォームを送信
+        document.getElementById("binkaisyuForm").submit(); // フォームを送信
     });
 
     confirmNo.addEventListener("click", function() {

@@ -72,30 +72,7 @@
     echo '</form>';
     ?>
     
-            <!-- ダイアログ -->
-<script type="text/javascript">
-    <?php
-        $txtArr = array('この内容でよろしいですか？','瓶を流しました');
-        $translator = new Translator();
-        for($i = 0; $i < count($txtArr); $i++){
-            $originalText = $txtArr[$i];
-            $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-            $txtArr[$i] = $originalText;
-        }
-    ?>
-    document.addEventListener("DOMContentLoaded", function() {
-        const nagasu = document.getElementById("kaisyu");
-        nagasu.addEventListener("click", function() {
-        event.preventDefault(); // デフォルトのフォーム送信動作を停止する
-            const userInput = document.getElementById("userInput2").value;
-            const userResponse = confirm(userInput + "\n\n"+<?php echo json_encode($txtArr[0]);?>);
-            if (userResponse) {
-                alert(<?php echo json_encode($txtArr[1]);?>);
-                document.getElementById("binkaisyuForm").submit(); // フォームを送信
-            }
-        });
-    });
-</script>
+
 <!--<?php //unset($_SESSION['flash']);?>-->
 </body>
 </html>
