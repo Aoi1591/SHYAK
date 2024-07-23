@@ -3,11 +3,15 @@ session_start();
 require 'connect.php';  // データベース接続の設定を読み込む
 
 // POSTデータを受け取る
-$senderId = $_POST['sender_id']; // 送り主の user_id
-$sentId = $_POST['sent_id']; // 送り先の ID 津田
+$senderId = $_POST['sender_id'] ?? null; // 送り主の user_id
+$sentId = $_POST['sent_id'] ?? null; // 送り先の ID 津田
+$userName = $_POST['sender_name'] ?? null; // 送り主の名前
+$sentMessage = $_POST['sent_message'] ?? null; // 送られたメッセージ
 
-$userName = $_POST['sender_name']; // 送り主の名前
-$sentMessage = $_POST['sent_message']; // 送られたメッセージ
+// 必要なデータが揃っているか確認する
+if ($senderId === null || $sentId === null || $userName === null || $sentMessage === null) {
+    die('Error: Missing required POST data.');
+}
 
 // データベースにデータを挿入
 try {
@@ -19,6 +23,8 @@ try {
     $stmt->bindParam(':sent_id', $sentId); //リプライ者
     $stmt->bindParam(':sent_message', $sentMessage);
     $stmt->execute();
+    
+    // データ挿入後、top.phpにリダイレクト
     header("Location: top.php");
     exit;
 } catch (PDOException $e) {
@@ -27,7 +33,7 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
