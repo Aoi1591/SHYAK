@@ -56,7 +56,7 @@ try {
 
     // 各フレンドリクエストに対するユーザー情報を表示
     echo '<div class="request">';
-    echo '<div class="s">';
+
 
     foreach ($requests as $request) {
         $Fid = $request['id'];
@@ -72,14 +72,13 @@ try {
             $id = htmlspecialchars($friend['user_id']); // 変更: user_id -> id
             $name = htmlspecialchars($friend['user_name']);
         
-            echo '<tr>';
-            echo '<td><a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a></td>';
-            echo '<td><button class="approve-friend" data-id="' . $Fid . '">許可</button></td>';
-            echo '<td><button class="reject-friend" data-id="' . $Fid . '">却下</button></td>';
-            echo '</tr>';
+            echo '<div class="sen">';
+            echo '<a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a>';
+            echo '<button class="approve-friend" data-id="' . $Fid . '">許可</button>';
+            echo '<button class="reject-friend" data-id="' . $Fid . '">却下</button>';
+            echo '</div>';
         }
     }
-    echo '</div>';
     echo '</div>';
     echo '</div>';
 } catch (PDOException $e) {
