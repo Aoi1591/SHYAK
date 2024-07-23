@@ -26,8 +26,9 @@
             </a>
         </div>
         <div class="jp">
-            <img src="../img/日本.png" class="kokki">
+            
             <button type="submit" name="language" value="ja">
+            <img src="../img/日本.png" class="kokki">
                 <?php
                     $translator = new Translator();
                     $originalText = "日本語";
