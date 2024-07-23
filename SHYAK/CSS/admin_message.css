@@ -8,6 +8,10 @@ body {
 
     font-family: Arial, sans-serif;
   }
+  a{
+    text-decoration: none;
+  }
+
   .title{
     font-size: 50px;
     font-weight: bold;
@@ -65,7 +69,7 @@ body {
   .return {
     text-decoration: none;
       top: 10%; /* 上から10px */
-      left: 80%; 
+      left: 90%; 
       position: absolute;
       transform: translateX(-50%);
       display: inline-block;
