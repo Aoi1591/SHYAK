@@ -21,8 +21,8 @@
         echo "<a href='logout-output.php' id='yes-button'>",$yesText,"</button>";
         echo "<a href='#' onclick='noevent(event)' id='no-button'>",$noText,"</a>";
         echo "</div>";
-        echo "<div id="confirmationDialog" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 1000;">";
-        echo "<div id="confirmationDialogCon" class="dialog-content" style="background: rgb(255, 244, 185); border-radius: 20px; padding: 7%; text-align: center; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; display: none;">";
+        echo "<div id='confirmationDialog' style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 1000;">";
+        echo "<div id='confirmationDialogCon' class="dialog-content" style="background: rgb(255, 244, 185); border-radius: 20px; padding: 7%; text-align: center; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; display: none;">";
         echo "<label>ログアウトしました</label>";
         echo "<button id="ok" type="submit" >OK</button>";
         echo "</div>";
