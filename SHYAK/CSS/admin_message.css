@@ -68,20 +68,20 @@ body {
   }
   .return {
     text-decoration: none;
-      top: 10%; /* 上から10px */
-      left: 90%; 
-      position: absolute;
-      transform: translateX(-50%);
-      display: inline-block;
-      padding: 0.5em; /* 上下左右の余白を大きくする */
-      font-size: 16px; /* フォントサイズを大きくする */
-      text-decoration: none;
-      background: #ffbf00;
-      color: #FFF;
-      border-radius: 12px;
-      width: 150px;
-      height: 20px;
-      box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
-      transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
+    text-align: center;
+    top: 10%; /* 上から10px */
+    left: 90%; 
+    position: absolute;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 0.5em; /* 上下左右の余白を大きくする */
+    font-size: 16px; /* フォントサイズを大きくする */
+    background: #ffbf00;
+    color: #FFF;
+    border-radius: 12px;
+    width: 150px;
+    height: 20px;
+    box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
+    transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
   }
   
