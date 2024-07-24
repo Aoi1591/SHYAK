@@ -7,9 +7,10 @@
 </head>
 <body> 
     <h1>ログアウトしますか？<h1>
+    <div id="logout">
         <a href="logout-output.php" id="yes-button">はい</button>
         <a href="#" onclick="noevent(event)" id="no-button">いいえ</a>
-       
+    </div>   
     <script src="../JavaScript/logout.js"></script>
 </body>
 </html>
