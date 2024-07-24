@@ -16,7 +16,6 @@
 <body>
 <?php
 require 'menu-humburger.php';
-//require 'api.php';
 //require 'CheckMessage.php';
 ?>
 <!-- ログアウトの時にのみ使用-->

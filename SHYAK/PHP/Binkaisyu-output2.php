@@ -19,6 +19,8 @@ try {
     $stmt->bindParam(':sent_id', $sentId); //リプライ者
     $stmt->bindParam(':sent_message', $sentMessage);
     $stmt->execute();
+    header("Location: top.php");
+    exit;
 } catch (PDOException $e) {
     die('Database error: ' . $e->getMessage());  // エラー処理
 }
@@ -34,18 +36,18 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<h2 class="text-center mt-5">この返事でよろしいですか？</h2>
-<div class="row justify-content-center">
-    <div class="col-6">
-        <a href="top.php">
-            <button type="submit" class="btn btn-outline-dark userinfoButton">はい<br></button>
-        </a>
-    </div>
-    <div class="col-6">
-        <a href="Binkaisyu-output2.php">
-            <button type="submit" class="btn btn-outline-dark userinfoButton">いいえ<br></button>
-        </a>
-    </div>
-</div>
+<!-- <h2 class="text-center mt-5">この返事でよろしいですか？</h2> -->
+<!-- <div class="row justify-content-center"> -->
+    <!-- <div class="col-6"> -->
+        <!-- <a href="top.php"> -->
+            <!-- <button type="submit" class="btn btn-outline-dark userinfoButton">はい<br></button> -->
+        <!-- </a> -->
+    <!-- </div> -->
+    <!-- <div class="col-6"> -->
+        <!-- <a href="Binkaisyu-output.php"> -->
+            <!-- <button type="submit" class="btn btn-outline-dark userinfoButton">いいえ<br></button> -->
+        <!-- </a> -->
+    <!-- </div> -->
+<!-- </div> -->
 </body>
 </html>
