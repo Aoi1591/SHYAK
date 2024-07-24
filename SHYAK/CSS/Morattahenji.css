@@ -75,3 +75,7 @@ body {
     width: 100%; /* フォームの幅に合わせる */
     box-sizing: border-box; /* パディングを含めた幅にする */
       }
+    .scroll{
+      height: 600px;
+      overflow: auto;
+    }

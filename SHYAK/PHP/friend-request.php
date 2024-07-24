@@ -55,32 +55,37 @@ try {
     $requests = $User_sql->fetchAll(PDO::FETCH_ASSOC);
 
     // 各フレンドリクエストに対するユーザー情報を表示
+    echo '<div class="request">';
+
+
     foreach ($requests as $request) {
         $Fid = $request['id'];
         $friend_id = $request['friend_id'];
         
         // フレンドの詳細を取得するSQLクエリを準備
-        $friend_sql = $pdo->prepare('SELECT * FROM Users WHERE id = ?'); // 変更: user_id -> id
+        $friend_sql = $pdo->prepare('SELECT * FROM Users WHERE user_id = ?'); // 変更: user_id -> id
         $friend_sql->execute([$friend_id]);
         $friends = $friend_sql->fetchAll(PDO::FETCH_ASSOC);
 
         // フレンド情報を表示
         foreach ($friends as $friend) {
-            $id = htmlspecialchars($friend['id']); // 変更: user_id -> id
+            $id = htmlspecialchars($friend['user_id']); // 変更: user_id -> id
             $name = htmlspecialchars($friend['user_name']);
         
-            echo '<tr>';
-            echo '<td><a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a></td>';
-            echo '<td><button class="approve-friend" data-id="' . $Fid . '">許可</button></td>';
-            echo '<td><button class="reject-friend" data-id="' . $Fid . '">却下</button></td>';
-            echo '</tr>';
+            echo '<div class="sen">';
+            echo '<a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a>';
+            echo '<button class="approve-friend" data-id="' . $Fid . '">許可</button>';
+            echo '<button class="reject-friend" data-id="' . $Fid . '">却下</button>';
+            echo '</div>';
         }
     }
+    echo '</div>';
     echo '</div>';
 } catch (PDOException $e) {
     // データベース接続またはクエリ実行エラー時の処理
     echo 'エラーが発生しました: ' . $e->getMessage();
 }
+
 ?>
 <?php
 // 既存のコード
