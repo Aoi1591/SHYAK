@@ -17,7 +17,7 @@
         echo "<h1>$translatedText</h1>";
         $yesText = $translator->translate("はい",$_SESSION['User']['lang']);
         $noText = $translator->translate("いいえ",$_SESSION['User']['lang']);
-        echo "<div id="logout">";
+        echo "<div id='logout'>";
         echo "<a href='logout-output.php' id='yes-button'>",$yesText,"</button>";
         echo "<a href='#' onclick='noevent(event)' id='no-button'>",$noText,"</a>";
         echo "</div>";
