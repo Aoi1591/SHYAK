@@ -131,3 +131,8 @@ try {
     </div>
 </body>
 </html>
+<style>
+html,body {
+  overflow-y: hidden;
+} 
+</style>
