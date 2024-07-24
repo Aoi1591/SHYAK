@@ -86,3 +86,8 @@
 <!--<?php //unset($_SESSION['flash']);?>-->
 </body>
 </html>
+<style>
+html,body {
+  overflow-y: hidden;
+} 
+</style>
