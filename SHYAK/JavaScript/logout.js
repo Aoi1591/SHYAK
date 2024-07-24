@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const confirmationDialog = document.getElementById("confirmationDialog");
     const confirmationDialogCon = document.getElementById("confirmationDialogCon");
     const yesbutton = document.getElementById("yes-button");
+    const ok = document.getElementById("ok");
     //const confirmNoButton = document.getElementById("no-button");
 
     logout.addEventListener("click", function() {
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     yesbutton.addEventListener("click", function() {
-        document.getElementById("yesbutton").submit(); // フォームを送信
+        document.getElementById("ok").submit(); // フォームを送信
     });
 
 });
@@ -27,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmationDialogCon.style.display = "block";
     });*/
 
-if (yesbutton) {
-   yesbutton.addEventListener("click", () => {
+if (ok) {
+   ok.addEventListener("click", () => {
         // 情報を保存して top.php に遷移
         document.getElementById("yesbutton").submit(); // フォームを送信
     });
