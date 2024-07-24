@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php 
-   require 'menu-humburger.php';
+   //require 'menu-humburger.php';
 ?>
 <div id="content">
     <div style="text-align: center">
