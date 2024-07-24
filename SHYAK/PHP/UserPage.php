@@ -3,66 +3,136 @@ session_start();
 require 'connect.php';
 require 'header.php';
 require 'api.php';
+
 ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザーページ</title>
     <link rel="stylesheet" href="../CSS/UserPage.css">
+
+    <?php
+    $translator = new Translator();
+    $originalText = "ブロックしますか？";
+    $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+    ?>
+
+    <script>
+        function confirmBlock(url) {
+            var translatedText = "<?php echo $translatedText; ?>";
+            if (confirm(translatedText)) {
+                window.location.href = url;
+            }
+        }
+    </script>
 </head>
 <body>
+
 <?php
-    if(isset($_GET['you'])){
-        if(isset($_GET['err'])){
-            echo '<script>alert("リクエストに失敗しました"\n"再度実行してください")</script>';
-        }
-        echo '<a href="javascript:history.back();">戻る</a>';
-        $you = $_GET['you'];
-        $pdo = new PDO($connect,USER,PASS);
+if (isset($_GET['you'])) {
+    $you = intval($_GET['you']); // 安全のために数値型に変換
+
+    try {
+        $pdo = new PDO($connect, USER, PASS);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
         $stmt = $pdo->prepare('SELECT * FROM Users WHERE user_id = :you');
-        $stmt->bindParam(':you', $you);
+        $stmt->bindParam(':you', $you, PDO::PARAM_INT);
         $stmt->execute();
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach($users as $user){
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            // ユーザー情報が見つかった場合
+            echo '<div class="header back-box">';
+            echo '<button id="backButton" type="button" onclick="javascript:history.back();">';
+            $originalText = "戻る";
+            $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+            echo $translatedText;
+            echo '</button>';
+            echo '</div>';
+
             echo '<div class="profile-box">';
-            if(empty($user['icon'])){
+            if (empty($user['icon'])) {
                 echo '<img src="../img/default.png" alt="user icon">';
-            }else{
+            } else {
                 echo '<img src="'.$user['icon'].'" alt="user icon">';
             }
-            echo '<h2>'.$user['user_name'].'</h2>';
+            echo '</div>';
+            echo '<h2 class="name">'.$user['user_name'].'</h2>';
+            echo '<div class="kuni">';
+            // 国旗表示
+            $country_flag = '';
             switch ($user['country_id']) {
                 case "ja":
-                    echo '<img src="../img/日本.png">';
+                    $country_flag = '日本.png';
                     break;
                 case "en":
-                    echo '<img src="../img/アメリカ.png">';
+                    $country_flag = 'アメリカ.png';
                     break;
                 case "fr":
-                    echo '<img src="../img/フランス.png">';
+                    $country_flag = 'フランス.png';
                     break;
                 case "pt":
-                    echo '<img src="../img/ポルトガル.png">';
+                    $country_flag = 'ポルトガル.png';
                     break;
                 case "ru":
-                    echo '<img src="../img/ロシア.png">';
+                    $country_flag = 'ロシア.png';
                     break;
                 case "zh-Hans":
-                    echo '<img src="../img/中国.png">';
+                    $country_flag = '中国.png';
                     break;
             }
+            if ($country_flag) {
+                echo '<img src="../img/'.$country_flag.'" alt="国旗">';
+            }
+            echo '</div>';
+
             echo '<div class="description-box">';
-            echo '<div class="intro-title">［自己紹介］</div>';
-            echo '<div id="description">',$user['message'],'</div>';
+            echo '<div class="intro-title">';
+            $originalText = "［自己紹介］";
+            $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+            echo $translatedText;
             echo '</div>';
+            echo '<div id="description">'.$user["message"].'</div>';
             echo '</div>';
+
+            // フレンド申請・ブロック機能
             echo '<div class="relation">';
             echo '<div class="friend">';
-            echo '<a href="UserPage-output.php?flg=2&you="'.$you.'">フレンド申請</a>';
+            echo '<a href="UserPage-output.php?flg=2&you='.$you.'">';
+            $originalText = "フレンド申請";
+            $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+            echo $translatedText;
+            echo '</a>';
             echo '</div>';
             echo '<div class="block">';
-            echo '<a href="UserPage-output.php?flg=1&you="'.$you.'">ブロックする</a>';
+            echo '<a href="javascript:void(0);" onclick="confirmBlock(\'UserPage-output.php?flg=1&you='.$you.'\')">';
+            $originalText = "ブロックする";
+            $translatedText = $translator->translate($originalText, $_SESSION['User']['lang']);
+            echo $translatedText;
+            echo '</a>';
             echo '</div>';
             echo '</div>';
+        } else {
+            // ユーザーが見つからない場合
+            $UsererrorText = "ユーザーが見つかりませんでした";
+            $UserText = $translator->translate($UsererrorText, $_SESSION['User']['lang']);
+            echo '<script>alert("'.$UserText.'");</script>';
+            echo '<script>window.location.href = "top.php";</script>';
         }
-    }else{
-        header('Location:top.php');
+    } catch (PDOException $e) {
+        $DBerrorText = "データベースエラーが発生しました";
+        $DBText = $translator->translate($DBerrorText, $_SESSION['User']['lang']);
+        echo '<script>alert("'.$DBText.'");</script>';
+        echo '<script>window.location.href = "top.php";</script>';
     }
+} else {
+    // ユーザーIDが提供されていない場合
+    header('Location: top.php');
+}
 ?>
+
 </body>
+</html>

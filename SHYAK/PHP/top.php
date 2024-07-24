@@ -1,6 +1,12 @@
 <?php
     session_start();
     require 'header.php';
+
+    if (isset($_SESSION['message'])) {
+        echo '<div class="message">' . htmlspecialchars($_SESSION['message'], ENT_QUOTES, 'UTF-8') . '</div>';
+        unset($_SESSION['message']); // メッセージを表示後に削除
+    }
+    
 ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Document</title>
@@ -10,16 +16,11 @@
 <body>
 <?php
 require 'menu-humburger.php';
-require 'api.php';
 //require 'CheckMessage.php';
 ?>
 <!-- ログアウトの時にのみ使用-->
  <?php
-      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
-        echo '<script>';
-        echo 'alert("ログアウトしました")';
-        echo '</script>';
-      }
+      
       ?>
 <!--瓶 -->
 <img id="img_bin1" src="../image/瓶.png" alt="瓶">
@@ -35,9 +36,7 @@ require 'api.php';
                 <br>
                 <?php
                     $translator = new Translator();
-                    //$originalText = $translator->translate($originalText);
                     $originalText = $translator->translate("本",$_SESSION['User']['lang']);
-
                     echo '<a href="Morattahenji.php?id=', $_SESSION['User']['id'], '"><img src="../image/hon.png" alt="', htmlspecialchars($originalText), '" class="btn-hon-image"></a>';
                 ?>
             </div>

@@ -1,5 +1,4 @@
 <?php session_start();?>
-<?php require 'header.php';?>
 <?php require 'connect.php';?>
 
 <link rel="stylesheet" href="../CSS/admin_message.css">
@@ -10,24 +9,30 @@
   $icon = isset($_GET['icon']) ? $_GET['icon'] : null;
   $name = isset($_GET['name']) ? $_GET['name']  : null;
   $country = isset($_GET['country']) ? $_GET['country'] : null;
-
+  echo '<!DOCTYPE html>';
+  echo '<html lang="ja">';
+  echo '<head>';
+  echo '<meta charset="UTF-8">';
+  echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+ /* アイコンのためのlink*/
+  echo '<link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">';
   echo '</head>';
   echo '<body>';
   echo '<div class=title>';
-  echo '<p>通報メッセージ一覧</p>';
+  echo '<p><font color=#fff>通報メッセージ一覧</font></p>';
   echo '</div>';
+  echo '<div class="return">';
+  echo '<a href="admin-input.php">';
+  echo '戻る';
+  echo '</a>';
+  echo'</div>';
   if($user_id){
-    // echo '<p>ユーザーID:',$user_id,'アイコン:',$icon,'ユーザー:',$name,'国籍:',$country,'</p>';
-    //echo '<img class="c" src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></img>';
-    //echo '<p class="b">ユーザーID:',$user_id,'<br>','ユーザー:',$name,'国籍:',$country,'</p>';
-
     echo '<div class="container">';
         echo '<div class="image">';
             echo '<img class="c" src="'.htmlspecialchars($icon, ENT_QUOTES, 'UTF-8') . '" alt="icon" style="width:50px;height:50px;"></img>';
         echo '</div>';
         echo '<div class="text">';
-            echo '<p>ユーザーID:6</p>';
-            echo '<p>ユーザー:ひろし国籍:ja</p>';
+            echo '<h4>ユーザーID:',$user_id,'　　ユーザー:',$name,'　　国籍:',$country,'</h4>';
         echo '</div>';
     echo '</div>';
 

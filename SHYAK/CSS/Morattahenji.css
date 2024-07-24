@@ -75,3 +75,17 @@ body {
     width: 100%; /* フォームの幅に合わせる */
     box-sizing: border-box; /* パディングを含めた幅にする */
       }
+    .scroll{
+      height: 600px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 10px; /* 内容を少し内側に配置するためのパディング */
+      border: none;
+      scrollbar-width: none;
+    }
+    .scroll::-webkit-scrollbar{
+      width: 0;
+      background: transparent;
+      display: none;
+
+    }

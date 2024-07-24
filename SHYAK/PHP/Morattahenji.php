@@ -38,12 +38,14 @@
             $sql->execute([$user_name]);
             $binkaisyu = $sql->fetchAll(PDO::FETCH_ASSOC);
             if($binkaisyu){
+                echo '<div class="scroll">';
+                echo '<span>';
                 foreach($binkaisyu as $row){
                     $sql = $pdo->prepare('select user_name, sent_message from Recieves where sent_id = ?');
                     $sql->execute([$row['sent_id']]);
                     $recieves = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $translator = new Translator();
-                    var_dump($recieves);
+                    //var_dump($recieves);
                     foreach($recieves as $res){
                         $txtArr = array('からもらった返事',$res['sent_message']);
                         for($i = 0; $i < count($txtArr); $i++){
@@ -53,7 +55,7 @@
                         }
                         echo '<div class="row justify-content-center">';
                         echo '<h2 class="text-center mt-5" style="width: 300px;">';
-                        echo $_SESSION['User']['username'], $txtArr[0].'</h2>';
+                        echo $res['user_name'], $txtArr[0].'</h2>';
                         echo '</div>';
                         echo '<div class="row justify-content-center mt-5">';
                         echo '<div class="col-6">';
@@ -64,6 +66,8 @@
                         echo '</div>';
                     }
                 }
+                echo'</span>';
+                echo'</div>';
             }else{
                 $translator = new Translator();
                 $originalText = "もらった返事はここに表示されます";

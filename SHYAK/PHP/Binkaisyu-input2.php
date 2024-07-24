@@ -69,33 +69,19 @@
     echo '</div>';
     echo '<input type="hidden" name="sender_id" value="<?php echo $userId; ?>">';
     echo '<input type="hidden" name="sender_name" value="' . htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') . '">';
+
+    echo '<div id="confirmationDialog" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 1000;">';
+    echo '<div id="confirmationDialogCon" class="dialog-content" style="background: rgb(255, 244, 185); border-radius: 20px; padding: 7%; text-align: center; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; display: none;">';
+    echo '<label>この内容でよろしいですか？</label>';
+    echo '<button id="confirmYes" type="submit" style="width: 100px; height: 40px; margin: 10px; border: none; border-radius: 20px; font-size: 16px; color: #fff; cursor: pointer; background-color: #4CAF50; transition: background-color 0.3s ease;">はい</button>';
+    echo '<button id="confirmNo" type="button" style="width: 100px; height: 40px; margin: 10px; border: none; border-radius: 20px; font-size: 16px; color: #fff; cursor: pointer; background-color: #f44336; transition: background-color 0.3s ease;">いいえ</button>';
+    echo '</div>';
+    echo '</div>';
+
     echo '</form>';
     ?>
     
-            <!-- ダイアログ -->
-<script type="text/javascript">
-    <?php
-        $txtArr = array('この内容でよろしいですか？','瓶を流しました');
-        $translator = new Translator();
-        for($i = 0; $i < count($txtArr); $i++){
-            $originalText = $txtArr[$i];
-            $originalText = $translator->translate($originalText,$_SESSION['User']['lang']);
-            $txtArr[$i] = $originalText;
-        }
-    ?>
-    document.addEventListener("DOMContentLoaded", function() {
-        const nagasu = document.getElementById("kaisyu");
-        nagasu.addEventListener("click", function() {
-        event.preventDefault(); // デフォルトのフォーム送信動作を停止する
-            const userInput = document.getElementById("userInput2").value;
-            const userResponse = confirm(userInput + "\n\n"+<?php echo json_encode($txtArr[0]);?>);
-            if (userResponse) {
-                alert(<?php echo json_encode($txtArr[1]);?>);
-                document.getElementById("binkaisyuForm").submit(); // フォームを送信
-            }
-        });
-    });
-</script>
+<script src="../JavaScript/Binkaisyu.js"></script>
 <!--<?php //unset($_SESSION['flash']);?>-->
 </body>
 </html>

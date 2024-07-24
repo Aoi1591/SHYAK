@@ -34,32 +34,34 @@ h1{
   transform: translateX(-50%);
 }
 .jp{
-
-  top: 320px; /* 上から10px */
+  top: 300px; /* 上から10px */
   left: 48%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .FR{
   
-  top: 290px; /* 上から10px */
+  top: 220px; /* 上から10px */
   left: 23%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .RU{
-  
-  top: 220px; /* 上から10px */
+  top: 160px; /* 上から10px */
   left: 42%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .CN{
   
-  top: 280px; /* 上から10px */
-  left: 43%; /* 左から20px */
+  top: 257px; /* 上から10px */
+  left: 40%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .EN{
   
@@ -67,13 +69,15 @@ h1{
   left: 70%;
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 .PT{
   
-  top: 470px;
+  top: 400px;
   left: 80%;
   position: absolute;
   transform: translateX(-50%);
+  display: flex;
 }
 img {
   max-width: 60px; /* 画像がコンテナの幅を超えないようにする */
@@ -81,4 +85,24 @@ img {
   margin-bottom: 20px; /* 画像とフォームの間に余白を追加 */
   margin-top: 20px;
   margin-right: 20px;
+}
+button{
+  border: none;
+  padding: 0;
+  width: 170%;
+  outline: none;
+  margin: 17% -8%;
+  background: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.kokki{
+  border-radius: 10px;
+  width: 50%;
+  margin: 10% 24%;
+}
+span{
+  color:white;
+  background-color: #6b3f31;
 }

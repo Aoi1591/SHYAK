@@ -66,7 +66,7 @@ background-color: #99c2ff;
             align-items: center;
             justify-content: center;
             position: relative;
-            /*top: 20px;*/
+            top: 20px;
             left: 70vw;
 }
 
@@ -99,38 +99,37 @@ background-color: #99c2ff;
             position: relative;
 }
 
-.userlogin{
-    top: 10%; /* 上から10px */
-  left: 7%; 
+.login{
+    top: 84%; /* 上から10px */
+  left: 30%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: inline-block;
   padding: 0.5em; /* 上下左右の余白を大きくする */
-  font-size: 16px; /* フォントサイズを大きくする */
+  font-size: 24px; /* フォントサイズを大きくする */
   text-decoration: none;
   background: #ffbf00;
   color: #FFF;
   border-radius: 12px;
-  width: 150px;
-  height: 20px;
+  width: 240px;
+  height: 70px;
   box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
   transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
 }
-.userlogout{
-  top: 10%; /* 上から10px */
-  left: 20%; /* 左から20px */
-
+.logout{
+    top: 84%; /* 上から10px */
+  left: 30%; /* 左から20px */
   position: absolute;
   transform: translateX(-50%);
   display: inline-block;
   padding: 0.5em; /* 上下左右の余白を大きくする */
-  font-size: 16px; /* フォントサイズを大きくする */
+  font-size: 24px; /* フォントサイズを大きくする */
   text-decoration: none;
   background: #ffbf00;
   color: #FFF;
   border-radius: 12px;
-  width: 150px;
-  height: 20px;
+  width: 240px;
+  height: 70px;
   box-shadow: 0px 4px 0px #bc8d00; /* ボーダーの代わりにボックスシャドウを使用 */
   transition: transform 0.1s, box-shadow 0.1s; /* スムーズな変化のためにトランジションを追加 */
 }
