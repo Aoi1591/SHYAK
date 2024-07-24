@@ -77,5 +77,15 @@ body {
       }
     .scroll{
       height: 600px;
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 10px; /* 内容を少し内側に配置するためのパディング */
+      border: 1px solid #ddd; /* オプション：コンテナの境界線 */
+      scrollbar-width: none;
+    }
+    .scroll::-webkit-scrollbar{
+      width: 0;
+      background: transparent;
+      display: none;
+
     }
