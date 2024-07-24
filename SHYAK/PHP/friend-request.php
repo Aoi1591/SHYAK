@@ -55,7 +55,7 @@ try {
     $requests = $User_sql->fetchAll(PDO::FETCH_ASSOC);
 
     // 各フレンドリクエストに対するユーザー情報を表示
-    echo '<div class="request">';
+    
 
 
     foreach ($requests as $request) {
@@ -73,6 +73,7 @@ try {
             $name = htmlspecialchars($friend['user_name']);
         
             echo '<div class="sen">';
+            echo '<div class="request">';
             echo '<a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a>';
             echo '<button class="approve-friend" data-id="' . $Fid . '">許可</button>';
             echo '<button class="reject-friend" data-id="' . $Fid . '">却下</button>';
