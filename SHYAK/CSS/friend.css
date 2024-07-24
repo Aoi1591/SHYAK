@@ -135,6 +135,7 @@ body {
     font-size: 16px; 
     color: #fff; 
     cursor: pointer; 
+    margin-left:30px;
     background-color: #4CAF50; 
     transition: background-color 0.3s ease;
 }
@@ -147,9 +148,10 @@ body {
     font-size: 16px; 
     color: #fff; 
     cursor: pointer; 
+    margin-right: 0.1px;
     background-color: #f44336; 
     transition: background-color 0.3s ease;
 }
 .request-a{
-    margin-left:90px;
+    margin-right:90px;
 }
