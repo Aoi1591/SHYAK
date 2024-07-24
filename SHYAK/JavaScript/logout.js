@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     const btn = document.getElementById("yes-button");
-    const okButton = document.getElementById("modal-ok-button");
+    const okButton = document.getElementById("ok");
 
     // 　「はい」を押下したとき
     btn.addEventListener('click', function(event) {
