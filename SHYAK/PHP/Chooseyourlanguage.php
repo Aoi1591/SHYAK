@@ -12,7 +12,6 @@
 <body>
 <?php 
    require 'menu-humburger.php';
-   require 'api.php';
 ?>
 <div id="content">
     <div style="text-align: center">
