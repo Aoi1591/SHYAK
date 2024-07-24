@@ -74,7 +74,9 @@ try {
         
             echo '<div class="sen">';
             echo '<div class="request">';
+            echo '<div class="request-a">';
             echo '<a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a>';
+            echo '</div>';
             echo '<button class="approve-friend" data-id="' . $Fid . '">許可</button>';
             echo '<button class="reject-friend" data-id="' . $Fid . '">却下</button>';
             echo '</div>';
