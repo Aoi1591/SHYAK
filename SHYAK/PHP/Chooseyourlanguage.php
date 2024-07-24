@@ -1,15 +1,18 @@
 <?php session_start();?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <?php require 'header.php'; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/humburger.css">
     <title>Choose your language</title>
     <link rel="stylesheet" href="../CSS/Chooseyourlanguage.css">
 </head>
 <body>
 <?php 
    require 'menu-humburger.php';
-   ?>
+   require 'api.php';
+?>
 <div id="content">
     <div style="text-align: center">
         <?php
