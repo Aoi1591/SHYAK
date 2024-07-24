@@ -9,9 +9,13 @@
 <?php require 'api.php'; ?>
 
 <?php
+// 翻訳クラスのインスタンス化
+$translator = new Translator();
+$originalText = "拾う瓶の言語を選んでください";
+$translatedText = $translator->translate($originalText,$_SESSION['User']['lang']);
+echo "<h1>$translatedText</h1>";
+
 echo '<div style="text-align: center">';
-// 拾う瓶の言語を選んでくださいって意味ね！
-echo '<h1>Please choose the language of the bottle you pick up</h1>';
 //echo $_SESSION['User']['pick'];
 switch($_SESSION['User']['pick']){
     case "ja":
@@ -34,8 +38,7 @@ switch($_SESSION['User']['pick']){
         break;
 }
 
-// 翻訳クラスのインスタンス化
-$translator = new Translator();
+
 
 // 翻訳するテキスト
 $originalText = "この瓶でよろしいですか？";
