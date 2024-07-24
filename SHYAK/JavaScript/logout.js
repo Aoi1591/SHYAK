@@ -11,17 +11,34 @@ document.addEventListener("DOMContentLoaded", function() {
     const ok = document.getElementById("ok");
     //const confirmNoButton = document.getElementById("no-button");
 
-    logout.addEventListener("click", function() {
+
+    const btn = document.getElementById("yes-button");
+    const okButton = document.getElementById("modal-ok-button");
+
+    // 　「はい」を押下したとき
+    btn.addEventListener('click', function(event) {
+        event.preventDefault(); // デフォルトのリンク動作を無効にする
         confirmationDialog.style.display = "flex";
         confirmationDialogCon.style.display = "block";
     });
+       // モーダルの OK ボタンをクリックしたときの動作
+    okButton.onclick = function() {
+        window.location.href = 'logout-output.php'; // リダイレクト先を指定
+    }
+
+
+
+    // logout.addEventListener("click", function() {
+    //     confirmationDialog.style.display = "flex";
+    //     confirmationDialogCon.style.display = "block";
+    // });
 
     // yesbutton.addEventListener("click", function() {
     //     document.getElementById("ok").submit(); // フォームを送信
     // });
-    okbutton.addEventListener("click", function() {
-        document.getElementById("ok").submit(); // フォームを送信
-    });
+    // okbutton.addEventListener("click", function() {
+    //     document.getElementById("ok").submit(); // フォームを送信
+    // });
 
 });
 
