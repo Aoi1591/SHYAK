@@ -25,6 +25,8 @@
         echo "<div id="confirmationDialogCon" class="dialog-content" style="background: rgb(255, 244, 185); border-radius: 20px; padding: 7%; text-align: center; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; display: none;">";
         echo "<label>ログアウトしました</label>";
         echo "<button id="ok" type="submit" >OK</button>";
+        echo "</div>";
+        echo "</div>";
     ?> 
     <script src="../JavaScript/logout.js"></script>
 </body>
