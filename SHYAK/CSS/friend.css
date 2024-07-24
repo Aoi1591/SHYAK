@@ -125,3 +125,28 @@ body {
     margin-left:25vw;
     margin-top:1vw;
 }
+.approve-friend{
+
+    width: 100px; 
+    height: 40px; 
+    margin: 10px; 
+    border: none; 
+    border-radius: 20px; 
+    font-size: 16px; 
+    color: #fff; 
+    cursor: pointer; 
+    background-color: #4CAF50; 
+    transition: background-color 0.3s ease;
+}
+.reject-friend{
+    width: 100px; 
+    height: 40px; 
+    margin: 10px; 
+    border: none; 
+    border-radius: 20px; 
+    font-size: 16px; 
+    color: #fff; 
+    cursor: pointer; 
+    background-color: #f44336; 
+    transition: background-color 0.3s ease;
+}
