@@ -76,6 +76,7 @@ try {
             echo '<a href="user.php?id=' . urldecode($id) . '&name=' . urldecode($name) . '">' . $name . '</a>';
             echo '<button class="approve-friend" data-id="' . $Fid . '">許可</button>';
             echo '<button class="reject-friend" data-id="' . $Fid . '">却下</button>';
+            echo "<br>";
             echo '</div>';
         }
     }
