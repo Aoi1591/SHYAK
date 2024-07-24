@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="../CSS/login-input.css">
 </head>
 <body>
-    <?php
-      if(isset($_GET['logout'])&&$_GET['logout'] == 1){
-        echo '<script>';
-        echo "alert('logged out');";
-        echo '</script>';
-      }
-    ?>
-
     <!-- Login Form Container -->
     <a href="#" id="admin">■</a>
     <form action="login-output.php" method="post">
