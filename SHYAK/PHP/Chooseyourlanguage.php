@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/humburger.css">
     <title>Choose your language</title>
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/Chooseyourlanguage.css">
 </head>
 <body>
