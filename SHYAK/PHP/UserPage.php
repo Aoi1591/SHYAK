@@ -136,3 +136,9 @@ if (isset($_GET['you'])) {
 
 </body>
 </html>
+
+<style>
+html,body {
+  overflow-y: hidden;
+} 
+</style>

@@ -68,3 +68,8 @@ require 'header.php';
    ?>
 
    
+<style>
+html,body {
+  overflow-y: hidden;
+} 
+</style>

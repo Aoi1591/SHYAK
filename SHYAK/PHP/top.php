@@ -66,3 +66,9 @@ require 'menu-humburger.php';
 
 <script src="../JavaScript/hamburger.js"></script>
 <?php require 'footer.php' ;?>
+
+<style>
+html,body {
+  overflow-y: hidden;
+} 
+</style>
