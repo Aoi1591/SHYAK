@@ -11,7 +11,7 @@
     <a href="#" id="admin">■</a>
     <form action="login-output.php" method="post">
         <div id="username-all">
-            <input type="text" id="username" name="username" placeholder="USER NAME" required>
+            <input type="text" id="username" name="username" placeholder="USER NAME" pattern=".{1,20}" title="1から20文字以内で入力してください"required>
         </div>
         <div id="password-all">
             <input type="password" id="password" name="password" placeholder="PASSWORD" required>
